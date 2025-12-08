@@ -1,0 +1,132 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: r3sn-deployment
+  labels:
+    app: r3sn
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: r3sn
+  template:
+    metadata:
+      labels:
+        app: r3sn
+    spec:
+      containers:
+      - name: r3sn
+        image: r3sn:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: PORT
+          value: "3000"
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: r3sn-config
+              key: db_host
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: r3sn-config
+              key: db_name
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: r3sn-secrets
+              key: db_user
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: r3sn-secrets
+              key: db_password
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: r3sn-config
+              key: redis_host
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: r3sn-secrets
+              key: jwt_secret
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "2000m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: r3sn-service
+spec:
+  selector:
+    app: r3sn
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+  type: LoadBalancer
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: r3sn-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: r3sn-deployment
+  minReplicas: 3
+  maxReplicas: 100
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: r3sn-config
+data:
+  db_host: "postgres-service"
+  db_name: "r3sn"
+  redis_host: "redis-service"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: r3sn-secrets
+type: Opaque
+stringData:
+  db_user: "postgres"
+  db_password: "your_secure_password"
+  jwt_secret: "your_jwt_secret"
