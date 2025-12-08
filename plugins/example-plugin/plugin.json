@@ -1,0 +1,32 @@
+{
+  "id": "example-plugin",
+  "name": "Example Plugin",
+  "version": "1.0.0",
+  "description": "Example plugin demonstrating the plugin system",
+  "author": "R3SN Team",
+  "main": "index.js",
+  "nodes": [
+    {
+      "type": "example.hello",
+      "name": "Hello World",
+      "category": "example",
+      "description": "A simple hello world node"
+    },
+    {
+      "type": "example.math",
+      "name": "Math Operations",
+      "category": "example",
+      "description": "Perform mathematical operations"
+    }
+  ],
+  "dependencies": {},
+  "permissions": [
+    "network"
+  ],
+  "icon": "🔌",
+  "homepage": "https://github.com/Nisu7648/R3SN",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nisu7648/R3SN.git"
+  }
+}
