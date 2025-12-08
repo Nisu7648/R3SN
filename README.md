@@ -1,112 +1,125 @@
-# R3SN - Revolutionary Automation Platform
+# R3SN - Revolutionary Workflow Automation Platform
 
-**🚀 PRODUCTION READY - Enterprise-Grade Automation with NO LIMITS**
+<div align="center">
 
-R3SN is the world's most powerful automation platform - 5X more capable than any competitor. Execute ANY prompt, connect to 800+ apps, run unlimited AI agents, and automate everything with zero restrictions.
+![R3SN Logo](https://img.shields.io/badge/R3SN-Workflow%20Engine-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.0.0-green?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-orange?style=for-the-badge)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
-[![Production Ready](https://img.shields.io/badge/status-production%20ready-success)](https://github.com/Nisu7648/R3SN)
+**Revolutionary automation platform with unlimited integrations (800+ apps), unlimited AI agents, plugin-based architecture, and 5X more powerful automation than traditional platforms.**
 
-## 🎯 What Makes R3SN Different
+[Features](#-features) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Architecture](#-architecture) • [Contributing](#-contributing)
 
-### Execute ANY Prompt - No Restrictions
-```javascript
-POST /api/execute
-{
-  "prompt": "Analyze Q4 sales data, generate executive report with charts, email to board members, schedule follow-up meeting, create Jira tickets for action items, and post summary to Slack"
-}
+</div>
+
+---
+
+## 🚀 What is R3SN?
+
+R3SN is a **next-generation workflow automation platform** that combines the power of n8n-style workflow execution with advanced AI/ML capabilities, hot-reload plugin system, and automatic API-to-node conversion. Built for developers, by developers.
+
+### Why R3SN?
+
+- 🔥 **Hot-Reload Plugins**: Update plugins without restarting
+- 🤖 **AI-Powered**: ML insights, predictions, and self-improvement
+- 🎨 **API Designer**: Design APIs and auto-generate workflow nodes
+- 📱 **Cross-Platform**: Backend + Android + Desktop ready
+- ⚡ **High Performance**: 100+ concurrent workflow executions
+- 🔌 **800+ Integrations**: Unlimited app integrations via plugins
+- 🧠 **Self-Improving**: Engine learns and optimizes automatically
+
+---
+
+## ✨ Features
+
+### 🎯 Core Workflow Engine
+- **Node-Based Processing**: Visual workflow builder with drag-and-drop
+- **Parallel Execution**: Automatic parallel node execution
+- **Real-Time Tracking**: Monitor executions in real-time
+- **Execution History**: Complete audit trail
+- **Error Recovery**: Automatic retry and error handling
+
+### 🔌 Plugin System
+- **Hot-Reload**: Update plugins without downtime
+- **Manifest-Based**: Simple JSON configuration
+- **Permission System**: Secure plugin execution
+- **Plugin Marketplace**: Ready for community plugins
+- **Example Plugin**: Complete working example included
+
+### 🎨 API Designer
+- **Visual Designer**: Design APIs with intuitive UI
+- **OpenAPI Support**: Import/Export OpenAPI 3.0 schemas
+- **Auto-Generate Nodes**: Convert APIs to workflow nodes automatically
+- **Test Endpoints**: Built-in API testing
+- **Authentication**: Bearer, API Key, OAuth2, Basic Auth
+
+### 🤖 ML/AI Engine
+- **Performance Analysis**: Real-time workflow analytics
+- **Predictive Analytics**: Forecast workflow outcomes
+- **Behavior Tracking**: Learn from user patterns
+- **Self-Improvement**: Auto-optimize workflows
+- **Daily Insights**: Automated daily analytics reports
+- **Anomaly Detection**: Identify issues before they happen
+
+### 📱 Android App
+- **Material 3 Design**: Modern, beautiful UI
+- **5 Core Screens**: Home, Workflows, Nodes, Plugins, ML Insights
+- **Real-Time Sync**: Live workflow monitoring
+- **Offline Support**: Work without internet (planned)
+
+### 🌐 REST API
+- **30+ Endpoints**: Complete API coverage
+- **RESTful Design**: Industry-standard API design
+- **Real-Time Events**: WebSocket support (planned)
+- **Rate Limiting**: Built-in protection
+- **Authentication**: JWT-ready
+
+---
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                    R3SN Platform                        │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │
+│  │   Workflow   │  │     API      │  │   ML/AI      │ │
+│  │    Engine    │  │   Designer   │  │   Engine     │ │
+│  └──────────────┘  └──────────────┘  └──────────────┘ │
+│         │                 │                  │         │
+│  ┌──────────────────────────────────────────────────┐ │
+│  │            Plugin System (Hot-Reload)            │ │
+│  └──────────────────────────────────────────────────┘ │
+│         │                 │                  │         │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │
+│  │   Node       │  │  Execution   │  │  Behavior    │ │
+│  │  Registry    │  │   Context    │  │   Tracker    │ │
+│  └──────────────┘  └──────────────┘  └──────────────┘ │
+│                                                         │
+├─────────────────────────────────────────────────────────┤
+│                    REST API Layer                       │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐ │
+│  │   Android    │  │   Desktop    │  │     Web      │ │
+│  │     App      │  │     App      │  │     UI       │ │
+│  └──────────────┘  └──────────────┘  └──────────────┘ │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
 ```
 
-**R3SN understands and executes complex multi-step tasks automatically.**
+---
 
-### Key Differentiators
+## 🚀 Quick Start
 
-| Feature | R3SN | Competitors |
-|---------|------|-------------|
-| **AI Agents** | ♾️ Unlimited | 5-10 max |
-| **Integrations** | 800+ (API + Plugin) | 200-300 |
-| **Concurrent Workflows** | ♾️ Unlimited | 10-50 |
-| **Code Execution** | 7 languages | Limited/None |
-| **Auto-scaling** | ✅ Infinite | ❌ Fixed |
-| **Plugin Generation** | ✅ Automatic | ❌ Manual |
-| **Enterprise Security** | ✅ Full Suite | ⚠️ Basic |
-| **Real-time Execution** | ✅ WebSocket | ⚠️ Polling |
+### Prerequisites
+- Node.js >= 18.0.0
+- npm >= 9.0.0
+- Android Studio (for Android app)
 
-## 🚀 Core Features
+### Installation
 
-### 1. Universal Executor
-Execute **ANY** prompt without restrictions:
-- Natural language understanding
-- Multi-step task decomposition
-- Automatic resource allocation
-- Intelligent error recovery
-- Cross-platform execution
-
-**Supported Operations:**
-- Code execution (JavaScript, Python, Bash, SQL, Java, Go, Rust)
-- Data processing (transform, analyze, visualize)
-- API calls (REST, GraphQL, SOAP)
-- File operations (CRUD, compress, encrypt)
-- Database queries (PostgreSQL, MySQL, MongoDB)
-- Cloud operations (AWS, GCP, Azure)
-- AI operations (generate, analyze, classify)
-
-### 2. Unlimited AI Agents
-- Create infinite agents
-- Parallel execution
-- Context sharing
-- Dynamic scaling
-- Zero resource limits
-
-### 3. 800+ Integrations
-
-**API-based (600+):**
-- Productivity: Google Workspace, Microsoft 365, Notion, Slack
-- Finance: Stripe, PayPal, QuickBooks, Xero
-- Marketing: HubSpot, Mailchimp, Salesforce
-- Development: GitHub, GitLab, Jira, Jenkins
-- Cloud: AWS, GCP, Azure, DigitalOcean
-
-**Plugin-based (200+):**
-- Auto-generated for apps without APIs
-- Uses Android Accessibility Services
-- Zero manual configuration
-- Background execution
-
-### 4. Enterprise Features
-
-**Security:**
-- AES-256 encryption
-- OAuth2 + JWT authentication
-- Role-Based Access Control (RBAC)
-- GDPR/HIPAA/SOC2 compliant
-- Complete audit logging
-
-**Scalability:**
-- Auto-scaling (unlimited workers)
-- Load balancing (3 algorithms)
-- Connection pooling
-- Response compression
-- Intelligent caching
-
-**Reliability:**
-- Retry policies with exponential backoff
-- Circuit breaker pattern
-- Health checks
-- Graceful degradation
-- 99.9% uptime SLA
-
-**Monitoring:**
-- Real-time metrics
-- Performance tracking
-- Resource utilization
-- Alert system
-- Audit trails
-
-## 📦 Installation
-
-### Quick Start
 ```bash
 # Clone repository
 git clone https://github.com/Nisu7648/R3SN.git
@@ -115,219 +128,367 @@ cd R3SN
 # Install dependencies
 npm install
 
-# Configure environment
+# Setup environment
 cp .env.example .env
-# Edit .env with your settings
 
-# Start development server
-npm run dev
+# Start server
+npm start
 ```
 
-### Docker (Recommended)
-```bash
-# Start all services
-docker-compose up -d
+Server will start at `http://localhost:3000`
 
-# View logs
-docker-compose logs -f r3sn
-```
+### Your First Workflow
 
-### Kubernetes
-```bash
-# Deploy to cluster
-kubectl apply -f k8s/deployment.yaml
-
-# Check status
-kubectl get pods -n r3sn
-```
-
-## 🎯 Quick Examples
-
-### Example 1: Universal Execution
 ```javascript
-const response = await fetch('http://localhost:3000/api/execute', {
-  method: 'POST',
-  headers: {
-    'Authorization': 'Bearer YOUR_TOKEN',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    prompt: 'Fetch latest GitHub issues, analyze sentiment, create summary report, and email to team'
-  })
-});
-```
-
-### Example 2: Enterprise Workflow
-```javascript
-const workflow = await fetch('http://localhost:3000/api/workflows', {
-  method: 'POST',
-  headers: {
-    'Authorization': 'Bearer YOUR_TOKEN',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({
-    name: 'Customer Onboarding',
-    triggers: [{ type: 'webhook', url: '/onboard' }],
-    tasks: [
-      { type: 'create_account', integration: 'salesforce' },
-      { type: 'send_welcome_email', integration: 'sendgrid' },
-      { type: 'schedule_call', integration: 'calendly' }
+// POST /api/workflows/execute
+{
+  "workflow": {
+    "nodes": [
+      {
+        "id": "1",
+        "type": "http.request",
+        "name": "Fetch Data",
+        "parameters": {
+          "method": "GET",
+          "url": "https://api.github.com/users/octocat"
+        }
+      },
+      {
+        "id": "2",
+        "type": "data.transform",
+        "name": "Process",
+        "parameters": {
+          "code": "return { name: data.name, repos: data.public_repos };"
+        }
+      }
     ],
-    sla: { maxExecutionTime: 300000 }
-  })
-});
-```
-
-### Example 3: Plugin-based Automation
-```javascript
-// Auto-generate plugin for WhatsApp
-const plugin = await fetch('http://localhost:3000/api/plugins/generate', {
-  method: 'POST',
-  headers: {
-    'Authorization': 'Bearer YOUR_TOKEN',
-    'Content-Type': 'application/json'
+    "connections": [
+      { "source": "1", "target": "2" }
+    ]
   },
-  body: JSON.stringify({
-    appName: 'WhatsApp',
-    packageName: 'com.whatsapp',
-    category: 'communication'
-  })
-});
+  "inputData": {}
+}
 ```
 
-## 📊 Performance Benchmarks
-
-- **Agent Execution**: <100ms
-- **Plugin Generation**: <5s
-- **API Integration**: <50ms
-- **Workflow Orchestration**: <200ms
-- **Throughput**: 1000+ requests/min
-- **Uptime**: 99.9%
-- **Error Rate**: <0.1%
-
-## 🏗️ Architecture
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                   Universal Executor                     │
-│         (Execute ANY prompt - No restrictions)           │
-└─────────────────────────────────────────────────────────┘
-                            │
-        ┌───────────────────┼───────────────────┐
-        │                   │                   │
-┌───────▼────────┐  ┌──────▼──────┐  ┌────────▼────────┐
-│  Agent Engine  │  │ Integration │  │     Plugin      │
-│   (Unlimited)  │  │  Hub (800+) │  │    Factory      │
-└───────┬────────┘  └──────┬──────┘  └────────┬────────┘
-        │                   │                   │
-        └───────────────────┼───────────────────┘
-                            │
-        ┌───────────────────┼───────────────────┐
-        │                   │                   │
-┌───────▼────────┐  ┌──────▼──────┐  ┌────────▼────────┐
-│   Enterprise   │  │  Security   │  │  Scalability    │
-│  Orchestrator  │  │   Manager   │  │     Engine      │
-└────────────────┘  └─────────────┘  └─────────────────┘
-```
+---
 
 ## 📚 Documentation
 
-- **[Getting Started](docs/GETTING_STARTED.md)** - Quick start guide
-- **[Architecture](ARCHITECTURE.md)** - System architecture
-- **[Enterprise Features](docs/ENTERPRISE_FEATURES.md)** - Complete feature list
-- **[Deployment](docs/DEPLOYMENT.md)** - Production deployment guide
-- **[Contributing](CONTRIBUTING.md)** - Contribution guidelines
-- **[API Reference](docs/API.md)** - Full API documentation
+### Core Documentation
+- [**Workflow Engine Guide**](WORKFLOW_ENGINE_GUIDE.md) - Complete guide (500+ lines)
+- [**Implementation Summary**](IMPLEMENTATION_SUMMARY.md) - Technical details
+- [**Plugin Development**](plugins/example-plugin/README.md) - Create custom plugins
+- [**API Reference**](docs/API.md) - REST API documentation (coming soon)
 
-## 🔒 Security
+### Quick Links
+- [Architecture Overview](#-architecture)
+- [Creating Workflows](#your-first-workflow)
+- [Developing Plugins](plugins/example-plugin/README.md)
+- [API Designer Guide](WORKFLOW_ENGINE_GUIDE.md#3-api-designer)
+- [ML/AI Features](WORKFLOW_ENGINE_GUIDE.md#4-ml-insights-engine)
 
-R3SN implements enterprise-grade security:
-- AES-256 encryption for data at rest and in transit
-- OAuth2 + JWT authentication
-- Role-Based Access Control (RBAC)
-- Complete audit logging
-- GDPR, HIPAA, SOC2 compliance
-- Regular security audits
-- Vulnerability scanning
+---
 
-## 🌐 Deployment Options
+## 🎯 Core Nodes
 
-- **Docker**: Single command deployment
-- **Kubernetes**: Auto-scaling production deployment
-- **AWS**: EC2, ECS, Lambda
-- **GCP**: Compute Engine, Cloud Run, GKE
-- **Azure**: App Service, Container Instances, AKS
-- **Traditional**: Ubuntu, CentOS, RHEL
+### HTTP Request Node
+Make API calls with full configuration support.
 
-## 🎓 Use Cases
+```javascript
+{
+  type: 'http.request',
+  parameters: {
+    method: 'POST',
+    url: 'https://api.example.com/data',
+    headers: { 'Authorization': 'Bearer token' },
+    body: { key: 'value' }
+  }
+}
+```
 
-### Enterprise Automation
-Automate complex business processes across multiple systems with natural language commands.
+### Data Transform Node
+Transform data using JavaScript.
 
-### DevOps Automation
-Monitor, build, test, deploy, and manage infrastructure with intelligent automation.
+```javascript
+{
+  type: 'data.transform',
+  parameters: {
+    code: `
+      return data.map(item => ({
+        ...item,
+        processed: true
+      }));
+    `
+  }
+}
+```
 
-### Data Processing
-Extract, transform, analyze, and visualize data from multiple sources automatically.
+### Filter Node
+Filter data with conditions.
 
-### Business Intelligence
-Aggregate data, calculate KPIs, generate reports, and distribute insights automatically.
+```javascript
+{
+  type: 'data.filter',
+  parameters: {
+    conditions: [
+      { field: 'status', operator: 'equals', value: 'active' }
+    ],
+    logic: 'AND'
+  }
+}
+```
 
-### Customer Operations
-Automate customer onboarding, support, communication, and relationship management.
+---
+
+## 🔌 Plugin Development
+
+Create custom plugins in minutes:
+
+```javascript
+// plugins/my-plugin/index.js
+class MyPlugin {
+  async initialize() {
+    console.log('Plugin initialized');
+  }
+
+  getNodes() {
+    return [{
+      type: 'my.custom.node',
+      name: 'My Custom Node',
+      execute: async (inputs, parameters, context) => {
+        return { result: 'success' };
+      }
+    }];
+  }
+}
+
+module.exports = MyPlugin;
+```
+
+See [Plugin Development Guide](plugins/example-plugin/README.md) for details.
+
+---
+
+## 🤖 ML/AI Features
+
+### Performance Analysis
+```javascript
+const insights = await mlEngine.analyzeExecution(execution);
+// Returns: performance, patterns, anomalies, predictions
+```
+
+### Behavior Tracking
+```javascript
+const behavior = mlEngine.behaviorTracker.getInsights('user-123');
+// Returns: favorite workflows, preferred times, recommendations
+```
+
+### Self-Improvement
+```javascript
+const improvements = await mlEngine.selfImprovementEngine.generateImprovements();
+// Returns: auto-applicable optimizations
+```
+
+---
+
+## 📱 Android App
+
+Built with Kotlin and Jetpack Compose:
+
+```bash
+cd android
+./gradlew assembleDebug
+
+# Install on device
+adb install app/build/outputs/apk/debug/app-debug.apk
+```
+
+### Features
+- Material 3 Design
+- Home Dashboard
+- Workflow Builder
+- Node Library
+- Plugin Store
+- ML Insights
+
+---
+
+## 🌐 REST API
+
+### Workflow Endpoints
+
+```bash
+# Execute workflow
+POST /api/workflows/execute
+
+# Get execution status
+GET /api/workflows/executions/:executionId
+
+# Get execution history
+GET /api/workflows/history
+
+# Get registered nodes
+GET /api/workflows/nodes
+```
+
+### API Designer Endpoints
+
+```bash
+# Create API
+POST /api/designer/apis
+
+# Generate OpenAPI schema
+GET /api/designer/apis/:apiId/schema
+
+# Convert to nodes
+GET /api/designer/apis/:apiId/nodes
+
+# Test endpoint
+POST /api/designer/apis/:apiId/test/:endpointId
+```
+
+### ML Insights Endpoints
+
+```bash
+# Get execution insights
+GET /api/ml/insights/:executionId
+
+# Get daily analytics
+GET /api/ml/analytics/daily
+
+# Get behavior insights
+GET /api/ml/behavior/insights?userId=user-123
+```
+
+See [API Documentation](WORKFLOW_ENGINE_GUIDE.md#-rest-api) for complete reference.
+
+---
+
+## 🎨 Screenshots
+
+### Workflow Builder
+![Workflow Builder](docs/images/workflow-builder.png)
+
+### API Designer
+![API Designer](docs/images/api-designer.png)
+
+### ML Insights
+![ML Insights](docs/images/ml-insights.png)
+
+---
+
+## 📊 Performance
+
+- **Execution Speed**: Sub-second for simple workflows
+- **Concurrent Executions**: 100+ supported
+- **Memory Efficiency**: Automatic cleanup
+- **Hot-Reload**: Zero-downtime updates
+- **API Response**: < 100ms average
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+- Node.js + Express
+- Axios for HTTP
+- Chokidar for file watching
+- Event-driven architecture
+
+### Android
+- Kotlin
+- Jetpack Compose
+- Material 3
+- Navigation Component
+
+### ML/AI
+- Custom prediction models
+- Behavior analysis
+- Pattern detection
+- Auto-optimization
+
+---
 
 ## 🤝 Contributing
 
 We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## 📄 License
+### Development Setup
 
-MIT License - see [LICENSE](LICENSE) file for details.
+```bash
+# Clone repo
+git clone https://github.com/Nisu7648/R3SN.git
 
-## 🆘 Support
+# Install dependencies
+npm install
 
-- **Documentation**: https://docs.r3sn.io
-- **Community Forum**: https://community.r3sn.io
-- **GitHub Issues**: https://github.com/Nisu7648/R3SN/issues
-- **Enterprise Support**: support@r3sn.io
+# Run in development mode
+npm run dev
 
-## 🌟 Star History
-
-If you find R3SN useful, please star the repository!
-
-## 🚀 Roadmap
-
-### Phase 1: Core Infrastructure ✅
-- [x] Agent engine with unlimited scaling
-- [x] Integration hub (800+ apps)
-- [x] Plugin factory
-- [x] Universal executor
-- [x] Enterprise orchestrator
-- [x] Security manager
-- [x] Scalability engine
-
-### Phase 2: Advanced Features (In Progress)
-- [ ] Machine learning integration
-- [ ] Predictive automation
-- [ ] Advanced analytics dashboard
-- [ ] Mobile app (iOS + Android)
-
-### Phase 3: Ecosystem (Planned)
-- [ ] Marketplace for plugins
-- [ ] Community workflows
-- [ ] Integration templates
-- [ ] Developer SDK
-
-### Phase 4: Enterprise (Planned)
-- [ ] Multi-tenancy
-- [ ] Advanced compliance features
-- [ ] Custom deployment options
-- [ ] Dedicated support
+# Run tests
+npm test
+```
 
 ---
 
-**R3SN - No Limits. No Restrictions. Infinite Possibilities.**
+## 📈 Roadmap
 
-Built with ❤️ by [HETAL RANA](https://github.com/Nisu7648)
+### Phase 1 (Current)
+- [x] Core workflow engine
+- [x] Plugin system
+- [x] API designer
+- [x] ML/AI engine
+- [x] Android app
+- [x] REST API
 
-**Repository**: https://github.com/Nisu7648/R3SN
+### Phase 2 (Next)
+- [ ] Visual workflow builder UI
+- [ ] Database integration
+- [ ] Authentication system
+- [ ] More core nodes
+- [ ] Plugin marketplace
+
+### Phase 3 (Future)
+- [ ] Desktop app (Electron)
+- [ ] Team collaboration
+- [ ] Webhook triggers
+- [ ] Scheduled workflows
+- [ ] Cloud deployment
+
+---
+
+## 📝 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- Inspired by n8n workflow automation
+- Built with modern Node.js ecosystem
+- Powered by community feedback
+
+---
+
+## 📞 Support
+
+- **GitHub Issues**: [Report bugs](https://github.com/Nisu7648/R3SN/issues)
+- **Documentation**: [Read the docs](WORKFLOW_ENGINE_GUIDE.md)
+- **Email**: support@r3sn.io
+
+---
+
+## 🌟 Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Nisu7648/R3SN&type=Date)](https://star-history.com/#Nisu7648/R3SN&Date)
+
+---
+
+<div align="center">
+
+**Built with ❤️ by the R3SN Team**
+
+[Website](https://r3sn.io) • [Documentation](WORKFLOW_ENGINE_GUIDE.md) • [GitHub](https://github.com/Nisu7648/R3SN)
+
+</div>
