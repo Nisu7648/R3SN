@@ -2,15 +2,17 @@
   "name": "r3sn-workflow-engine",
   "version": "1.0.0",
   "description": "R3SN - Revolutionary automation platform with unlimited integrations, AI agents, and plugin-based architecture",
-  "main": "backend/src/server.js",
+  "main": "backend/server.js",
   "scripts": {
-    "start": "node backend/src/server.js",
-    "dev": "nodemon backend/src/server.js",
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "production": "NODE_ENV=production node backend/server-production.js",
     "test": "jest",
     "lint": "eslint .",
     "build": "npm run build:backend && npm run build:android",
     "build:backend": "echo 'Backend build complete'",
-    "build:android": "cd android && ./gradlew assembleRelease"
+    "build:android": "cd android && ./gradlew assembleRelease",
+    "seed": "node backend/scripts/seed.js"
   },
   "keywords": [
     "workflow",
@@ -22,7 +24,10 @@
     "ai",
     "android",
     "web-scraping",
-    "unrestricted"
+    "unrestricted",
+    "r3sn",
+    "integrations",
+    "plugins"
   ],
   "author": "R3SN Team",
   "license": "MIT",
@@ -49,7 +54,11 @@
     "uuid": "^9.0.1",
     "moment": "^2.30.1",
     "lodash": "^4.17.21",
-    "winston": "^3.11.0"
+    "winston": "^3.11.0",
+    "openai": "^4.24.1",
+    "node-cron": "^3.0.3",
+    "validator": "^13.11.0",
+    "crypto": "^1.0.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.3",
