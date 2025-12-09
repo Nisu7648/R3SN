@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">R3SN</string>
+    <string name="api_base_url">http://localhost:3000</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_workflows">Workflows</string>
+    <string name="nav_nodes">Nodes</string>
+    <string name="nav_plugins">Plugins</string>
+    <string name="nav_ml">ML Insights</string>
+    
+    <!-- Home Screen -->
+    <string name="welcome_title">Welcome to R3SN</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="active_workflows">Active Workflows</string>
+    <string name="total_executions">Total Executions</string>
+    <string name="success_rate">Success Rate</string>
+    <string name="create_workflow">Create New Workflow</string>
+    
+    <!-- Workflow Screen -->
+    <string name="workflows_title">Workflows</string>
+    <string name="no_workflows">No workflows yet</string>
+    <string name="create_first_workflow">Create your first workflow</string>
+    
+    <!-- Nodes Screen -->
+    <string name="nodes_title">Node Library</string>
+    <string name="search_nodes">Search nodes…</string>
+    <string name="no_nodes">No nodes available</string>
+    
+    <!-- Plugins Screen -->
+    <string name="plugins_title">Plugin Store</string>
+    <string name="installed_plugins">Installed Plugins</string>
+    <string name="available_plugins">Available Plugins</string>
+    <string name="install_plugin">Install</string>
+    <string name="uninstall_plugin">Uninstall</string>
+    
+    <!-- ML Insights Screen -->
+    <string name="ml_title">ML Insights</string>
+    <string name="performance_metrics">Performance Metrics</string>
+    <string name="predictions">Predictions</string>
+    <string name="recommendations">Recommendations</string>
+    
+    <!-- Common -->
+    <string name="loading">Loading…</string>
+    <string name="error">Error</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+</resources>
