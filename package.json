@@ -20,7 +20,9 @@
     "api",
     "ml",
     "ai",
-    "android"
+    "android",
+    "web-scraping",
+    "unrestricted"
   ],
   "author": "R3SN Team",
   "license": "MIT",
@@ -29,6 +31,7 @@
     "cors": "^2.8.5",
     "morgan": "^1.10.0",
     "axios": "^1.6.5",
+    "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.3.1",
     "chokidar": "^3.5.3",
     "ws": "^8.16.0",
