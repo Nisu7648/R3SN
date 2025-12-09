@@ -1,6 +1,6 @@
 /**
- * R3SN Production Server
- * Enterprise-grade server with all features enabled
+ * R3SN Production Server - COMPLETE EDITION
+ * Enterprise-grade server with ALL features including self-evolution and self-debugging
  */
 
 const express = require('express');
@@ -20,6 +20,11 @@ const UniversalExecutor = require('./core/UniversalExecutor');
 const EnterpriseOrchestrator = require('./core/EnterpriseOrchestrator');
 const SecurityManager = require('./core/SecurityManager');
 const ScalabilityEngine = require('./core/ScalabilityEngine');
+const SelfEvolvingEngine = require('./core/SelfEvolvingEngine');
+const SelfDebuggingEngine = require('./core/SelfDebuggingEngine');
+
+// Integrations manifest
+const { INTEGRATIONS_MANIFEST, getAllIntegrations } = require('./integrations/IntegrationsManifest');
 
 // Initialize core components
 const agentEngine = new AgentEngine();
@@ -29,6 +34,11 @@ const universalExecutor = new UniversalExecutor(agentEngine, integrationHub, plu
 const orchestrator = new EnterpriseOrchestrator();
 const security = new SecurityManager();
 const scalability = new ScalabilityEngine();
+const selfEvolving = new SelfEvolvingEngine(universalExecutor, agentEngine, integrationHub);
+const selfDebugging = new SelfDebuggingEngine();
+
+// Start self-improvement systems
+selfDebugging.startMonitoring();
 
 const app = express();
 const server = http.createServer(app);
@@ -150,6 +160,77 @@ app.post('/api/workflows/:id/execute', authenticate, authorize('workflow:execute
   }
 });
 
+// Self-evolution endpoints
+app.get('/api/evolution/stats', authenticate, (req, res) => {
+  try {
+    const stats = selfEvolving.getEvolutionStats();
+    res.json(stats);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/evolution/history', authenticate, (req, res) => {
+  try {
+    const history = selfEvolving.evolutionLog;
+    res.json(history);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Self-debugging endpoints
+app.get('/api/debug/stats', authenticate, (req, res) => {
+  try {
+    const stats = selfDebugging.getDebugStats();
+    res.json(stats);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/debug/bugs', authenticate, (req, res) => {
+  try {
+    const bugs = Array.from(selfDebugging.bugDatabase.values());
+    res.json(bugs);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/debug/fixes', authenticate, (req, res) => {
+  try {
+    const fixes = selfDebugging.fixHistory;
+    res.json(fixes);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Integrations manifest endpoint
+app.get('/api/integrations/manifest', authenticate, (req, res) => {
+  try {
+    res.json({
+      total: getAllIntegrations().length,
+      manifest: INTEGRATIONS_MANIFEST,
+      categories: Object.keys(INTEGRATIONS_MANIFEST)
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/integrations/search', authenticate, (req, res) => {
+  try {
+    const { q } = req.query;
+    const { search } = require('./integrations/IntegrationsManifest');
+    const results = search(q);
+    res.json(results);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Authentication endpoints
 app.post('/api/auth/register', async (req, res) => {
   try {
@@ -202,7 +283,9 @@ app.get('/api/metrics', authenticate, authorize('metrics:read'), async (req, res
       orchestrator: orchestrator.getMetrics(),
       scalability: await scalability.getMetrics(),
       agents: agentEngine.getStats(),
-      integrations: integrationHub.getStats()
+      integrations: integrationHub.getStats(),
+      evolution: selfEvolving.getEvolutionStats(),
+      debugging: selfDebugging.getDebugStats()
     };
     
     res.json(metrics);
@@ -219,7 +302,16 @@ app.get('/health', async (req, res) => {
       timestamp: new Date(),
       uptime: process.uptime(),
       orchestrator: await orchestrator.healthCheck(),
-      scalability: await scalability.healthCheck()
+      scalability: await scalability.healthCheck(),
+      selfEvolving: {
+        active: true,
+        evolutions: selfEvolving.evolutionLog.length
+      },
+      selfDebugging: {
+        active: selfDebugging.monitoringActive,
+        bugs: selfDebugging.bugDatabase.size,
+        fixes: selfDebugging.fixHistory.length
+      }
     };
     
     res.json(health);
@@ -228,6 +320,32 @@ app.get('/health', async (req, res) => {
       status: 'unhealthy',
       error: error.message 
     });
+  }
+});
+
+// System status endpoint
+app.get('/api/status', authenticate, (req, res) => {
+  try {
+    res.json({
+      version: '1.0.0',
+      features: {
+        universalExecutor: true,
+        unlimitedAgents: true,
+        integrations: getAllIntegrations().length,
+        selfEvolving: true,
+        selfDebugging: true,
+        enterpriseSecurity: true,
+        autoScaling: true
+      },
+      stats: {
+        totalExecutions: universalExecutor.executionHistory?.length || 0,
+        totalEvolutions: selfEvolving.evolutionLog.length,
+        totalBugsFixed: selfDebugging.fixHistory.filter(f => f.success).length,
+        uptime: process.uptime()
+      }
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 });
 
@@ -291,11 +409,24 @@ io.on('connection', (socket) => {
     const interval = setInterval(async () => {
       const metrics = {
         orchestrator: orchestrator.getMetrics(),
-        scalability: await scalability.getMetrics()
+        scalability: await scalability.getMetrics(),
+        evolution: selfEvolving.getEvolutionStats(),
+        debugging: selfDebugging.getDebugStats()
       };
       
       socket.emit('metrics:update', metrics);
     }, 5000);
+
+    socket.on('disconnect', () => {
+      clearInterval(interval);
+    });
+  });
+
+  // Evolution updates
+  socket.on('evolution:subscribe', () => {
+    const interval = setInterval(() => {
+      socket.emit('evolution:update', selfEvolving.getEvolutionStats());
+    }, 10000);
 
     socket.on('disconnect', () => {
       clearInterval(interval);
@@ -367,22 +498,33 @@ server.listen(PORT, () => {
   console.log(`
 ╔═══════════════════════════════════════════════════════════╗
 ║                                                           ║
-║   R3SN Production Server                                  ║
+║   R3SN Production Server - COMPLETE EDITION               ║
 ║   Revolutionary Automation Platform                       ║
 ║                                                           ║
 ║   Status: RUNNING                                         ║
 ║   Port: ${PORT}                                              ║
 ║   Environment: ${process.env.NODE_ENV || 'production'}                                ║
 ║                                                           ║
-║   Features:                                               ║
-║   ✓ Unlimited AI Agents                                   ║
-║   ✓ 800+ Integrations                                     ║
+║   Core Features:                                          ║
 ║   ✓ Universal Executor (ANY prompt)                       ║
+║   ✓ Unlimited AI Agents                                   ║
+║   ✓ 800+ Integrations (API + Plugin)                      ║
 ║   ✓ Enterprise Orchestration                              ║
 ║   ✓ Auto-scaling & Load Balancing                         ║
 ║   ✓ Enterprise Security (AES-256, RBAC, Audit)            ║
 ║   ✓ Real-time WebSocket                                   ║
-║   ✓ Production-ready                                      ║
+║                                                           ║
+║   Advanced Features:                                      ║
+║   ✓ Self-Evolving System                                  ║
+║   ✓ Self-Debugging System                                 ║
+║   ✓ Auto-Fix Bugs                                         ║
+║   ✓ Auto-Generate Capabilities                            ║
+║   ✓ Auto-Optimize Code                                    ║
+║   ✓ Auto-Update Integrations                              ║
+║                                                           ║
+║   Production Ready: YES                                   ║
+║   No Limits: YES                                          ║
+║   No Restrictions: YES                                    ║
 ║                                                           ║
 ╚═══════════════════════════════════════════════════════════╝
   `);
