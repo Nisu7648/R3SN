@@ -1,0 +1,274 @@
+{
+  "name": "Complete E-Commerce Order Processing Workflow",
+  "description": "End-to-end workflow demonstrating R3SN's full capabilities: API calls, data transformation, AI agents, integrations, and notifications",
+  "nodes": [
+    {
+      "id": "1",
+      "type": "http",
+      "displayName": "Fetch New Orders",
+      "config": {
+        "url": "https://api.shopify.com/admin/api/2024-01/orders.json",
+        "method": "GET",
+        "headers": {
+          "X-Shopify-Access-Token": "{{env.SHOPIFY_TOKEN}}"
+        },
+        "params": {
+          "status": "pending",
+          "limit": "50"
+        }
+      },
+      "position": { "x": 100, "y": 100 }
+    },
+    {
+      "id": "2",
+      "type": "filter",
+      "displayName": "Filter High-Value Orders",
+      "config": {
+        "conditions": [
+          {
+            "field": "total_price",
+            "operator": "greaterThan",
+            "value": 1000
+          }
+        ],
+        "logic": "AND"
+      },
+      "position": { "x": 300, "y": 100 }
+    },
+    {
+      "id": "3",
+      "type": "transform",
+      "displayName": "Extract Customer Data",
+      "config": {
+        "code": "return data.orders.map(order => ({ orderId: order.id, customerEmail: order.customer.email, customerName: order.customer.name, totalPrice: order.total_price, items: order.line_items.map(item => ({ name: item.name, quantity: item.quantity, price: item.price })) }));"
+      },
+      "position": { "x": 500, "y": 100 }
+    },
+    {
+      "id": "4",
+      "type": "aiAgent",
+      "displayName": "AI Fraud Detection",
+      "config": {
+        "agentType": "analyzer",
+        "prompt": "Analyze this order for potential fraud indicators. Check for: unusual shipping addresses, mismatched billing/shipping, high-value first-time orders, suspicious email patterns. Return risk score (0-100) and explanation.",
+        "model": "gpt-4",
+        "temperature": 0.3
+      },
+      "position": { "x": 700, "y": 100 }
+    },
+    {
+      "id": "5",
+      "type": "filter",
+      "displayName": "Check Fraud Risk",
+      "config": {
+        "conditions": [
+          {
+            "field": "riskScore",
+            "operator": "lessThan",
+            "value": 70
+          }
+        ]
+      },
+      "position": { "x": 900, "y": 100 }
+    },
+    {
+      "id": "6",
+      "type": "http",
+      "displayName": "Update Inventory",
+      "config": {
+        "url": "https://api.inventory-system.com/v1/reserve",
+        "method": "POST",
+        "headers": {
+          "Authorization": "Bearer {{env.INVENTORY_TOKEN}}",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "orderId": "{{orderId}}",
+          "items": "{{items}}"
+        }
+      },
+      "position": { "x": 1100, "y": 50 }
+    },
+    {
+      "id": "7",
+      "type": "http",
+      "displayName": "Create Shipping Label",
+      "config": {
+        "url": "https://api.shippo.com/shipments",
+        "method": "POST",
+        "headers": {
+          "Authorization": "ShippoToken {{env.SHIPPO_TOKEN}}",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "address_from": {
+            "name": "R3SN Warehouse",
+            "street1": "123 Warehouse St",
+            "city": "San Francisco",
+            "state": "CA",
+            "zip": "94103",
+            "country": "US"
+          },
+          "address_to": "{{shippingAddress}}",
+          "parcels": "{{parcels}}"
+        }
+      },
+      "position": { "x": 1100, "y": 150 }
+    },
+    {
+      "id": "8",
+      "type": "integration",
+      "displayName": "Send to Slack",
+      "config": {
+        "integration": "slack",
+        "action": "sendMessage",
+        "params": {
+          "channel": "#orders",
+          "text": "🎉 New high-value order #{{orderId}} - ${{totalPrice}}\\n👤 Customer: {{customerName}}\\n📦 Items: {{items.length}}\\n✅ Fraud check passed (Risk: {{riskScore}})\\n🚚 Shipping label created"
+        }
+      },
+      "position": { "x": 1300, "y": 50 }
+    },
+    {
+      "id": "9",
+      "type": "integration",
+      "displayName": "Send Confirmation Email",
+      "config": {
+        "integration": "sendgrid",
+        "action": "sendEmail",
+        "params": {
+          "to": "{{customerEmail}}",
+          "from": "orders@r3sn.com",
+          "subject": "Order Confirmation #{{orderId}}",
+          "html": "<h1>Thank you for your order!</h1><p>Your order #{{orderId}} has been confirmed and will ship soon.</p><p>Total: ${{totalPrice}}</p>"
+        }
+      },
+      "position": { "x": 1300, "y": 150 }
+    },
+    {
+      "id": "10",
+      "type": "http",
+      "displayName": "Update CRM",
+      "config": {
+        "url": "https://api.salesforce.com/services/data/v58.0/sobjects/Order",
+        "method": "POST",
+        "headers": {
+          "Authorization": "Bearer {{env.SALESFORCE_TOKEN}}",
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "OrderNumber": "{{orderId}}",
+          "CustomerEmail": "{{customerEmail}}",
+          "TotalAmount": "{{totalPrice}}",
+          "Status": "Processing"
+        }
+      },
+      "position": { "x": 1300, "y": 250 }
+    },
+    {
+      "id": "11",
+      "type": "integration",
+      "displayName": "Flag for Manual Review",
+      "config": {
+        "integration": "jira",
+        "action": "createIssue",
+        "params": {
+          "project": "FRAUD",
+          "summary": "High-risk order #{{orderId}} requires review",
+          "description": "Order #{{orderId}} flagged with risk score {{riskScore}}\\n\\nCustomer: {{customerName}} ({{customerEmail}})\\nAmount: ${{totalPrice}}\\n\\nReason: {{fraudReason}}",
+          "priority": "High",
+          "assignee": "fraud-team"
+        }
+      },
+      "position": { "x": 900, "y": 300 }
+    },
+    {
+      "id": "12",
+      "type": "integration",
+      "displayName": "Alert Fraud Team",
+      "config": {
+        "integration": "slack",
+        "action": "sendMessage",
+        "params": {
+          "channel": "#fraud-alerts",
+          "text": "🚨 HIGH RISK ORDER DETECTED\\n\\nOrder: #{{orderId}}\\nRisk Score: {{riskScore}}\\nCustomer: {{customerName}}\\nAmount: ${{totalPrice}}\\n\\nJira ticket created for review."
+        }
+      },
+      "position": { "x": 1100, "y": 300 }
+    }
+  ],
+  "edges": [
+    {
+      "source": "1",
+      "target": "2",
+      "label": "Orders fetched"
+    },
+    {
+      "source": "2",
+      "target": "3",
+      "label": "High-value orders"
+    },
+    {
+      "source": "3",
+      "target": "4",
+      "label": "Customer data extracted"
+    },
+    {
+      "source": "4",
+      "target": "5",
+      "label": "Fraud analysis complete"
+    },
+    {
+      "source": "5",
+      "target": "6",
+      "condition": "riskScore < 70",
+      "label": "Low risk - proceed"
+    },
+    {
+      "source": "5",
+      "target": "11",
+      "condition": "riskScore >= 70",
+      "label": "High risk - flag"
+    },
+    {
+      "source": "6",
+      "target": "7",
+      "label": "Inventory reserved"
+    },
+    {
+      "source": "7",
+      "target": "8",
+      "label": "Label created"
+    },
+    {
+      "source": "7",
+      "target": "9",
+      "label": "Label created"
+    },
+    {
+      "source": "7",
+      "target": "10",
+      "label": "Label created"
+    },
+    {
+      "source": "11",
+      "target": "12",
+      "label": "Ticket created"
+    }
+  ],
+  "settings": {
+    "timeout": 300000,
+    "retryAttempts": 3,
+    "retryDelay": 2000,
+    "enableParallelExecution": true,
+    "enableLogging": true,
+    "enableMetrics": true
+  },
+  "tags": ["e-commerce", "order-processing", "fraud-detection", "automation"],
+  "enabled": true,
+  "schedule": {
+    "enabled": true,
+    "cron": "*/5 * * * *",
+    "timezone": "America/Los_Angeles"
+  }
+}
