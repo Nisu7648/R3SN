@@ -2,73 +2,112 @@ version: '3.8'
 
 services:
   # R3SN Application
-  r3sn:
-    build: .
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: r3sn-app
+    restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "${PORT:-3000}:3000"
     environment:
       - NODE_ENV=production
       - PORT=3000
-      - DB_HOST=postgres
-      - DB_NAME=r3sn
-      - DB_USER=postgres
-      - DB_PASSWORD=r3sn_password
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
+      - MONGODB_URI=mongodb://mongodb:27017/r3sn
+      - REDIS_URL=redis://redis:6379
+      - JWT_SECRET=${JWT_SECRET:-change-this-secret-in-production}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - CORS_ORIGIN=${CORS_ORIGIN:-*}
     depends_on:
-      - postgres
-      - redis
-    restart: unless-stopped
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - r3sn-network
     volumes:
       - ./logs:/app/logs
-    networks:
-      - r3sn-network
+      - ./uploads:/app/uploads
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
-  # PostgreSQL Database
-  postgres:
-    image: postgres:14-alpine
-    environment:
-      - POSTGRES_DB=r3sn
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=r3sn_password
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
+  # MongoDB Database
+  mongodb:
+    image: mongo:7.0
+    container_name: r3sn-mongodb
     restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=r3sn
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER:-admin}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD:-admin123}
+    volumes:
+      - mongodb-data:/data/db
+      - mongodb-config:/data/configdb
     networks:
       - r3sn-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/r3sn --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
 
   # Redis Cache
   redis:
     image: redis:7-alpine
+    container_name: r3sn-redis
+    restart: unless-stopped
     ports:
       - "6379:6379"
     volumes:
       - redis-data:/data
-    restart: unless-stopped
     networks:
       - r3sn-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
 
-  # Nginx Reverse Proxy (Optional)
+  # Nginx Reverse Proxy (Optional - use with profile)
   nginx:
     image: nginx:alpine
+    container_name: r3sn-nginx
+    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ./ssl:/etc/nginx/ssl:ro
+      - nginx-logs:/var/log/nginx
     depends_on:
-      - r3sn
-    restart: unless-stopped
+      - app
     networks:
       - r3sn-network
-
-volumes:
-  postgres-data:
-  redis-data:
+    profiles:
+      - with-nginx
 
 networks:
   r3sn-network:
     driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  mongodb-data:
+    driver: local
+  mongodb-config:
+    driver: local
+  redis-data:
+    driver: local
+  nginx-logs:
+    driver: local
