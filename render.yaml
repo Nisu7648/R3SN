@@ -1,0 +1,149 @@
+services:
+  # Backend API Service
+  - type: web
+    name: r3sn-backend
+    env: node
+    region: oregon
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm run production
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: MONGODB_URI
+        sync: false
+      - key: REDIS_HOST
+        sync: false
+      - key: REDIS_PORT
+        value: 6379
+      - key: REDIS_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ENCRYPTION_KEY
+        generateValue: true
+      - key: ENABLE_CLUSTERING
+        value: true
+      - key: ENABLE_COMPRESSION
+        value: true
+      - key: ENABLE_ML_INSIGHTS
+        value: true
+      - key: ENABLE_SELF_EVOLVING
+        value: true
+      - key: ENABLE_SELF_DEBUGGING
+        value: true
+      - key: LOG_LEVEL
+        value: info
+      - key: ENABLE_FILE_LOGGING
+        value: false
+      - key: ENABLE_METRICS
+        value: true
+      - key: ENABLE_HEALTH_CHECK
+        value: true
+    healthCheckPath: /health
+    autoDeploy: true
+    
+  # Redis Cache Service
+  - type: redis
+    name: r3sn-redis
+    region: oregon
+    plan: starter
+    ipAllowList: []
+
+# MongoDB Database (External - MongoDB Atlas recommended)
+# Configure MONGODB_URI in environment variables
+
+# Background Worker (Optional - for heavy processing)
+  - type: worker
+    name: r3sn-worker
+    env: node
+    region: oregon
+    plan: starter
+    buildCommand: npm install
+    startCommand: node backend/worker.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: REDIS_HOST
+        fromService:
+          type: redis
+          name: r3sn-redis
+          property: host
+      - key: REDIS_PORT
+        fromService:
+          type: redis
+          name: r3sn-redis
+          property: port
+      - key: REDIS_PASSWORD
+        fromService:
+          type: redis
+          name: r3sn-redis
+          property: password
+      - key: JWT_SECRET
+        sync: false
+      - key: ENCRYPTION_KEY
+        sync: false
+    autoDeploy: true
+
+# Cron Jobs for ML Analytics and Self-Evolution
+  - type: cron
+    name: r3sn-ml-analytics
+    env: node
+    region: oregon
+    plan: starter
+    buildCommand: npm install
+    schedule: "0 * * * *"  # Every hour
+    startCommand: node backend/jobs/ml-analytics.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: REDIS_HOST
+        fromService:
+          type: redis
+          name: r3sn-redis
+          property: host
+      - key: REDIS_PORT
+        fromService:
+          type: redis
+          name: r3sn-redis
+          property: port
+      - key: REDIS_PASSWORD
+        fromService:
+          type: redis
+          name: r3sn-redis
+          property: password
+
+  - type: cron
+    name: r3sn-self-evolution
+    env: node
+    region: oregon
+    plan: starter
+    buildCommand: npm install
+    schedule: "0 */6 * * *"  # Every 6 hours
+    startCommand: node backend/jobs/self-evolution.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: REDIS_HOST
+        fromService:
+          type: redis
+          name: r3sn-redis
+          property: host
+      - key: REDIS_PORT
+        fromService:
+          type: redis
+          name: r3sn-redis
+          property: port
+      - key: REDIS_PASSWORD
+        fromService:
+          type: redis
+          name: r3sn-redis
+          property: password
