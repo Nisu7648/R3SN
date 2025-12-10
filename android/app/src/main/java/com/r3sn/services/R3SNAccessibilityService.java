@@ -1,62 +1,164 @@
 package com.r3sn.services;
 
 import android.accessibilityservice.AccessibilityService;
+import android.accessibilityservice.AccessibilityServiceInfo;
+import android.content.Intent;
+import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
-import java.util.List;
 
 /**
- * R3SNAccessibilityService - Enables plugin-based app automation
- * Allows R3SN to interact with apps that don't have APIs
+ * R3SNAccessibilityService - Core automation service
+ * Provides full access to UI elements for automation
  */
 public class R3SNAccessibilityService extends AccessibilityService {
-
+    private static final String TAG = "R3SNAccessibility";
+    private static R3SNAccessibilityService instance;
+    
+    public static R3SNAccessibilityService getInstance() {
+        return instance;
+    }
+    
+    @Override
+    public void onServiceConnected() {
+        super.onServiceConnected();
+        instance = this;
+        
+        AccessibilityServiceInfo info = new AccessibilityServiceInfo();
+        
+        // Monitor all events
+        info.eventTypes = AccessibilityEvent.TYPES_ALL_MASK;
+        
+        // Monitor all apps
+        info.packageNames = null;
+        
+        // Get full window content
+        info.feedbackType = AccessibilityServiceInfo.FEEDBACK_GENERIC;
+        
+        // Retrieve window content
+        info.flags = AccessibilityServiceInfo.FLAG_INCLUDE_NOT_IMPORTANT_VIEWS |
+                     AccessibilityServiceInfo.FLAG_REPORT_VIEW_IDS |
+                     AccessibilityServiceInfo.FLAG_RETRIEVE_INTERACTIVE_WINDOWS;
+        
+        // No notification timeout
+        info.notificationTimeout = 0;
+        
+        setServiceInfo(info);
+        
+        Log.d(TAG, "R3SN Accessibility Service Connected - Full Automation Enabled");
+    }
+    
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-        // Capture UI events from target apps
-        String packageName = event.getPackageName().toString();
-        int eventType = event.getEventType();
-
-        // Process events for plugin-based automations
-        processEvent(packageName, eventType, event);
+        // Log events for debugging
+        if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+            CharSequence packageName = event.getPackageName();
+            CharSequence className = event.getClassName();
+            Log.d(TAG, "Window changed: " + packageName + " - " + className);
+        }
+        
+        // Handle specific events for automation
+        handleAutomationEvent(event);
     }
-
+    
     @Override
     public void onInterrupt() {
-        // Handle service interruption
+        Log.d(TAG, "R3SN Accessibility Service Interrupted");
     }
-
+    
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        instance = null;
+        Log.d(TAG, "R3SN Accessibility Service Destroyed");
+    }
+    
     /**
-     * Process accessibility events for automation
+     * Handle automation events
      */
-    private void processEvent(String packageName, int eventType, AccessibilityEvent event) {
-        // TODO: Implement event processing logic
-        // - Match against active automations
-        // - Execute plugin actions
-        // - Update automation state
+    private void handleAutomationEvent(AccessibilityEvent event) {
+        // Broadcast event to automation engine
+        Intent intent = new Intent("com.r3sn.AUTOMATION_EVENT");
+        intent.putExtra("eventType", event.getEventType());
+        intent.putExtra("packageName", event.getPackageName());
+        intent.putExtra("className", event.getClassName());
+        sendBroadcast(intent);
     }
-
+    
     /**
-     * Find UI element by text
+     * Get root node of active window
+     */
+    public AccessibilityNodeInfo getRootNode() {
+        return getRootInActiveWindow();
+    }
+    
+    /**
+     * Perform global action
+     */
+    public boolean performGlobalAction(int action) {
+        return performGlobalAction(action);
+    }
+    
+    /**
+     * Find node by text
      */
     public AccessibilityNodeInfo findNodeByText(String text) {
-        AccessibilityNodeInfo rootNode = getRootInActiveWindow();
-        if (rootNode == null) return null;
-
-        List<AccessibilityNodeInfo> nodes = rootNode.findAccessibilityNodeInfosByText(text);
-        return nodes.isEmpty() ? null : nodes.get(0);
+        AccessibilityNodeInfo root = getRootInActiveWindow();
+        if (root == null) return null;
+        return findNodeByTextRecursive(root, text);
     }
-
+    
+    private AccessibilityNodeInfo findNodeByTextRecursive(AccessibilityNodeInfo node, String text) {
+        if (node.getText() != null && node.getText().toString().contains(text)) {
+            return node;
+        }
+        
+        for (int i = 0; i < node.getChildCount(); i++) {
+            AccessibilityNodeInfo child = node.getChild(i);
+            if (child != null) {
+                AccessibilityNodeInfo result = findNodeByTextRecursive(child, text);
+                if (result != null) return result;
+            }
+        }
+        
+        return null;
+    }
+    
     /**
-     * Click on UI element
+     * Find node by ID
+     */
+    public AccessibilityNodeInfo findNodeById(String id) {
+        AccessibilityNodeInfo root = getRootInActiveWindow();
+        if (root == null) return null;
+        return findNodeByIdRecursive(root, id);
+    }
+    
+    private AccessibilityNodeInfo findNodeByIdRecursive(AccessibilityNodeInfo node, String id) {
+        if (node.getViewIdResourceName() != null && node.getViewIdResourceName().equals(id)) {
+            return node;
+        }
+        
+        for (int i = 0; i < node.getChildCount(); i++) {
+            AccessibilityNodeInfo child = node.getChild(i);
+            if (child != null) {
+                AccessibilityNodeInfo result = findNodeByIdRecursive(child, id);
+                if (result != null) return result;
+            }
+        }
+        
+        return null;
+    }
+    
+    /**
+     * Click on node
      */
     public boolean clickNode(AccessibilityNodeInfo node) {
         if (node == null) return false;
         return node.performAction(AccessibilityNodeInfo.ACTION_CLICK);
     }
-
+    
     /**
-     * Input text into UI element
+     * Input text to node
      */
     public boolean inputText(AccessibilityNodeInfo node, String text) {
         if (node == null) return false;
@@ -65,13 +167,42 @@ public class R3SNAccessibilityService extends AccessibilityService {
         arguments.putCharSequence(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, text);
         return node.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT, arguments);
     }
-
+    
     /**
-     * Get text from UI element
+     * Scroll node
      */
-    public String getText(AccessibilityNodeInfo node) {
-        if (node == null) return null;
-        CharSequence text = node.getText();
-        return text != null ? text.toString() : null;
+    public boolean scrollNode(AccessibilityNodeInfo node, boolean forward) {
+        if (node == null) return false;
+        
+        int action = forward ? 
+            AccessibilityNodeInfo.ACTION_SCROLL_FORWARD : 
+            AccessibilityNodeInfo.ACTION_SCROLL_BACKWARD;
+        
+        return node.performAction(action);
+    }
+    
+    /**
+     * Get all text from screen
+     */
+    public String getAllText() {
+        AccessibilityNodeInfo root = getRootInActiveWindow();
+        if (root == null) return "";
+        
+        StringBuilder text = new StringBuilder();
+        extractTextRecursive(root, text);
+        return text.toString();
+    }
+    
+    private void extractTextRecursive(AccessibilityNodeInfo node, StringBuilder builder) {
+        if (node.getText() != null) {
+            builder.append(node.getText()).append("\n");
+        }
+        
+        for (int i = 0; i < node.getChildCount(); i++) {
+            AccessibilityNodeInfo child = node.getChild(i);
+            if (child != null) {
+                extractTextRecursive(child, builder);
+            }
+        }
     }
 }
