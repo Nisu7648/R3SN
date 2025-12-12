@@ -1,0 +1,17 @@
+{
+  "id": "premium-api-plugin",
+  "name": "Premium API Plugin",
+  "version": "1.0.0",
+  "description": "Premium API integration with unlimited access",
+  "main": "index.js",
+  "author": "R3SN Team",
+  "premium": true,
+  "unlimited": true,
+  "permissions": ["http", "crypto"],
+  "features": [
+    "multi-service-integration",
+    "batch-processing",
+    "rate-limit-bypass",
+    "premium-endpoints"
+  ]
+}
