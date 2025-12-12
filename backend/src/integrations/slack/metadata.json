@@ -1,0 +1,184 @@
+{
+  "name": "slack",
+  "displayName": "Slack",
+  "version": "1.0.0",
+  "author": "R3SN Team",
+  "description": "Send messages, manage channels, and interact with Slack workspaces",
+  "category": "communication",
+  "type": "api",
+  "icon": "https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg",
+  "capabilities": [
+    "messaging",
+    "channels",
+    "users",
+    "files",
+    "notifications"
+  ],
+  "actions": [
+    {
+      "name": "sendMessage",
+      "displayName": "Send Message",
+      "description": "Send a message to a Slack channel",
+      "parameters": [
+        {
+          "name": "channel",
+          "type": "string",
+          "required": true,
+          "description": "Channel ID or name"
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": false,
+          "description": "Message text"
+        },
+        {
+          "name": "blocks",
+          "type": "array",
+          "required": false,
+          "description": "Block Kit blocks"
+        },
+        {
+          "name": "attachments",
+          "type": "array",
+          "required": false,
+          "description": "Message attachments"
+        }
+      ]
+    },
+    {
+      "name": "getChannels",
+      "displayName": "Get Channels",
+      "description": "Get list of channels in workspace",
+      "parameters": [
+        {
+          "name": "limit",
+          "type": "number",
+          "required": false,
+          "default": 100,
+          "description": "Maximum number of channels to return"
+        },
+        {
+          "name": "cursor",
+          "type": "string",
+          "required": false,
+          "description": "Pagination cursor"
+        }
+      ]
+    },
+    {
+      "name": "getUserInfo",
+      "displayName": "Get User Info",
+      "description": "Get information about a user",
+      "parameters": [
+        {
+          "name": "user",
+          "type": "string",
+          "required": true,
+          "description": "User ID"
+        }
+      ]
+    },
+    {
+      "name": "uploadFile",
+      "displayName": "Upload File",
+      "description": "Upload a file to Slack",
+      "parameters": [
+        {
+          "name": "channels",
+          "type": "string",
+          "required": true,
+          "description": "Comma-separated channel IDs"
+        },
+        {
+          "name": "file",
+          "type": "file",
+          "required": true,
+          "description": "File to upload"
+        },
+        {
+          "name": "filename",
+          "type": "string",
+          "required": false,
+          "description": "Filename"
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false,
+          "description": "File title"
+        },
+        {
+          "name": "initial_comment",
+          "type": "string",
+          "required": false,
+          "description": "Initial comment"
+        }
+      ]
+    },
+    {
+      "name": "createChannel",
+      "displayName": "Create Channel",
+      "description": "Create a new channel",
+      "parameters": [
+        {
+          "name": "name",
+          "type": "string",
+          "required": true,
+          "description": "Channel name"
+        },
+        {
+          "name": "is_private",
+          "type": "boolean",
+          "required": false,
+          "default": false,
+          "description": "Create as private channel"
+        }
+      ]
+    },
+    {
+      "name": "inviteUser",
+      "displayName": "Invite User",
+      "description": "Invite user to channel",
+      "parameters": [
+        {
+          "name": "channel",
+          "type": "string",
+          "required": true,
+          "description": "Channel ID"
+        },
+        {
+          "name": "users",
+          "type": "string",
+          "required": true,
+          "description": "Comma-separated user IDs"
+        }
+      ]
+    }
+  ],
+  "authentication": {
+    "type": "oauth2",
+    "fields": [
+      {
+        "name": "token",
+        "type": "string",
+        "required": true,
+        "description": "Slack Bot Token (xoxb-...)",
+        "secure": true
+      }
+    ],
+    "scopes": [
+      "channels:read",
+      "channels:write",
+      "chat:write",
+      "files:write",
+      "users:read"
+    ]
+  },
+  "rateLimit": {
+    "requests": 1,
+    "period": 1000
+  },
+  "documentation": "https://api.slack.com/docs",
+  "support": "https://slack.com/help"
+}
