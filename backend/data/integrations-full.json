@@ -1,0 +1,85 @@
+{
+  "integrations": [
+    {
+      "name": "Google Workspace",
+      "category": "productivity",
+      "apiEndpoint": "https://www.googleapis.com",
+      "authType": "oauth2",
+      "capabilities": ["docs", "sheets", "slides", "drive", "calendar", "gmail"],
+      "premium": true
+    },
+    {
+      "name": "Microsoft 365",
+      "category": "productivity",
+      "apiEndpoint": "https://graph.microsoft.com/v1.0",
+      "authType": "oauth2",
+      "capabilities": ["word", "excel", "powerpoint", "onedrive", "outlook", "teams"],
+      "premium": true
+    },
+    {
+      "name": "Notion",
+      "category": "productivity",
+      "apiEndpoint": "https://api.notion.com/v1",
+      "authType": "bearer",
+      "capabilities": ["pages", "databases", "blocks", "users"],
+      "premium": true
+    },
+    {
+      "name": "Airtable",
+      "category": "productivity",
+      "apiEndpoint": "https://api.airtable.com/v0",
+      "authType": "bearer",
+      "capabilities": ["records", "tables", "bases"],
+      "premium": true
+    },
+    {
+      "name": "Evernote",
+      "category": "productivity",
+      "apiEndpoint": "https://api.evernote.com",
+      "authType": "oauth2",
+      "capabilities": ["notes", "notebooks", "tags"],
+      "premium": true
+    },
+    {
+      "name": "Todoist",
+      "category": "productivity",
+      "apiEndpoint": "https://api.todoist.com/rest/v2",
+      "authType": "bearer",
+      "capabilities": ["tasks", "projects", "labels"],
+      "premium": true
+    },
+    {
+      "name": "Trello",
+      "category": "productivity",
+      "apiEndpoint": "https://api.trello.com/1",
+      "authType": "apikey",
+      "capabilities": ["boards", "lists", "cards", "members"],
+      "premium": true
+    },
+    {
+      "name": "Asana",
+      "category": "productivity",
+      "apiEndpoint": "https://app.asana.com/api/1.0",
+      "authType": "bearer",
+      "capabilities": ["tasks", "projects", "teams", "workspaces"],
+      "premium": true
+    },
+    {
+      "name": "Monday.com",
+      "category": "productivity",
+      "apiEndpoint": "https://api.monday.com/v2",
+      "authType": "bearer",
+      "capabilities": ["boards", "items", "columns", "groups"],
+      "premium": true
+    },
+    {
+      "name": "ClickUp",
+      "category": "productivity",
+      "apiEndpoint": "https://api.clickup.com/api/v2",
+      "authType": "bearer",
+      "capabilities": ["tasks", "lists", "folders", "spaces"],
+      "premium": true
+    }
+  ],
+  "note": "This file contains only 10 integrations as a starting point. To reach 800+, we need to add more integrations from various categories."
+}
