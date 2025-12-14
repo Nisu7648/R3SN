@@ -1,0 +1,85 @@
+{
+  "name": "GitHub",
+  "id": "github",
+  "version": "1.0.0",
+  "description": "GitHub REST API integration for managing repositories, issues, pull requests, and more",
+  "category": "development",
+  "icon": "🐙",
+  "color": "#181717",
+  "authentication": {
+    "type": "token",
+    "fields": [
+      {
+        "name": "token",
+        "label": "Personal Access Token",
+        "type": "password",
+        "required": true,
+        "description": "GitHub Personal Access Token with appropriate scopes"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "createRepo",
+      "name": "Create Repository",
+      "description": "Create a new repository"
+    },
+    {
+      "id": "getRepo",
+      "name": "Get Repository",
+      "description": "Get repository information"
+    },
+    {
+      "id": "listRepos",
+      "name": "List Repositories",
+      "description": "List user repositories"
+    },
+    {
+      "id": "createIssue",
+      "name": "Create Issue",
+      "description": "Create a new issue"
+    },
+    {
+      "id": "listIssues",
+      "name": "List Issues",
+      "description": "List repository issues"
+    },
+    {
+      "id": "closeIssue",
+      "name": "Close Issue",
+      "description": "Close an issue"
+    },
+    {
+      "id": "commentIssue",
+      "name": "Comment on Issue",
+      "description": "Add a comment to an issue"
+    },
+    {
+      "id": "createPR",
+      "name": "Create Pull Request",
+      "description": "Create a new pull request"
+    },
+    {
+      "id": "mergePR",
+      "name": "Merge Pull Request",
+      "description": "Merge a pull request"
+    },
+    {
+      "id": "createRelease",
+      "name": "Create Release",
+      "description": "Create a new release"
+    },
+    {
+      "id": "getCommits",
+      "name": "Get Commits",
+      "description": "Get repository commits"
+    },
+    {
+      "id": "createBranch",
+      "name": "Create Branch",
+      "description": "Create a new branch"
+    }
+  ],
+  "documentation": "https://docs.github.com/en/rest",
+  "setupGuide": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token"
+}
