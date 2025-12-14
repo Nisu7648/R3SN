@@ -1,0 +1,149 @@
+{
+  "name": "Twitter/X",
+  "id": "twitter",
+  "version": "1.0.0",
+  "description": "Twitter API v2 integration for posting tweets, searching, and managing your account",
+  "category": "social",
+  "icon": "🐦",
+  "color": "#1DA1F2",
+  "authentication": {
+    "type": "bearer",
+    "fields": [
+      {
+        "name": "bearerToken",
+        "label": "Bearer Token",
+        "type": "password",
+        "required": true,
+        "description": "Twitter API Bearer Token from Developer Portal"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "postTweet",
+      "name": "Post Tweet",
+      "description": "Post a new tweet",
+      "parameters": [
+        {
+          "name": "text",
+          "label": "Tweet Text",
+          "type": "text",
+          "required": true,
+          "maxLength": 280
+        },
+        {
+          "name": "replyTo",
+          "label": "Reply To Tweet ID",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "searchTweets",
+      "name": "Search Tweets",
+      "description": "Search for tweets",
+      "parameters": [
+        {
+          "name": "query",
+          "label": "Search Query",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "maxResults",
+          "label": "Max Results",
+          "type": "number",
+          "default": 10,
+          "min": 1,
+          "max": 100
+        }
+      ]
+    },
+    {
+      "id": "getUser",
+      "name": "Get User",
+      "description": "Get user information",
+      "parameters": [
+        {
+          "name": "username",
+          "label": "Username",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "getTimeline",
+      "name": "Get Timeline",
+      "description": "Get user's tweets",
+      "parameters": [
+        {
+          "name": "userId",
+          "label": "User ID",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "maxResults",
+          "label": "Max Results",
+          "type": "number",
+          "default": 10
+        }
+      ]
+    },
+    {
+      "id": "deleteTweet",
+      "name": "Delete Tweet",
+      "description": "Delete a tweet",
+      "parameters": [
+        {
+          "name": "tweetId",
+          "label": "Tweet ID",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "likeTweet",
+      "name": "Like Tweet",
+      "description": "Like a tweet",
+      "parameters": [
+        {
+          "name": "userId",
+          "label": "Your User ID",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "tweetId",
+          "label": "Tweet ID",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "retweet",
+      "name": "Retweet",
+      "description": "Retweet a tweet",
+      "parameters": [
+        {
+          "name": "userId",
+          "label": "Your User ID",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "tweetId",
+          "label": "Tweet ID",
+          "type": "text",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "documentation": "https://developer.twitter.com/en/docs/twitter-api",
+  "setupGuide": "https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens"
+}
