@@ -1,0 +1,80 @@
+{
+  "name": "Stripe",
+  "id": "stripe",
+  "version": "1.0.0",
+  "description": "Stripe payment processing integration for payments, subscriptions, customers, and invoices",
+  "category": "payment",
+  "icon": "💳",
+  "color": "#635BFF",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "secretKey",
+        "label": "Secret Key",
+        "type": "password",
+        "required": true,
+        "description": "Stripe Secret Key (sk_test_... or sk_live_...)"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "createPaymentIntent",
+      "name": "Create Payment Intent",
+      "description": "Create a payment intent for processing payments"
+    },
+    {
+      "id": "createCustomer",
+      "name": "Create Customer",
+      "description": "Create a new customer"
+    },
+    {
+      "id": "getCustomer",
+      "name": "Get Customer",
+      "description": "Get customer information"
+    },
+    {
+      "id": "listCustomers",
+      "name": "List Customers",
+      "description": "List all customers"
+    },
+    {
+      "id": "createSubscription",
+      "name": "Create Subscription",
+      "description": "Create a new subscription"
+    },
+    {
+      "id": "cancelSubscription",
+      "name": "Cancel Subscription",
+      "description": "Cancel an existing subscription"
+    },
+    {
+      "id": "createInvoice",
+      "name": "Create Invoice",
+      "description": "Create a new invoice"
+    },
+    {
+      "id": "listCharges",
+      "name": "List Charges",
+      "description": "List all charges"
+    },
+    {
+      "id": "refundPayment",
+      "name": "Refund Payment",
+      "description": "Refund a payment"
+    },
+    {
+      "id": "createProduct",
+      "name": "Create Product",
+      "description": "Create a new product"
+    },
+    {
+      "id": "createPrice",
+      "name": "Create Price",
+      "description": "Create a price for a product"
+    }
+  ],
+  "documentation": "https://stripe.com/docs/api",
+  "setupGuide": "https://stripe.com/docs/keys"
+}
