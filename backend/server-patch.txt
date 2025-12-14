@@ -1,0 +1,5 @@
+// Add this line after line 48 (after masterRoutes import):
+const simpleApiRoutes = require('./routes/simple-api');
+
+// Add this line after line 58 (after app.use('/api/master'...)):
+app.use('/api', simpleApiRoutes); // Simple working APIs (no complex dependencies)
