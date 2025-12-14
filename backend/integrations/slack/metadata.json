@@ -1,0 +1,196 @@
+{
+  "name": "slack",
+  "displayName": "Slack",
+  "version": "1.0.0",
+  "description": "Complete Slack integration with 20 endpoints for messaging, channels, users, files, and more",
+  "category": "communication",
+  "icon": "https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "channels:read",
+      "channels:write",
+      "chat:write",
+      "files:write",
+      "users:read",
+      "reactions:write",
+      "reminders:write",
+      "pins:write",
+      "bookmarks:write",
+      "search:read",
+      "usergroups:read",
+      "usergroups:write",
+      "team:read"
+    ]
+  },
+  "baseUrl": "https://slack.com/api",
+  "rateLimit": {
+    "tier1": 1,
+    "tier2": 20,
+    "tier3": 50,
+    "tier4": 100
+  },
+  "endpoints": [
+    {
+      "id": "send_message",
+      "name": "Send Message",
+      "method": "POST",
+      "path": "/chat.postMessage",
+      "description": "Send a message to a channel",
+      "tier": 3
+    },
+    {
+      "id": "list_channels",
+      "name": "List Channels",
+      "method": "GET",
+      "path": "/conversations.list",
+      "description": "List all channels in workspace",
+      "tier": 2
+    },
+    {
+      "id": "create_channel",
+      "name": "Create Channel",
+      "method": "POST",
+      "path": "/conversations.create",
+      "description": "Create a new channel",
+      "tier": 2
+    },
+    {
+      "id": "list_users",
+      "name": "List Users",
+      "method": "GET",
+      "path": "/users.list",
+      "description": "List all users in workspace",
+      "tier": 2
+    },
+    {
+      "id": "get_user",
+      "name": "Get User",
+      "method": "GET",
+      "path": "/users.info",
+      "description": "Get user information",
+      "tier": 3
+    },
+    {
+      "id": "upload_file",
+      "name": "Upload File",
+      "method": "POST",
+      "path": "/files.upload",
+      "description": "Upload a file to Slack",
+      "tier": 2
+    },
+    {
+      "id": "conversation_history",
+      "name": "Conversation History",
+      "method": "GET",
+      "path": "/conversations.history",
+      "description": "Get conversation history",
+      "tier": 3
+    },
+    {
+      "id": "invite_to_conversation",
+      "name": "Invite to Conversation",
+      "method": "POST",
+      "path": "/conversations.invite",
+      "description": "Invite users to a conversation",
+      "tier": 3
+    },
+    {
+      "id": "add_reaction",
+      "name": "Add Reaction",
+      "method": "POST",
+      "path": "/reactions.add",
+      "description": "Add reaction to a message",
+      "tier": 3
+    },
+    {
+      "id": "team_info",
+      "name": "Team Info",
+      "method": "GET",
+      "path": "/team.info",
+      "description": "Get team information",
+      "tier": 2
+    },
+    {
+      "id": "add_reminder",
+      "name": "Add Reminder",
+      "method": "POST",
+      "path": "/reminders.add",
+      "description": "Create a reminder",
+      "tier": 3
+    },
+    {
+      "id": "list_reminders",
+      "name": "List Reminders",
+      "method": "GET",
+      "path": "/reminders.list",
+      "description": "List all reminders",
+      "tier": 2
+    },
+    {
+      "id": "add_pin",
+      "name": "Add Pin",
+      "method": "POST",
+      "path": "/pins.add",
+      "description": "Pin a message to channel",
+      "tier": 3
+    },
+    {
+      "id": "list_pins",
+      "name": "List Pins",
+      "method": "GET",
+      "path": "/pins.list",
+      "description": "List pinned messages",
+      "tier": 2
+    },
+    {
+      "id": "add_bookmark",
+      "name": "Add Bookmark",
+      "method": "POST",
+      "path": "/bookmarks.add",
+      "description": "Add a bookmark to channel",
+      "tier": 3
+    },
+    {
+      "id": "search_messages",
+      "name": "Search Messages",
+      "method": "GET",
+      "path": "/search.messages",
+      "description": "Search for messages",
+      "tier": 2
+    },
+    {
+      "id": "create_usergroup",
+      "name": "Create User Group",
+      "method": "POST",
+      "path": "/usergroups.create",
+      "description": "Create a user group",
+      "tier": 2
+    },
+    {
+      "id": "list_usergroups",
+      "name": "List User Groups",
+      "method": "GET",
+      "path": "/usergroups.list",
+      "description": "List all user groups",
+      "tier": 2
+    },
+    {
+      "id": "trigger_workflow",
+      "name": "Trigger Workflow",
+      "method": "POST",
+      "path": "/workflows.stepCompleted",
+      "description": "Trigger a Slack workflow",
+      "tier": 3
+    },
+    {
+      "id": "get_analytics",
+      "name": "Get Analytics",
+      "method": "GET",
+      "path": "/admin.analytics.getFile",
+      "description": "Get workspace analytics",
+      "tier": 1
+    }
+  ]
+}
