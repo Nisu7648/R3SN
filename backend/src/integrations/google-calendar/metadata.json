@@ -1,0 +1,64 @@
+{
+  "name": "Google Calendar",
+  "id": "google-calendar",
+  "version": "1.0.0",
+  "description": "Google Calendar for event and calendar management",
+  "category": "productivity",
+  "icon": "📅",
+  "color": "#4285F4",
+  "authentication": {
+    "type": "oauth2",
+    "fields": [
+      {
+        "name": "credentials",
+        "label": "Service Account JSON",
+        "type": "json",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "listEvents",
+      "name": "List Events",
+      "description": "List calendar events"
+    },
+    {
+      "id": "getEvent",
+      "name": "Get Event",
+      "description": "Get event details"
+    },
+    {
+      "id": "createEvent",
+      "name": "Create Event",
+      "description": "Create a new event"
+    },
+    {
+      "id": "updateEvent",
+      "name": "Update Event",
+      "description": "Update an event"
+    },
+    {
+      "id": "deleteEvent",
+      "name": "Delete Event",
+      "description": "Delete an event"
+    },
+    {
+      "id": "listCalendars",
+      "name": "List Calendars",
+      "description": "List all calendars"
+    },
+    {
+      "id": "createCalendar",
+      "name": "Create Calendar",
+      "description": "Create a new calendar"
+    },
+    {
+      "id": "quickAdd",
+      "name": "Quick Add Event",
+      "description": "Quick add event from text"
+    }
+  ],
+  "documentation": "https://developers.google.com/calendar/api/v3/reference",
+  "setupGuide": "https://console.cloud.google.com/apis/credentials"
+}
