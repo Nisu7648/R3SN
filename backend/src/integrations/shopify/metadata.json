@@ -1,0 +1,86 @@
+{
+  "name": "Shopify",
+  "id": "shopify",
+  "version": "1.0.0",
+  "description": "Shopify e-commerce platform for products, orders, and customers",
+  "category": "ecommerce",
+  "icon": "🛍️",
+  "color": "#96BF48",
+  "authentication": {
+    "type": "custom",
+    "fields": [
+      {
+        "name": "shopName",
+        "label": "Shop Name",
+        "type": "text",
+        "required": true,
+        "description": "Your shop name (e.g., mystore)"
+      },
+      {
+        "name": "accessToken",
+        "label": "Access Token",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "listProducts",
+      "name": "List Products",
+      "description": "List all products"
+    },
+    {
+      "id": "getProduct",
+      "name": "Get Product",
+      "description": "Get product details"
+    },
+    {
+      "id": "createProduct",
+      "name": "Create Product",
+      "description": "Create a new product"
+    },
+    {
+      "id": "updateProduct",
+      "name": "Update Product",
+      "description": "Update a product"
+    },
+    {
+      "id": "deleteProduct",
+      "name": "Delete Product",
+      "description": "Delete a product"
+    },
+    {
+      "id": "listOrders",
+      "name": "List Orders",
+      "description": "List all orders"
+    },
+    {
+      "id": "getOrder",
+      "name": "Get Order",
+      "description": "Get order details"
+    },
+    {
+      "id": "createOrder",
+      "name": "Create Order",
+      "description": "Create a new order"
+    },
+    {
+      "id": "listCustomers",
+      "name": "List Customers",
+      "description": "List all customers"
+    },
+    {
+      "id": "getCustomer",
+      "name": "Get Customer",
+      "description": "Get customer details"
+    },
+    {
+      "id": "createCustomer",
+      "name": "Create Customer",
+      "description": "Create a new customer"
+    }
+  ],
+  "documentation": "https://shopify.dev/docs/api/admin-rest",
+  "setupGuide": "https://shopify.dev/docs/apps/auth/admin-app-access-tokens"
+}
