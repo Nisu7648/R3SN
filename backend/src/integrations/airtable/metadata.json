@@ -1,0 +1,65 @@
+{
+  "name": "Airtable",
+  "id": "airtable",
+  "version": "1.0.0",
+  "description": "Airtable database and spreadsheet management",
+  "category": "database",
+  "icon": "🗄️",
+  "color": "#18BFFF",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key",
+        "type": "password",
+        "required": true
+      },
+      {
+        "name": "baseId",
+        "label": "Base ID",
+        "type": "text",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "listRecords",
+      "name": "List Records",
+      "description": "List records from a table"
+    },
+    {
+      "id": "getRecord",
+      "name": "Get Record",
+      "description": "Get a single record"
+    },
+    {
+      "id": "createRecord",
+      "name": "Create Record",
+      "description": "Create a new record"
+    },
+    {
+      "id": "updateRecord",
+      "name": "Update Record",
+      "description": "Update a record"
+    },
+    {
+      "id": "deleteRecord",
+      "name": "Delete Record",
+      "description": "Delete a record"
+    },
+    {
+      "id": "createRecords",
+      "name": "Create Multiple Records",
+      "description": "Create multiple records"
+    },
+    {
+      "id": "updateRecords",
+      "name": "Update Multiple Records",
+      "description": "Update multiple records"
+    }
+  ],
+  "documentation": "https://airtable.com/developers/web/api/introduction",
+  "setupGuide": "https://airtable.com/create/tokens"
+}
