@@ -1,0 +1,70 @@
+{
+  "name": "Twilio",
+  "id": "twilio",
+  "version": "1.0.0",
+  "description": "Twilio SMS, Voice, and WhatsApp integration",
+  "category": "communication",
+  "icon": "📱",
+  "color": "#F22F46",
+  "authentication": {
+    "type": "basic",
+    "fields": [
+      {
+        "name": "accountSid",
+        "label": "Account SID",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "authToken",
+        "label": "Auth Token",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "sendSMS",
+      "name": "Send SMS",
+      "description": "Send an SMS message"
+    },
+    {
+      "id": "sendWhatsApp",
+      "name": "Send WhatsApp",
+      "description": "Send a WhatsApp message"
+    },
+    {
+      "id": "makeCall",
+      "name": "Make Call",
+      "description": "Make a voice call"
+    },
+    {
+      "id": "listMessages",
+      "name": "List Messages",
+      "description": "List sent/received messages"
+    },
+    {
+      "id": "getMessage",
+      "name": "Get Message",
+      "description": "Get message details"
+    },
+    {
+      "id": "listCalls",
+      "name": "List Calls",
+      "description": "List call history"
+    },
+    {
+      "id": "getCall",
+      "name": "Get Call",
+      "description": "Get call details"
+    },
+    {
+      "id": "lookupNumber",
+      "name": "Lookup Number",
+      "description": "Lookup phone number info"
+    }
+  ],
+  "documentation": "https://www.twilio.com/docs/usage/api",
+  "setupGuide": "https://www.twilio.com/console"
+}
