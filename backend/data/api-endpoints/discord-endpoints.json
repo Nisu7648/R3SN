@@ -1,0 +1,262 @@
+{
+  "name": "Discord",
+  "category": "communication",
+  "apiEndpoint": "https://discord.com/api/v10",
+  "authType": "bearer",
+  "premium": true,
+  "endpoints": {
+    "messages": {
+      "send": {
+        "method": "POST",
+        "path": "/channels/{channel_id}/messages",
+        "params": ["channel_id"],
+        "body": ["content", "embeds", "files", "tts", "allowed_mentions"]
+      },
+      "get": {
+        "method": "GET",
+        "path": "/channels/{channel_id}/messages/{message_id}",
+        "params": ["channel_id", "message_id"]
+      },
+      "list": {
+        "method": "GET",
+        "path": "/channels/{channel_id}/messages",
+        "params": ["channel_id"],
+        "query": ["limit", "before", "after", "around"]
+      },
+      "edit": {
+        "method": "PATCH",
+        "path": "/channels/{channel_id}/messages/{message_id}",
+        "params": ["channel_id", "message_id"],
+        "body": ["content", "embeds", "flags", "allowed_mentions"]
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/channels/{channel_id}/messages/{message_id}",
+        "params": ["channel_id", "message_id"]
+      },
+      "bulkDelete": {
+        "method": "POST",
+        "path": "/channels/{channel_id}/messages/bulk-delete",
+        "params": ["channel_id"],
+        "body": ["messages"]
+      }
+    },
+    "channels": {
+      "get": {
+        "method": "GET",
+        "path": "/channels/{channel_id}",
+        "params": ["channel_id"]
+      },
+      "modify": {
+        "method": "PATCH",
+        "path": "/channels/{channel_id}",
+        "params": ["channel_id"],
+        "body": ["name", "type", "position", "topic", "nsfw", "rate_limit_per_user"]
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/channels/{channel_id}",
+        "params": ["channel_id"]
+      },
+      "pins": {
+        "method": "GET",
+        "path": "/channels/{channel_id}/pins",
+        "params": ["channel_id"]
+      },
+      "pin": {
+        "method": "PUT",
+        "path": "/channels/{channel_id}/pins/{message_id}",
+        "params": ["channel_id", "message_id"]
+      },
+      "unpin": {
+        "method": "DELETE",
+        "path": "/channels/{channel_id}/pins/{message_id}",
+        "params": ["channel_id", "message_id"]
+      }
+    },
+    "guilds": {
+      "get": {
+        "method": "GET",
+        "path": "/guilds/{guild_id}",
+        "params": ["guild_id"],
+        "query": ["with_counts"]
+      },
+      "modify": {
+        "method": "PATCH",
+        "path": "/guilds/{guild_id}",
+        "params": ["guild_id"],
+        "body": ["name", "region", "verification_level", "default_message_notifications"]
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/guilds/{guild_id}",
+        "params": ["guild_id"]
+      },
+      "channels": {
+        "method": "GET",
+        "path": "/guilds/{guild_id}/channels",
+        "params": ["guild_id"]
+      },
+      "createChannel": {
+        "method": "POST",
+        "path": "/guilds/{guild_id}/channels",
+        "params": ["guild_id"],
+        "body": ["name", "type", "topic", "bitrate", "user_limit", "rate_limit_per_user"]
+      },
+      "members": {
+        "method": "GET",
+        "path": "/guilds/{guild_id}/members",
+        "params": ["guild_id"],
+        "query": ["limit", "after"]
+      },
+      "getMember": {
+        "method": "GET",
+        "path": "/guilds/{guild_id}/members/{user_id}",
+        "params": ["guild_id", "user_id"]
+      },
+      "addMember": {
+        "method": "PUT",
+        "path": "/guilds/{guild_id}/members/{user_id}",
+        "params": ["guild_id", "user_id"],
+        "body": ["access_token", "nick", "roles", "mute", "deaf"]
+      },
+      "removeMember": {
+        "method": "DELETE",
+        "path": "/guilds/{guild_id}/members/{user_id}",
+        "params": ["guild_id", "user_id"]
+      },
+      "bans": {
+        "method": "GET",
+        "path": "/guilds/{guild_id}/bans",
+        "params": ["guild_id"]
+      },
+      "ban": {
+        "method": "PUT",
+        "path": "/guilds/{guild_id}/bans/{user_id}",
+        "params": ["guild_id", "user_id"],
+        "body": ["delete_message_days", "reason"]
+      },
+      "unban": {
+        "method": "DELETE",
+        "path": "/guilds/{guild_id}/bans/{user_id}",
+        "params": ["guild_id", "user_id"]
+      },
+      "roles": {
+        "method": "GET",
+        "path": "/guilds/{guild_id}/roles",
+        "params": ["guild_id"]
+      },
+      "createRole": {
+        "method": "POST",
+        "path": "/guilds/{guild_id}/roles",
+        "params": ["guild_id"],
+        "body": ["name", "permissions", "color", "hoist", "mentionable"]
+      },
+      "modifyRole": {
+        "method": "PATCH",
+        "path": "/guilds/{guild_id}/roles/{role_id}",
+        "params": ["guild_id", "role_id"],
+        "body": ["name", "permissions", "color", "hoist", "mentionable"]
+      },
+      "deleteRole": {
+        "method": "DELETE",
+        "path": "/guilds/{guild_id}/roles/{role_id}",
+        "params": ["guild_id", "role_id"]
+      }
+    },
+    "users": {
+      "getCurrent": {
+        "method": "GET",
+        "path": "/users/@me"
+      },
+      "get": {
+        "method": "GET",
+        "path": "/users/{user_id}",
+        "params": ["user_id"]
+      },
+      "modifyCurrent": {
+        "method": "PATCH",
+        "path": "/users/@me",
+        "body": ["username", "avatar"]
+      },
+      "guilds": {
+        "method": "GET",
+        "path": "/users/@me/guilds",
+        "query": ["before", "after", "limit"]
+      },
+      "leaveGuild": {
+        "method": "DELETE",
+        "path": "/users/@me/guilds/{guild_id}",
+        "params": ["guild_id"]
+      },
+      "dms": {
+        "method": "GET",
+        "path": "/users/@me/channels"
+      },
+      "createDM": {
+        "method": "POST",
+        "path": "/users/@me/channels",
+        "body": ["recipient_id"]
+      }
+    },
+    "reactions": {
+      "create": {
+        "method": "PUT",
+        "path": "/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me",
+        "params": ["channel_id", "message_id", "emoji"]
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me",
+        "params": ["channel_id", "message_id", "emoji"]
+      },
+      "deleteUser": {
+        "method": "DELETE",
+        "path": "/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/{user_id}",
+        "params": ["channel_id", "message_id", "emoji", "user_id"]
+      },
+      "get": {
+        "method": "GET",
+        "path": "/channels/{channel_id}/messages/{message_id}/reactions/{emoji}",
+        "params": ["channel_id", "message_id", "emoji"],
+        "query": ["after", "limit"]
+      },
+      "deleteAll": {
+        "method": "DELETE",
+        "path": "/channels/{channel_id}/messages/{message_id}/reactions",
+        "params": ["channel_id", "message_id"]
+      }
+    },
+    "webhooks": {
+      "create": {
+        "method": "POST",
+        "path": "/channels/{channel_id}/webhooks",
+        "params": ["channel_id"],
+        "body": ["name", "avatar"]
+      },
+      "get": {
+        "method": "GET",
+        "path": "/webhooks/{webhook_id}",
+        "params": ["webhook_id"]
+      },
+      "modify": {
+        "method": "PATCH",
+        "path": "/webhooks/{webhook_id}",
+        "params": ["webhook_id"],
+        "body": ["name", "avatar", "channel_id"]
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/webhooks/{webhook_id}",
+        "params": ["webhook_id"]
+      },
+      "execute": {
+        "method": "POST",
+        "path": "/webhooks/{webhook_id}/{webhook_token}",
+        "params": ["webhook_id", "webhook_token"],
+        "body": ["content", "username", "avatar_url", "tts", "embeds"],
+        "query": ["wait"]
+      }
+    }
+  }
+}
