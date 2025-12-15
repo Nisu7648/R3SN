@@ -1,0 +1,240 @@
+{
+  "name": "shopify",
+  "displayName": "Shopify",
+  "version": "1.0.0",
+  "description": "Complete Shopify integration with 30+ endpoints for products, orders, customers, inventory, and store management",
+  "category": "ecommerce",
+  "icon": "https://cdn.worldvectorlogo.com/logos/shopify.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "read_products",
+      "write_products",
+      "read_orders",
+      "write_orders",
+      "read_customers",
+      "write_customers",
+      "read_inventory",
+      "write_inventory"
+    ]
+  },
+  "baseUrl": "https://{shop}.myshopify.com/admin/api/2024-01",
+  "rateLimit": {
+    "quota": 40,
+    "perSecond": 2,
+    "bucketSize": 40
+  },
+  "endpoints": [
+    {
+      "id": "list_products",
+      "name": "List Products",
+      "method": "GET",
+      "path": "/products.json",
+      "description": "Get all products in the store"
+    },
+    {
+      "id": "get_product",
+      "name": "Get Product",
+      "method": "GET",
+      "path": "/products/{product_id}.json",
+      "description": "Get a specific product by ID"
+    },
+    {
+      "id": "create_product",
+      "name": "Create Product",
+      "method": "POST",
+      "path": "/products.json",
+      "description": "Create a new product"
+    },
+    {
+      "id": "update_product",
+      "name": "Update Product",
+      "method": "PUT",
+      "path": "/products/{product_id}.json",
+      "description": "Update an existing product"
+    },
+    {
+      "id": "delete_product",
+      "name": "Delete Product",
+      "method": "DELETE",
+      "path": "/products/{product_id}.json",
+      "description": "Delete a product"
+    },
+    {
+      "id": "list_orders",
+      "name": "List Orders",
+      "method": "GET",
+      "path": "/orders.json",
+      "description": "Get all orders"
+    },
+    {
+      "id": "get_order",
+      "name": "Get Order",
+      "method": "GET",
+      "path": "/orders/{order_id}.json",
+      "description": "Get a specific order"
+    },
+    {
+      "id": "create_order",
+      "name": "Create Order",
+      "method": "POST",
+      "path": "/orders.json",
+      "description": "Create a new order"
+    },
+    {
+      "id": "update_order",
+      "name": "Update Order",
+      "method": "PUT",
+      "path": "/orders/{order_id}.json",
+      "description": "Update an order"
+    },
+    {
+      "id": "cancel_order",
+      "name": "Cancel Order",
+      "method": "POST",
+      "path": "/orders/{order_id}/cancel.json",
+      "description": "Cancel an order"
+    },
+    {
+      "id": "list_customers",
+      "name": "List Customers",
+      "method": "GET",
+      "path": "/customers.json",
+      "description": "Get all customers"
+    },
+    {
+      "id": "get_customer",
+      "name": "Get Customer",
+      "method": "GET",
+      "path": "/customers/{customer_id}.json",
+      "description": "Get a specific customer"
+    },
+    {
+      "id": "create_customer",
+      "name": "Create Customer",
+      "method": "POST",
+      "path": "/customers.json",
+      "description": "Create a new customer"
+    },
+    {
+      "id": "update_customer",
+      "name": "Update Customer",
+      "method": "PUT",
+      "path": "/customers/{customer_id}.json",
+      "description": "Update customer information"
+    },
+    {
+      "id": "delete_customer",
+      "name": "Delete Customer",
+      "method": "DELETE",
+      "path": "/customers/{customer_id}.json",
+      "description": "Delete a customer"
+    },
+    {
+      "id": "list_inventory_items",
+      "name": "List Inventory Items",
+      "method": "GET",
+      "path": "/inventory_items.json",
+      "description": "Get inventory items"
+    },
+    {
+      "id": "get_inventory_item",
+      "name": "Get Inventory Item",
+      "method": "GET",
+      "path": "/inventory_items/{inventory_item_id}.json",
+      "description": "Get specific inventory item"
+    },
+    {
+      "id": "update_inventory_item",
+      "name": "Update Inventory Item",
+      "method": "PUT",
+      "path": "/inventory_items/{inventory_item_id}.json",
+      "description": "Update inventory item"
+    },
+    {
+      "id": "list_inventory_levels",
+      "name": "List Inventory Levels",
+      "method": "GET",
+      "path": "/inventory_levels.json",
+      "description": "Get inventory levels"
+    },
+    {
+      "id": "adjust_inventory_level",
+      "name": "Adjust Inventory Level",
+      "method": "POST",
+      "path": "/inventory_levels/adjust.json",
+      "description": "Adjust inventory quantity"
+    },
+    {
+      "id": "list_collections",
+      "name": "List Collections",
+      "method": "GET",
+      "path": "/collections.json",
+      "description": "Get all collections"
+    },
+    {
+      "id": "get_collection",
+      "name": "Get Collection",
+      "method": "GET",
+      "path": "/collections/{collection_id}.json",
+      "description": "Get a specific collection"
+    },
+    {
+      "id": "create_collection",
+      "name": "Create Collection",
+      "method": "POST",
+      "path": "/collections.json",
+      "description": "Create a new collection"
+    },
+    {
+      "id": "update_collection",
+      "name": "Update Collection",
+      "method": "PUT",
+      "path": "/collections/{collection_id}.json",
+      "description": "Update a collection"
+    },
+    {
+      "id": "delete_collection",
+      "name": "Delete Collection",
+      "method": "DELETE",
+      "path": "/collections/{collection_id}.json",
+      "description": "Delete a collection"
+    },
+    {
+      "id": "list_discounts",
+      "name": "List Discounts",
+      "method": "GET",
+      "path": "/price_rules.json",
+      "description": "Get all discount codes"
+    },
+    {
+      "id": "create_discount",
+      "name": "Create Discount",
+      "method": "POST",
+      "path": "/price_rules.json",
+      "description": "Create a discount code"
+    },
+    {
+      "id": "get_shop",
+      "name": "Get Shop",
+      "method": "GET",
+      "path": "/shop.json",
+      "description": "Get shop information"
+    },
+    {
+      "id": "list_webhooks",
+      "name": "List Webhooks",
+      "method": "GET",
+      "path": "/webhooks.json",
+      "description": "Get all webhooks"
+    },
+    {
+      "id": "create_webhook",
+      "name": "Create Webhook",
+      "method": "POST",
+      "path": "/webhooks.json",
+      "description": "Create a new webhook"
+    }
+  ]
+}
