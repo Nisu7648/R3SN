@@ -1,0 +1,164 @@
+{
+  "name": "google_sheets",
+  "displayName": "Google Sheets",
+  "version": "1.0.0",
+  "description": "Complete Google Sheets integration with 20 endpoints for spreadsheet management, data operations, and formatting",
+  "category": "productivity",
+  "icon": "https://cdn.worldvectorlogo.com/logos/google-sheets.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "https://www.googleapis.com/auth/spreadsheets",
+      "https://www.googleapis.com/auth/drive.file"
+    ]
+  },
+  "baseUrl": "https://sheets.googleapis.com/v4/spreadsheets",
+  "rateLimit": {
+    "readRequests": 100,
+    "writeRequests": 100,
+    "perMinute": 60
+  },
+  "endpoints": [
+    {
+      "id": "get_spreadsheet",
+      "name": "Get Spreadsheet",
+      "method": "GET",
+      "path": "/{spreadsheetId}",
+      "description": "Get spreadsheet metadata"
+    },
+    {
+      "id": "create_spreadsheet",
+      "name": "Create Spreadsheet",
+      "method": "POST",
+      "path": "",
+      "description": "Create a new spreadsheet"
+    },
+    {
+      "id": "update_spreadsheet",
+      "name": "Update Spreadsheet",
+      "method": "POST",
+      "path": "/{spreadsheetId}:batchUpdate",
+      "description": "Update spreadsheet properties"
+    },
+    {
+      "id": "get_values",
+      "name": "Get Values",
+      "method": "GET",
+      "path": "/{spreadsheetId}/values/{range}",
+      "description": "Get cell values from range"
+    },
+    {
+      "id": "update_values",
+      "name": "Update Values",
+      "method": "PUT",
+      "path": "/{spreadsheetId}/values/{range}",
+      "description": "Update cell values in range"
+    },
+    {
+      "id": "append_values",
+      "name": "Append Values",
+      "method": "POST",
+      "path": "/{spreadsheetId}/values/{range}:append",
+      "description": "Append values to sheet"
+    },
+    {
+      "id": "clear_values",
+      "name": "Clear Values",
+      "method": "POST",
+      "path": "/{spreadsheetId}/values/{range}:clear",
+      "description": "Clear values from range"
+    },
+    {
+      "id": "batch_get",
+      "name": "Batch Get Values",
+      "method": "GET",
+      "path": "/{spreadsheetId}/values:batchGet",
+      "description": "Get multiple ranges"
+    },
+    {
+      "id": "batch_update",
+      "name": "Batch Update Values",
+      "method": "POST",
+      "path": "/{spreadsheetId}/values:batchUpdate",
+      "description": "Update multiple ranges"
+    },
+    {
+      "id": "create_sheet",
+      "name": "Create Sheet",
+      "method": "POST",
+      "path": "/{spreadsheetId}:batchUpdate",
+      "description": "Create a new sheet"
+    },
+    {
+      "id": "delete_sheet",
+      "name": "Delete Sheet",
+      "method": "POST",
+      "path": "/{spreadsheetId}:batchUpdate",
+      "description": "Delete a sheet"
+    },
+    {
+      "id": "copy_sheet",
+      "name": "Copy Sheet",
+      "method": "POST",
+      "path": "/{spreadsheetId}/sheets/{sheetId}:copyTo",
+      "description": "Copy sheet to another spreadsheet"
+    },
+    {
+      "id": "get_sheet_properties",
+      "name": "Get Sheet Properties",
+      "method": "GET",
+      "path": "/{spreadsheetId}",
+      "description": "Get sheet properties"
+    },
+    {
+      "id": "update_sheet_properties",
+      "name": "Update Sheet Properties",
+      "method": "POST",
+      "path": "/{spreadsheetId}:batchUpdate",
+      "description": "Update sheet properties"
+    },
+    {
+      "id": "add_rows",
+      "name": "Add Rows",
+      "method": "POST",
+      "path": "/{spreadsheetId}:batchUpdate",
+      "description": "Add rows to sheet"
+    },
+    {
+      "id": "delete_rows",
+      "name": "Delete Rows",
+      "method": "POST",
+      "path": "/{spreadsheetId}:batchUpdate",
+      "description": "Delete rows from sheet"
+    },
+    {
+      "id": "add_columns",
+      "name": "Add Columns",
+      "method": "POST",
+      "path": "/{spreadsheetId}:batchUpdate",
+      "description": "Add columns to sheet"
+    },
+    {
+      "id": "delete_columns",
+      "name": "Delete Columns",
+      "method": "POST",
+      "path": "/{spreadsheetId}:batchUpdate",
+      "description": "Delete columns from sheet"
+    },
+    {
+      "id": "format_cells",
+      "name": "Format Cells",
+      "method": "POST",
+      "path": "/{spreadsheetId}:batchUpdate",
+      "description": "Format cell ranges"
+    },
+    {
+      "id": "get_cell_format",
+      "name": "Get Cell Format",
+      "method": "GET",
+      "path": "/{spreadsheetId}",
+      "description": "Get cell formatting"
+    }
+  ]
+}
