@@ -1,0 +1,64 @@
+{
+  "name": "SendGrid",
+  "id": "sendgrid",
+  "version": "1.0.0",
+  "description": "SendGrid email delivery and marketing platform",
+  "category": "email",
+  "icon": "📧",
+  "color": "#1A82E2",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "sendEmail",
+      "name": "Send Email",
+      "description": "Send a single email"
+    },
+    {
+      "id": "sendBulkEmail",
+      "name": "Send Bulk Email",
+      "description": "Send emails to multiple recipients"
+    },
+    {
+      "id": "addContact",
+      "name": "Add Contact",
+      "description": "Add a contact to your list"
+    },
+    {
+      "id": "listContacts",
+      "name": "List Contacts",
+      "description": "List all contacts"
+    },
+    {
+      "id": "deleteContact",
+      "name": "Delete Contact",
+      "description": "Delete a contact"
+    },
+    {
+      "id": "createList",
+      "name": "Create List",
+      "description": "Create a contact list"
+    },
+    {
+      "id": "getStats",
+      "name": "Get Stats",
+      "description": "Get email statistics"
+    },
+    {
+      "id": "validateEmail",
+      "name": "Validate Email",
+      "description": "Validate an email address"
+    }
+  ],
+  "documentation": "https://docs.sendgrid.com/api-reference",
+  "setupGuide": "https://app.sendgrid.com/settings/api_keys"
+}
