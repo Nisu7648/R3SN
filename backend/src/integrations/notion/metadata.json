@@ -1,0 +1,74 @@
+{
+  "name": "Notion",
+  "id": "notion",
+  "version": "1.0.0",
+  "description": "Notion workspace and database management",
+  "category": "productivity",
+  "icon": "📝",
+  "color": "#000000",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "Integration Token",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "createPage",
+      "name": "Create Page",
+      "description": "Create a new page"
+    },
+    {
+      "id": "getPage",
+      "name": "Get Page",
+      "description": "Get page details"
+    },
+    {
+      "id": "updatePage",
+      "name": "Update Page",
+      "description": "Update page properties"
+    },
+    {
+      "id": "queryDatabase",
+      "name": "Query Database",
+      "description": "Query database entries"
+    },
+    {
+      "id": "createDatabase",
+      "name": "Create Database",
+      "description": "Create a new database"
+    },
+    {
+      "id": "getDatabase",
+      "name": "Get Database",
+      "description": "Get database details"
+    },
+    {
+      "id": "addPageToDatabase",
+      "name": "Add Page to Database",
+      "description": "Add a page to database"
+    },
+    {
+      "id": "search",
+      "name": "Search",
+      "description": "Search workspace"
+    },
+    {
+      "id": "getBlockChildren",
+      "name": "Get Block Children",
+      "description": "Get block children"
+    },
+    {
+      "id": "appendBlockChildren",
+      "name": "Append Block Children",
+      "description": "Append blocks to page"
+    }
+  ],
+  "documentation": "https://developers.notion.com/reference",
+  "setupGuide": "https://www.notion.so/my-integrations"
+}
