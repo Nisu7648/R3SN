@@ -1,0 +1,175 @@
+{
+  "name": "discord",
+  "displayName": "Discord",
+  "version": "1.0.0",
+  "description": "Complete Discord integration with 20 endpoints for messages, channels, guilds, roles, and moderation",
+  "category": "communication",
+  "icon": "https://cdn.worldvectorlogo.com/logos/discord.svg",
+  "authentication": {
+    "type": "bot_token",
+    "tokenType": "Bot",
+    "scopes": [
+      "bot",
+      "messages.read",
+      "messages.write",
+      "guilds",
+      "guilds.members.read",
+      "channels.read",
+      "channels.write",
+      "roles.write",
+      "webhooks.write",
+      "emojis.write",
+      "bans.write",
+      "kick.members",
+      "manage.threads"
+    ]
+  },
+  "baseUrl": "https://discord.com/api/v10",
+  "rateLimit": {
+    "global": 50,
+    "perRoute": 5,
+    "burst": 10
+  },
+  "endpoints": [
+    {
+      "id": "send_message",
+      "name": "Send Message",
+      "method": "POST",
+      "path": "/channels/{channel_id}/messages",
+      "description": "Send a message to a channel"
+    },
+    {
+      "id": "list_channels",
+      "name": "List Channels",
+      "method": "GET",
+      "path": "/guilds/{guild_id}/channels",
+      "description": "List all channels in a guild"
+    },
+    {
+      "id": "create_channel",
+      "name": "Create Channel",
+      "method": "POST",
+      "path": "/guilds/{guild_id}/channels",
+      "description": "Create a new channel"
+    },
+    {
+      "id": "get_guild",
+      "name": "Get Guild",
+      "method": "GET",
+      "path": "/guilds/{guild_id}",
+      "description": "Get guild information"
+    },
+    {
+      "id": "list_members",
+      "name": "List Members",
+      "method": "GET",
+      "path": "/guilds/{guild_id}/members",
+      "description": "List guild members"
+    },
+    {
+      "id": "create_role",
+      "name": "Create Role",
+      "method": "POST",
+      "path": "/guilds/{guild_id}/roles",
+      "description": "Create a new role"
+    },
+    {
+      "id": "assign_role",
+      "name": "Assign Role",
+      "method": "PUT",
+      "path": "/guilds/{guild_id}/members/{user_id}/roles/{role_id}",
+      "description": "Assign role to member"
+    },
+    {
+      "id": "create_invite",
+      "name": "Create Invite",
+      "method": "POST",
+      "path": "/channels/{channel_id}/invites",
+      "description": "Create channel invite"
+    },
+    {
+      "id": "list_invites",
+      "name": "List Invites",
+      "method": "GET",
+      "path": "/guilds/{guild_id}/invites",
+      "description": "List guild invites"
+    },
+    {
+      "id": "create_webhook",
+      "name": "Create Webhook",
+      "method": "POST",
+      "path": "/channels/{channel_id}/webhooks",
+      "description": "Create a webhook"
+    },
+    {
+      "id": "execute_webhook",
+      "name": "Execute Webhook",
+      "method": "POST",
+      "path": "/webhooks/{webhook_id}/{webhook_token}",
+      "description": "Execute a webhook"
+    },
+    {
+      "id": "list_emojis",
+      "name": "List Emojis",
+      "method": "GET",
+      "path": "/guilds/{guild_id}/emojis",
+      "description": "List guild emojis"
+    },
+    {
+      "id": "create_emoji",
+      "name": "Create Emoji",
+      "method": "POST",
+      "path": "/guilds/{guild_id}/emojis",
+      "description": "Create custom emoji"
+    },
+    {
+      "id": "create_ban",
+      "name": "Create Ban",
+      "method": "PUT",
+      "path": "/guilds/{guild_id}/bans/{user_id}",
+      "description": "Ban a member"
+    },
+    {
+      "id": "list_bans",
+      "name": "List Bans",
+      "method": "GET",
+      "path": "/guilds/{guild_id}/bans",
+      "description": "List guild bans"
+    },
+    {
+      "id": "kick_member",
+      "name": "Kick Member",
+      "method": "DELETE",
+      "path": "/guilds/{guild_id}/members/{user_id}",
+      "description": "Kick a member"
+    },
+    {
+      "id": "get_audit_logs",
+      "name": "Get Audit Logs",
+      "method": "GET",
+      "path": "/guilds/{guild_id}/audit-logs",
+      "description": "Get guild audit logs"
+    },
+    {
+      "id": "create_thread",
+      "name": "Create Thread",
+      "method": "POST",
+      "path": "/channels/{channel_id}/threads",
+      "description": "Create a thread"
+    },
+    {
+      "id": "list_threads",
+      "name": "List Threads",
+      "method": "GET",
+      "path": "/guilds/{guild_id}/threads/active",
+      "description": "List active threads"
+    },
+    {
+      "id": "add_reaction",
+      "name": "Add Reaction",
+      "method": "PUT",
+      "path": "/channels/{channel_id}/messages/{message_id}/reactions/{emoji}/@me",
+      "description": "Add reaction to message"
+    }
+  ]
+}
