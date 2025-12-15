@@ -1,0 +1,166 @@
+{
+  "name": "airtable",
+  "displayName": "Airtable",
+  "version": "1.0.0",
+  "description": "Complete Airtable integration with 20 endpoints for bases, tables, records, fields, and views",
+  "category": "productivity",
+  "icon": "https://cdn.worldvectorlogo.com/logos/airtable.svg",
+  "authentication": {
+    "type": "bearer",
+    "tokenType": "Bearer",
+    "scopes": [
+      "data.records:read",
+      "data.records:write",
+      "schema.bases:read",
+      "schema.bases:write"
+    ]
+  },
+  "baseUrl": "https://api.airtable.com/v0",
+  "rateLimit": {
+    "quota": 5,
+    "perSecond": 5,
+    "perHour": 1000
+  },
+  "endpoints": [
+    {
+      "id": "list_bases",
+      "name": "List Bases",
+      "method": "GET",
+      "path": "/meta/bases",
+      "description": "Get all bases"
+    },
+    {
+      "id": "get_base_schema",
+      "name": "Get Base Schema",
+      "method": "GET",
+      "path": "/meta/bases/{baseId}/tables",
+      "description": "Get base schema with tables"
+    },
+    {
+      "id": "list_records",
+      "name": "List Records",
+      "method": "GET",
+      "path": "/{baseId}/{tableIdOrName}",
+      "description": "List all records in a table"
+    },
+    {
+      "id": "get_record",
+      "name": "Get Record",
+      "method": "GET",
+      "path": "/{baseId}/{tableIdOrName}/{recordId}",
+      "description": "Get a specific record"
+    },
+    {
+      "id": "create_record",
+      "name": "Create Record",
+      "method": "POST",
+      "path": "/{baseId}/{tableIdOrName}",
+      "description": "Create a new record"
+    },
+    {
+      "id": "create_records",
+      "name": "Create Multiple Records",
+      "method": "POST",
+      "path": "/{baseId}/{tableIdOrName}",
+      "description": "Create multiple records at once (max 10)"
+    },
+    {
+      "id": "update_record",
+      "name": "Update Record",
+      "method": "PATCH",
+      "path": "/{baseId}/{tableIdOrName}/{recordId}",
+      "description": "Update a record (partial update)"
+    },
+    {
+      "id": "replace_record",
+      "name": "Replace Record",
+      "method": "PUT",
+      "path": "/{baseId}/{tableIdOrName}/{recordId}",
+      "description": "Replace a record (full update)"
+    },
+    {
+      "id": "update_records",
+      "name": "Update Multiple Records",
+      "method": "PATCH",
+      "path": "/{baseId}/{tableIdOrName}",
+      "description": "Update multiple records at once (max 10)"
+    },
+    {
+      "id": "delete_record",
+      "name": "Delete Record",
+      "method": "DELETE",
+      "path": "/{baseId}/{tableIdOrName}/{recordId}",
+      "description": "Delete a record"
+    },
+    {
+      "id": "delete_records",
+      "name": "Delete Multiple Records",
+      "method": "DELETE",
+      "path": "/{baseId}/{tableIdOrName}",
+      "description": "Delete multiple records at once"
+    },
+    {
+      "id": "list_fields",
+      "name": "List Fields",
+      "method": "GET",
+      "path": "/meta/bases/{baseId}/tables/{tableIdOrName}/fields",
+      "description": "Get all fields in a table"
+    },
+    {
+      "id": "create_field",
+      "name": "Create Field",
+      "method": "POST",
+      "path": "/meta/bases/{baseId}/tables/{tableIdOrName}/fields",
+      "description": "Create a new field"
+    },
+    {
+      "id": "update_field",
+      "name": "Update Field",
+      "method": "PATCH",
+      "path": "/meta/bases/{baseId}/tables/{tableIdOrName}/fields/{fieldId}",
+      "description": "Update a field"
+    },
+    {
+      "id": "list_views",
+      "name": "List Views",
+      "method": "GET",
+      "path": "/meta/bases/{baseId}/tables/{tableIdOrName}/views",
+      "description": "Get all views in a table"
+    },
+    {
+      "id": "create_table",
+      "name": "Create Table",
+      "method": "POST",
+      "path": "/meta/bases/{baseId}/tables",
+      "description": "Create a new table"
+    },
+    {
+      "id": "update_table",
+      "name": "Update Table",
+      "method": "PATCH",
+      "path": "/meta/bases/{baseId}/tables/{tableIdOrName}",
+      "description": "Update table properties"
+    },
+    {
+      "id": "list_webhooks",
+      "name": "List Webhooks",
+      "method": "GET",
+      "path": "/bases/{baseId}/webhooks",
+      "description": "Get all webhooks for a base"
+    },
+    {
+      "id": "create_webhook",
+      "name": "Create Webhook",
+      "method": "POST",
+      "path": "/bases/{baseId}/webhooks",
+      "description": "Create a new webhook"
+    },
+    {
+      "id": "delete_webhook",
+      "name": "Delete Webhook",
+      "method": "DELETE",
+      "path": "/bases/{baseId}/webhooks/{webhookId}",
+      "description": "Delete a webhook"
+    }
+  ]
+}
