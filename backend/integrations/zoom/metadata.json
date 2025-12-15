@@ -1,0 +1,225 @@
+{
+  "name": "zoom",
+  "displayName": "Zoom",
+  "version": "1.0.0",
+  "description": "Complete Zoom integration with 28 endpoints for meetings, webinars, users, recordings, and reports",
+  "category": "communication",
+  "icon": "https://cdn.worldvectorlogo.com/logos/zoom-communications-logo.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "meeting:read",
+      "meeting:write",
+      "webinar:read",
+      "webinar:write",
+      "user:read",
+      "recording:read",
+      "recording:write"
+    ]
+  },
+  "baseUrl": "https://api.zoom.us/v2",
+  "rateLimit": {
+    "quota": 100,
+    "perSecond": 10,
+    "daily": 100000
+  },
+  "endpoints": [
+    {
+      "id": "list_meetings",
+      "name": "List Meetings",
+      "method": "GET",
+      "path": "/users/{userId}/meetings",
+      "description": "List all meetings for a user"
+    },
+    {
+      "id": "get_meeting",
+      "name": "Get Meeting",
+      "method": "GET",
+      "path": "/meetings/{meetingId}",
+      "description": "Get meeting details"
+    },
+    {
+      "id": "create_meeting",
+      "name": "Create Meeting",
+      "method": "POST",
+      "path": "/users/{userId}/meetings",
+      "description": "Create a new meeting"
+    },
+    {
+      "id": "update_meeting",
+      "name": "Update Meeting",
+      "method": "PATCH",
+      "path": "/meetings/{meetingId}",
+      "description": "Update meeting details"
+    },
+    {
+      "id": "delete_meeting",
+      "name": "Delete Meeting",
+      "method": "DELETE",
+      "path": "/meetings/{meetingId}",
+      "description": "Delete a meeting"
+    },
+    {
+      "id": "end_meeting",
+      "name": "End Meeting",
+      "method": "PUT",
+      "path": "/meetings/{meetingId}/status",
+      "description": "End a meeting"
+    },
+    {
+      "id": "list_webinars",
+      "name": "List Webinars",
+      "method": "GET",
+      "path": "/users/{userId}/webinars",
+      "description": "List all webinars for a user"
+    },
+    {
+      "id": "get_webinar",
+      "name": "Get Webinar",
+      "method": "GET",
+      "path": "/webinars/{webinarId}",
+      "description": "Get webinar details"
+    },
+    {
+      "id": "create_webinar",
+      "name": "Create Webinar",
+      "method": "POST",
+      "path": "/users/{userId}/webinars",
+      "description": "Create a new webinar"
+    },
+    {
+      "id": "update_webinar",
+      "name": "Update Webinar",
+      "method": "PATCH",
+      "path": "/webinars/{webinarId}",
+      "description": "Update webinar details"
+    },
+    {
+      "id": "delete_webinar",
+      "name": "Delete Webinar",
+      "method": "DELETE",
+      "path": "/webinars/{webinarId}",
+      "description": "Delete a webinar"
+    },
+    {
+      "id": "list_users",
+      "name": "List Users",
+      "method": "GET",
+      "path": "/users",
+      "description": "List all users in account"
+    },
+    {
+      "id": "get_user",
+      "name": "Get User",
+      "method": "GET",
+      "path": "/users/{userId}",
+      "description": "Get user details"
+    },
+    {
+      "id": "create_user",
+      "name": "Create User",
+      "method": "POST",
+      "path": "/users",
+      "description": "Create a new user"
+    },
+    {
+      "id": "update_user",
+      "name": "Update User",
+      "method": "PATCH",
+      "path": "/users/{userId}",
+      "description": "Update user details"
+    },
+    {
+      "id": "delete_user",
+      "name": "Delete User",
+      "method": "DELETE",
+      "path": "/users/{userId}",
+      "description": "Delete a user"
+    },
+    {
+      "id": "list_recordings",
+      "name": "List Recordings",
+      "method": "GET",
+      "path": "/users/{userId}/recordings",
+      "description": "List all recordings for a user"
+    },
+    {
+      "id": "get_recording",
+      "name": "Get Recording",
+      "method": "GET",
+      "path": "/meetings/{meetingId}/recordings",
+      "description": "Get meeting recordings"
+    },
+    {
+      "id": "delete_recording",
+      "name": "Delete Recording",
+      "method": "DELETE",
+      "path": "/meetings/{meetingId}/recordings/{recordingId}",
+      "description": "Delete a recording"
+    },
+    {
+      "id": "list_participants",
+      "name": "List Participants",
+      "method": "GET",
+      "path": "/meetings/{meetingId}/participants",
+      "description": "List meeting participants"
+    },
+    {
+      "id": "get_meeting_poll",
+      "name": "Get Meeting Poll",
+      "method": "GET",
+      "path": "/meetings/{meetingId}/polls",
+      "description": "Get meeting polls"
+    },
+    {
+      "id": "create_meeting_poll",
+      "name": "Create Meeting Poll",
+      "method": "POST",
+      "path": "/meetings/{meetingId}/polls",
+      "description": "Create a meeting poll"
+    },
+    {
+      "id": "list_registrants",
+      "name": "List Registrants",
+      "method": "GET",
+      "path": "/meetings/{meetingId}/registrants",
+      "description": "List meeting registrants"
+    },
+    {
+      "id": "add_registrant",
+      "name": "Add Registrant",
+      "method": "POST",
+      "path": "/meetings/{meetingId}/registrants",
+      "description": "Add a meeting registrant"
+    },
+    {
+      "id": "get_account_settings",
+      "name": "Get Account Settings",
+      "method": "GET",
+      "path": "/accounts/{accountId}/settings",
+      "description": "Get account settings"
+    },
+    {
+      "id": "update_account_settings",
+      "name": "Update Account Settings",
+      "method": "PATCH",
+      "path": "/accounts/{accountId}/settings",
+      "description": "Update account settings"
+    },
+    {
+      "id": "get_daily_report",
+      "name": "Get Daily Report",
+      "method": "GET",
+      "path": "/report/daily",
+      "description": "Get daily usage report"
+    },
+    {
+      "id": "get_meeting_report",
+      "name": "Get Meeting Report",
+      "method": "GET",
+      "path": "/report/meetings/{meetingId}",
+      "description": "Get meeting report"
+    }
+  ]
+}
