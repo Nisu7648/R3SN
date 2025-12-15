@@ -1,0 +1,238 @@
+{
+  "name": "github",
+  "displayName": "GitHub",
+  "version": "1.0.0",
+  "description": "Complete GitHub integration with 30 endpoints for repositories, branches, commits, pull requests, issues, and more",
+  "category": "development",
+  "icon": "https://cdn.worldvectorlogo.com/logos/github-icon-1.svg",
+  "authentication": {
+    "type": "token",
+    "tokenType": "token",
+    "scopes": [
+      "repo",
+      "user",
+      "admin:org",
+      "admin:repo_hook",
+      "write:discussion",
+      "read:discussion"
+    ]
+  },
+  "baseUrl": "https://api.github.com",
+  "rateLimit": {
+    "authenticated": 5000,
+    "unauthenticated": 60,
+    "perHour": 5000
+  },
+  "endpoints": [
+    {
+      "id": "list_repos",
+      "name": "List Repositories",
+      "method": "GET",
+      "path": "/user/repos",
+      "description": "List user repositories"
+    },
+    {
+      "id": "create_repo",
+      "name": "Create Repository",
+      "method": "POST",
+      "path": "/user/repos",
+      "description": "Create a new repository"
+    },
+    {
+      "id": "get_repo",
+      "name": "Get Repository",
+      "method": "GET",
+      "path": "/repos/{owner}/{repo}",
+      "description": "Get repository details"
+    },
+    {
+      "id": "update_repo",
+      "name": "Update Repository",
+      "method": "PATCH",
+      "path": "/repos/{owner}/{repo}",
+      "description": "Update repository settings"
+    },
+    {
+      "id": "delete_repo",
+      "name": "Delete Repository",
+      "method": "DELETE",
+      "path": "/repos/{owner}/{repo}",
+      "description": "Delete a repository"
+    },
+    {
+      "id": "list_branches",
+      "name": "List Branches",
+      "method": "GET",
+      "path": "/repos/{owner}/{repo}/branches",
+      "description": "List repository branches"
+    },
+    {
+      "id": "create_branch",
+      "name": "Create Branch",
+      "method": "POST",
+      "path": "/repos/{owner}/{repo}/git/refs",
+      "description": "Create a new branch"
+    },
+    {
+      "id": "get_branch",
+      "name": "Get Branch",
+      "method": "GET",
+      "path": "/repos/{owner}/{repo}/branches/{branch}",
+      "description": "Get branch details"
+    },
+    {
+      "id": "delete_branch",
+      "name": "Delete Branch",
+      "method": "DELETE",
+      "path": "/repos/{owner}/{repo}/git/refs/heads/{branch}",
+      "description": "Delete a branch"
+    },
+    {
+      "id": "list_commits",
+      "name": "List Commits",
+      "method": "GET",
+      "path": "/repos/{owner}/{repo}/commits",
+      "description": "List repository commits"
+    },
+    {
+      "id": "get_commit",
+      "name": "Get Commit",
+      "method": "GET",
+      "path": "/repos/{owner}/{repo}/commits/{sha}",
+      "description": "Get commit details"
+    },
+    {
+      "id": "create_commit",
+      "name": "Create Commit",
+      "method": "POST",
+      "path": "/repos/{owner}/{repo}/git/commits",
+      "description": "Create a new commit"
+    },
+    {
+      "id": "list_prs",
+      "name": "List Pull Requests",
+      "method": "GET",
+      "path": "/repos/{owner}/{repo}/pulls",
+      "description": "List pull requests"
+    },
+    {
+      "id": "create_pr",
+      "name": "Create Pull Request",
+      "method": "POST",
+      "path": "/repos/{owner}/{repo}/pulls",
+      "description": "Create a pull request"
+    },
+    {
+      "id": "get_pr",
+      "name": "Get Pull Request",
+      "method": "GET",
+      "path": "/repos/{owner}/{repo}/pulls/{number}",
+      "description": "Get pull request details"
+    },
+    {
+      "id": "update_pr",
+      "name": "Update Pull Request",
+      "method": "PATCH",
+      "path": "/repos/{owner}/{repo}/pulls/{number}",
+      "description": "Update pull request"
+    },
+    {
+      "id": "merge_pr",
+      "name": "Merge Pull Request",
+      "method": "PUT",
+      "path": "/repos/{owner}/{repo}/pulls/{number}/merge",
+      "description": "Merge a pull request"
+    },
+    {
+      "id": "list_issues",
+      "name": "List Issues",
+      "method": "GET",
+      "path": "/repos/{owner}/{repo}/issues",
+      "description": "List repository issues"
+    },
+    {
+      "id": "create_issue",
+      "name": "Create Issue",
+      "method": "POST",
+      "path": "/repos/{owner}/{repo}/issues",
+      "description": "Create a new issue"
+    },
+    {
+      "id": "get_issue",
+      "name": "Get Issue",
+      "method": "GET",
+      "path": "/repos/{owner}/{repo}/issues/{number}",
+      "description": "Get issue details"
+    },
+    {
+      "id": "update_issue",
+      "name": "Update Issue",
+      "method": "PATCH",
+      "path": "/repos/{owner}/{repo}/issues/{number}",
+      "description": "Update an issue"
+    },
+    {
+      "id": "close_issue",
+      "name": "Close Issue",
+      "method": "PATCH",
+      "path": "/repos/{owner}/{repo}/issues/{number}",
+      "description": "Close an issue"
+    },
+    {
+      "id": "add_comment",
+      "name": "Add Comment",
+      "method": "POST",
+      "path": "/repos/{owner}/{repo}/issues/{number}/comments",
+      "description": "Add comment to issue/PR"
+    },
+    {
+      "id": "list_comments",
+      "name": "List Comments",
+      "method": "GET",
+      "path": "/repos/{owner}/{repo}/issues/{number}/comments",
+      "description": "List issue/PR comments"
+    },
+    {
+      "id": "get_user",
+      "name": "Get User",
+      "method": "GET",
+      "path": "/users/{username}",
+      "description": "Get user profile"
+    },
+    {
+      "id": "list_orgs",
+      "name": "List Organizations",
+      "method": "GET",
+      "path": "/user/orgs",
+      "description": "List user organizations"
+    },
+    {
+      "id": "get_org",
+      "name": "Get Organization",
+      "method": "GET",
+      "path": "/orgs/{org}",
+      "description": "Get organization details"
+    },
+    {
+      "id": "list_teams",
+      "name": "List Teams",
+      "method": "GET",
+      "path": "/orgs/{org}/teams",
+      "description": "List organization teams"
+    },
+    {
+      "id": "create_webhook",
+      "name": "Create Webhook",
+      "method": "POST",
+      "path": "/repos/{owner}/{repo}/hooks",
+      "description": "Create a webhook"
+    },
+    {
+      "id": "list_webhooks",
+      "name": "List Webhooks",
+      "method": "GET",
+      "path": "/repos/{owner}/{repo}/hooks",
+      "description": "List repository webhooks"
+    }
+  ]
+}
