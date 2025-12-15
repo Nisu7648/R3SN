@@ -1,0 +1,309 @@
+{
+  "name": "GitHub",
+  "category": "development",
+  "apiEndpoint": "https://api.github.com",
+  "authType": "bearer",
+  "premium": true,
+  "endpoints": {
+    "repos": {
+      "list": {
+        "method": "GET",
+        "path": "/user/repos",
+        "query": ["visibility", "affiliation", "type", "sort", "direction", "per_page", "page"]
+      },
+      "get": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}",
+        "params": ["owner", "repo"]
+      },
+      "create": {
+        "method": "POST",
+        "path": "/user/repos",
+        "body": ["name", "description", "homepage", "private", "has_issues", "has_projects", "has_wiki"]
+      },
+      "update": {
+        "method": "PATCH",
+        "path": "/repos/{owner}/{repo}",
+        "params": ["owner", "repo"],
+        "body": ["name", "description", "homepage", "private", "has_issues", "has_projects", "has_wiki"]
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/repos/{owner}/{repo}",
+        "params": ["owner", "repo"]
+      },
+      "listBranches": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/branches",
+        "params": ["owner", "repo"],
+        "query": ["protected", "per_page", "page"]
+      },
+      "getBranch": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/branches/{branch}",
+        "params": ["owner", "repo", "branch"]
+      },
+      "listCollaborators": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/collaborators",
+        "params": ["owner", "repo"],
+        "query": ["affiliation", "per_page", "page"]
+      },
+      "addCollaborator": {
+        "method": "PUT",
+        "path": "/repos/{owner}/{repo}/collaborators/{username}",
+        "params": ["owner", "repo", "username"],
+        "body": ["permission"]
+      },
+      "removeCollaborator": {
+        "method": "DELETE",
+        "path": "/repos/{owner}/{repo}/collaborators/{username}",
+        "params": ["owner", "repo", "username"]
+      }
+    },
+    "issues": {
+      "list": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/issues",
+        "params": ["owner", "repo"],
+        "query": ["milestone", "state", "assignee", "creator", "mentioned", "labels", "sort", "direction", "since", "per_page", "page"]
+      },
+      "get": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/issues/{issue_number}",
+        "params": ["owner", "repo", "issue_number"]
+      },
+      "create": {
+        "method": "POST",
+        "path": "/repos/{owner}/{repo}/issues",
+        "params": ["owner", "repo"],
+        "body": ["title", "body", "assignees", "milestone", "labels"]
+      },
+      "update": {
+        "method": "PATCH",
+        "path": "/repos/{owner}/{repo}/issues/{issue_number}",
+        "params": ["owner", "repo", "issue_number"],
+        "body": ["title", "body", "assignees", "milestone", "labels", "state"]
+      },
+      "lock": {
+        "method": "PUT",
+        "path": "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+        "params": ["owner", "repo", "issue_number"],
+        "body": ["lock_reason"]
+      },
+      "unlock": {
+        "method": "DELETE",
+        "path": "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+        "params": ["owner", "repo", "issue_number"]
+      },
+      "listComments": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/issues/{issue_number}/comments",
+        "params": ["owner", "repo", "issue_number"],
+        "query": ["since", "per_page", "page"]
+      },
+      "createComment": {
+        "method": "POST",
+        "path": "/repos/{owner}/{repo}/issues/{issue_number}/comments",
+        "params": ["owner", "repo", "issue_number"],
+        "body": ["body"]
+      },
+      "updateComment": {
+        "method": "PATCH",
+        "path": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+        "params": ["owner", "repo", "comment_id"],
+        "body": ["body"]
+      },
+      "deleteComment": {
+        "method": "DELETE",
+        "path": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+        "params": ["owner", "repo", "comment_id"]
+      }
+    },
+    "pulls": {
+      "list": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/pulls",
+        "params": ["owner", "repo"],
+        "query": ["state", "head", "base", "sort", "direction", "per_page", "page"]
+      },
+      "get": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/pulls/{pull_number}",
+        "params": ["owner", "repo", "pull_number"]
+      },
+      "create": {
+        "method": "POST",
+        "path": "/repos/{owner}/{repo}/pulls",
+        "params": ["owner", "repo"],
+        "body": ["title", "head", "base", "body", "maintainer_can_modify", "draft"]
+      },
+      "update": {
+        "method": "PATCH",
+        "path": "/repos/{owner}/{repo}/pulls/{pull_number}",
+        "params": ["owner", "repo", "pull_number"],
+        "body": ["title", "body", "state", "base", "maintainer_can_modify"]
+      },
+      "merge": {
+        "method": "PUT",
+        "path": "/repos/{owner}/{repo}/pulls/{pull_number}/merge",
+        "params": ["owner", "repo", "pull_number"],
+        "body": ["commit_title", "commit_message", "sha", "merge_method"]
+      },
+      "listFiles": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/pulls/{pull_number}/files",
+        "params": ["owner", "repo", "pull_number"],
+        "query": ["per_page", "page"]
+      },
+      "listCommits": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/pulls/{pull_number}/commits",
+        "params": ["owner", "repo", "pull_number"],
+        "query": ["per_page", "page"]
+      },
+      "listReviews": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews",
+        "params": ["owner", "repo", "pull_number"],
+        "query": ["per_page", "page"]
+      },
+      "createReview": {
+        "method": "POST",
+        "path": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews",
+        "params": ["owner", "repo", "pull_number"],
+        "body": ["commit_id", "body", "event", "comments"]
+      },
+      "requestReviewers": {
+        "method": "POST",
+        "path": "/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
+        "params": ["owner", "repo", "pull_number"],
+        "body": ["reviewers", "team_reviewers"]
+      }
+    },
+    "commits": {
+      "list": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/commits",
+        "params": ["owner", "repo"],
+        "query": ["sha", "path", "author", "since", "until", "per_page", "page"]
+      },
+      "get": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/commits/{ref}",
+        "params": ["owner", "repo", "ref"]
+      },
+      "compare": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/compare/{basehead}",
+        "params": ["owner", "repo", "basehead"]
+      },
+      "listComments": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
+        "params": ["owner", "repo", "commit_sha"],
+        "query": ["per_page", "page"]
+      },
+      "createComment": {
+        "method": "POST",
+        "path": "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
+        "params": ["owner", "repo", "commit_sha"],
+        "body": ["body", "path", "position", "line"]
+      }
+    },
+    "contents": {
+      "get": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/contents/{path}",
+        "params": ["owner", "repo", "path"],
+        "query": ["ref"]
+      },
+      "create": {
+        "method": "PUT",
+        "path": "/repos/{owner}/{repo}/contents/{path}",
+        "params": ["owner", "repo", "path"],
+        "body": ["message", "content", "branch", "committer", "author"]
+      },
+      "update": {
+        "method": "PUT",
+        "path": "/repos/{owner}/{repo}/contents/{path}",
+        "params": ["owner", "repo", "path"],
+        "body": ["message", "content", "sha", "branch", "committer", "author"]
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/repos/{owner}/{repo}/contents/{path}",
+        "params": ["owner", "repo", "path"],
+        "body": ["message", "sha", "branch", "committer", "author"]
+      }
+    },
+    "actions": {
+      "listWorkflows": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/actions/workflows",
+        "params": ["owner", "repo"],
+        "query": ["per_page", "page"]
+      },
+      "getWorkflow": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}",
+        "params": ["owner", "repo", "workflow_id"]
+      },
+      "listWorkflowRuns": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/actions/runs",
+        "params": ["owner", "repo"],
+        "query": ["actor", "branch", "event", "status", "per_page", "page"]
+      },
+      "getWorkflowRun": {
+        "method": "GET",
+        "path": "/repos/{owner}/{repo}/actions/runs/{run_id}",
+        "params": ["owner", "repo", "run_id"]
+      },
+      "rerunWorkflow": {
+        "method": "POST",
+        "path": "/repos/{owner}/{repo}/actions/runs/{run_id}/rerun",
+        "params": ["owner", "repo", "run_id"]
+      },
+      "cancelWorkflowRun": {
+        "method": "POST",
+        "path": "/repos/{owner}/{repo}/actions/runs/{run_id}/cancel",
+        "params": ["owner", "repo", "run_id"]
+      },
+      "createWorkflowDispatch": {
+        "method": "POST",
+        "path": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches",
+        "params": ["owner", "repo", "workflow_id"],
+        "body": ["ref", "inputs"]
+      }
+    },
+    "users": {
+      "getCurrent": {
+        "method": "GET",
+        "path": "/user"
+      },
+      "get": {
+        "method": "GET",
+        "path": "/users/{username}",
+        "params": ["username"]
+      },
+      "updateCurrent": {
+        "method": "PATCH",
+        "path": "/user",
+        "body": ["name", "email", "blog", "twitter_username", "company", "location", "hireable", "bio"]
+      },
+      "listFollowers": {
+        "method": "GET",
+        "path": "/users/{username}/followers",
+        "params": ["username"],
+        "query": ["per_page", "page"]
+      },
+      "listFollowing": {
+        "method": "GET",
+        "path": "/users/{username}/following",
+        "params": ["username"],
+        "query": ["per_page", "page"]
+      }
+    }
+  }
+}
