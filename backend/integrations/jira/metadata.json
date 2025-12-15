@@ -1,0 +1,250 @@
+{
+  "name": "jira",
+  "displayName": "Jira",
+  "version": "1.0.0",
+  "description": "Complete Jira integration with 32 endpoints for issues, projects, boards, sprints, and workflows",
+  "category": "project_management",
+  "icon": "https://cdn.worldvectorlogo.com/logos/jira-1.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "read:jira-work",
+      "write:jira-work",
+      "read:jira-user",
+      "manage:jira-project"
+    ]
+  },
+  "baseUrl": "https://api.atlassian.com/ex/jira/{cloudId}/rest/api/3",
+  "rateLimit": {
+    "quota": 100,
+    "perSecond": 10,
+    "perMinute": 300
+  },
+  "endpoints": [
+    {
+      "id": "list_issues",
+      "name": "List Issues",
+      "method": "GET",
+      "path": "/search",
+      "description": "Search for issues using JQL"
+    },
+    {
+      "id": "get_issue",
+      "name": "Get Issue",
+      "method": "GET",
+      "path": "/issue/{issueIdOrKey}",
+      "description": "Get issue details"
+    },
+    {
+      "id": "create_issue",
+      "name": "Create Issue",
+      "method": "POST",
+      "path": "/issue",
+      "description": "Create a new issue"
+    },
+    {
+      "id": "update_issue",
+      "name": "Update Issue",
+      "method": "PUT",
+      "path": "/issue/{issueIdOrKey}",
+      "description": "Update an issue"
+    },
+    {
+      "id": "delete_issue",
+      "name": "Delete Issue",
+      "method": "DELETE",
+      "path": "/issue/{issueIdOrKey}",
+      "description": "Delete an issue"
+    },
+    {
+      "id": "assign_issue",
+      "name": "Assign Issue",
+      "method": "PUT",
+      "path": "/issue/{issueIdOrKey}/assignee",
+      "description": "Assign issue to user"
+    },
+    {
+      "id": "add_comment",
+      "name": "Add Comment",
+      "method": "POST",
+      "path": "/issue/{issueIdOrKey}/comment",
+      "description": "Add comment to issue"
+    },
+    {
+      "id": "get_comments",
+      "name": "Get Comments",
+      "method": "GET",
+      "path": "/issue/{issueIdOrKey}/comment",
+      "description": "Get all comments on issue"
+    },
+    {
+      "id": "update_comment",
+      "name": "Update Comment",
+      "method": "PUT",
+      "path": "/issue/{issueIdOrKey}/comment/{id}",
+      "description": "Update a comment"
+    },
+    {
+      "id": "delete_comment",
+      "name": "Delete Comment",
+      "method": "DELETE",
+      "path": "/issue/{issueIdOrKey}/comment/{id}",
+      "description": "Delete a comment"
+    },
+    {
+      "id": "list_projects",
+      "name": "List Projects",
+      "method": "GET",
+      "path": "/project",
+      "description": "Get all projects"
+    },
+    {
+      "id": "get_project",
+      "name": "Get Project",
+      "method": "GET",
+      "path": "/project/{projectIdOrKey}",
+      "description": "Get project details"
+    },
+    {
+      "id": "create_project",
+      "name": "Create Project",
+      "method": "POST",
+      "path": "/project",
+      "description": "Create a new project"
+    },
+    {
+      "id": "update_project",
+      "name": "Update Project",
+      "method": "PUT",
+      "path": "/project/{projectIdOrKey}",
+      "description": "Update project details"
+    },
+    {
+      "id": "delete_project",
+      "name": "Delete Project",
+      "method": "DELETE",
+      "path": "/project/{projectIdOrKey}",
+      "description": "Delete a project"
+    },
+    {
+      "id": "list_boards",
+      "name": "List Boards",
+      "method": "GET",
+      "path": "/board",
+      "description": "Get all boards"
+    },
+    {
+      "id": "get_board",
+      "name": "Get Board",
+      "method": "GET",
+      "path": "/board/{boardId}",
+      "description": "Get board details"
+    },
+    {
+      "id": "list_sprints",
+      "name": "List Sprints",
+      "method": "GET",
+      "path": "/board/{boardId}/sprint",
+      "description": "Get all sprints for a board"
+    },
+    {
+      "id": "get_sprint",
+      "name": "Get Sprint",
+      "method": "GET",
+      "path": "/sprint/{sprintId}",
+      "description": "Get sprint details"
+    },
+    {
+      "id": "create_sprint",
+      "name": "Create Sprint",
+      "method": "POST",
+      "path": "/sprint",
+      "description": "Create a new sprint"
+    },
+    {
+      "id": "update_sprint",
+      "name": "Update Sprint",
+      "method": "PUT",
+      "path": "/sprint/{sprintId}",
+      "description": "Update sprint details"
+    },
+    {
+      "id": "delete_sprint",
+      "name": "Delete Sprint",
+      "method": "DELETE",
+      "path": "/sprint/{sprintId}",
+      "description": "Delete a sprint"
+    },
+    {
+      "id": "move_issues_to_sprint",
+      "name": "Move Issues to Sprint",
+      "method": "POST",
+      "path": "/sprint/{sprintId}/issue",
+      "description": "Move issues to sprint"
+    },
+    {
+      "id": "list_transitions",
+      "name": "List Transitions",
+      "method": "GET",
+      "path": "/issue/{issueIdOrKey}/transitions",
+      "description": "Get available transitions for issue"
+    },
+    {
+      "id": "transition_issue",
+      "name": "Transition Issue",
+      "method": "POST",
+      "path": "/issue/{issueIdOrKey}/transitions",
+      "description": "Transition issue to new status"
+    },
+    {
+      "id": "list_users",
+      "name": "List Users",
+      "method": "GET",
+      "path": "/users/search",
+      "description": "Search for users"
+    },
+    {
+      "id": "get_user",
+      "name": "Get User",
+      "method": "GET",
+      "path": "/user",
+      "description": "Get user details"
+    },
+    {
+      "id": "list_workflows",
+      "name": "List Workflows",
+      "method": "GET",
+      "path": "/workflow",
+      "description": "Get all workflows"
+    },
+    {
+      "id": "add_attachment",
+      "name": "Add Attachment",
+      "method": "POST",
+      "path": "/issue/{issueIdOrKey}/attachments",
+      "description": "Add attachment to issue"
+    },
+    {
+      "id": "get_attachment",
+      "name": "Get Attachment",
+      "method": "GET",
+      "path": "/attachment/{id}",
+      "description": "Get attachment details"
+    },
+    {
+      "id": "delete_attachment",
+      "name": "Delete Attachment",
+      "method": "DELETE",
+      "path": "/attachment/{id}",
+      "description": "Delete an attachment"
+    },
+    {
+      "id": "create_version",
+      "name": "Create Version",
+      "method": "POST",
+      "path": "/version",
+      "description": "Create a project version"
+    }
+  ]
+}
