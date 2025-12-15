@@ -1,0 +1,274 @@
+{
+  "name": "hubspot",
+  "displayName": "HubSpot",
+  "version": "1.0.0",
+  "description": "Complete HubSpot CRM integration with 35+ endpoints for contacts, companies, deals, tickets, and marketing automation",
+  "category": "crm",
+  "icon": "https://cdn.worldvectorlogo.com/logos/hubspot.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "crm.objects.contacts.read",
+      "crm.objects.contacts.write",
+      "crm.objects.companies.read",
+      "crm.objects.companies.write",
+      "crm.objects.deals.read",
+      "crm.objects.deals.write",
+      "tickets"
+    ]
+  },
+  "baseUrl": "https://api.hubapi.com",
+  "rateLimit": {
+    "quota": 100,
+    "perSecond": 10,
+    "daily": 500000
+  },
+  "endpoints": [
+    {
+      "id": "list_contacts",
+      "name": "List Contacts",
+      "method": "GET",
+      "path": "/crm/v3/objects/contacts",
+      "description": "Get all contacts"
+    },
+    {
+      "id": "get_contact",
+      "name": "Get Contact",
+      "method": "GET",
+      "path": "/crm/v3/objects/contacts/{contactId}",
+      "description": "Get a specific contact"
+    },
+    {
+      "id": "create_contact",
+      "name": "Create Contact",
+      "method": "POST",
+      "path": "/crm/v3/objects/contacts",
+      "description": "Create a new contact"
+    },
+    {
+      "id": "update_contact",
+      "name": "Update Contact",
+      "method": "PATCH",
+      "path": "/crm/v3/objects/contacts/{contactId}",
+      "description": "Update a contact"
+    },
+    {
+      "id": "delete_contact",
+      "name": "Delete Contact",
+      "method": "DELETE",
+      "path": "/crm/v3/objects/contacts/{contactId}",
+      "description": "Delete a contact"
+    },
+    {
+      "id": "search_contacts",
+      "name": "Search Contacts",
+      "method": "POST",
+      "path": "/crm/v3/objects/contacts/search",
+      "description": "Search contacts with filters"
+    },
+    {
+      "id": "list_companies",
+      "name": "List Companies",
+      "method": "GET",
+      "path": "/crm/v3/objects/companies",
+      "description": "Get all companies"
+    },
+    {
+      "id": "get_company",
+      "name": "Get Company",
+      "method": "GET",
+      "path": "/crm/v3/objects/companies/{companyId}",
+      "description": "Get a specific company"
+    },
+    {
+      "id": "create_company",
+      "name": "Create Company",
+      "method": "POST",
+      "path": "/crm/v3/objects/companies",
+      "description": "Create a new company"
+    },
+    {
+      "id": "update_company",
+      "name": "Update Company",
+      "method": "PATCH",
+      "path": "/crm/v3/objects/companies/{companyId}",
+      "description": "Update a company"
+    },
+    {
+      "id": "delete_company",
+      "name": "Delete Company",
+      "method": "DELETE",
+      "path": "/crm/v3/objects/companies/{companyId}",
+      "description": "Delete a company"
+    },
+    {
+      "id": "list_deals",
+      "name": "List Deals",
+      "method": "GET",
+      "path": "/crm/v3/objects/deals",
+      "description": "Get all deals"
+    },
+    {
+      "id": "get_deal",
+      "name": "Get Deal",
+      "method": "GET",
+      "path": "/crm/v3/objects/deals/{dealId}",
+      "description": "Get a specific deal"
+    },
+    {
+      "id": "create_deal",
+      "name": "Create Deal",
+      "method": "POST",
+      "path": "/crm/v3/objects/deals",
+      "description": "Create a new deal"
+    },
+    {
+      "id": "update_deal",
+      "name": "Update Deal",
+      "method": "PATCH",
+      "path": "/crm/v3/objects/deals/{dealId}",
+      "description": "Update a deal"
+    },
+    {
+      "id": "delete_deal",
+      "name": "Delete Deal",
+      "method": "DELETE",
+      "path": "/crm/v3/objects/deals/{dealId}",
+      "description": "Delete a deal"
+    },
+    {
+      "id": "list_tickets",
+      "name": "List Tickets",
+      "method": "GET",
+      "path": "/crm/v3/objects/tickets",
+      "description": "Get all tickets"
+    },
+    {
+      "id": "get_ticket",
+      "name": "Get Ticket",
+      "method": "GET",
+      "path": "/crm/v3/objects/tickets/{ticketId}",
+      "description": "Get a specific ticket"
+    },
+    {
+      "id": "create_ticket",
+      "name": "Create Ticket",
+      "method": "POST",
+      "path": "/crm/v3/objects/tickets",
+      "description": "Create a new ticket"
+    },
+    {
+      "id": "update_ticket",
+      "name": "Update Ticket",
+      "method": "PATCH",
+      "path": "/crm/v3/objects/tickets/{ticketId}",
+      "description": "Update a ticket"
+    },
+    {
+      "id": "list_pipelines",
+      "name": "List Pipelines",
+      "method": "GET",
+      "path": "/crm/v3/pipelines/deals",
+      "description": "Get all deal pipelines"
+    },
+    {
+      "id": "get_pipeline",
+      "name": "Get Pipeline",
+      "method": "GET",
+      "path": "/crm/v3/pipelines/deals/{pipelineId}",
+      "description": "Get a specific pipeline"
+    },
+    {
+      "id": "list_owners",
+      "name": "List Owners",
+      "method": "GET",
+      "path": "/crm/v3/owners",
+      "description": "Get all CRM owners"
+    },
+    {
+      "id": "get_owner",
+      "name": "Get Owner",
+      "method": "GET",
+      "path": "/crm/v3/owners/{ownerId}",
+      "description": "Get a specific owner"
+    },
+    {
+      "id": "create_note",
+      "name": "Create Note",
+      "method": "POST",
+      "path": "/crm/v3/objects/notes",
+      "description": "Create a note"
+    },
+    {
+      "id": "create_task",
+      "name": "Create Task",
+      "method": "POST",
+      "path": "/crm/v3/objects/tasks",
+      "description": "Create a task"
+    },
+    {
+      "id": "create_meeting",
+      "name": "Create Meeting",
+      "method": "POST",
+      "path": "/crm/v3/objects/meetings",
+      "description": "Create a meeting"
+    },
+    {
+      "id": "create_call",
+      "name": "Create Call",
+      "method": "POST",
+      "path": "/crm/v3/objects/calls",
+      "description": "Log a call"
+    },
+    {
+      "id": "create_email",
+      "name": "Create Email",
+      "method": "POST",
+      "path": "/crm/v3/objects/emails",
+      "description": "Log an email"
+    },
+    {
+      "id": "create_association",
+      "name": "Create Association",
+      "method": "PUT",
+      "path": "/crm/v3/objects/{fromObjectType}/{fromObjectId}/associations/{toObjectType}/{toObjectId}/{associationType}",
+      "description": "Associate two CRM objects"
+    },
+    {
+      "id": "delete_association",
+      "name": "Delete Association",
+      "method": "DELETE",
+      "path": "/crm/v3/objects/{fromObjectType}/{fromObjectId}/associations/{toObjectType}/{toObjectId}/{associationType}",
+      "description": "Remove association between objects"
+    },
+    {
+      "id": "batch_create",
+      "name": "Batch Create",
+      "method": "POST",
+      "path": "/crm/v3/objects/{objectType}/batch/create",
+      "description": "Create multiple objects at once"
+    },
+    {
+      "id": "batch_update",
+      "name": "Batch Update",
+      "method": "POST",
+      "path": "/crm/v3/objects/{objectType}/batch/update",
+      "description": "Update multiple objects at once"
+    },
+    {
+      "id": "batch_read",
+      "name": "Batch Read",
+      "method": "POST",
+      "path": "/crm/v3/objects/{objectType}/batch/read",
+      "description": "Read multiple objects at once"
+    },
+    {
+      "id": "get_properties",
+      "name": "Get Properties",
+      "method": "GET",
+      "path": "/crm/v3/properties/{objectType}",
+      "description": "Get all properties for an object type"
+    }
+  ]
+}
