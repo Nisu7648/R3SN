@@ -1,0 +1,202 @@
+{
+  "name": "gmail",
+  "displayName": "Gmail",
+  "version": "1.0.0",
+  "description": "Complete Gmail integration with 25 endpoints for email management, drafts, labels, threads, and attachments",
+  "category": "email",
+  "icon": "https://cdn.worldvectorlogo.com/logos/gmail-icon.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "https://www.googleapis.com/auth/gmail.readonly",
+      "https://www.googleapis.com/auth/gmail.send",
+      "https://www.googleapis.com/auth/gmail.modify",
+      "https://www.googleapis.com/auth/gmail.compose",
+      "https://www.googleapis.com/auth/gmail.labels"
+    ]
+  },
+  "baseUrl": "https://gmail.googleapis.com/gmail/v1",
+  "rateLimit": {
+    "quota": 1000000000,
+    "perUser": 250,
+    "perSecond": 25
+  },
+  "endpoints": [
+    {
+      "id": "send_message",
+      "name": "Send Message",
+      "method": "POST",
+      "path": "/users/me/messages/send",
+      "description": "Send an email message"
+    },
+    {
+      "id": "list_messages",
+      "name": "List Messages",
+      "method": "GET",
+      "path": "/users/me/messages",
+      "description": "List all messages in mailbox"
+    },
+    {
+      "id": "get_message",
+      "name": "Get Message",
+      "method": "GET",
+      "path": "/users/me/messages/{id}",
+      "description": "Get a specific message"
+    },
+    {
+      "id": "delete_message",
+      "name": "Delete Message",
+      "method": "DELETE",
+      "path": "/users/me/messages/{id}",
+      "description": "Delete a message"
+    },
+    {
+      "id": "modify_message",
+      "name": "Modify Message",
+      "method": "POST",
+      "path": "/users/me/messages/{id}/modify",
+      "description": "Modify message labels"
+    },
+    {
+      "id": "create_draft",
+      "name": "Create Draft",
+      "method": "POST",
+      "path": "/users/me/drafts",
+      "description": "Create a draft message"
+    },
+    {
+      "id": "send_draft",
+      "name": "Send Draft",
+      "method": "POST",
+      "path": "/users/me/drafts/send",
+      "description": "Send a draft message"
+    },
+    {
+      "id": "list_drafts",
+      "name": "List Drafts",
+      "method": "GET",
+      "path": "/users/me/drafts",
+      "description": "List all draft messages"
+    },
+    {
+      "id": "delete_draft",
+      "name": "Delete Draft",
+      "method": "DELETE",
+      "path": "/users/me/drafts/{id}",
+      "description": "Delete a draft"
+    },
+    {
+      "id": "list_labels",
+      "name": "List Labels",
+      "method": "GET",
+      "path": "/users/me/labels",
+      "description": "List all labels"
+    },
+    {
+      "id": "create_label",
+      "name": "Create Label",
+      "method": "POST",
+      "path": "/users/me/labels",
+      "description": "Create a new label"
+    },
+    {
+      "id": "update_label",
+      "name": "Update Label",
+      "method": "PUT",
+      "path": "/users/me/labels/{id}",
+      "description": "Update a label"
+    },
+    {
+      "id": "delete_label",
+      "name": "Delete Label",
+      "method": "DELETE",
+      "path": "/users/me/labels/{id}",
+      "description": "Delete a label"
+    },
+    {
+      "id": "list_threads",
+      "name": "List Threads",
+      "method": "GET",
+      "path": "/users/me/threads",
+      "description": "List all email threads"
+    },
+    {
+      "id": "get_thread",
+      "name": "Get Thread",
+      "method": "GET",
+      "path": "/users/me/threads/{id}",
+      "description": "Get a specific thread"
+    },
+    {
+      "id": "modify_thread",
+      "name": "Modify Thread",
+      "method": "POST",
+      "path": "/users/me/threads/{id}/modify",
+      "description": "Modify thread labels"
+    },
+    {
+      "id": "trash_message",
+      "name": "Trash Message",
+      "method": "POST",
+      "path": "/users/me/messages/{id}/trash",
+      "description": "Move message to trash"
+    },
+    {
+      "id": "untrash_message",
+      "name": "Untrash Message",
+      "method": "POST",
+      "path": "/users/me/messages/{id}/untrash",
+      "description": "Remove message from trash"
+    },
+    {
+      "id": "get_attachment",
+      "name": "Get Attachment",
+      "method": "GET",
+      "path": "/users/me/messages/{messageId}/attachments/{id}",
+      "description": "Get message attachment"
+    },
+    {
+      "id": "get_profile",
+      "name": "Get Profile",
+      "method": "GET",
+      "path": "/users/me/profile",
+      "description": "Get user profile"
+    },
+    {
+      "id": "watch_mailbox",
+      "name": "Watch Mailbox",
+      "method": "POST",
+      "path": "/users/me/watch",
+      "description": "Set up push notifications"
+    },
+    {
+      "id": "stop_watch",
+      "name": "Stop Watch",
+      "method": "POST",
+      "path": "/users/me/stop",
+      "description": "Stop push notifications"
+    },
+    {
+      "id": "get_history",
+      "name": "Get History",
+      "method": "GET",
+      "path": "/users/me/history",
+      "description": "Get mailbox history"
+    },
+    {
+      "id": "batch_modify",
+      "name": "Batch Modify",
+      "method": "POST",
+      "path": "/users/me/messages/batchModify",
+      "description": "Modify multiple messages"
+    },
+    {
+      "id": "batch_delete",
+      "name": "Batch Delete",
+      "method": "POST",
+      "path": "/users/me/messages/batchDelete",
+      "description": "Delete multiple messages"
+    }
+  ]
+}
