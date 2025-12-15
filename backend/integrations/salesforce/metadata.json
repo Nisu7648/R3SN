@@ -1,0 +1,305 @@
+{
+  "name": "salesforce",
+  "displayName": "Salesforce",
+  "version": "1.0.0",
+  "description": "Complete Salesforce CRM integration with 40+ endpoints for leads, accounts, contacts, opportunities, and custom objects",
+  "category": "crm",
+  "icon": "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "api",
+      "refresh_token",
+      "full"
+    ]
+  },
+  "baseUrl": "https://{instance}.salesforce.com/services/data/v59.0",
+  "rateLimit": {
+    "quota": 15000,
+    "perDay": 15000,
+    "concurrent": 25
+  },
+  "endpoints": [
+    {
+      "id": "list_leads",
+      "name": "List Leads",
+      "method": "GET",
+      "path": "/sobjects/Lead",
+      "description": "Get all leads"
+    },
+    {
+      "id": "get_lead",
+      "name": "Get Lead",
+      "method": "GET",
+      "path": "/sobjects/Lead/{id}",
+      "description": "Get a specific lead"
+    },
+    {
+      "id": "create_lead",
+      "name": "Create Lead",
+      "method": "POST",
+      "path": "/sobjects/Lead",
+      "description": "Create a new lead"
+    },
+    {
+      "id": "update_lead",
+      "name": "Update Lead",
+      "method": "PATCH",
+      "path": "/sobjects/Lead/{id}",
+      "description": "Update a lead"
+    },
+    {
+      "id": "delete_lead",
+      "name": "Delete Lead",
+      "method": "DELETE",
+      "path": "/sobjects/Lead/{id}",
+      "description": "Delete a lead"
+    },
+    {
+      "id": "convert_lead",
+      "name": "Convert Lead",
+      "method": "POST",
+      "path": "/sobjects/Lead/{id}/convert",
+      "description": "Convert lead to account/contact/opportunity"
+    },
+    {
+      "id": "list_accounts",
+      "name": "List Accounts",
+      "method": "GET",
+      "path": "/sobjects/Account",
+      "description": "Get all accounts"
+    },
+    {
+      "id": "get_account",
+      "name": "Get Account",
+      "method": "GET",
+      "path": "/sobjects/Account/{id}",
+      "description": "Get a specific account"
+    },
+    {
+      "id": "create_account",
+      "name": "Create Account",
+      "method": "POST",
+      "path": "/sobjects/Account",
+      "description": "Create a new account"
+    },
+    {
+      "id": "update_account",
+      "name": "Update Account",
+      "method": "PATCH",
+      "path": "/sobjects/Account/{id}",
+      "description": "Update an account"
+    },
+    {
+      "id": "delete_account",
+      "name": "Delete Account",
+      "method": "DELETE",
+      "path": "/sobjects/Account/{id}",
+      "description": "Delete an account"
+    },
+    {
+      "id": "list_contacts",
+      "name": "List Contacts",
+      "method": "GET",
+      "path": "/sobjects/Contact",
+      "description": "Get all contacts"
+    },
+    {
+      "id": "get_contact",
+      "name": "Get Contact",
+      "method": "GET",
+      "path": "/sobjects/Contact/{id}",
+      "description": "Get a specific contact"
+    },
+    {
+      "id": "create_contact",
+      "name": "Create Contact",
+      "method": "POST",
+      "path": "/sobjects/Contact",
+      "description": "Create a new contact"
+    },
+    {
+      "id": "update_contact",
+      "name": "Update Contact",
+      "method": "PATCH",
+      "path": "/sobjects/Contact/{id}",
+      "description": "Update a contact"
+    },
+    {
+      "id": "delete_contact",
+      "name": "Delete Contact",
+      "method": "DELETE",
+      "path": "/sobjects/Contact/{id}",
+      "description": "Delete a contact"
+    },
+    {
+      "id": "list_opportunities",
+      "name": "List Opportunities",
+      "method": "GET",
+      "path": "/sobjects/Opportunity",
+      "description": "Get all opportunities"
+    },
+    {
+      "id": "get_opportunity",
+      "name": "Get Opportunity",
+      "method": "GET",
+      "path": "/sobjects/Opportunity/{id}",
+      "description": "Get a specific opportunity"
+    },
+    {
+      "id": "create_opportunity",
+      "name": "Create Opportunity",
+      "method": "POST",
+      "path": "/sobjects/Opportunity",
+      "description": "Create a new opportunity"
+    },
+    {
+      "id": "update_opportunity",
+      "name": "Update Opportunity",
+      "method": "PATCH",
+      "path": "/sobjects/Opportunity/{id}",
+      "description": "Update an opportunity"
+    },
+    {
+      "id": "delete_opportunity",
+      "name": "Delete Opportunity",
+      "method": "DELETE",
+      "path": "/sobjects/Opportunity/{id}",
+      "description": "Delete an opportunity"
+    },
+    {
+      "id": "list_cases",
+      "name": "List Cases",
+      "method": "GET",
+      "path": "/sobjects/Case",
+      "description": "Get all cases"
+    },
+    {
+      "id": "get_case",
+      "name": "Get Case",
+      "method": "GET",
+      "path": "/sobjects/Case/{id}",
+      "description": "Get a specific case"
+    },
+    {
+      "id": "create_case",
+      "name": "Create Case",
+      "method": "POST",
+      "path": "/sobjects/Case",
+      "description": "Create a new case"
+    },
+    {
+      "id": "update_case",
+      "name": "Update Case",
+      "method": "PATCH",
+      "path": "/sobjects/Case/{id}",
+      "description": "Update a case"
+    },
+    {
+      "id": "list_tasks",
+      "name": "List Tasks",
+      "method": "GET",
+      "path": "/sobjects/Task",
+      "description": "Get all tasks"
+    },
+    {
+      "id": "create_task",
+      "name": "Create Task",
+      "method": "POST",
+      "path": "/sobjects/Task",
+      "description": "Create a new task"
+    },
+    {
+      "id": "list_events",
+      "name": "List Events",
+      "method": "GET",
+      "path": "/sobjects/Event",
+      "description": "Get all events"
+    },
+    {
+      "id": "create_event",
+      "name": "Create Event",
+      "method": "POST",
+      "path": "/sobjects/Event",
+      "description": "Create a new event"
+    },
+    {
+      "id": "query",
+      "name": "SOQL Query",
+      "method": "GET",
+      "path": "/query",
+      "description": "Execute SOQL query"
+    },
+    {
+      "id": "search",
+      "name": "SOSL Search",
+      "method": "GET",
+      "path": "/search",
+      "description": "Execute SOSL search"
+    },
+    {
+      "id": "describe_global",
+      "name": "Describe Global",
+      "method": "GET",
+      "path": "/sobjects",
+      "description": "Get all available objects"
+    },
+    {
+      "id": "describe_object",
+      "name": "Describe Object",
+      "method": "GET",
+      "path": "/sobjects/{objectType}/describe",
+      "description": "Get object metadata"
+    },
+    {
+      "id": "get_limits",
+      "name": "Get Limits",
+      "method": "GET",
+      "path": "/limits",
+      "description": "Get API usage limits"
+    },
+    {
+      "id": "composite_request",
+      "name": "Composite Request",
+      "method": "POST",
+      "path": "/composite",
+      "description": "Execute multiple requests in one call"
+    },
+    {
+      "id": "batch_request",
+      "name": "Batch Request",
+      "method": "POST",
+      "path": "/composite/batch",
+      "description": "Execute batch requests"
+    },
+    {
+      "id": "tree_request",
+      "name": "Tree Request",
+      "method": "POST",
+      "path": "/composite/tree/{objectType}",
+      "description": "Create records with relationships"
+    },
+    {
+      "id": "get_user_info",
+      "name": "Get User Info",
+      "method": "GET",
+      "path": "/sobjects/User/{id}",
+      "description": "Get user information"
+    },
+    {
+      "id": "list_reports",
+      "name": "List Reports",
+      "method": "GET",
+      "path": "/analytics/reports",
+      "description": "Get all reports"
+    },
+    {
+      "id": "run_report",
+      "name": "Run Report",
+      "method": "POST",
+      "path": "/analytics/reports/{reportId}",
+      "description": "Execute a report"
+    }
+  ]
+}
