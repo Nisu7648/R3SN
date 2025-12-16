@@ -1,0 +1,125 @@
+{
+  "name": "trello",
+  "displayName": "Trello",
+  "version": "1.0.0",
+  "description": "Complete Trello integration with 15 endpoints for boards, lists, cards, members, and labels",
+  "category": "project_management",
+  "icon": "https://cdn.worldvectorlogo.com/logos/trello.svg",
+  "authentication": {
+    "type": "api_key",
+    "params": ["key", "token"]
+  },
+  "baseUrl": "https://api.trello.com/1",
+  "rateLimit": {
+    "perSecond": 10,
+    "perMinute": 300,
+    "perHour": 18000
+  },
+  "endpoints": [
+    {
+      "id": "list_boards",
+      "name": "List Boards",
+      "method": "GET",
+      "path": "/members/me/boards",
+      "description": "List all boards for authenticated user"
+    },
+    {
+      "id": "create_board",
+      "name": "Create Board",
+      "method": "POST",
+      "path": "/boards",
+      "description": "Create a new board"
+    },
+    {
+      "id": "get_board",
+      "name": "Get Board",
+      "method": "GET",
+      "path": "/boards/{id}",
+      "description": "Get board details"
+    },
+    {
+      "id": "list_lists",
+      "name": "List Lists",
+      "method": "GET",
+      "path": "/boards/{id}/lists",
+      "description": "Get all lists on a board"
+    },
+    {
+      "id": "create_list",
+      "name": "Create List",
+      "method": "POST",
+      "path": "/lists",
+      "description": "Create a new list"
+    },
+    {
+      "id": "list_cards",
+      "name": "List Cards",
+      "method": "GET",
+      "path": "/lists/{id}/cards",
+      "description": "Get all cards in a list"
+    },
+    {
+      "id": "create_card",
+      "name": "Create Card",
+      "method": "POST",
+      "path": "/cards",
+      "description": "Create a new card"
+    },
+    {
+      "id": "get_card",
+      "name": "Get Card",
+      "method": "GET",
+      "path": "/cards/{id}",
+      "description": "Get card details"
+    },
+    {
+      "id": "update_card",
+      "name": "Update Card",
+      "method": "PUT",
+      "path": "/cards/{id}",
+      "description": "Update card details"
+    },
+    {
+      "id": "delete_card",
+      "name": "Delete Card",
+      "method": "DELETE",
+      "path": "/cards/{id}",
+      "description": "Delete a card"
+    },
+    {
+      "id": "add_member",
+      "name": "Add Member",
+      "method": "POST",
+      "path": "/cards/{id}/idMembers",
+      "description": "Add member to card"
+    },
+    {
+      "id": "add_label",
+      "name": "Add Label",
+      "method": "POST",
+      "path": "/cards/{id}/idLabels",
+      "description": "Add label to card"
+    },
+    {
+      "id": "add_checklist",
+      "name": "Add Checklist",
+      "method": "POST",
+      "path": "/cards/{id}/checklists",
+      "description": "Add checklist to card"
+    },
+    {
+      "id": "add_attachment",
+      "name": "Add Attachment",
+      "method": "POST",
+      "path": "/cards/{id}/attachments",
+      "description": "Add attachment to card"
+    },
+    {
+      "id": "add_comment",
+      "name": "Add Comment",
+      "method": "POST",
+      "path": "/cards/{id}/actions/comments",
+      "description": "Add comment to card"
+    }
+  ]
+}
