@@ -1,0 +1,274 @@
+{
+  "name": "dropbox",
+  "displayName": "Dropbox",
+  "version": "1.0.0",
+  "description": "Complete Dropbox integration with 35 endpoints for files, folders, sharing, search, and team management",
+  "category": "storage",
+  "icon": "https://cdn.worldvectorlogo.com/logos/dropbox-1.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "account_info.read",
+      "files.metadata.write",
+      "files.metadata.read",
+      "files.content.write",
+      "files.content.read",
+      "sharing.write",
+      "sharing.read"
+    ]
+  },
+  "baseUrl": "https://api.dropboxapi.com/2",
+  "rateLimit": {
+    "quota": 12000,
+    "perHour": 12000,
+    "perSecond": 20
+  },
+  "endpoints": [
+    {
+      "id": "list_folder",
+      "name": "List Folder",
+      "method": "POST",
+      "path": "/files/list_folder",
+      "description": "List contents of a folder"
+    },
+    {
+      "id": "list_folder_continue",
+      "name": "List Folder Continue",
+      "method": "POST",
+      "path": "/files/list_folder/continue",
+      "description": "Continue listing folder contents"
+    },
+    {
+      "id": "get_metadata",
+      "name": "Get Metadata",
+      "method": "POST",
+      "path": "/files/get_metadata",
+      "description": "Get file or folder metadata"
+    },
+    {
+      "id": "download",
+      "name": "Download File",
+      "method": "POST",
+      "path": "/files/download",
+      "description": "Download a file"
+    },
+    {
+      "id": "upload",
+      "name": "Upload File",
+      "method": "POST",
+      "path": "/files/upload",
+      "description": "Upload a file"
+    },
+    {
+      "id": "upload_session_start",
+      "name": "Upload Session Start",
+      "method": "POST",
+      "path": "/files/upload_session/start",
+      "description": "Start upload session for large files"
+    },
+    {
+      "id": "upload_session_append",
+      "name": "Upload Session Append",
+      "method": "POST",
+      "path": "/files/upload_session/append_v2",
+      "description": "Append data to upload session"
+    },
+    {
+      "id": "upload_session_finish",
+      "name": "Upload Session Finish",
+      "method": "POST",
+      "path": "/files/upload_session/finish",
+      "description": "Finish upload session"
+    },
+    {
+      "id": "create_folder",
+      "name": "Create Folder",
+      "method": "POST",
+      "path": "/files/create_folder_v2",
+      "description": "Create a new folder"
+    },
+    {
+      "id": "delete",
+      "name": "Delete File/Folder",
+      "method": "POST",
+      "path": "/files/delete_v2",
+      "description": "Delete a file or folder"
+    },
+    {
+      "id": "permanently_delete",
+      "name": "Permanently Delete",
+      "method": "POST",
+      "path": "/files/permanently_delete",
+      "description": "Permanently delete a file or folder"
+    },
+    {
+      "id": "move",
+      "name": "Move File/Folder",
+      "method": "POST",
+      "path": "/files/move_v2",
+      "description": "Move a file or folder"
+    },
+    {
+      "id": "copy",
+      "name": "Copy File/Folder",
+      "method": "POST",
+      "path": "/files/copy_v2",
+      "description": "Copy a file or folder"
+    },
+    {
+      "id": "restore",
+      "name": "Restore File",
+      "method": "POST",
+      "path": "/files/restore",
+      "description": "Restore a deleted file"
+    },
+    {
+      "id": "search",
+      "name": "Search Files",
+      "method": "POST",
+      "path": "/files/search_v2",
+      "description": "Search for files and folders"
+    },
+    {
+      "id": "get_thumbnail",
+      "name": "Get Thumbnail",
+      "method": "POST",
+      "path": "/files/get_thumbnail_v2",
+      "description": "Get thumbnail for an image"
+    },
+    {
+      "id": "get_preview",
+      "name": "Get Preview",
+      "method": "POST",
+      "path": "/files/get_preview",
+      "description": "Get preview for a file"
+    },
+    {
+      "id": "get_temporary_link",
+      "name": "Get Temporary Link",
+      "method": "POST",
+      "path": "/files/get_temporary_link",
+      "description": "Get temporary download link"
+    },
+    {
+      "id": "create_shared_link",
+      "name": "Create Shared Link",
+      "method": "POST",
+      "path": "/sharing/create_shared_link_with_settings",
+      "description": "Create a shared link"
+    },
+    {
+      "id": "list_shared_links",
+      "name": "List Shared Links",
+      "method": "POST",
+      "path": "/sharing/list_shared_links",
+      "description": "List all shared links"
+    },
+    {
+      "id": "revoke_shared_link",
+      "name": "Revoke Shared Link",
+      "method": "POST",
+      "path": "/sharing/revoke_shared_link",
+      "description": "Revoke a shared link"
+    },
+    {
+      "id": "share_folder",
+      "name": "Share Folder",
+      "method": "POST",
+      "path": "/sharing/share_folder",
+      "description": "Share a folder with users"
+    },
+    {
+      "id": "list_folders",
+      "name": "List Shared Folders",
+      "method": "POST",
+      "path": "/sharing/list_folders",
+      "description": "List all shared folders"
+    },
+    {
+      "id": "add_folder_member",
+      "name": "Add Folder Member",
+      "method": "POST",
+      "path": "/sharing/add_folder_member",
+      "description": "Add member to shared folder"
+    },
+    {
+      "id": "remove_folder_member",
+      "name": "Remove Folder Member",
+      "method": "POST",
+      "path": "/sharing/remove_folder_member_2",
+      "description": "Remove member from shared folder"
+    },
+    {
+      "id": "list_folder_members",
+      "name": "List Folder Members",
+      "method": "POST",
+      "path": "/sharing/list_folder_members",
+      "description": "List members of shared folder"
+    },
+    {
+      "id": "get_account",
+      "name": "Get Account",
+      "method": "POST",
+      "path": "/users/get_account",
+      "description": "Get account information"
+    },
+    {
+      "id": "get_current_account",
+      "name": "Get Current Account",
+      "method": "POST",
+      "path": "/users/get_current_account",
+      "description": "Get current user account info"
+    },
+    {
+      "id": "get_space_usage",
+      "name": "Get Space Usage",
+      "method": "POST",
+      "path": "/users/get_space_usage",
+      "description": "Get space usage information"
+    },
+    {
+      "id": "list_revisions",
+      "name": "List Revisions",
+      "method": "POST",
+      "path": "/files/list_revisions",
+      "description": "List file revisions"
+    },
+    {
+      "id": "save_url",
+      "name": "Save URL",
+      "method": "POST",
+      "path": "/files/save_url",
+      "description": "Save a file from URL to Dropbox"
+    },
+    {
+      "id": "check_job_status",
+      "name": "Check Job Status",
+      "method": "POST",
+      "path": "/files/save_url/check_job_status",
+      "description": "Check status of async job"
+    },
+    {
+      "id": "copy_reference_get",
+      "name": "Get Copy Reference",
+      "method": "POST",
+      "path": "/files/copy_reference/get",
+      "description": "Get copy reference for a file"
+    },
+    {
+      "id": "copy_reference_save",
+      "name": "Save Copy Reference",
+      "method": "POST",
+      "path": "/files/copy_reference/save",
+      "description": "Save file from copy reference"
+    },
+    {
+      "id": "get_file_lock",
+      "name": "Get File Lock",
+      "method": "POST",
+      "path": "/files/lock_file_batch",
+      "description": "Lock files to prevent editing"
+    }
+  ]
+}
