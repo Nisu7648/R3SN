@@ -1,0 +1,289 @@
+{
+  "name": "asana",
+  "displayName": "Asana",
+  "version": "1.0.0",
+  "description": "Complete Asana integration with 38 endpoints for tasks, projects, teams, workspaces, portfolios, and goals",
+  "category": "project_management",
+  "icon": "https://cdn.worldvectorlogo.com/logos/asana-logo.svg",
+  "authentication": {
+    "type": "bearer",
+    "tokenType": "Bearer",
+    "scopes": [
+      "default"
+    ]
+  },
+  "baseUrl": "https://app.asana.com/api/1.0",
+  "rateLimit": {
+    "quota": 1500,
+    "perMinute": 1500,
+    "concurrent": 50
+  },
+  "endpoints": [
+    {
+      "id": "list_tasks",
+      "name": "List Tasks",
+      "method": "GET",
+      "path": "/tasks",
+      "description": "Get all tasks in workspace"
+    },
+    {
+      "id": "get_task",
+      "name": "Get Task",
+      "method": "GET",
+      "path": "/tasks/{task_gid}",
+      "description": "Get a specific task"
+    },
+    {
+      "id": "create_task",
+      "name": "Create Task",
+      "method": "POST",
+      "path": "/tasks",
+      "description": "Create a new task"
+    },
+    {
+      "id": "update_task",
+      "name": "Update Task",
+      "method": "PUT",
+      "path": "/tasks/{task_gid}",
+      "description": "Update a task"
+    },
+    {
+      "id": "delete_task",
+      "name": "Delete Task",
+      "method": "DELETE",
+      "path": "/tasks/{task_gid}",
+      "description": "Delete a task"
+    },
+    {
+      "id": "duplicate_task",
+      "name": "Duplicate Task",
+      "method": "POST",
+      "path": "/tasks/{task_gid}/duplicate",
+      "description": "Duplicate a task"
+    },
+    {
+      "id": "add_task_comment",
+      "name": "Add Task Comment",
+      "method": "POST",
+      "path": "/tasks/{task_gid}/stories",
+      "description": "Add comment to task"
+    },
+    {
+      "id": "get_task_stories",
+      "name": "Get Task Stories",
+      "method": "GET",
+      "path": "/tasks/{task_gid}/stories",
+      "description": "Get all comments and activity on task"
+    },
+    {
+      "id": "add_subtask",
+      "name": "Add Subtask",
+      "method": "POST",
+      "path": "/tasks/{task_gid}/subtasks",
+      "description": "Create a subtask"
+    },
+    {
+      "id": "get_subtasks",
+      "name": "Get Subtasks",
+      "method": "GET",
+      "path": "/tasks/{task_gid}/subtasks",
+      "description": "Get all subtasks of a task"
+    },
+    {
+      "id": "list_projects",
+      "name": "List Projects",
+      "method": "GET",
+      "path": "/projects",
+      "description": "Get all projects"
+    },
+    {
+      "id": "get_project",
+      "name": "Get Project",
+      "method": "GET",
+      "path": "/projects/{project_gid}",
+      "description": "Get a specific project"
+    },
+    {
+      "id": "create_project",
+      "name": "Create Project",
+      "method": "POST",
+      "path": "/projects",
+      "description": "Create a new project"
+    },
+    {
+      "id": "update_project",
+      "name": "Update Project",
+      "method": "PUT",
+      "path": "/projects/{project_gid}",
+      "description": "Update a project"
+    },
+    {
+      "id": "delete_project",
+      "name": "Delete Project",
+      "method": "DELETE",
+      "path": "/projects/{project_gid}",
+      "description": "Delete a project"
+    },
+    {
+      "id": "get_project_tasks",
+      "name": "Get Project Tasks",
+      "method": "GET",
+      "path": "/projects/{project_gid}/tasks",
+      "description": "Get all tasks in a project"
+    },
+    {
+      "id": "add_task_to_project",
+      "name": "Add Task to Project",
+      "method": "POST",
+      "path": "/tasks/{task_gid}/addProject",
+      "description": "Add task to project"
+    },
+    {
+      "id": "remove_task_from_project",
+      "name": "Remove Task from Project",
+      "method": "POST",
+      "path": "/tasks/{task_gid}/removeProject",
+      "description": "Remove task from project"
+    },
+    {
+      "id": "list_sections",
+      "name": "List Sections",
+      "method": "GET",
+      "path": "/projects/{project_gid}/sections",
+      "description": "Get all sections in a project"
+    },
+    {
+      "id": "create_section",
+      "name": "Create Section",
+      "method": "POST",
+      "path": "/projects/{project_gid}/sections",
+      "description": "Create a new section"
+    },
+    {
+      "id": "update_section",
+      "name": "Update Section",
+      "method": "PUT",
+      "path": "/sections/{section_gid}",
+      "description": "Update a section"
+    },
+    {
+      "id": "delete_section",
+      "name": "Delete Section",
+      "method": "DELETE",
+      "path": "/sections/{section_gid}",
+      "description": "Delete a section"
+    },
+    {
+      "id": "list_workspaces",
+      "name": "List Workspaces",
+      "method": "GET",
+      "path": "/workspaces",
+      "description": "Get all workspaces"
+    },
+    {
+      "id": "get_workspace",
+      "name": "Get Workspace",
+      "method": "GET",
+      "path": "/workspaces/{workspace_gid}",
+      "description": "Get a specific workspace"
+    },
+    {
+      "id": "list_teams",
+      "name": "List Teams",
+      "method": "GET",
+      "path": "/organizations/{workspace_gid}/teams",
+      "description": "Get all teams in workspace"
+    },
+    {
+      "id": "get_team",
+      "name": "Get Team",
+      "method": "GET",
+      "path": "/teams/{team_gid}",
+      "description": "Get a specific team"
+    },
+    {
+      "id": "list_users",
+      "name": "List Users",
+      "method": "GET",
+      "path": "/users",
+      "description": "Get all users"
+    },
+    {
+      "id": "get_user",
+      "name": "Get User",
+      "method": "GET",
+      "path": "/users/{user_gid}",
+      "description": "Get a specific user"
+    },
+    {
+      "id": "get_current_user",
+      "name": "Get Current User",
+      "method": "GET",
+      "path": "/users/me",
+      "description": "Get current authenticated user"
+    },
+    {
+      "id": "list_portfolios",
+      "name": "List Portfolios",
+      "method": "GET",
+      "path": "/portfolios",
+      "description": "Get all portfolios"
+    },
+    {
+      "id": "get_portfolio",
+      "name": "Get Portfolio",
+      "method": "GET",
+      "path": "/portfolios/{portfolio_gid}",
+      "description": "Get a specific portfolio"
+    },
+    {
+      "id": "create_portfolio",
+      "name": "Create Portfolio",
+      "method": "POST",
+      "path": "/portfolios",
+      "description": "Create a new portfolio"
+    },
+    {
+      "id": "list_tags",
+      "name": "List Tags",
+      "method": "GET",
+      "path": "/tags",
+      "description": "Get all tags"
+    },
+    {
+      "id": "create_tag",
+      "name": "Create Tag",
+      "method": "POST",
+      "path": "/tags",
+      "description": "Create a new tag"
+    },
+    {
+      "id": "add_tag_to_task",
+      "name": "Add Tag to Task",
+      "method": "POST",
+      "path": "/tasks/{task_gid}/addTag",
+      "description": "Add tag to task"
+    },
+    {
+      "id": "search_workspace",
+      "name": "Search Workspace",
+      "method": "GET",
+      "path": "/workspaces/{workspace_gid}/typeahead",
+      "description": "Search for objects in workspace"
+    },
+    {
+      "id": "list_attachments",
+      "name": "List Attachments",
+      "method": "GET",
+      "path": "/tasks/{task_gid}/attachments",
+      "description": "Get all attachments on task"
+    },
+    {
+      "id": "upload_attachment",
+      "name": "Upload Attachment",
+      "method": "POST",
+      "path": "/attachments",
+      "description": "Upload an attachment"
+    }
+  ]
+}
