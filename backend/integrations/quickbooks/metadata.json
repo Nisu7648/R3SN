@@ -1,0 +1,338 @@
+{
+  "name": "quickbooks",
+  "displayName": "QuickBooks",
+  "version": "1.0.0",
+  "description": "Complete QuickBooks integration with 45 endpoints for invoices, customers, expenses, payments, and financial reports",
+  "category": "accounting",
+  "icon": "https://cdn.worldvectorlogo.com/logos/quickbooks-1.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "com.intuit.quickbooks.accounting"
+    ]
+  },
+  "baseUrl": "https://quickbooks.api.intuit.com/v3/company/{realmId}",
+  "rateLimit": {
+    "quota": 500,
+    "perMinute": 500,
+    "concurrent": 10
+  },
+  "endpoints": [
+    {
+      "id": "list_invoices",
+      "name": "List Invoices",
+      "method": "GET",
+      "path": "/query?query=select * from Invoice",
+      "description": "Get all invoices"
+    },
+    {
+      "id": "get_invoice",
+      "name": "Get Invoice",
+      "method": "GET",
+      "path": "/invoice/{invoice_id}",
+      "description": "Get a specific invoice"
+    },
+    {
+      "id": "create_invoice",
+      "name": "Create Invoice",
+      "method": "POST",
+      "path": "/invoice",
+      "description": "Create a new invoice"
+    },
+    {
+      "id": "update_invoice",
+      "name": "Update Invoice",
+      "method": "POST",
+      "path": "/invoice",
+      "description": "Update an invoice"
+    },
+    {
+      "id": "delete_invoice",
+      "name": "Delete Invoice",
+      "method": "POST",
+      "path": "/invoice?operation=delete",
+      "description": "Delete an invoice"
+    },
+    {
+      "id": "send_invoice",
+      "name": "Send Invoice",
+      "method": "POST",
+      "path": "/invoice/{invoice_id}/send",
+      "description": "Send invoice via email"
+    },
+    {
+      "id": "list_customers",
+      "name": "List Customers",
+      "method": "GET",
+      "path": "/query?query=select * from Customer",
+      "description": "Get all customers"
+    },
+    {
+      "id": "get_customer",
+      "name": "Get Customer",
+      "method": "GET",
+      "path": "/customer/{customer_id}",
+      "description": "Get a specific customer"
+    },
+    {
+      "id": "create_customer",
+      "name": "Create Customer",
+      "method": "POST",
+      "path": "/customer",
+      "description": "Create a new customer"
+    },
+    {
+      "id": "update_customer",
+      "name": "Update Customer",
+      "method": "POST",
+      "path": "/customer",
+      "description": "Update a customer"
+    },
+    {
+      "id": "delete_customer",
+      "name": "Delete Customer",
+      "method": "POST",
+      "path": "/customer?operation=delete",
+      "description": "Delete a customer"
+    },
+    {
+      "id": "list_expenses",
+      "name": "List Expenses",
+      "method": "GET",
+      "path": "/query?query=select * from Purchase",
+      "description": "Get all expenses"
+    },
+    {
+      "id": "get_expense",
+      "name": "Get Expense",
+      "method": "GET",
+      "path": "/purchase/{expense_id}",
+      "description": "Get a specific expense"
+    },
+    {
+      "id": "create_expense",
+      "name": "Create Expense",
+      "method": "POST",
+      "path": "/purchase",
+      "description": "Create a new expense"
+    },
+    {
+      "id": "update_expense",
+      "name": "Update Expense",
+      "method": "POST",
+      "path": "/purchase",
+      "description": "Update an expense"
+    },
+    {
+      "id": "delete_expense",
+      "name": "Delete Expense",
+      "method": "POST",
+      "path": "/purchase?operation=delete",
+      "description": "Delete an expense"
+    },
+    {
+      "id": "list_payments",
+      "name": "List Payments",
+      "method": "GET",
+      "path": "/query?query=select * from Payment",
+      "description": "Get all payments"
+    },
+    {
+      "id": "get_payment",
+      "name": "Get Payment",
+      "method": "GET",
+      "path": "/payment/{payment_id}",
+      "description": "Get a specific payment"
+    },
+    {
+      "id": "create_payment",
+      "name": "Create Payment",
+      "method": "POST",
+      "path": "/payment",
+      "description": "Create a new payment"
+    },
+    {
+      "id": "update_payment",
+      "name": "Update Payment",
+      "method": "POST",
+      "path": "/payment",
+      "description": "Update a payment"
+    },
+    {
+      "id": "list_bills",
+      "name": "List Bills",
+      "method": "GET",
+      "path": "/query?query=select * from Bill",
+      "description": "Get all bills"
+    },
+    {
+      "id": "create_bill",
+      "name": "Create Bill",
+      "method": "POST",
+      "path": "/bill",
+      "description": "Create a new bill"
+    },
+    {
+      "id": "list_vendors",
+      "name": "List Vendors",
+      "method": "GET",
+      "path": "/query?query=select * from Vendor",
+      "description": "Get all vendors"
+    },
+    {
+      "id": "create_vendor",
+      "name": "Create Vendor",
+      "method": "POST",
+      "path": "/vendor",
+      "description": "Create a new vendor"
+    },
+    {
+      "id": "list_items",
+      "name": "List Items",
+      "method": "GET",
+      "path": "/query?query=select * from Item",
+      "description": "Get all items/products"
+    },
+    {
+      "id": "create_item",
+      "name": "Create Item",
+      "method": "POST",
+      "path": "/item",
+      "description": "Create a new item"
+    },
+    {
+      "id": "list_accounts",
+      "name": "List Accounts",
+      "method": "GET",
+      "path": "/query?query=select * from Account",
+      "description": "Get all accounts"
+    },
+    {
+      "id": "create_account",
+      "name": "Create Account",
+      "method": "POST",
+      "path": "/account",
+      "description": "Create a new account"
+    },
+    {
+      "id": "list_estimates",
+      "name": "List Estimates",
+      "method": "GET",
+      "path": "/query?query=select * from Estimate",
+      "description": "Get all estimates"
+    },
+    {
+      "id": "create_estimate",
+      "name": "Create Estimate",
+      "method": "POST",
+      "path": "/estimate",
+      "description": "Create a new estimate"
+    },
+    {
+      "id": "send_estimate",
+      "name": "Send Estimate",
+      "method": "POST",
+      "path": "/estimate/{estimate_id}/send",
+      "description": "Send estimate via email"
+    },
+    {
+      "id": "get_profit_loss",
+      "name": "Get Profit & Loss",
+      "method": "GET",
+      "path": "/reports/ProfitAndLoss",
+      "description": "Get profit and loss report"
+    },
+    {
+      "id": "get_balance_sheet",
+      "name": "Get Balance Sheet",
+      "method": "GET",
+      "path": "/reports/BalanceSheet",
+      "description": "Get balance sheet report"
+    },
+    {
+      "id": "get_cash_flow",
+      "name": "Get Cash Flow",
+      "method": "GET",
+      "path": "/reports/CashFlow",
+      "description": "Get cash flow report"
+    },
+    {
+      "id": "get_aged_receivables",
+      "name": "Get Aged Receivables",
+      "method": "GET",
+      "path": "/reports/AgedReceivables",
+      "description": "Get aged receivables report"
+    },
+    {
+      "id": "get_aged_payables",
+      "name": "Get Aged Payables",
+      "method": "GET",
+      "path": "/reports/AgedPayables",
+      "description": "Get aged payables report"
+    },
+    {
+      "id": "list_tax_codes",
+      "name": "List Tax Codes",
+      "method": "GET",
+      "path": "/query?query=select * from TaxCode",
+      "description": "Get all tax codes"
+    },
+    {
+      "id": "list_classes",
+      "name": "List Classes",
+      "method": "GET",
+      "path": "/query?query=select * from Class",
+      "description": "Get all classes"
+    },
+    {
+      "id": "create_class",
+      "name": "Create Class",
+      "method": "POST",
+      "path": "/class",
+      "description": "Create a new class"
+    },
+    {
+      "id": "list_departments",
+      "name": "List Departments",
+      "method": "GET",
+      "path": "/query?query=select * from Department",
+      "description": "Get all departments"
+    },
+    {
+      "id": "create_department",
+      "name": "Create Department",
+      "method": "POST",
+      "path": "/department",
+      "description": "Create a new department"
+    },
+    {
+      "id": "get_company_info",
+      "name": "Get Company Info",
+      "method": "GET",
+      "path": "/companyinfo/{company_id}",
+      "description": "Get company information"
+    },
+    {
+      "id": "list_journal_entries",
+      "name": "List Journal Entries",
+      "method": "GET",
+      "path": "/query?query=select * from JournalEntry",
+      "description": "Get all journal entries"
+    },
+    {
+      "id": "create_journal_entry",
+      "name": "Create Journal Entry",
+      "method": "POST",
+      "path": "/journalentry",
+      "description": "Create a new journal entry"
+    },
+    {
+      "id": "batch_request",
+      "name": "Batch Request",
+      "method": "POST",
+      "path": "/batch",
+      "description": "Execute multiple operations in one request"
+    }
+  ]
+}
