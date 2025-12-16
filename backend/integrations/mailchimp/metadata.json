@@ -1,0 +1,315 @@
+{
+  "name": "mailchimp",
+  "displayName": "Mailchimp",
+  "version": "1.0.0",
+  "description": "Complete Mailchimp integration with 42 endpoints for email campaigns, audiences, automation, templates, and analytics",
+  "category": "marketing",
+  "icon": "https://cdn.worldvectorlogo.com/logos/mailchimp-freddie-icon.svg",
+  "authentication": {
+    "type": "bearer",
+    "tokenType": "Bearer",
+    "scopes": []
+  },
+  "baseUrl": "https://{dc}.api.mailchimp.com/3.0",
+  "rateLimit": {
+    "quota": 10,
+    "perSecond": 10,
+    "perHour": 500
+  },
+  "endpoints": [
+    {
+      "id": "list_campaigns",
+      "name": "List Campaigns",
+      "method": "GET",
+      "path": "/campaigns",
+      "description": "Get all campaigns"
+    },
+    {
+      "id": "get_campaign",
+      "name": "Get Campaign",
+      "method": "GET",
+      "path": "/campaigns/{campaign_id}",
+      "description": "Get a specific campaign"
+    },
+    {
+      "id": "create_campaign",
+      "name": "Create Campaign",
+      "method": "POST",
+      "path": "/campaigns",
+      "description": "Create a new campaign"
+    },
+    {
+      "id": "update_campaign",
+      "name": "Update Campaign",
+      "method": "PATCH",
+      "path": "/campaigns/{campaign_id}",
+      "description": "Update a campaign"
+    },
+    {
+      "id": "delete_campaign",
+      "name": "Delete Campaign",
+      "method": "DELETE",
+      "path": "/campaigns/{campaign_id}",
+      "description": "Delete a campaign"
+    },
+    {
+      "id": "send_campaign",
+      "name": "Send Campaign",
+      "method": "POST",
+      "path": "/campaigns/{campaign_id}/actions/send",
+      "description": "Send a campaign immediately"
+    },
+    {
+      "id": "schedule_campaign",
+      "name": "Schedule Campaign",
+      "method": "POST",
+      "path": "/campaigns/{campaign_id}/actions/schedule",
+      "description": "Schedule a campaign"
+    },
+    {
+      "id": "unschedule_campaign",
+      "name": "Unschedule Campaign",
+      "method": "POST",
+      "path": "/campaigns/{campaign_id}/actions/unschedule",
+      "description": "Unschedule a campaign"
+    },
+    {
+      "id": "test_campaign",
+      "name": "Test Campaign",
+      "method": "POST",
+      "path": "/campaigns/{campaign_id}/actions/test",
+      "description": "Send a test email"
+    },
+    {
+      "id": "replicate_campaign",
+      "name": "Replicate Campaign",
+      "method": "POST",
+      "path": "/campaigns/{campaign_id}/actions/replicate",
+      "description": "Replicate a campaign"
+    },
+    {
+      "id": "list_lists",
+      "name": "List Audiences",
+      "method": "GET",
+      "path": "/lists",
+      "description": "Get all audience lists"
+    },
+    {
+      "id": "get_list",
+      "name": "Get Audience",
+      "method": "GET",
+      "path": "/lists/{list_id}",
+      "description": "Get a specific audience"
+    },
+    {
+      "id": "create_list",
+      "name": "Create Audience",
+      "method": "POST",
+      "path": "/lists",
+      "description": "Create a new audience"
+    },
+    {
+      "id": "update_list",
+      "name": "Update Audience",
+      "method": "PATCH",
+      "path": "/lists/{list_id}",
+      "description": "Update an audience"
+    },
+    {
+      "id": "delete_list",
+      "name": "Delete Audience",
+      "method": "DELETE",
+      "path": "/lists/{list_id}",
+      "description": "Delete an audience"
+    },
+    {
+      "id": "list_members",
+      "name": "List Members",
+      "method": "GET",
+      "path": "/lists/{list_id}/members",
+      "description": "Get all members in audience"
+    },
+    {
+      "id": "get_member",
+      "name": "Get Member",
+      "method": "GET",
+      "path": "/lists/{list_id}/members/{subscriber_hash}",
+      "description": "Get a specific member"
+    },
+    {
+      "id": "add_member",
+      "name": "Add Member",
+      "method": "POST",
+      "path": "/lists/{list_id}/members",
+      "description": "Add a member to audience"
+    },
+    {
+      "id": "update_member",
+      "name": "Update Member",
+      "method": "PATCH",
+      "path": "/lists/{list_id}/members/{subscriber_hash}",
+      "description": "Update a member"
+    },
+    {
+      "id": "delete_member",
+      "name": "Delete Member",
+      "method": "DELETE",
+      "path": "/lists/{list_id}/members/{subscriber_hash}",
+      "description": "Delete a member permanently"
+    },
+    {
+      "id": "archive_member",
+      "name": "Archive Member",
+      "method": "DELETE",
+      "path": "/lists/{list_id}/members/{subscriber_hash}/actions/delete-permanent",
+      "description": "Archive a member"
+    },
+    {
+      "id": "list_segments",
+      "name": "List Segments",
+      "method": "GET",
+      "path": "/lists/{list_id}/segments",
+      "description": "Get all segments in audience"
+    },
+    {
+      "id": "create_segment",
+      "name": "Create Segment",
+      "method": "POST",
+      "path": "/lists/{list_id}/segments",
+      "description": "Create a new segment"
+    },
+    {
+      "id": "update_segment",
+      "name": "Update Segment",
+      "method": "PATCH",
+      "path": "/lists/{list_id}/segments/{segment_id}",
+      "description": "Update a segment"
+    },
+    {
+      "id": "delete_segment",
+      "name": "Delete Segment",
+      "method": "DELETE",
+      "path": "/lists/{list_id}/segments/{segment_id}",
+      "description": "Delete a segment"
+    },
+    {
+      "id": "list_templates",
+      "name": "List Templates",
+      "method": "GET",
+      "path": "/templates",
+      "description": "Get all templates"
+    },
+    {
+      "id": "get_template",
+      "name": "Get Template",
+      "method": "GET",
+      "path": "/templates/{template_id}",
+      "description": "Get a specific template"
+    },
+    {
+      "id": "create_template",
+      "name": "Create Template",
+      "method": "POST",
+      "path": "/templates",
+      "description": "Create a new template"
+    },
+    {
+      "id": "update_template",
+      "name": "Update Template",
+      "method": "PATCH",
+      "path": "/templates/{template_id}",
+      "description": "Update a template"
+    },
+    {
+      "id": "delete_template",
+      "name": "Delete Template",
+      "method": "DELETE",
+      "path": "/templates/{template_id}",
+      "description": "Delete a template"
+    },
+    {
+      "id": "list_automations",
+      "name": "List Automations",
+      "method": "GET",
+      "path": "/automations",
+      "description": "Get all automations"
+    },
+    {
+      "id": "get_automation",
+      "name": "Get Automation",
+      "method": "GET",
+      "path": "/automations/{workflow_id}",
+      "description": "Get a specific automation"
+    },
+    {
+      "id": "pause_automation",
+      "name": "Pause Automation",
+      "method": "POST",
+      "path": "/automations/{workflow_id}/actions/pause-all-emails",
+      "description": "Pause an automation"
+    },
+    {
+      "id": "start_automation",
+      "name": "Start Automation",
+      "method": "POST",
+      "path": "/automations/{workflow_id}/actions/start-all-emails",
+      "description": "Start an automation"
+    },
+    {
+      "id": "get_campaign_report",
+      "name": "Get Campaign Report",
+      "method": "GET",
+      "path": "/reports/{campaign_id}",
+      "description": "Get campaign performance report"
+    },
+    {
+      "id": "list_reports",
+      "name": "List Reports",
+      "method": "GET",
+      "path": "/reports",
+      "description": "Get all campaign reports"
+    },
+    {
+      "id": "get_email_activity",
+      "name": "Get Email Activity",
+      "method": "GET",
+      "path": "/reports/{campaign_id}/email-activity",
+      "description": "Get email activity for campaign"
+    },
+    {
+      "id": "list_tags",
+      "name": "List Tags",
+      "method": "GET",
+      "path": "/lists/{list_id}/tag-search",
+      "description": "Get all tags in audience"
+    },
+    {
+      "id": "add_tag_to_member",
+      "name": "Add Tag to Member",
+      "method": "POST",
+      "path": "/lists/{list_id}/members/{subscriber_hash}/tags",
+      "description": "Add tags to a member"
+    },
+    {
+      "id": "get_account",
+      "name": "Get Account",
+      "method": "GET",
+      "path": "/",
+      "description": "Get account information"
+    },
+    {
+      "id": "ping",
+      "name": "Ping",
+      "method": "GET",
+      "path": "/ping",
+      "description": "Test API connection"
+    },
+    {
+      "id": "batch_operations",
+      "name": "Batch Operations",
+      "method": "POST",
+      "path": "/batches",
+      "description": "Execute batch operations"
+    }
+  ]
+}
