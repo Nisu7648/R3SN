@@ -1,0 +1,238 @@
+{
+  "name": "linkedin",
+  "displayName": "LinkedIn",
+  "version": "1.0.0",
+  "description": "Complete LinkedIn integration with 30 endpoints for profile, posts, companies, connections, and messaging",
+  "category": "social_media",
+  "icon": "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "r_liteprofile",
+      "r_emailaddress",
+      "w_member_social",
+      "r_organization_social",
+      "w_organization_social",
+      "rw_organization_admin"
+    ]
+  },
+  "baseUrl": "https://api.linkedin.com/v2",
+  "rateLimit": {
+    "quota": 100,
+    "perDay": 100000,
+    "throttle": "application"
+  },
+  "endpoints": [
+    {
+      "id": "get_profile",
+      "name": "Get Profile",
+      "method": "GET",
+      "path": "/me",
+      "description": "Get current user profile"
+    },
+    {
+      "id": "get_email",
+      "name": "Get Email",
+      "method": "GET",
+      "path": "/emailAddress?q=members&projection=(elements*(handle~))",
+      "description": "Get user email address"
+    },
+    {
+      "id": "create_post",
+      "name": "Create Post",
+      "method": "POST",
+      "path": "/ugcPosts",
+      "description": "Create a new post"
+    },
+    {
+      "id": "create_share",
+      "name": "Create Share",
+      "method": "POST",
+      "path": "/shares",
+      "description": "Share content on LinkedIn"
+    },
+    {
+      "id": "get_posts",
+      "name": "Get Posts",
+      "method": "GET",
+      "path": "/ugcPosts?q=authors&authors=List({author_id})",
+      "description": "Get user posts"
+    },
+    {
+      "id": "delete_post",
+      "name": "Delete Post",
+      "method": "DELETE",
+      "path": "/ugcPosts/{post_id}",
+      "description": "Delete a post"
+    },
+    {
+      "id": "get_post_stats",
+      "name": "Get Post Statistics",
+      "method": "GET",
+      "path": "/socialActions/{share_urn}/likes",
+      "description": "Get post engagement statistics"
+    },
+    {
+      "id": "get_post_comments",
+      "name": "Get Post Comments",
+      "method": "GET",
+      "path": "/socialActions/{share_urn}/comments",
+      "description": "Get comments on a post"
+    },
+    {
+      "id": "create_comment",
+      "name": "Create Comment",
+      "method": "POST",
+      "path": "/socialActions/{share_urn}/comments",
+      "description": "Comment on a post"
+    },
+    {
+      "id": "like_post",
+      "name": "Like Post",
+      "method": "POST",
+      "path": "/socialActions/{share_urn}/likes",
+      "description": "Like a post"
+    },
+    {
+      "id": "unlike_post",
+      "name": "Unlike Post",
+      "method": "DELETE",
+      "path": "/socialActions/{share_urn}/likes/{actor_urn}",
+      "description": "Unlike a post"
+    },
+    {
+      "id": "upload_image",
+      "name": "Upload Image",
+      "method": "POST",
+      "path": "/assets?action=registerUpload",
+      "description": "Upload image for post"
+    },
+    {
+      "id": "upload_video",
+      "name": "Upload Video",
+      "method": "POST",
+      "path": "/videos?action=initializeUpload",
+      "description": "Initialize video upload"
+    },
+    {
+      "id": "get_organization",
+      "name": "Get Organization",
+      "method": "GET",
+      "path": "/organizations/{organization_id}",
+      "description": "Get organization details"
+    },
+    {
+      "id": "get_organization_posts",
+      "name": "Get Organization Posts",
+      "method": "GET",
+      "path": "/ugcPosts?q=authors&authors=List(urn:li:organization:{organization_id})",
+      "description": "Get organization posts"
+    },
+    {
+      "id": "create_organization_post",
+      "name": "Create Organization Post",
+      "method": "POST",
+      "path": "/ugcPosts",
+      "description": "Create post as organization"
+    },
+    {
+      "id": "get_organization_followers",
+      "name": "Get Organization Followers",
+      "method": "GET",
+      "path": "/organizationalEntityFollowerStatistics?q=organizationalEntity&organizationalEntity=urn:li:organization:{organization_id}",
+      "description": "Get organization follower count"
+    },
+    {
+      "id": "get_organization_analytics",
+      "name": "Get Organization Analytics",
+      "method": "GET",
+      "path": "/organizationPageStatistics?q=organization&organization=urn:li:organization:{organization_id}",
+      "description": "Get organization page analytics"
+    },
+    {
+      "id": "get_connections",
+      "name": "Get Connections",
+      "method": "GET",
+      "path": "/connections?q=viewer",
+      "description": "Get user connections"
+    },
+    {
+      "id": "send_message",
+      "name": "Send Message",
+      "method": "POST",
+      "path": "/messages",
+      "description": "Send a direct message"
+    },
+    {
+      "id": "get_conversations",
+      "name": "Get Conversations",
+      "method": "GET",
+      "path": "/conversations",
+      "description": "Get message conversations"
+    },
+    {
+      "id": "get_conversation",
+      "name": "Get Conversation",
+      "method": "GET",
+      "path": "/conversations/{conversation_id}",
+      "description": "Get specific conversation"
+    },
+    {
+      "id": "search_companies",
+      "name": "Search Companies",
+      "method": "GET",
+      "path": "/search?q=companies",
+      "description": "Search for companies"
+    },
+    {
+      "id": "search_people",
+      "name": "Search People",
+      "method": "GET",
+      "path": "/search?q=people",
+      "description": "Search for people"
+    },
+    {
+      "id": "get_company_updates",
+      "name": "Get Company Updates",
+      "method": "GET",
+      "path": "/companies/{company_id}/updates",
+      "description": "Get company updates"
+    },
+    {
+      "id": "follow_company",
+      "name": "Follow Company",
+      "method": "POST",
+      "path": "/people/{person_id}/following",
+      "description": "Follow a company"
+    },
+    {
+      "id": "unfollow_company",
+      "name": "Unfollow Company",
+      "method": "DELETE",
+      "path": "/people/{person_id}/following/{company_id}",
+      "description": "Unfollow a company"
+    },
+    {
+      "id": "get_share_statistics",
+      "name": "Get Share Statistics",
+      "method": "GET",
+      "path": "/organizationalEntityShareStatistics?q=organizationalEntity&organizationalEntity=urn:li:organization:{organization_id}",
+      "description": "Get share statistics for organization"
+    },
+    {
+      "id": "get_video_analytics",
+      "name": "Get Video Analytics",
+      "method": "GET",
+      "path": "/videoAnalytics?q=video&video={video_urn}",
+      "description": "Get video analytics"
+    },
+    {
+      "id": "get_member_groups",
+      "name": "Get Member Groups",
+      "method": "GET",
+      "path": "/groups?q=member",
+      "description": "Get groups user is member of"
+    }
+  ]
+}
