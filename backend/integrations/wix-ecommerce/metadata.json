@@ -1,0 +1,306 @@
+{
+  "name": "wix-ecommerce",
+  "displayName": "Wix eCommerce",
+  "version": "1.0.0",
+  "description": "Complete Wix eCommerce integration with 40 endpoints for products, orders, inventory, collections, and store management",
+  "category": "ecommerce",
+  "icon": "https://cdn.worldvectorlogo.com/logos/wix-1.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "wix.stores.read",
+      "wix.stores.write",
+      "wix.orders.read",
+      "wix.orders.write"
+    ]
+  },
+  "baseUrl": "https://www.wixapis.com",
+  "rateLimit": {
+    "quota": 200,
+    "perMinute": 200,
+    "perSecond": 5
+  },
+  "endpoints": [
+    {
+      "id": "list_products",
+      "name": "List Products",
+      "method": "POST",
+      "path": "/stores/v1/products/query",
+      "description": "Query all products"
+    },
+    {
+      "id": "get_product",
+      "name": "Get Product",
+      "method": "GET",
+      "path": "/stores/v1/products/{productId}",
+      "description": "Get a specific product"
+    },
+    {
+      "id": "create_product",
+      "name": "Create Product",
+      "method": "POST",
+      "path": "/stores/v1/products",
+      "description": "Create a new product"
+    },
+    {
+      "id": "update_product",
+      "name": "Update Product",
+      "method": "PATCH",
+      "path": "/stores/v1/products/{productId}",
+      "description": "Update a product"
+    },
+    {
+      "id": "delete_product",
+      "name": "Delete Product",
+      "method": "DELETE",
+      "path": "/stores/v1/products/{productId}",
+      "description": "Delete a product"
+    },
+    {
+      "id": "bulk_update_products",
+      "name": "Bulk Update Products",
+      "method": "POST",
+      "path": "/stores/v1/products/bulk/update",
+      "description": "Update multiple products"
+    },
+    {
+      "id": "list_product_variants",
+      "name": "List Product Variants",
+      "method": "POST",
+      "path": "/stores/v1/products/{productId}/variants/query",
+      "description": "Get product variants"
+    },
+    {
+      "id": "create_product_variant",
+      "name": "Create Product Variant",
+      "method": "POST",
+      "path": "/stores/v1/products/{productId}/variants",
+      "description": "Create a product variant"
+    },
+    {
+      "id": "list_orders",
+      "name": "List Orders",
+      "method": "POST",
+      "path": "/stores/v2/orders/query",
+      "description": "Query all orders"
+    },
+    {
+      "id": "get_order",
+      "name": "Get Order",
+      "method": "GET",
+      "path": "/stores/v2/orders/{orderId}",
+      "description": "Get a specific order"
+    },
+    {
+      "id": "create_order",
+      "name": "Create Order",
+      "method": "POST",
+      "path": "/stores/v2/orders",
+      "description": "Create a new order"
+    },
+    {
+      "id": "update_order",
+      "name": "Update Order",
+      "method": "PATCH",
+      "path": "/stores/v2/orders/{orderId}",
+      "description": "Update an order"
+    },
+    {
+      "id": "cancel_order",
+      "name": "Cancel Order",
+      "method": "POST",
+      "path": "/stores/v2/orders/{orderId}/cancel",
+      "description": "Cancel an order"
+    },
+    {
+      "id": "fulfill_order",
+      "name": "Fulfill Order",
+      "method": "POST",
+      "path": "/stores/v2/orders/{orderId}/fulfillments",
+      "description": "Create fulfillment for order"
+    },
+    {
+      "id": "list_inventory_items",
+      "name": "List Inventory Items",
+      "method": "POST",
+      "path": "/stores/v2/inventoryItems/query",
+      "description": "Query inventory items"
+    },
+    {
+      "id": "get_inventory_item",
+      "name": "Get Inventory Item",
+      "method": "GET",
+      "path": "/stores/v2/inventoryItems/{inventoryItemId}",
+      "description": "Get inventory item"
+    },
+    {
+      "id": "update_inventory",
+      "name": "Update Inventory",
+      "method": "PATCH",
+      "path": "/stores/v2/inventoryItems/{inventoryItemId}",
+      "description": "Update inventory quantity"
+    },
+    {
+      "id": "decrement_inventory",
+      "name": "Decrement Inventory",
+      "method": "POST",
+      "path": "/stores/v2/inventoryItems/{inventoryItemId}/decrement",
+      "description": "Decrease inventory quantity"
+    },
+    {
+      "id": "increment_inventory",
+      "name": "Increment Inventory",
+      "method": "POST",
+      "path": "/stores/v2/inventoryItems/{inventoryItemId}/increment",
+      "description": "Increase inventory quantity"
+    },
+    {
+      "id": "list_collections",
+      "name": "List Collections",
+      "method": "POST",
+      "path": "/stores/v1/collections/query",
+      "description": "Query all collections"
+    },
+    {
+      "id": "get_collection",
+      "name": "Get Collection",
+      "method": "GET",
+      "path": "/stores/v1/collections/{collectionId}",
+      "description": "Get a specific collection"
+    },
+    {
+      "id": "create_collection",
+      "name": "Create Collection",
+      "method": "POST",
+      "path": "/stores/v1/collections",
+      "description": "Create a new collection"
+    },
+    {
+      "id": "update_collection",
+      "name": "Update Collection",
+      "method": "PATCH",
+      "path": "/stores/v1/collections/{collectionId}",
+      "description": "Update a collection"
+    },
+    {
+      "id": "delete_collection",
+      "name": "Delete Collection",
+      "method": "DELETE",
+      "path": "/stores/v1/collections/{collectionId}",
+      "description": "Delete a collection"
+    },
+    {
+      "id": "add_products_to_collection",
+      "name": "Add Products to Collection",
+      "method": "POST",
+      "path": "/stores/v1/collections/{collectionId}/products",
+      "description": "Add products to collection"
+    },
+    {
+      "id": "remove_products_from_collection",
+      "name": "Remove Products from Collection",
+      "method": "DELETE",
+      "path": "/stores/v1/collections/{collectionId}/products",
+      "description": "Remove products from collection"
+    },
+    {
+      "id": "list_carts",
+      "name": "List Carts",
+      "method": "POST",
+      "path": "/ecom/v1/carts/query",
+      "description": "Query all carts"
+    },
+    {
+      "id": "get_cart",
+      "name": "Get Cart",
+      "method": "GET",
+      "path": "/ecom/v1/carts/{cartId}",
+      "description": "Get a specific cart"
+    },
+    {
+      "id": "create_cart",
+      "name": "Create Cart",
+      "method": "POST",
+      "path": "/ecom/v1/carts",
+      "description": "Create a new cart"
+    },
+    {
+      "id": "update_cart",
+      "name": "Update Cart",
+      "method": "PATCH",
+      "path": "/ecom/v1/carts/{cartId}",
+      "description": "Update a cart"
+    },
+    {
+      "id": "delete_cart",
+      "name": "Delete Cart",
+      "method": "DELETE",
+      "path": "/ecom/v1/carts/{cartId}",
+      "description": "Delete a cart"
+    },
+    {
+      "id": "add_to_cart",
+      "name": "Add to Cart",
+      "method": "POST",
+      "path": "/ecom/v1/carts/{cartId}/addToCart",
+      "description": "Add items to cart"
+    },
+    {
+      "id": "remove_from_cart",
+      "name": "Remove from Cart",
+      "method": "POST",
+      "path": "/ecom/v1/carts/{cartId}/removeLineItems",
+      "description": "Remove items from cart"
+    },
+    {
+      "id": "create_checkout",
+      "name": "Create Checkout",
+      "method": "POST",
+      "path": "/ecom/v1/checkouts",
+      "description": "Create checkout from cart"
+    },
+    {
+      "id": "list_abandoned_carts",
+      "name": "List Abandoned Carts",
+      "method": "POST",
+      "path": "/ecom/v1/abandoned-carts/query",
+      "description": "Query abandoned carts"
+    },
+    {
+      "id": "get_store_properties",
+      "name": "Get Store Properties",
+      "method": "GET",
+      "path": "/stores/v1/properties",
+      "description": "Get store properties"
+    },
+    {
+      "id": "list_shipping_rules",
+      "name": "List Shipping Rules",
+      "method": "GET",
+      "path": "/stores/v1/shipping-rules",
+      "description": "Get shipping rules"
+    },
+    {
+      "id": "estimate_shipping",
+      "name": "Estimate Shipping",
+      "method": "POST",
+      "path": "/ecom/v1/shipping/estimate",
+      "description": "Estimate shipping cost"
+    },
+    {
+      "id": "list_payment_providers",
+      "name": "List Payment Providers",
+      "method": "GET",
+      "path": "/payment-provider-spi/v1/providers",
+      "description": "Get payment providers"
+    },
+    {
+      "id": "create_refund",
+      "name": "Create Refund",
+      "method": "POST",
+      "path": "/stores/v2/orders/{orderId}/refunds",
+      "description": "Create a refund"
+    }
+  ]
+}
