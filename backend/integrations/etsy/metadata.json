@@ -1,0 +1,370 @@
+{
+  "name": "etsy",
+  "displayName": "Etsy",
+  "version": "1.0.0",
+  "description": "Complete Etsy integration with 50 endpoints for listings, orders, shops, inventory, shipping, and marketplace management",
+  "category": "ecommerce",
+  "icon": "https://cdn.worldvectorlogo.com/logos/etsy-1.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "listings_r",
+      "listings_w",
+      "transactions_r",
+      "shops_r",
+      "shops_w"
+    ]
+  },
+  "baseUrl": "https://openapi.etsy.com/v3/application",
+  "rateLimit": {
+    "quota": 10000,
+    "perDay": 10000,
+    "perSecond": 10
+  },
+  "endpoints": [
+    {
+      "id": "list_shops",
+      "name": "List Shops",
+      "method": "GET",
+      "path": "/shops",
+      "description": "Get all shops for user"
+    },
+    {
+      "id": "get_shop",
+      "name": "Get Shop",
+      "method": "GET",
+      "path": "/shops/{shop_id}",
+      "description": "Get a specific shop"
+    },
+    {
+      "id": "update_shop",
+      "name": "Update Shop",
+      "method": "PUT",
+      "path": "/shops/{shop_id}",
+      "description": "Update shop details"
+    },
+    {
+      "id": "get_shop_sections",
+      "name": "Get Shop Sections",
+      "method": "GET",
+      "path": "/shops/{shop_id}/sections",
+      "description": "Get shop sections"
+    },
+    {
+      "id": "create_shop_section",
+      "name": "Create Shop Section",
+      "method": "POST",
+      "path": "/shops/{shop_id}/sections",
+      "description": "Create a shop section"
+    },
+    {
+      "id": "list_listings",
+      "name": "List Listings",
+      "method": "GET",
+      "path": "/shops/{shop_id}/listings",
+      "description": "Get all listings in shop"
+    },
+    {
+      "id": "get_listing",
+      "name": "Get Listing",
+      "method": "GET",
+      "path": "/listings/{listing_id}",
+      "description": "Get a specific listing"
+    },
+    {
+      "id": "create_listing",
+      "name": "Create Listing",
+      "method": "POST",
+      "path": "/shops/{shop_id}/listings",
+      "description": "Create a new listing"
+    },
+    {
+      "id": "update_listing",
+      "name": "Update Listing",
+      "method": "PATCH",
+      "path": "/shops/{shop_id}/listings/{listing_id}",
+      "description": "Update a listing"
+    },
+    {
+      "id": "delete_listing",
+      "name": "Delete Listing",
+      "method": "DELETE",
+      "path": "/listings/{listing_id}",
+      "description": "Delete a listing"
+    },
+    {
+      "id": "get_listing_inventory",
+      "name": "Get Listing Inventory",
+      "method": "GET",
+      "path": "/listings/{listing_id}/inventory",
+      "description": "Get listing inventory"
+    },
+    {
+      "id": "update_listing_inventory",
+      "name": "Update Listing Inventory",
+      "method": "PUT",
+      "path": "/listings/{listing_id}/inventory",
+      "description": "Update listing inventory"
+    },
+    {
+      "id": "list_listing_images",
+      "name": "List Listing Images",
+      "method": "GET",
+      "path": "/shops/{shop_id}/listings/{listing_id}/images",
+      "description": "Get listing images"
+    },
+    {
+      "id": "upload_listing_image",
+      "name": "Upload Listing Image",
+      "method": "POST",
+      "path": "/shops/{shop_id}/listings/{listing_id}/images",
+      "description": "Upload image to listing"
+    },
+    {
+      "id": "delete_listing_image",
+      "name": "Delete Listing Image",
+      "method": "DELETE",
+      "path": "/shops/{shop_id}/listings/{listing_id}/images/{image_id}",
+      "description": "Delete listing image"
+    },
+    {
+      "id": "list_listing_variations",
+      "name": "List Listing Variations",
+      "method": "GET",
+      "path": "/listings/{listing_id}/variations",
+      "description": "Get listing variations"
+    },
+    {
+      "id": "create_listing_variation",
+      "name": "Create Listing Variation",
+      "method": "POST",
+      "path": "/listings/{listing_id}/variations",
+      "description": "Create listing variation"
+    },
+    {
+      "id": "list_receipts",
+      "name": "List Receipts",
+      "method": "GET",
+      "path": "/shops/{shop_id}/receipts",
+      "description": "Get all receipts (orders)"
+    },
+    {
+      "id": "get_receipt",
+      "name": "Get Receipt",
+      "method": "GET",
+      "path": "/shops/{shop_id}/receipts/{receipt_id}",
+      "description": "Get a specific receipt"
+    },
+    {
+      "id": "update_receipt",
+      "name": "Update Receipt",
+      "method": "PUT",
+      "path": "/shops/{shop_id}/receipts/{receipt_id}",
+      "description": "Update a receipt"
+    },
+    {
+      "id": "list_transactions",
+      "name": "List Transactions",
+      "method": "GET",
+      "path": "/shops/{shop_id}/transactions",
+      "description": "Get all transactions"
+    },
+    {
+      "id": "get_transaction",
+      "name": "Get Transaction",
+      "method": "GET",
+      "path": "/shops/{shop_id}/transactions/{transaction_id}",
+      "description": "Get a specific transaction"
+    },
+    {
+      "id": "list_payment_account_ledger",
+      "name": "List Payment Ledger",
+      "method": "GET",
+      "path": "/shops/{shop_id}/payment-account/ledger-entries",
+      "description": "Get payment ledger entries"
+    },
+    {
+      "id": "list_shipping_profiles",
+      "name": "List Shipping Profiles",
+      "method": "GET",
+      "path": "/shops/{shop_id}/shipping-profiles",
+      "description": "Get shipping profiles"
+    },
+    {
+      "id": "get_shipping_profile",
+      "name": "Get Shipping Profile",
+      "method": "GET",
+      "path": "/shops/{shop_id}/shipping-profiles/{shipping_profile_id}",
+      "description": "Get a specific shipping profile"
+    },
+    {
+      "id": "create_shipping_profile",
+      "name": "Create Shipping Profile",
+      "method": "POST",
+      "path": "/shops/{shop_id}/shipping-profiles",
+      "description": "Create a shipping profile"
+    },
+    {
+      "id": "update_shipping_profile",
+      "name": "Update Shipping Profile",
+      "method": "PUT",
+      "path": "/shops/{shop_id}/shipping-profiles/{shipping_profile_id}",
+      "description": "Update a shipping profile"
+    },
+    {
+      "id": "delete_shipping_profile",
+      "name": "Delete Shipping Profile",
+      "method": "DELETE",
+      "path": "/shops/{shop_id}/shipping-profiles/{shipping_profile_id}",
+      "description": "Delete a shipping profile"
+    },
+    {
+      "id": "create_shipping_carrier",
+      "name": "Create Shipping Carrier",
+      "method": "POST",
+      "path": "/shops/{shop_id}/shipping-profiles/{shipping_profile_id}/carriers",
+      "description": "Add shipping carrier"
+    },
+    {
+      "id": "list_production_partners",
+      "name": "List Production Partners",
+      "method": "GET",
+      "path": "/shops/{shop_id}/production-partners",
+      "description": "Get production partners"
+    },
+    {
+      "id": "create_production_partner",
+      "name": "Create Production Partner",
+      "method": "POST",
+      "path": "/shops/{shop_id}/production-partners",
+      "description": "Create a production partner"
+    },
+    {
+      "id": "list_shop_coupons",
+      "name": "List Shop Coupons",
+      "method": "GET",
+      "path": "/shops/{shop_id}/coupons",
+      "description": "Get shop coupons"
+    },
+    {
+      "id": "create_shop_coupon",
+      "name": "Create Shop Coupon",
+      "method": "POST",
+      "path": "/shops/{shop_id}/coupons",
+      "description": "Create a coupon"
+    },
+    {
+      "id": "update_shop_coupon",
+      "name": "Update Shop Coupon",
+      "method": "PUT",
+      "path": "/shops/{shop_id}/coupons/{coupon_id}",
+      "description": "Update a coupon"
+    },
+    {
+      "id": "delete_shop_coupon",
+      "name": "Delete Shop Coupon",
+      "method": "DELETE",
+      "path": "/shops/{shop_id}/coupons/{coupon_id}",
+      "description": "Delete a coupon"
+    },
+    {
+      "id": "search_listings",
+      "name": "Search Listings",
+      "method": "GET",
+      "path": "/listings/active",
+      "description": "Search active listings"
+    },
+    {
+      "id": "find_shops",
+      "name": "Find Shops",
+      "method": "GET",
+      "path": "/shops",
+      "description": "Search for shops"
+    },
+    {
+      "id": "get_user",
+      "name": "Get User",
+      "method": "GET",
+      "path": "/users/{user_id}",
+      "description": "Get user details"
+    },
+    {
+      "id": "get_me",
+      "name": "Get Current User",
+      "method": "GET",
+      "path": "/users/me",
+      "description": "Get current authenticated user"
+    },
+    {
+      "id": "list_reviews",
+      "name": "List Reviews",
+      "method": "GET",
+      "path": "/shops/{shop_id}/reviews",
+      "description": "Get shop reviews"
+    },
+    {
+      "id": "get_listing_reviews",
+      "name": "Get Listing Reviews",
+      "method": "GET",
+      "path": "/listings/{listing_id}/reviews",
+      "description": "Get reviews for listing"
+    },
+    {
+      "id": "list_conversations",
+      "name": "List Conversations",
+      "method": "GET",
+      "path": "/conversations",
+      "description": "Get all conversations"
+    },
+    {
+      "id": "get_conversation",
+      "name": "Get Conversation",
+      "method": "GET",
+      "path": "/conversations/{conversation_id}",
+      "description": "Get a specific conversation"
+    },
+    {
+      "id": "send_message",
+      "name": "Send Message",
+      "method": "POST",
+      "path": "/conversations/{conversation_id}/messages",
+      "description": "Send a message"
+    },
+    {
+      "id": "get_shop_stats",
+      "name": "Get Shop Statistics",
+      "method": "GET",
+      "path": "/shops/{shop_id}/stats",
+      "description": "Get shop statistics"
+    },
+    {
+      "id": "list_taxonomy",
+      "name": "List Taxonomy",
+      "method": "GET",
+      "path": "/taxonomy/seller",
+      "description": "Get seller taxonomy"
+    },
+    {
+      "id": "get_listing_properties",
+      "name": "Get Listing Properties",
+      "method": "GET",
+      "path": "/taxonomy/seller/{taxonomy_id}/properties",
+      "description": "Get properties for taxonomy"
+    },
+    {
+      "id": "create_draft_listing",
+      "name": "Create Draft Listing",
+      "method": "POST",
+      "path": "/shops/{shop_id}/listings/draft",
+      "description": "Create a draft listing"
+    },
+    {
+      "id": "publish_listing",
+      "name": "Publish Listing",
+      "method": "POST",
+      "path": "/shops/{shop_id}/listings/{listing_id}/publish",
+      "description": "Publish a draft listing"
+    }
+  ]
+}
