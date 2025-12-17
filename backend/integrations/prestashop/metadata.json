@@ -1,0 +1,336 @@
+{
+  "name": "prestashop",
+  "displayName": "PrestaShop",
+  "version": "1.0.0",
+  "description": "Complete PrestaShop integration with 45 endpoints for products, orders, customers, categories, carriers, and store management",
+  "category": "ecommerce",
+  "icon": "https://cdn.worldvectorlogo.com/logos/prestashop.svg",
+  "authentication": {
+    "type": "apikey",
+    "tokenType": "Basic",
+    "scopes": []
+  },
+  "baseUrl": "https://{store_url}/api",
+  "rateLimit": {
+    "quota": 500,
+    "perMinute": 500,
+    "throttle": "per_store"
+  },
+  "endpoints": [
+    {
+      "id": "list_products",
+      "name": "List Products",
+      "method": "GET",
+      "path": "/products",
+      "description": "Get all products"
+    },
+    {
+      "id": "get_product",
+      "name": "Get Product",
+      "method": "GET",
+      "path": "/products/{id}",
+      "description": "Get a specific product"
+    },
+    {
+      "id": "create_product",
+      "name": "Create Product",
+      "method": "POST",
+      "path": "/products",
+      "description": "Create a new product"
+    },
+    {
+      "id": "update_product",
+      "name": "Update Product",
+      "method": "PUT",
+      "path": "/products/{id}",
+      "description": "Update a product"
+    },
+    {
+      "id": "delete_product",
+      "name": "Delete Product",
+      "method": "DELETE",
+      "path": "/products/{id}",
+      "description": "Delete a product"
+    },
+    {
+      "id": "search_products",
+      "name": "Search Products",
+      "method": "GET",
+      "path": "/products?filter[name]=[{search_term}]",
+      "description": "Search products by name"
+    },
+    {
+      "id": "list_orders",
+      "name": "List Orders",
+      "method": "GET",
+      "path": "/orders",
+      "description": "Get all orders"
+    },
+    {
+      "id": "get_order",
+      "name": "Get Order",
+      "method": "GET",
+      "path": "/orders/{id}",
+      "description": "Get a specific order"
+    },
+    {
+      "id": "create_order",
+      "name": "Create Order",
+      "method": "POST",
+      "path": "/orders",
+      "description": "Create a new order"
+    },
+    {
+      "id": "update_order",
+      "name": "Update Order",
+      "method": "PUT",
+      "path": "/orders/{id}",
+      "description": "Update an order"
+    },
+    {
+      "id": "delete_order",
+      "name": "Delete Order",
+      "method": "DELETE",
+      "path": "/orders/{id}",
+      "description": "Delete an order"
+    },
+    {
+      "id": "list_order_states",
+      "name": "List Order States",
+      "method": "GET",
+      "path": "/order_states",
+      "description": "Get all order states"
+    },
+    {
+      "id": "list_order_histories",
+      "name": "List Order Histories",
+      "method": "GET",
+      "path": "/order_histories",
+      "description": "Get order history records"
+    },
+    {
+      "id": "create_order_history",
+      "name": "Create Order History",
+      "method": "POST",
+      "path": "/order_histories",
+      "description": "Add order history entry"
+    },
+    {
+      "id": "list_customers",
+      "name": "List Customers",
+      "method": "GET",
+      "path": "/customers",
+      "description": "Get all customers"
+    },
+    {
+      "id": "get_customer",
+      "name": "Get Customer",
+      "method": "GET",
+      "path": "/customers/{id}",
+      "description": "Get a specific customer"
+    },
+    {
+      "id": "create_customer",
+      "name": "Create Customer",
+      "method": "POST",
+      "path": "/customers",
+      "description": "Create a new customer"
+    },
+    {
+      "id": "update_customer",
+      "name": "Update Customer",
+      "method": "PUT",
+      "path": "/customers/{id}",
+      "description": "Update a customer"
+    },
+    {
+      "id": "delete_customer",
+      "name": "Delete Customer",
+      "method": "DELETE",
+      "path": "/customers/{id}",
+      "description": "Delete a customer"
+    },
+    {
+      "id": "list_addresses",
+      "name": "List Addresses",
+      "method": "GET",
+      "path": "/addresses",
+      "description": "Get all addresses"
+    },
+    {
+      "id": "create_address",
+      "name": "Create Address",
+      "method": "POST",
+      "path": "/addresses",
+      "description": "Create a new address"
+    },
+    {
+      "id": "list_categories",
+      "name": "List Categories",
+      "method": "GET",
+      "path": "/categories",
+      "description": "Get all categories"
+    },
+    {
+      "id": "get_category",
+      "name": "Get Category",
+      "method": "GET",
+      "path": "/categories/{id}",
+      "description": "Get a specific category"
+    },
+    {
+      "id": "create_category",
+      "name": "Create Category",
+      "method": "POST",
+      "path": "/categories",
+      "description": "Create a new category"
+    },
+    {
+      "id": "update_category",
+      "name": "Update Category",
+      "method": "PUT",
+      "path": "/categories/{id}",
+      "description": "Update a category"
+    },
+    {
+      "id": "delete_category",
+      "name": "Delete Category",
+      "method": "DELETE",
+      "path": "/categories/{id}",
+      "description": "Delete a category"
+    },
+    {
+      "id": "list_carriers",
+      "name": "List Carriers",
+      "method": "GET",
+      "path": "/carriers",
+      "description": "Get all carriers"
+    },
+    {
+      "id": "get_carrier",
+      "name": "Get Carrier",
+      "method": "GET",
+      "path": "/carriers/{id}",
+      "description": "Get a specific carrier"
+    },
+    {
+      "id": "create_carrier",
+      "name": "Create Carrier",
+      "method": "POST",
+      "path": "/carriers",
+      "description": "Create a new carrier"
+    },
+    {
+      "id": "list_carts",
+      "name": "List Carts",
+      "method": "GET",
+      "path": "/carts",
+      "description": "Get all carts"
+    },
+    {
+      "id": "get_cart",
+      "name": "Get Cart",
+      "method": "GET",
+      "path": "/carts/{id}",
+      "description": "Get a specific cart"
+    },
+    {
+      "id": "create_cart",
+      "name": "Create Cart",
+      "method": "POST",
+      "path": "/carts",
+      "description": "Create a new cart"
+    },
+    {
+      "id": "list_cart_rules",
+      "name": "List Cart Rules",
+      "method": "GET",
+      "path": "/cart_rules",
+      "description": "Get all cart rules (discounts)"
+    },
+    {
+      "id": "create_cart_rule",
+      "name": "Create Cart Rule",
+      "method": "POST",
+      "path": "/cart_rules",
+      "description": "Create a cart rule"
+    },
+    {
+      "id": "list_stock_availables",
+      "name": "List Stock Availables",
+      "method": "GET",
+      "path": "/stock_availables",
+      "description": "Get stock availability"
+    },
+    {
+      "id": "update_stock_available",
+      "name": "Update Stock Available",
+      "method": "PUT",
+      "path": "/stock_availables/{id}",
+      "description": "Update stock availability"
+    },
+    {
+      "id": "list_manufacturers",
+      "name": "List Manufacturers",
+      "method": "GET",
+      "path": "/manufacturers",
+      "description": "Get all manufacturers"
+    },
+    {
+      "id": "create_manufacturer",
+      "name": "Create Manufacturer",
+      "method": "POST",
+      "path": "/manufacturers",
+      "description": "Create a manufacturer"
+    },
+    {
+      "id": "list_suppliers",
+      "name": "List Suppliers",
+      "method": "GET",
+      "path": "/suppliers",
+      "description": "Get all suppliers"
+    },
+    {
+      "id": "create_supplier",
+      "name": "Create Supplier",
+      "method": "POST",
+      "path": "/suppliers",
+      "description": "Create a supplier"
+    },
+    {
+      "id": "list_images",
+      "name": "List Images",
+      "method": "GET",
+      "path": "/images/products/{product_id}",
+      "description": "Get product images"
+    },
+    {
+      "id": "upload_image",
+      "name": "Upload Image",
+      "method": "POST",
+      "path": "/images/products/{product_id}",
+      "description": "Upload product image"
+    },
+    {
+      "id": "list_languages",
+      "name": "List Languages",
+      "method": "GET",
+      "path": "/languages",
+      "description": "Get all languages"
+    },
+    {
+      "id": "list_currencies",
+      "name": "List Currencies",
+      "method": "GET",
+      "path": "/currencies",
+      "description": "Get all currencies"
+    },
+    {
+      "id": "list_countries",
+      "name": "List Countries",
+      "method": "GET",
+      "path": "/countries",
+      "description": "Get all countries"
+    }
+  ]
+}
