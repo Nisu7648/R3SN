@@ -1,0 +1,64 @@
+{
+  "name": "OpenAI",
+  "id": "openai",
+  "version": "1.0.0",
+  "description": "OpenAI GPT models, DALL-E, Whisper, and embeddings",
+  "category": "ai",
+  "icon": "🤖",
+  "color": "#10A37F",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "chatCompletion",
+      "name": "Chat Completion",
+      "description": "Generate chat responses with GPT"
+    },
+    {
+      "id": "textCompletion",
+      "name": "Text Completion",
+      "description": "Generate text completions"
+    },
+    {
+      "id": "createImage",
+      "name": "Create Image",
+      "description": "Generate images with DALL-E"
+    },
+    {
+      "id": "createEmbedding",
+      "name": "Create Embedding",
+      "description": "Generate text embeddings"
+    },
+    {
+      "id": "moderateContent",
+      "name": "Moderate Content",
+      "description": "Check content for policy violations"
+    },
+    {
+      "id": "listModels",
+      "name": "List Models",
+      "description": "List available models"
+    },
+    {
+      "id": "createSpeech",
+      "name": "Create Speech",
+      "description": "Text-to-speech with TTS"
+    },
+    {
+      "id": "transcribeAudio",
+      "name": "Transcribe Audio",
+      "description": "Speech-to-text with Whisper"
+    }
+  ],
+  "documentation": "https://platform.openai.com/docs/api-reference",
+  "setupGuide": "https://platform.openai.com/api-keys"
+}
