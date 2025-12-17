@@ -1,0 +1,74 @@
+{
+  "name": "Hugging Face",
+  "id": "huggingface",
+  "version": "1.0.0",
+  "description": "Hugging Face AI model hub with 100,000+ models",
+  "category": "ai",
+  "icon": "🤗",
+  "color": "#FFD21E",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "textGeneration",
+      "name": "Text Generation",
+      "description": "Generate text with LLMs"
+    },
+    {
+      "id": "textClassification",
+      "name": "Text Classification",
+      "description": "Classify text into categories"
+    },
+    {
+      "id": "tokenClassification",
+      "name": "Token Classification",
+      "description": "Named entity recognition"
+    },
+    {
+      "id": "questionAnswering",
+      "name": "Question Answering",
+      "description": "Answer questions from context"
+    },
+    {
+      "id": "summarization",
+      "name": "Summarization",
+      "description": "Summarize long text"
+    },
+    {
+      "id": "translation",
+      "name": "Translation",
+      "description": "Translate text"
+    },
+    {
+      "id": "sentimentAnalysis",
+      "name": "Sentiment Analysis",
+      "description": "Analyze text sentiment"
+    },
+    {
+      "id": "imageClassification",
+      "name": "Image Classification",
+      "description": "Classify images"
+    },
+    {
+      "id": "objectDetection",
+      "name": "Object Detection",
+      "description": "Detect objects in images"
+    },
+    {
+      "id": "imageToText",
+      "name": "Image to Text",
+      "description": "Generate captions for images"
+    }
+  ],
+  "documentation": "https://huggingface.co/docs/api-inference",
+  "setupGuide": "https://huggingface.co/settings/tokens"
+}
