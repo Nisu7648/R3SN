@@ -1,0 +1,43 @@
+{
+  "name": "clickup",
+  "displayName": "ClickUp",
+  "version": "1.0.0",
+  "description": "Complete ClickUp integration with 25 endpoints for workspaces, spaces, folders, lists, tasks, and time tracking",
+  "category": "project_management",
+  "icon": "https://clickup.com/landing/images/logo-clickup.svg",
+  "authentication": {
+    "type": "api_key",
+    "tokenType": "Bearer"
+  },
+  "baseUrl": "https://api.clickup.com/api/v2",
+  "rateLimit": {
+    "perMinute": 100
+  },
+  "endpoints": [
+    {"id": "get_teams", "name": "Get Teams", "method": "GET", "path": "/team", "description": "Get authorized teams/workspaces"},
+    {"id": "get_spaces", "name": "Get Spaces", "method": "GET", "path": "/team/{team_id}/space", "description": "Get spaces in team"},
+    {"id": "create_space", "name": "Create Space", "method": "POST", "path": "/team/{team_id}/space", "description": "Create a new space"},
+    {"id": "get_space", "name": "Get Space", "method": "GET", "path": "/space/{space_id}", "description": "Get space details"},
+    {"id": "update_space", "name": "Update Space", "method": "PUT", "path": "/space/{space_id}", "description": "Update space"},
+    {"id": "delete_space", "name": "Delete Space", "method": "DELETE", "path": "/space/{space_id}", "description": "Delete space"},
+    {"id": "get_folders", "name": "Get Folders", "method": "GET", "path": "/space/{space_id}/folder", "description": "Get folders in space"},
+    {"id": "create_folder", "name": "Create Folder", "method": "POST", "path": "/space/{space_id}/folder", "description": "Create folder"},
+    {"id": "get_lists", "name": "Get Lists", "method": "GET", "path": "/folder/{folder_id}/list", "description": "Get lists in folder"},
+    {"id": "create_list", "name": "Create List", "method": "POST", "path": "/folder/{folder_id}/list", "description": "Create list"},
+    {"id": "get_list", "name": "Get List", "method": "GET", "path": "/list/{list_id}", "description": "Get list details"},
+    {"id": "get_tasks", "name": "Get Tasks", "method": "GET", "path": "/list/{list_id}/task", "description": "Get tasks in list"},
+    {"id": "create_task", "name": "Create Task", "method": "POST", "path": "/list/{list_id}/task", "description": "Create task"},
+    {"id": "get_task", "name": "Get Task", "method": "GET", "path": "/task/{task_id}", "description": "Get task details"},
+    {"id": "update_task", "name": "Update Task", "method": "PUT", "path": "/task/{task_id}", "description": "Update task"},
+    {"id": "delete_task", "name": "Delete Task", "method": "DELETE", "path": "/task/{task_id}", "description": "Delete task"},
+    {"id": "add_comment", "name": "Add Comment", "method": "POST", "path": "/task/{task_id}/comment", "description": "Add comment to task"},
+    {"id": "get_comments", "name": "Get Comments", "method": "GET", "path": "/task/{task_id}/comment", "description": "Get task comments"},
+    {"id": "create_checklist", "name": "Create Checklist", "method": "POST", "path": "/task/{task_id}/checklist", "description": "Create checklist"},
+    {"id": "add_attachment", "name": "Add Attachment", "method": "POST", "path": "/task/{task_id}/attachment", "description": "Add attachment"},
+    {"id": "get_time_entries", "name": "Get Time Entries", "method": "GET", "path": "/team/{team_id}/time_entries", "description": "Get time entries"},
+    {"id": "create_time_entry", "name": "Create Time Entry", "method": "POST", "path": "/team/{team_id}/time_entries", "description": "Create time entry"},
+    {"id": "get_members", "name": "Get Members", "method": "GET", "path": "/team/{team_id}/user", "description": "Get team members"},
+    {"id": "get_tags", "name": "Get Tags", "method": "GET", "path": "/space/{space_id}/tag", "description": "Get space tags"},
+    {"id": "create_tag", "name": "Create Tag", "method": "POST", "path": "/space/{space_id}/tag", "description": "Create tag"}
+  ]
+}
