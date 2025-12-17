@@ -1,0 +1,81 @@
+{
+  "name": "n8n",
+  "id": "n8n",
+  "version": "1.0.0",
+  "description": "n8n workflow automation platform",
+  "category": "automation",
+  "icon": "⚡",
+  "color": "#EA4B71",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key",
+        "type": "password",
+        "required": true
+      },
+      {
+        "name": "instanceUrl",
+        "label": "Instance URL",
+        "type": "text",
+        "required": false,
+        "description": "Your n8n instance URL (optional)"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "listWorkflows",
+      "name": "List Workflows",
+      "description": "List all workflows"
+    },
+    {
+      "id": "getWorkflow",
+      "name": "Get Workflow",
+      "description": "Get workflow details"
+    },
+    {
+      "id": "createWorkflow",
+      "name": "Create Workflow",
+      "description": "Create new workflow"
+    },
+    {
+      "id": "updateWorkflow",
+      "name": "Update Workflow",
+      "description": "Update workflow"
+    },
+    {
+      "id": "deleteWorkflow",
+      "name": "Delete Workflow",
+      "description": "Delete workflow"
+    },
+    {
+      "id": "activateWorkflow",
+      "name": "Activate Workflow",
+      "description": "Activate workflow"
+    },
+    {
+      "id": "deactivateWorkflow",
+      "name": "Deactivate Workflow",
+      "description": "Deactivate workflow"
+    },
+    {
+      "id": "executeWorkflow",
+      "name": "Execute Workflow",
+      "description": "Execute workflow"
+    },
+    {
+      "id": "listExecutions",
+      "name": "List Executions",
+      "description": "List workflow executions"
+    },
+    {
+      "id": "getExecution",
+      "name": "Get Execution",
+      "description": "Get execution details"
+    }
+  ],
+  "documentation": "https://docs.n8n.io/api/",
+  "setupGuide": "https://docs.n8n.io/api/authentication/"
+}
