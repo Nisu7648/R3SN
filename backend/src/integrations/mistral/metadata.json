@@ -1,0 +1,39 @@
+{
+  "name": "Mistral AI",
+  "id": "mistral",
+  "version": "1.0.0",
+  "description": "Mistral AI language models",
+  "category": "ai",
+  "icon": "🌊",
+  "color": "#FF7000",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "chatCompletion",
+      "name": "Chat Completion",
+      "description": "Generate chat responses"
+    },
+    {
+      "id": "createEmbedding",
+      "name": "Create Embedding",
+      "description": "Generate text embeddings"
+    },
+    {
+      "id": "listModels",
+      "name": "List Models",
+      "description": "List available models"
+    }
+  ],
+  "documentation": "https://docs.mistral.ai/api/",
+  "setupGuide": "https://console.mistral.ai/api-keys/"
+}
