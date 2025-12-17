@@ -1,0 +1,38 @@
+{
+  "name": "basecamp",
+  "displayName": "Basecamp",
+  "version": "1.0.0",
+  "description": "Complete Basecamp integration with 20 endpoints for projects, to-dos, messages, and schedules",
+  "category": "project_management",
+  "icon": "https://basecamp.com/assets/logo-bc3-9f1e4f7e0e8e8e8e8e8e8e8e8e8e8e8e.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer"
+  },
+  "baseUrl": "https://3.basecampapi.com/{account_id}",
+  "rateLimit": {
+    "perSecond": 1
+  },
+  "endpoints": [
+    {"id": "get_projects", "name": "Get Projects", "method": "GET", "path": "/projects.json", "description": "Get all projects"},
+    {"id": "get_project", "name": "Get Project", "method": "GET", "path": "/projects/{id}.json", "description": "Get project details"},
+    {"id": "create_project", "name": "Create Project", "method": "POST", "path": "/projects.json", "description": "Create project"},
+    {"id": "update_project", "name": "Update Project", "method": "PUT", "path": "/projects/{id}.json", "description": "Update project"},
+    {"id": "get_todolists", "name": "Get Todo Lists", "method": "GET", "path": "/buckets/{bucket_id}/todolists.json", "description": "Get todo lists"},
+    {"id": "create_todolist", "name": "Create Todo List", "method": "POST", "path": "/buckets/{bucket_id}/todolists.json", "description": "Create todo list"},
+    {"id": "get_todos", "name": "Get Todos", "method": "GET", "path": "/buckets/{bucket_id}/todolists/{todolist_id}/todos.json", "description": "Get todos"},
+    {"id": "create_todo", "name": "Create Todo", "method": "POST", "path": "/buckets/{bucket_id}/todolists/{todolist_id}/todos.json", "description": "Create todo"},
+    {"id": "update_todo", "name": "Update Todo", "method": "PUT", "path": "/buckets/{bucket_id}/todos/{id}.json", "description": "Update todo"},
+    {"id": "complete_todo", "name": "Complete Todo", "method": "POST", "path": "/buckets/{bucket_id}/todos/{id}/completion.json", "description": "Complete todo"},
+    {"id": "get_messages", "name": "Get Messages", "method": "GET", "path": "/buckets/{bucket_id}/message_boards/{id}/messages.json", "description": "Get messages"},
+    {"id": "create_message", "name": "Create Message", "method": "POST", "path": "/buckets/{bucket_id}/message_boards/{id}/messages.json", "description": "Create message"},
+    {"id": "get_comments", "name": "Get Comments", "method": "GET", "path": "/buckets/{bucket_id}/recordings/{id}/comments.json", "description": "Get comments"},
+    {"id": "create_comment", "name": "Create Comment", "method": "POST", "path": "/buckets/{bucket_id}/recordings/{id}/comments.json", "description": "Create comment"},
+    {"id": "get_people", "name": "Get People", "method": "GET", "path": "/projects/{id}/people.json", "description": "Get project people"},
+    {"id": "get_schedules", "name": "Get Schedules", "method": "GET", "path": "/buckets/{bucket_id}/schedules/{id}/entries.json", "description": "Get schedule entries"},
+    {"id": "create_schedule_entry", "name": "Create Schedule Entry", "method": "POST", "path": "/buckets/{bucket_id}/schedules/{id}/entries.json", "description": "Create schedule entry"},
+    {"id": "get_documents", "name": "Get Documents", "method": "GET", "path": "/buckets/{bucket_id}/vaults/{id}/documents.json", "description": "Get documents"},
+    {"id": "upload_file", "name": "Upload File", "method": "POST", "path": "/buckets/{bucket_id}/vaults/{id}/uploads.json", "description": "Upload file"},
+    {"id": "get_campfire", "name": "Get Campfire", "method": "GET", "path": "/buckets/{bucket_id}/chats/{id}/lines.json", "description": "Get campfire lines"}
+  ]
+}
