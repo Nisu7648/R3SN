@@ -1,0 +1,38 @@
+{
+  "name": "monday",
+  "displayName": "Monday.com",
+  "version": "1.0.0",
+  "description": "Complete Monday.com integration with 20 endpoints for boards, items, columns, groups, and updates",
+  "category": "project_management",
+  "icon": "https://dapulse-res.cloudinary.com/image/upload/monday_platform/logos/monday_logo_icon.png",
+  "authentication": {
+    "type": "api_key",
+    "tokenType": "Bearer"
+  },
+  "baseUrl": "https://api.monday.com/v2",
+  "rateLimit": {
+    "perMinute": 60
+  },
+  "endpoints": [
+    {"id": "get_boards", "name": "Get Boards", "method": "POST", "path": "", "description": "Get all boards"},
+    {"id": "create_board", "name": "Create Board", "method": "POST", "path": "", "description": "Create a new board"},
+    {"id": "get_board", "name": "Get Board", "method": "POST", "path": "", "description": "Get board details"},
+    {"id": "archive_board", "name": "Archive Board", "method": "POST", "path": "", "description": "Archive a board"},
+    {"id": "get_items", "name": "Get Items", "method": "POST", "path": "", "description": "Get items from board"},
+    {"id": "create_item", "name": "Create Item", "method": "POST", "path": "", "description": "Create a new item"},
+    {"id": "get_item", "name": "Get Item", "method": "POST", "path": "", "description": "Get item details"},
+    {"id": "update_item", "name": "Update Item", "method": "POST", "path": "", "description": "Update item"},
+    {"id": "delete_item", "name": "Delete Item", "method": "POST", "path": "", "description": "Delete item"},
+    {"id": "get_columns", "name": "Get Columns", "method": "POST", "path": "", "description": "Get board columns"},
+    {"id": "create_column", "name": "Create Column", "method": "POST", "path": "", "description": "Create column"},
+    {"id": "update_column", "name": "Update Column", "method": "POST", "path": "", "description": "Update column value"},
+    {"id": "get_groups", "name": "Get Groups", "method": "POST", "path": "", "description": "Get board groups"},
+    {"id": "create_group", "name": "Create Group", "method": "POST", "path": "", "description": "Create group"},
+    {"id": "get_updates", "name": "Get Updates", "method": "POST", "path": "", "description": "Get item updates"},
+    {"id": "create_update", "name": "Create Update", "method": "POST", "path": "", "description": "Create update"},
+    {"id": "get_users", "name": "Get Users", "method": "POST", "path": "", "description": "Get workspace users"},
+    {"id": "get_teams", "name": "Get Teams", "method": "POST", "path": "", "description": "Get teams"},
+    {"id": "get_tags", "name": "Get Tags", "method": "POST", "path": "", "description": "Get tags"},
+    {"id": "get_workspaces", "name": "Get Workspaces", "method": "POST", "path": "", "description": "Get workspaces"}
+  ]
+}
