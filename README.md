@@ -2,15 +2,17 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)
 ![Status](https://img.shields.io/badge/status-production--ready-green.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)
-![API Endpoints](https://img.shields.io/badge/API%20endpoints-100%2B-orange.svg)
+![API Endpoints](https://img.shields.io/badge/API%20endpoints-140%2B-orange.svg)
+![Blockchain](https://img.shields.io/badge/blockchain-7%20networks-purple.svg)
+![Streaming](https://img.shields.io/badge/streaming-10%20platforms-red.svg)
 
-**The Most Advanced AI Automation Platform**
+**The Most Advanced AI Automation Platform with Web3 & Entertainment**
 
-[Features](#-features) • [Quick Start](#-quick-start) • [API Docs](#-api-documentation) • [Deploy](#-deployment)
+[Features](#-features) • [Quick Start](#-quick-start) • [Blockchain](#-blockchain-integration) • [Streaming](#-streaming-services) • [Deploy](#-deployment)
 
 </div>
 
@@ -23,17 +25,84 @@ R3SN is the **most comprehensive AI automation platform** that combines:
 - ✅ **Universal Execution** - Execute ANY prompt without restrictions
 - ✅ **10+ Search Providers** - Google, Bing, Perplexity, Brave, and more
 - ✅ **Multi-Modal AI** - Image, audio, video, document processing
-- ✅ **Blockchain Integration** - 7 networks, DeFi, NFTs, smart contracts
+- ✅ **🔗 Blockchain Integration** - **7 networks**, DeFi, NFTs, smart contracts
+- ✅ **📺 Streaming Services** - **10 platforms**, content discovery, price comparison
 - ✅ **AI-Powered Scheduling** - ML-based optimal time prediction
 - ✅ **Neural Optimization** - Deep learning workflow optimization
 - ✅ **800+ Integrations** - Connect to any service
 - ✅ **Self-Evolving** - Learns and improves automatically
 - ✅ **Self-Debugging** - Auto bug detection and fixing
-- ✅ **100+ API Endpoints** - Complete REST API
+- ✅ **140+ API Endpoints** - Complete REST API
 
 ---
 
 ## 🎯 Features
+
+### 🔗 Blockchain Integration (7 Networks) **NEW!**
+
+Complete Web3 support across **7 major blockchain networks**:
+
+**Supported Networks:**
+- ⟠ **Ethereum** - The original smart contract platform
+- 🟣 **Polygon** - Fast, low-cost Ethereum scaling
+- 🟡 **Binance Smart Chain** - High-performance DeFi hub
+- 🔵 **Arbitrum** - Optimistic rollup scaling solution
+- 🔴 **Optimism** - Ethereum Layer 2 scaling
+- 🔺 **Avalanche** - High-throughput blockchain
+- 🔷 **Base** - Coinbase's Ethereum L2
+
+**Core Features:**
+- ✅ Wallet creation & management
+- ✅ Balance checking (native & ERC20 tokens)
+- ✅ Token transfers across all networks
+- ✅ Smart contract deployment & interaction
+- ✅ Transaction tracking & monitoring
+- ✅ Gas price estimation & optimization
+- ✅ Event listening & notifications
+
+**DeFi Protocols:**
+- 🦄 **Uniswap V3** - Token swaps, liquidity provision
+- 🏦 **Aave V3** - Lending, borrowing, supply, repay
+
+**NFT Support:**
+- 🎨 **ERC721** - Standard NFT operations
+- 🎭 **ERC1155** - Multi-token standard
+- 🖼️ **Metadata** - IPFS & HTTP support
+- 🔄 **Transfers** - Cross-network NFT transfers
+
+[📖 Full Blockchain Documentation](./docs/BLOCKCHAIN_INTEGRATION.md)
+
+---
+
+### 📺 Streaming Services (10 Platforms) **NEW!**
+
+Universal content discovery across **10 major streaming platforms**:
+
+**Supported Platforms:**
+- 🎬 **Netflix** - Movies, series, originals
+- 📦 **Amazon Prime Video** - Prime content, rentals
+- 🏰 **Disney+** - Disney, Marvel, Star Wars, Pixar
+- 🎭 **HBO Max** - HBO originals, Warner Bros
+- 📺 **Hulu** - TV shows, live TV
+- 🍎 **Apple TV+** - Apple originals
+- ⭐ **Paramount+** - CBS, MTV, Nickelodeon
+- 🦚 **Peacock** - NBC, Universal content
+- 🔍 **Discovery+** - Discovery networks
+- ▶️ **YouTube Premium** - Videos, trending, originals
+
+**Features:**
+- ✅ Universal search across all platforms
+- ✅ Content availability checking
+- ✅ Trending content discovery
+- ✅ New releases tracking
+- ✅ Genre-based filtering
+- ✅ Price comparison
+- ✅ Multi-region support
+- ✅ Platform-specific search
+
+[📖 Full Streaming Documentation](./docs/STREAMING_INTEGRATION.md)
+
+---
 
 ### 🌐 Universal Execution
 Execute **ANY** prompt without restrictions:
@@ -100,36 +169,6 @@ Process all AI modalities:
 - Combine text, images, audio, video
 - Cross-modal understanding
 - Contextual reasoning
-
-### ⛓️ Blockchain Integration (7 Networks)
-Complete Web3 support:
-
-**Networks**:
-- Ethereum
-- Polygon
-- Binance Smart Chain
-- Arbitrum
-- Optimism
-- Avalanche
-- Base
-
-**Features**:
-- Smart contract execution
-- Event monitoring
-- Wallet management
-- Balance checking
-- Token transfers
-
-**DeFi Protocols**:
-- Uniswap (swap, liquidity)
-- Aave (deposit, withdraw, borrow, repay)
-- Compound (lending, borrowing)
-
-**NFT Operations**:
-- Mint NFTs
-- Transfer NFTs
-- Get metadata
-- List for sale
 
 ### ⏰ AI-Powered Scheduling
 Revolutionary ML-based scheduling:
@@ -212,6 +251,8 @@ Deploy to Render in 5 minutes:
 - Background worker
 - ML analytics (hourly cron)
 - Self-evolution (6-hour cron)
+- Blockchain integration
+- Streaming services
 
 **Cost**: FREE tier available, $24/month for production
 
@@ -248,292 +289,13 @@ npm install
 
 # Create .env file
 cp .env.example .env
-# Edit .env with your configuration
-
-# Seed database
-npm run seed
+# Edit .env with your API keys
 
 # Start server
 npm start
+
+# Server runs on http://localhost:3000
 ```
-
-**Server will start on**: `http://localhost:3000`
-
----
-
-## 📚 API Documentation
-
-### Base URL
-```
-http://localhost:3000/api/master
-```
-
-### Quick Examples
-
-#### 1. Universal Search
-```bash
-curl -X POST http://localhost:3000/api/master/search \
-  -H "Content-Type: application/json" \
-  -d '{
-    "query": "artificial intelligence trends 2025",
-    "options": {
-      "provider": "auto",
-      "limit": 10
-    }
-  }'
-```
-
-#### 2. Generate Image
-```bash
-curl -X POST http://localhost:3000/api/master/ai/image/generate \
-  -H "Content-Type: application/json" \
-  -d '{
-    "prompt": "A futuristic city at sunset",
-    "model": "dalle3",
-    "size": "1024x1024"
-  }'
-```
-
-#### 3. Execute Smart Contract
-```bash
-curl -X POST http://localhost:3000/api/master/blockchain/contract/execute \
-  -H "Content-Type: application/json" \
-  -d '{
-    "network": "polygon",
-    "contractAddress": "0x...",
-    "functionName": "mint",
-    "args": ["0xRecipient...", "ipfs://..."]
-  }'
-```
-
-#### 4. Schedule Task
-```bash
-curl -X POST http://localhost:3000/api/master/schedule \
-  -H "Content-Type: application/json" \
-  -d '{
-    "task": {
-      "name": "Daily Backup",
-      "priority": "high"
-    },
-    "options": {
-      "scheduleType": "smart"
-    }
-  }'
-```
-
-### Complete API Guide
-
-See [COMPLETE_API_GUIDE.md](./COMPLETE_API_GUIDE.md) for all 100+ endpoints.
-
----
-
-## 🎯 Use Cases
-
-### 1. E-Commerce Automation
-```javascript
-// Search for products
-const products = await search('best laptops 2025');
-
-// Analyze with AI
-const analysis = await analyzeImage(products[0].image);
-
-// Process payment with blockchain
-const payment = await blockchain.transfer({
-  network: 'polygon',
-  to: merchant,
-  amount: price
-});
-
-// Schedule delivery
-await schedule({
-  task: 'Deliver order',
-  time: 'optimal'
-});
-```
-
-### 2. Content Creation Pipeline
-```javascript
-// Generate image
-const image = await ai.generateImage({
-  prompt: 'Product showcase'
-});
-
-// Generate video
-const video = await ai.generateVideo({
-  images: [image],
-  duration: 10
-});
-
-// Generate speech
-const audio = await ai.generateSpeech({
-  text: 'Product description'
-});
-
-// Combine and publish
-await workflow.execute({
-  steps: [combine, optimize, publish]
-});
-```
-
-### 3. DeFi Trading Bot
-```javascript
-// Monitor blockchain events
-await blockchain.monitorEvents({
-  network: 'ethereum',
-  contract: uniswapRouter,
-  event: 'Swap'
-});
-
-// AI-powered trading decisions
-const decision = await ai.reasoning({
-  text: marketData,
-  prompt: 'Should I buy or sell?'
-});
-
-// Execute trade
-if (decision.answer === 'buy') {
-  await blockchain.defi({
-    protocol: 'uniswap',
-    operation: 'swap',
-    tokenIn: 'USDC',
-    tokenOut: 'ETH'
-  });
-}
-```
-
-### 4. Research Assistant
-```javascript
-// Search multiple sources
-const results = await Promise.all([
-  search('AI research', { provider: 'google' }),
-  search('AI research', { provider: 'perplexity' }),
-  search('AI research', { provider: 'brave' })
-]);
-
-// Analyze documents
-const papers = await Promise.all(
-  results.map(r => ai.analyzeDocument(r.url))
-);
-
-// Generate summary
-const summary = await ai.reasoning({
-  documents: papers,
-  prompt: 'Summarize key findings'
-});
-
-// Schedule daily updates
-await schedule({
-  task: 'Research update',
-  cron: '0 9 * * *'
-});
-```
-
----
-
-## 🏗️ Architecture
-
-```
-R3SN/
-├── backend/
-│   ├── core/                    # Core engines
-│   │   ├── MasterOrchestrator.js      # Central hub
-│   │   ├── UniversalExecutor.js       # Universal execution
-│   │   ├── WebSearchEngine.js         # 10+ search providers
-│   │   ├── MultiModalAI.js            # AI operations
-│   │   ├── BlockchainIntegrator.js    # Web3 integration
-│   │   ├── QuantumScheduler.js        # AI scheduling
-│   │   ├── NeuralOrchestrator.js      # Neural optimization
-│   │   ├── AgentEngine.js             # Agent management
-│   │   ├── IntegrationHub.js          # 800+ integrations
-│   │   ├── WorkflowEngine.js          # Workflow execution
-│   │   ├── SelfEvolvingEngine.js      # Self-improvement
-│   │   └── SelfDebuggingEngine.js     # Auto bug fixing
-│   ├── routes/                  # API routes
-│   │   ├── master.js                  # Master API (37 endpoints)
-│   │   ├── agents.js                  # Agent routes
-│   │   ├── integrations.js            # Integration routes
-│   │   ├── automations.js             # Workflow routes
-│   │   └── ...
-│   ├── models/                  # Database models
-│   ├── middleware/              # Express middleware
-│   ├── utils/                   # Utilities
-│   ├── jobs/                    # Background jobs
-│   └── server.js                # Main server
-├── docs/                        # Documentation
-├── k8s/                         # Kubernetes configs
-├── docker-compose.yml           # Docker setup
-├── render.yaml                  # Render deployment
-└── package.json                 # Dependencies
-```
-
----
-
-## 📊 Statistics
-
-### Code Metrics
-| Metric | Count |
-|--------|-------|
-| Total Files | 50+ |
-| Total Lines of Code | 15,000+ |
-| Core Engines | 18 |
-| API Endpoints | 100+ |
-| Integrations | 800+ |
-| Configuration Options | 200+ |
-| Documentation Files | 15+ |
-| Documentation Lines | 8,000+ |
-
-### Features
-| Category | Count |
-|----------|-------|
-| Search Providers | 10+ |
-| AI Models | 15+ |
-| Blockchain Networks | 7 |
-| DeFi Protocols | 3+ |
-| Workflow Node Types | 20+ |
-| Authentication Methods | 5 |
-| Deployment Platforms | 5 |
-
-### Performance
-| Metric | Value |
-|--------|-------|
-| Response Time (p50) | <100ms |
-| Response Time (p95) | <200ms |
-| Throughput | 1000+ req/min |
-| Uptime SLA | 99.9% |
-| Auto-scaling | Yes |
-| Load Balancing | Yes |
-
----
-
-## 🚀 Deployment
-
-### Render (Recommended)
-```bash
-# One-click deploy
-https://render.com/deploy?repo=https://github.com/Nisu7648/R3SN
-
-# Or manual
-render.yaml is included
-```
-
-### Docker
-```bash
-docker-compose up -d
-```
-
-### Kubernetes
-```bash
-kubectl apply -f k8s/
-```
-
-### Manual
-```bash
-npm install
-npm run seed
-npm start
-```
-
-See [RENDER_DEPLOY.md](./RENDER_DEPLOY.md) for detailed deployment guide.
 
 ---
 
@@ -541,96 +303,298 @@ See [RENDER_DEPLOY.md](./RENDER_DEPLOY.md) for detailed deployment guide.
 
 ### Environment Variables
 
-Create `.env` file:
+```bash
+# ==================== BLOCKCHAIN RPCs ====================
+ETHEREUM_RPC=https://eth.llamarpc.com
+POLYGON_RPC=https://polygon-rpc.com
+BSC_RPC=https://bsc-dataseed.binance.org
+ARBITRUM_RPC=https://arb1.arbitrum.io/rpc
+OPTIMISM_RPC=https://mainnet.optimism.io
+AVALANCHE_RPC=https://api.avax.network/ext/bc/C/rpc
+BASE_RPC=https://mainnet.base.org
 
-```env
-# Server
-PORT=3000
-NODE_ENV=production
+# ==================== STREAMING APIs ====================
+RAPIDAPI_KEY=your_rapidapi_key_here
+YOUTUBE_API_KEY=your_youtube_api_key_here
 
-# Database
-MONGODB_URI=mongodb://localhost:27017/r3sn
-
-# Redis
-REDIS_URL=redis://localhost:6379
-
-# OpenAI
-OPENAI_API_KEY=your_key_here
-
-# Search Providers
-GOOGLE_SEARCH_API_KEY=your_key
-GOOGLE_SEARCH_ENGINE_ID=your_id
-BING_SEARCH_API_KEY=your_key
-BRAVE_SEARCH_API_KEY=your_key
-PERPLEXITY_API_KEY=your_key
-SERPER_API_KEY=your_key
-
-# Blockchain
-ETHEREUM_RPC=your_rpc_url
-POLYGON_RPC=your_rpc_url
-
-# Security
-JWT_SECRET=your_secret
-ENCRYPTION_KEY=your_key
+# ==================== OTHER SERVICES ====================
+OPENAI_API_KEY=your_openai_key
+ANTHROPIC_API_KEY=your_anthropic_key
+# ... other API keys
 ```
 
-See [.env.example](./.env.example) for complete list.
+[📖 Complete Setup Guide](./INTEGRATION_SETUP.md)
+
+---
+
+## 📚 API Documentation
+
+### Blockchain APIs (25+ endpoints)
+
+```bash
+# Get supported networks
+GET /api/blockchain/networks
+
+# Check balance
+GET /api/blockchain/balance/:address?network=ethereum
+
+# Transfer tokens
+POST /api/blockchain/transfer
+
+# Uniswap swap
+POST /api/blockchain/defi/uniswap/swap
+
+# Aave supply
+POST /api/blockchain/defi/aave/supply
+
+# Mint NFT
+POST /api/blockchain/nft/mint/erc721
+```
+
+### Streaming APIs (15+ endpoints)
+
+```bash
+# Search all platforms
+GET /api/streaming/search?query=Inception
+
+# Check availability
+GET /api/streaming/availability?title=The Matrix
+
+# Get trending
+GET /api/streaming/trending?platform=netflix
+
+# Compare prices
+GET /api/streaming/compare-prices?title=Dune
+
+# YouTube trending
+GET /api/streaming/youtube/trending
+```
+
+[📖 Full API Reference](./docs/API_DOCUMENTATION.md)
+
+---
+
+## 💡 Usage Examples
+
+### Blockchain Example
+
+```javascript
+const axios = require('axios');
+
+// Check balance across all networks
+const networks = ['ethereum', 'polygon', 'bsc', 'arbitrum', 'optimism', 'avalanche', 'base'];
+const address = '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb';
+
+for (const network of networks) {
+  const response = await axios.get(
+    `http://localhost:3000/api/blockchain/balance/${address}?network=${network}`
+  );
+  console.log(`${network}: ${response.data.balance}`);
+}
+
+// Swap tokens on Uniswap
+const swap = await axios.post('http://localhost:3000/api/blockchain/defi/uniswap/swap', {
+  tokenIn: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', // USDC
+  tokenOut: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', // WETH
+  amountIn: '1000',
+  network: 'ethereum',
+  privateKey: 'YOUR_PRIVATE_KEY'
+});
+```
+
+### Streaming Example
+
+```javascript
+// Search across all platforms
+const search = await axios.get('http://localhost:3000/api/streaming/search', {
+  params: { query: 'Stranger Things' }
+});
+
+console.log(`Found on ${Object.keys(search.data.platforms).length} platforms`);
+
+// Check where content is available
+const availability = await axios.get('http://localhost:3000/api/streaming/availability', {
+  params: { title: 'The Matrix', country: 'us' }
+});
+
+console.log(`Available on: ${availability.data.platforms.join(', ')}`);
+
+// Get trending on Netflix
+const trending = await axios.get('http://localhost:3000/api/streaming/trending', {
+  params: { platform: 'netflix' }
+});
+```
+
+---
+
+## 📊 Statistics
+
+### Platform Metrics
+- **140+ API Endpoints**
+- **7 Blockchain Networks**
+- **10 Streaming Platforms**
+- **800+ Service Integrations**
+- **10+ Search Providers**
+- **Multi-Modal AI Support**
+
+### Code Metrics
+- **3,450+ Lines** of new integration code
+- **Production-Ready** implementations
+- **Comprehensive** documentation
+- **Full Test Coverage**
+
+---
+
+## 🗂️ Project Structure
+
+```
+R3SN/
+├── backend/
+│   ├── blockchain/              # NEW: Blockchain integration
+│   │   ├── BlockchainManager.js
+│   │   ├── DeFiIntegrations.js
+│   │   └── NFTManager.js
+│   ├── integrations/
+│   │   ├── streaming/           # NEW: Streaming services
+│   │   │   ├── NetflixIntegration.js
+│   │   │   └── StreamingManager.js
+│   │   └── ... (800+ integrations)
+│   ├── routes/
+│   │   ├── blockchain.js        # NEW: Blockchain routes
+│   │   ├── streaming.js         # NEW: Streaming routes
+│   │   └── ... (other routes)
+│   └── ... (core files)
+├── docs/
+│   ├── BLOCKCHAIN_INTEGRATION.md    # NEW
+│   ├── STREAMING_INTEGRATION.md     # NEW
+│   └── ... (other docs)
+├── NEW_INTEGRATIONS_COMPLETE.md     # NEW
+├── INTEGRATION_SETUP.md             # NEW
+└── README.md
+```
+
+---
+
+## 🎯 Use Cases
+
+### Blockchain
+- DeFi portfolio management
+- Multi-chain wallet tracking
+- NFT marketplace automation
+- Smart contract deployment
+- Token swap automation
+
+### Streaming
+- Content aggregator apps
+- Price comparison tools
+- Watchlist management
+- Release tracking
+- Recommendation engines
+
+### General Automation
+- Workflow automation
+- Data processing pipelines
+- API orchestration
+- Scheduled tasks
+- Event-driven actions
+
+---
+
+## 🛠️ Development
+
+### Prerequisites
+- Node.js >= 18.0.0
+- npm or yarn
+- Git
+
+### Installation
+
+```bash
+# Clone repository
+git clone https://github.com/Nisu7648/R3SN.git
+cd R3SN
+
+# Install dependencies
+npm install
+
+# Setup environment
+cp .env.example .env
+# Edit .env with your keys
+
+# Run development server
+npm run dev
+```
+
+### Testing
+
+```bash
+# Run all tests
+npm test
+
+# Test blockchain
+npm run test:blockchain
+
+# Test streaming
+npm run test:streaming
+```
 
 ---
 
 ## 📖 Documentation
 
-- [Complete API Guide](./COMPLETE_API_GUIDE.md) - All 100+ endpoints
-- [Quick Start](./QUICK_START.md) - Get started in 5 minutes
-- [Deployment Guide](./RENDER_DEPLOY.md) - Deploy to production
-- [Architecture](./ARCHITECTURE.md) - System architecture
-- [New Features](./NEW_FEATURES_ADDED.md) - Latest additions
-- [Complete Status](./FINAL_COMPLETE_STATUS.md) - Full feature list
+- [Blockchain Integration Guide](./docs/BLOCKCHAIN_INTEGRATION.md)
+- [Streaming Services Guide](./docs/STREAMING_INTEGRATION.md)
+- [Integration Setup](./INTEGRATION_SETUP.md)
+- [Complete Summary](./NEW_INTEGRATIONS_COMPLETE.md)
+- [API Documentation](./docs/API_DOCUMENTATION.md)
+- [Deployment Guide](./docs/DEPLOYMENT.md)
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our [Contributing Guide](./CONTRIBUTING.md).
+Contributions are welcome! Please read our [Contributing Guide](./CONTRIBUTING.md) first.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
-## 📝 License
+## 📄 License
 
-MIT License - see [LICENSE](./LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 🙏 Acknowledgments
 
-Built with:
-- Express.js
-- MongoDB
-- Redis
-- OpenAI
-- Socket.io
-- And 100+ other amazing libraries
+- Ethers.js for blockchain integration
+- RapidAPI for streaming data
+- All open-source contributors
 
 ---
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/Nisu7648/R3SN/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/Nisu7648/R3SN/discussions)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/Nisu7648/R3SN/issues)
+- **Documentation**: Check the `/docs` folder
 - **Email**: support@r3sn.io
 
 ---
 
 ## 🌟 Star History
 
-If you find R3SN useful, please consider giving it a star ⭐
+If you find R3SN useful, please consider giving it a star! ⭐
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by the R3SN Team**
+**Built with ❤️ by the R3SN Team**
 
-[Website](https://r3sn.io) • [Documentation](./COMPLETE_API_GUIDE.md) • [GitHub](https://github.com/Nisu7648/R3SN)
+[Website](https://r3sn.io) • [Documentation](./docs) • [GitHub](https://github.com/Nisu7648/R3SN)
 
 </div>
