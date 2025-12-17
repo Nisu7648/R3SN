@@ -1,0 +1,383 @@
+{
+  "name": "bigcommerce",
+  "displayName": "BigCommerce",
+  "version": "1.0.0",
+  "description": "Complete BigCommerce integration with 52 endpoints for products, orders, customers, categories, carts, and store management",
+  "category": "ecommerce",
+  "icon": "https://cdn.worldvectorlogo.com/logos/bigcommerce.svg",
+  "authentication": {
+    "type": "apikey",
+    "tokenType": "X-Auth-Token",
+    "scopes": [
+      "store_v2_products",
+      "store_v2_orders",
+      "store_v2_customers",
+      "store_v2_content"
+    ]
+  },
+  "baseUrl": "https://api.bigcommerce.com/stores/{store_hash}/v3",
+  "rateLimit": {
+    "quota": 20000,
+    "perHour": 20000,
+    "perSecond": 2
+  },
+  "endpoints": [
+    {
+      "id": "list_products",
+      "name": "List Products",
+      "method": "GET",
+      "path": "/catalog/products",
+      "description": "Get all products"
+    },
+    {
+      "id": "get_product",
+      "name": "Get Product",
+      "method": "GET",
+      "path": "/catalog/products/{product_id}",
+      "description": "Get a specific product"
+    },
+    {
+      "id": "create_product",
+      "name": "Create Product",
+      "method": "POST",
+      "path": "/catalog/products",
+      "description": "Create a new product"
+    },
+    {
+      "id": "update_product",
+      "name": "Update Product",
+      "method": "PUT",
+      "path": "/catalog/products/{product_id}",
+      "description": "Update a product"
+    },
+    {
+      "id": "delete_product",
+      "name": "Delete Product",
+      "method": "DELETE",
+      "path": "/catalog/products/{product_id}",
+      "description": "Delete a product"
+    },
+    {
+      "id": "list_product_variants",
+      "name": "List Product Variants",
+      "method": "GET",
+      "path": "/catalog/products/{product_id}/variants",
+      "description": "Get all variants of a product"
+    },
+    {
+      "id": "create_product_variant",
+      "name": "Create Product Variant",
+      "method": "POST",
+      "path": "/catalog/products/{product_id}/variants",
+      "description": "Create a product variant"
+    },
+    {
+      "id": "update_product_variant",
+      "name": "Update Product Variant",
+      "method": "PUT",
+      "path": "/catalog/products/{product_id}/variants/{variant_id}",
+      "description": "Update a product variant"
+    },
+    {
+      "id": "list_product_images",
+      "name": "List Product Images",
+      "method": "GET",
+      "path": "/catalog/products/{product_id}/images",
+      "description": "Get all images for a product"
+    },
+    {
+      "id": "create_product_image",
+      "name": "Create Product Image",
+      "method": "POST",
+      "path": "/catalog/products/{product_id}/images",
+      "description": "Add image to product"
+    },
+    {
+      "id": "list_orders",
+      "name": "List Orders",
+      "method": "GET",
+      "path": "/orders",
+      "description": "Get all orders"
+    },
+    {
+      "id": "get_order",
+      "name": "Get Order",
+      "method": "GET",
+      "path": "/orders/{order_id}",
+      "description": "Get a specific order"
+    },
+    {
+      "id": "create_order",
+      "name": "Create Order",
+      "method": "POST",
+      "path": "/orders",
+      "description": "Create a new order"
+    },
+    {
+      "id": "update_order",
+      "name": "Update Order",
+      "method": "PUT",
+      "path": "/orders/{order_id}",
+      "description": "Update an order"
+    },
+    {
+      "id": "delete_order",
+      "name": "Delete Order",
+      "method": "DELETE",
+      "path": "/orders/{order_id}",
+      "description": "Delete an order"
+    },
+    {
+      "id": "list_order_products",
+      "name": "List Order Products",
+      "method": "GET",
+      "path": "/orders/{order_id}/products",
+      "description": "Get products in an order"
+    },
+    {
+      "id": "list_order_shipments",
+      "name": "List Order Shipments",
+      "method": "GET",
+      "path": "/orders/{order_id}/shipments",
+      "description": "Get shipments for an order"
+    },
+    {
+      "id": "create_order_shipment",
+      "name": "Create Order Shipment",
+      "method": "POST",
+      "path": "/orders/{order_id}/shipments",
+      "description": "Create a shipment for order"
+    },
+    {
+      "id": "list_customers",
+      "name": "List Customers",
+      "method": "GET",
+      "path": "/customers",
+      "description": "Get all customers"
+    },
+    {
+      "id": "get_customer",
+      "name": "Get Customer",
+      "method": "GET",
+      "path": "/customers/{customer_id}",
+      "description": "Get a specific customer"
+    },
+    {
+      "id": "create_customer",
+      "name": "Create Customer",
+      "method": "POST",
+      "path": "/customers",
+      "description": "Create a new customer"
+    },
+    {
+      "id": "update_customer",
+      "name": "Update Customer",
+      "method": "PUT",
+      "path": "/customers/{customer_id}",
+      "description": "Update a customer"
+    },
+    {
+      "id": "delete_customer",
+      "name": "Delete Customer",
+      "method": "DELETE",
+      "path": "/customers/{customer_id}",
+      "description": "Delete a customer"
+    },
+    {
+      "id": "list_customer_addresses",
+      "name": "List Customer Addresses",
+      "method": "GET",
+      "path": "/customers/{customer_id}/addresses",
+      "description": "Get customer addresses"
+    },
+    {
+      "id": "create_customer_address",
+      "name": "Create Customer Address",
+      "method": "POST",
+      "path": "/customers/{customer_id}/addresses",
+      "description": "Add customer address"
+    },
+    {
+      "id": "list_categories",
+      "name": "List Categories",
+      "method": "GET",
+      "path": "/catalog/categories",
+      "description": "Get all categories"
+    },
+    {
+      "id": "get_category",
+      "name": "Get Category",
+      "method": "GET",
+      "path": "/catalog/categories/{category_id}",
+      "description": "Get a specific category"
+    },
+    {
+      "id": "create_category",
+      "name": "Create Category",
+      "method": "POST",
+      "path": "/catalog/categories",
+      "description": "Create a new category"
+    },
+    {
+      "id": "update_category",
+      "name": "Update Category",
+      "method": "PUT",
+      "path": "/catalog/categories/{category_id}",
+      "description": "Update a category"
+    },
+    {
+      "id": "delete_category",
+      "name": "Delete Category",
+      "method": "DELETE",
+      "path": "/catalog/categories/{category_id}",
+      "description": "Delete a category"
+    },
+    {
+      "id": "list_brands",
+      "name": "List Brands",
+      "method": "GET",
+      "path": "/catalog/brands",
+      "description": "Get all brands"
+    },
+    {
+      "id": "create_brand",
+      "name": "Create Brand",
+      "method": "POST",
+      "path": "/catalog/brands",
+      "description": "Create a new brand"
+    },
+    {
+      "id": "list_carts",
+      "name": "List Carts",
+      "method": "GET",
+      "path": "/carts",
+      "description": "Get all carts"
+    },
+    {
+      "id": "get_cart",
+      "name": "Get Cart",
+      "method": "GET",
+      "path": "/carts/{cart_id}",
+      "description": "Get a specific cart"
+    },
+    {
+      "id": "create_cart",
+      "name": "Create Cart",
+      "method": "POST",
+      "path": "/carts",
+      "description": "Create a new cart"
+    },
+    {
+      "id": "update_cart",
+      "name": "Update Cart",
+      "method": "PUT",
+      "path": "/carts/{cart_id}",
+      "description": "Update a cart"
+    },
+    {
+      "id": "delete_cart",
+      "name": "Delete Cart",
+      "method": "DELETE",
+      "path": "/carts/{cart_id}",
+      "description": "Delete a cart"
+    },
+    {
+      "id": "add_cart_item",
+      "name": "Add Cart Item",
+      "method": "POST",
+      "path": "/carts/{cart_id}/items",
+      "description": "Add item to cart"
+    },
+    {
+      "id": "list_coupons",
+      "name": "List Coupons",
+      "method": "GET",
+      "path": "/marketing/coupons",
+      "description": "Get all coupons"
+    },
+    {
+      "id": "create_coupon",
+      "name": "Create Coupon",
+      "method": "POST",
+      "path": "/marketing/coupons",
+      "description": "Create a new coupon"
+    },
+    {
+      "id": "list_gift_certificates",
+      "name": "List Gift Certificates",
+      "method": "GET",
+      "path": "/marketing/gift-certificates",
+      "description": "Get all gift certificates"
+    },
+    {
+      "id": "create_gift_certificate",
+      "name": "Create Gift Certificate",
+      "method": "POST",
+      "path": "/marketing/gift-certificates",
+      "description": "Create a gift certificate"
+    },
+    {
+      "id": "list_shipping_zones",
+      "name": "List Shipping Zones",
+      "method": "GET",
+      "path": "/shipping/zones",
+      "description": "Get all shipping zones"
+    },
+    {
+      "id": "create_shipping_zone",
+      "name": "Create Shipping Zone",
+      "method": "POST",
+      "path": "/shipping/zones",
+      "description": "Create a shipping zone"
+    },
+    {
+      "id": "list_payment_methods",
+      "name": "List Payment Methods",
+      "method": "GET",
+      "path": "/payments/methods",
+      "description": "Get all payment methods"
+    },
+    {
+      "id": "list_webhooks",
+      "name": "List Webhooks",
+      "method": "GET",
+      "path": "/hooks",
+      "description": "Get all webhooks"
+    },
+    {
+      "id": "create_webhook",
+      "name": "Create Webhook",
+      "method": "POST",
+      "path": "/hooks",
+      "description": "Create a webhook"
+    },
+    {
+      "id": "delete_webhook",
+      "name": "Delete Webhook",
+      "method": "DELETE",
+      "path": "/hooks/{webhook_id}",
+      "description": "Delete a webhook"
+    },
+    {
+      "id": "get_store_info",
+      "name": "Get Store Info",
+      "method": "GET",
+      "path": "/store",
+      "description": "Get store information"
+    },
+    {
+      "id": "list_wishlists",
+      "name": "List Wishlists",
+      "method": "GET",
+      "path": "/wishlists",
+      "description": "Get all wishlists"
+    },
+    {
+      "id": "create_wishlist",
+      "name": "Create Wishlist",
+      "method": "POST",
+      "path": "/wishlists",
+      "description": "Create a wishlist"
+    }
+  ]
+}
