@@ -1,0 +1,38 @@
+{
+  "name": "freshdesk",
+  "displayName": "Freshdesk",
+  "version": "1.0.0",
+  "description": "Complete Freshdesk integration with 20 endpoints for tickets, contacts, agents, and knowledge base",
+  "category": "customer_support",
+  "icon": "https://www.freshworks.com/static-assets/images/common/company/logos/logo-fworks-black.svg",
+  "authentication": {
+    "type": "api_key",
+    "tokenType": "Basic"
+  },
+  "baseUrl": "https://{domain}.freshdesk.com/api/v2",
+  "rateLimit": {
+    "perMinute": 50
+  },
+  "endpoints": [
+    {"id": "list_tickets", "name": "List Tickets", "method": "GET", "path": "/tickets", "description": "List all tickets"},
+    {"id": "get_ticket", "name": "Get Ticket", "method": "GET", "path": "/tickets/{id}", "description": "Get ticket details"},
+    {"id": "create_ticket", "name": "Create Ticket", "method": "POST", "path": "/tickets", "description": "Create ticket"},
+    {"id": "update_ticket", "name": "Update Ticket", "method": "PUT", "path": "/tickets/{id}", "description": "Update ticket"},
+    {"id": "delete_ticket", "name": "Delete Ticket", "method": "DELETE", "path": "/tickets/{id}", "description": "Delete ticket"},
+    {"id": "list_contacts", "name": "List Contacts", "method": "GET", "path": "/contacts", "description": "List contacts"},
+    {"id": "get_contact", "name": "Get Contact", "method": "GET", "path": "/contacts/{id}", "description": "Get contact"},
+    {"id": "create_contact", "name": "Create Contact", "method": "POST", "path": "/contacts", "description": "Create contact"},
+    {"id": "update_contact", "name": "Update Contact", "method": "PUT", "path": "/contacts/{id}", "description": "Update contact"},
+    {"id": "list_agents", "name": "List Agents", "method": "GET", "path": "/agents", "description": "List agents"},
+    {"id": "get_agent", "name": "Get Agent", "method": "GET", "path": "/agents/{id}", "description": "Get agent"},
+    {"id": "list_companies", "name": "List Companies", "method": "GET", "path": "/companies", "description": "List companies"},
+    {"id": "create_company", "name": "Create Company", "method": "POST", "path": "/companies", "description": "Create company"},
+    {"id": "add_note", "name": "Add Note", "method": "POST", "path": "/tickets/{id}/notes", "description": "Add note to ticket"},
+    {"id": "add_reply", "name": "Add Reply", "method": "POST", "path": "/tickets/{id}/reply", "description": "Add reply to ticket"},
+    {"id": "list_conversations", "name": "List Conversations", "method": "GET", "path": "/tickets/{id}/conversations", "description": "Get ticket conversations"},
+    {"id": "list_groups", "name": "List Groups", "method": "GET", "path": "/groups", "description": "List groups"},
+    {"id": "list_categories", "name": "List Categories", "method": "GET", "path": "/solutions/categories", "description": "List KB categories"},
+    {"id": "list_articles", "name": "List Articles", "method": "GET", "path": "/solutions/articles", "description": "List KB articles"},
+    {"id": "create_article", "name": "Create Article", "method": "POST", "path": "/solutions/articles", "description": "Create KB article"}
+  ]
+}
