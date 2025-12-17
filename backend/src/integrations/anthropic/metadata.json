@@ -1,0 +1,39 @@
+{
+  "name": "Anthropic Claude",
+  "id": "anthropic",
+  "version": "1.0.0",
+  "description": "Anthropic Claude AI assistant models",
+  "category": "ai",
+  "icon": "🧠",
+  "color": "#D97757",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "createMessage",
+      "name": "Create Message",
+      "description": "Generate response with Claude"
+    },
+    {
+      "id": "streamMessage",
+      "name": "Stream Message",
+      "description": "Stream response with Claude"
+    },
+    {
+      "id": "countTokens",
+      "name": "Count Tokens",
+      "description": "Estimate token count"
+    }
+  ],
+  "documentation": "https://docs.anthropic.com/claude/reference",
+  "setupGuide": "https://console.anthropic.com/account/keys"
+}
