@@ -1,0 +1,292 @@
+{
+  "name": "squarespace-commerce",
+  "displayName": "Squarespace Commerce",
+  "version": "1.0.0",
+  "description": "Complete Squarespace Commerce integration with 38 endpoints for products, orders, inventory, transactions, and store management",
+  "category": "ecommerce",
+  "icon": "https://cdn.worldvectorlogo.com/logos/squarespace-1.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "website.products",
+      "website.orders",
+      "website.inventory",
+      "website.transactions"
+    ]
+  },
+  "baseUrl": "https://api.squarespace.com/1.0",
+  "rateLimit": {
+    "quota": 100,
+    "perMinute": 100,
+    "perSecond": 2
+  },
+  "endpoints": [
+    {
+      "id": "list_products",
+      "name": "List Products",
+      "method": "GET",
+      "path": "/commerce/products",
+      "description": "Get all products"
+    },
+    {
+      "id": "get_product",
+      "name": "Get Product",
+      "method": "GET",
+      "path": "/commerce/products/{productId}",
+      "description": "Get a specific product"
+    },
+    {
+      "id": "create_product",
+      "name": "Create Product",
+      "method": "POST",
+      "path": "/commerce/products",
+      "description": "Create a new product"
+    },
+    {
+      "id": "update_product",
+      "name": "Update Product",
+      "method": "PUT",
+      "path": "/commerce/products/{productId}",
+      "description": "Update a product"
+    },
+    {
+      "id": "delete_product",
+      "name": "Delete Product",
+      "method": "DELETE",
+      "path": "/commerce/products/{productId}",
+      "description": "Delete a product"
+    },
+    {
+      "id": "list_product_variants",
+      "name": "List Product Variants",
+      "method": "GET",
+      "path": "/commerce/products/{productId}/variants",
+      "description": "Get product variants"
+    },
+    {
+      "id": "create_product_variant",
+      "name": "Create Product Variant",
+      "method": "POST",
+      "path": "/commerce/products/{productId}/variants",
+      "description": "Create a product variant"
+    },
+    {
+      "id": "update_product_variant",
+      "name": "Update Product Variant",
+      "method": "PUT",
+      "path": "/commerce/products/{productId}/variants/{variantId}",
+      "description": "Update a product variant"
+    },
+    {
+      "id": "list_orders",
+      "name": "List Orders",
+      "method": "GET",
+      "path": "/commerce/orders",
+      "description": "Get all orders"
+    },
+    {
+      "id": "get_order",
+      "name": "Get Order",
+      "method": "GET",
+      "path": "/commerce/orders/{orderId}",
+      "description": "Get a specific order"
+    },
+    {
+      "id": "update_order",
+      "name": "Update Order",
+      "method": "PUT",
+      "path": "/commerce/orders/{orderId}",
+      "description": "Update an order"
+    },
+    {
+      "id": "fulfill_order",
+      "name": "Fulfill Order",
+      "method": "POST",
+      "path": "/commerce/orders/{orderId}/fulfillments",
+      "description": "Create fulfillment for order"
+    },
+    {
+      "id": "list_order_fulfillments",
+      "name": "List Order Fulfillments",
+      "method": "GET",
+      "path": "/commerce/orders/{orderId}/fulfillments",
+      "description": "Get order fulfillments"
+    },
+    {
+      "id": "update_fulfillment",
+      "name": "Update Fulfillment",
+      "method": "PUT",
+      "path": "/commerce/orders/{orderId}/fulfillments/{fulfillmentId}",
+      "description": "Update a fulfillment"
+    },
+    {
+      "id": "list_inventory",
+      "name": "List Inventory",
+      "method": "GET",
+      "path": "/commerce/inventory",
+      "description": "Get inventory levels"
+    },
+    {
+      "id": "get_inventory_item",
+      "name": "Get Inventory Item",
+      "method": "GET",
+      "path": "/commerce/inventory/{variantId}",
+      "description": "Get inventory for variant"
+    },
+    {
+      "id": "update_inventory",
+      "name": "Update Inventory",
+      "method": "PUT",
+      "path": "/commerce/inventory/{variantId}",
+      "description": "Update inventory quantity"
+    },
+    {
+      "id": "list_transactions",
+      "name": "List Transactions",
+      "method": "GET",
+      "path": "/commerce/transactions",
+      "description": "Get all transactions"
+    },
+    {
+      "id": "get_transaction",
+      "name": "Get Transaction",
+      "method": "GET",
+      "path": "/commerce/transactions/{transactionId}",
+      "description": "Get a specific transaction"
+    },
+    {
+      "id": "refund_transaction",
+      "name": "Refund Transaction",
+      "method": "POST",
+      "path": "/commerce/transactions/{transactionId}/refund",
+      "description": "Refund a transaction"
+    },
+    {
+      "id": "list_customers",
+      "name": "List Customers",
+      "method": "GET",
+      "path": "/commerce/customers",
+      "description": "Get all customers"
+    },
+    {
+      "id": "get_customer",
+      "name": "Get Customer",
+      "method": "GET",
+      "path": "/commerce/customers/{customerId}",
+      "description": "Get a specific customer"
+    },
+    {
+      "id": "list_shipping_zones",
+      "name": "List Shipping Zones",
+      "method": "GET",
+      "path": "/commerce/shipping/zones",
+      "description": "Get shipping zones"
+    },
+    {
+      "id": "get_shipping_zone",
+      "name": "Get Shipping Zone",
+      "method": "GET",
+      "path": "/commerce/shipping/zones/{zoneId}",
+      "description": "Get a specific shipping zone"
+    },
+    {
+      "id": "create_shipping_zone",
+      "name": "Create Shipping Zone",
+      "method": "POST",
+      "path": "/commerce/shipping/zones",
+      "description": "Create a shipping zone"
+    },
+    {
+      "id": "update_shipping_zone",
+      "name": "Update Shipping Zone",
+      "method": "PUT",
+      "path": "/commerce/shipping/zones/{zoneId}",
+      "description": "Update a shipping zone"
+    },
+    {
+      "id": "list_tax_rates",
+      "name": "List Tax Rates",
+      "method": "GET",
+      "path": "/commerce/tax/rates",
+      "description": "Get tax rates"
+    },
+    {
+      "id": "create_tax_rate",
+      "name": "Create Tax Rate",
+      "method": "POST",
+      "path": "/commerce/tax/rates",
+      "description": "Create a tax rate"
+    },
+    {
+      "id": "list_discounts",
+      "name": "List Discounts",
+      "method": "GET",
+      "path": "/commerce/discounts",
+      "description": "Get all discounts"
+    },
+    {
+      "id": "get_discount",
+      "name": "Get Discount",
+      "method": "GET",
+      "path": "/commerce/discounts/{discountId}",
+      "description": "Get a specific discount"
+    },
+    {
+      "id": "create_discount",
+      "name": "Create Discount",
+      "method": "POST",
+      "path": "/commerce/discounts",
+      "description": "Create a discount code"
+    },
+    {
+      "id": "update_discount",
+      "name": "Update Discount",
+      "method": "PUT",
+      "path": "/commerce/discounts/{discountId}",
+      "description": "Update a discount"
+    },
+    {
+      "id": "delete_discount",
+      "name": "Delete Discount",
+      "method": "DELETE",
+      "path": "/commerce/discounts/{discountId}",
+      "description": "Delete a discount"
+    },
+    {
+      "id": "get_store_settings",
+      "name": "Get Store Settings",
+      "method": "GET",
+      "path": "/commerce/settings",
+      "description": "Get store settings"
+    },
+    {
+      "id": "update_store_settings",
+      "name": "Update Store Settings",
+      "method": "PUT",
+      "path": "/commerce/settings",
+      "description": "Update store settings"
+    },
+    {
+      "id": "list_webhooks",
+      "name": "List Webhooks",
+      "method": "GET",
+      "path": "/webhooks",
+      "description": "Get all webhooks"
+    },
+    {
+      "id": "create_webhook",
+      "name": "Create Webhook",
+      "method": "POST",
+      "path": "/webhooks",
+      "description": "Create a webhook"
+    },
+    {
+      "id": "delete_webhook",
+      "name": "Delete Webhook",
+      "method": "DELETE",
+      "path": "/webhooks/{webhookId}",
+      "description": "Delete a webhook"
+    }
+  ]
+}
