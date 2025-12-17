@@ -1,0 +1,40 @@
+{
+  "name": "Llama (Meta)",
+  "id": "llama",
+  "version": "1.0.0",
+  "description": "Meta's open-source Llama LLM via Replicate",
+  "category": "ai",
+  "icon": "🦙",
+  "color": "#0668E1",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "Replicate API Key",
+        "type": "password",
+        "required": true,
+        "description": "Get from replicate.com"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "generateText",
+      "name": "Generate Text",
+      "description": "Generate text with Llama"
+    },
+    {
+      "id": "generateChat",
+      "name": "Generate Chat",
+      "description": "Chat with Llama"
+    },
+    {
+      "id": "streamGenerate",
+      "name": "Stream Generate",
+      "description": "Stream text generation"
+    }
+  ],
+  "documentation": "https://replicate.com/meta/llama-2-70b-chat",
+  "setupGuide": "https://replicate.com/account/api-tokens"
+}
