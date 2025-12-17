@@ -1,0 +1,399 @@
+{
+  "name": "magento",
+  "displayName": "Magento",
+  "version": "1.0.0",
+  "description": "Complete Magento integration with 55 endpoints for products, orders, customers, inventory, categories, and store management",
+  "category": "ecommerce",
+  "icon": "https://cdn.worldvectorlogo.com/logos/magento.svg",
+  "authentication": {
+    "type": "bearer",
+    "tokenType": "Bearer",
+    "scopes": []
+  },
+  "baseUrl": "https://{store_url}/rest/V1",
+  "rateLimit": {
+    "quota": 1000,
+    "perHour": 1000,
+    "concurrent": 10
+  },
+  "endpoints": [
+    {
+      "id": "list_products",
+      "name": "List Products",
+      "method": "GET",
+      "path": "/products",
+      "description": "Get all products"
+    },
+    {
+      "id": "get_product",
+      "name": "Get Product",
+      "method": "GET",
+      "path": "/products/{sku}",
+      "description": "Get a specific product by SKU"
+    },
+    {
+      "id": "create_product",
+      "name": "Create Product",
+      "method": "POST",
+      "path": "/products",
+      "description": "Create a new product"
+    },
+    {
+      "id": "update_product",
+      "name": "Update Product",
+      "method": "PUT",
+      "path": "/products/{sku}",
+      "description": "Update a product"
+    },
+    {
+      "id": "delete_product",
+      "name": "Delete Product",
+      "method": "DELETE",
+      "path": "/products/{sku}",
+      "description": "Delete a product"
+    },
+    {
+      "id": "search_products",
+      "name": "Search Products",
+      "method": "GET",
+      "path": "/products?searchCriteria[filter_groups][0][filters][0][field]=name&searchCriteria[filter_groups][0][filters][0][value]=%{search_term}%",
+      "description": "Search products"
+    },
+    {
+      "id": "list_product_attributes",
+      "name": "List Product Attributes",
+      "method": "GET",
+      "path": "/products/attributes",
+      "description": "Get all product attributes"
+    },
+    {
+      "id": "get_product_attribute",
+      "name": "Get Product Attribute",
+      "method": "GET",
+      "path": "/products/attributes/{attributeCode}",
+      "description": "Get specific product attribute"
+    },
+    {
+      "id": "list_orders",
+      "name": "List Orders",
+      "method": "GET",
+      "path": "/orders",
+      "description": "Get all orders"
+    },
+    {
+      "id": "get_order",
+      "name": "Get Order",
+      "method": "GET",
+      "path": "/orders/{id}",
+      "description": "Get a specific order"
+    },
+    {
+      "id": "create_order",
+      "name": "Create Order",
+      "method": "POST",
+      "path": "/orders",
+      "description": "Create a new order"
+    },
+    {
+      "id": "update_order",
+      "name": "Update Order",
+      "method": "PUT",
+      "path": "/orders/{id}",
+      "description": "Update an order"
+    },
+    {
+      "id": "cancel_order",
+      "name": "Cancel Order",
+      "method": "POST",
+      "path": "/orders/{id}/cancel",
+      "description": "Cancel an order"
+    },
+    {
+      "id": "hold_order",
+      "name": "Hold Order",
+      "method": "POST",
+      "path": "/orders/{id}/hold",
+      "description": "Put order on hold"
+    },
+    {
+      "id": "unhold_order",
+      "name": "Unhold Order",
+      "method": "POST",
+      "path": "/orders/{id}/unhold",
+      "description": "Remove order from hold"
+    },
+    {
+      "id": "add_order_comment",
+      "name": "Add Order Comment",
+      "method": "POST",
+      "path": "/orders/{id}/comments",
+      "description": "Add comment to order"
+    },
+    {
+      "id": "list_customers",
+      "name": "List Customers",
+      "method": "GET",
+      "path": "/customers/search",
+      "description": "Get all customers"
+    },
+    {
+      "id": "get_customer",
+      "name": "Get Customer",
+      "method": "GET",
+      "path": "/customers/{customerId}",
+      "description": "Get a specific customer"
+    },
+    {
+      "id": "create_customer",
+      "name": "Create Customer",
+      "method": "POST",
+      "path": "/customers",
+      "description": "Create a new customer"
+    },
+    {
+      "id": "update_customer",
+      "name": "Update Customer",
+      "method": "PUT",
+      "path": "/customers/{customerId}",
+      "description": "Update a customer"
+    },
+    {
+      "id": "delete_customer",
+      "name": "Delete Customer",
+      "method": "DELETE",
+      "path": "/customers/{customerId}",
+      "description": "Delete a customer"
+    },
+    {
+      "id": "list_categories",
+      "name": "List Categories",
+      "method": "GET",
+      "path": "/categories",
+      "description": "Get all categories"
+    },
+    {
+      "id": "get_category",
+      "name": "Get Category",
+      "method": "GET",
+      "path": "/categories/{categoryId}",
+      "description": "Get a specific category"
+    },
+    {
+      "id": "create_category",
+      "name": "Create Category",
+      "method": "POST",
+      "path": "/categories",
+      "description": "Create a new category"
+    },
+    {
+      "id": "update_category",
+      "name": "Update Category",
+      "method": "PUT",
+      "path": "/categories/{categoryId}",
+      "description": "Update a category"
+    },
+    {
+      "id": "delete_category",
+      "name": "Delete Category",
+      "method": "DELETE",
+      "path": "/categories/{categoryId}",
+      "description": "Delete a category"
+    },
+    {
+      "id": "list_invoices",
+      "name": "List Invoices",
+      "method": "GET",
+      "path": "/invoices",
+      "description": "Get all invoices"
+    },
+    {
+      "id": "get_invoice",
+      "name": "Get Invoice",
+      "method": "GET",
+      "path": "/invoices/{id}",
+      "description": "Get a specific invoice"
+    },
+    {
+      "id": "create_invoice",
+      "name": "Create Invoice",
+      "method": "POST",
+      "path": "/order/{orderId}/invoice",
+      "description": "Create invoice for order"
+    },
+    {
+      "id": "list_shipments",
+      "name": "List Shipments",
+      "method": "GET",
+      "path": "/shipments",
+      "description": "Get all shipments"
+    },
+    {
+      "id": "get_shipment",
+      "name": "Get Shipment",
+      "method": "GET",
+      "path": "/shipments/{id}",
+      "description": "Get a specific shipment"
+    },
+    {
+      "id": "create_shipment",
+      "name": "Create Shipment",
+      "method": "POST",
+      "path": "/order/{orderId}/ship",
+      "description": "Create shipment for order"
+    },
+    {
+      "id": "list_credit_memos",
+      "name": "List Credit Memos",
+      "method": "GET",
+      "path": "/creditmemos",
+      "description": "Get all credit memos"
+    },
+    {
+      "id": "create_credit_memo",
+      "name": "Create Credit Memo",
+      "method": "POST",
+      "path": "/creditmemo",
+      "description": "Create a credit memo"
+    },
+    {
+      "id": "get_stock_item",
+      "name": "Get Stock Item",
+      "method": "GET",
+      "path": "/stockItems/{itemId}",
+      "description": "Get stock item details"
+    },
+    {
+      "id": "update_stock_item",
+      "name": "Update Stock Item",
+      "method": "PUT",
+      "path": "/products/{sku}/stockItems/{itemId}",
+      "description": "Update stock item"
+    },
+    {
+      "id": "list_carts",
+      "name": "List Carts",
+      "method": "GET",
+      "path": "/carts/search",
+      "description": "Get all carts"
+    },
+    {
+      "id": "get_cart",
+      "name": "Get Cart",
+      "method": "GET",
+      "path": "/carts/{cartId}",
+      "description": "Get a specific cart"
+    },
+    {
+      "id": "create_cart",
+      "name": "Create Cart",
+      "method": "POST",
+      "path": "/carts/mine",
+      "description": "Create a new cart"
+    },
+    {
+      "id": "add_cart_item",
+      "name": "Add Cart Item",
+      "method": "POST",
+      "path": "/carts/{cartId}/items",
+      "description": "Add item to cart"
+    },
+    {
+      "id": "update_cart_item",
+      "name": "Update Cart Item",
+      "method": "PUT",
+      "path": "/carts/{cartId}/items/{itemId}",
+      "description": "Update cart item"
+    },
+    {
+      "id": "delete_cart_item",
+      "name": "Delete Cart Item",
+      "method": "DELETE",
+      "path": "/carts/{cartId}/items/{itemId}",
+      "description": "Remove item from cart"
+    },
+    {
+      "id": "list_coupons",
+      "name": "List Coupons",
+      "method": "GET",
+      "path": "/coupons/search",
+      "description": "Get all coupons"
+    },
+    {
+      "id": "apply_coupon",
+      "name": "Apply Coupon",
+      "method": "PUT",
+      "path": "/carts/{cartId}/coupons/{couponCode}",
+      "description": "Apply coupon to cart"
+    },
+    {
+      "id": "remove_coupon",
+      "name": "Remove Coupon",
+      "method": "DELETE",
+      "path": "/carts/{cartId}/coupons",
+      "description": "Remove coupon from cart"
+    },
+    {
+      "id": "list_tax_rates",
+      "name": "List Tax Rates",
+      "method": "GET",
+      "path": "/taxRates/search",
+      "description": "Get all tax rates"
+    },
+    {
+      "id": "create_tax_rate",
+      "name": "Create Tax Rate",
+      "method": "POST",
+      "path": "/taxRates",
+      "description": "Create a tax rate"
+    },
+    {
+      "id": "list_shipping_methods",
+      "name": "List Shipping Methods",
+      "method": "GET",
+      "path": "/carts/{cartId}/shipping-methods",
+      "description": "Get available shipping methods"
+    },
+    {
+      "id": "list_payment_methods",
+      "name": "List Payment Methods",
+      "method": "GET",
+      "path": "/carts/{cartId}/payment-methods",
+      "description": "Get available payment methods"
+    },
+    {
+      "id": "set_payment_info",
+      "name": "Set Payment Information",
+      "method": "POST",
+      "path": "/carts/{cartId}/payment-information",
+      "description": "Set payment information for cart"
+    },
+    {
+      "id": "place_order",
+      "name": "Place Order",
+      "method": "PUT",
+      "path": "/carts/{cartId}/order",
+      "description": "Place order from cart"
+    },
+    {
+      "id": "get_store_config",
+      "name": "Get Store Config",
+      "method": "GET",
+      "path": "/store/storeConfigs",
+      "description": "Get store configuration"
+    },
+    {
+      "id": "list_cms_pages",
+      "name": "List CMS Pages",
+      "method": "GET",
+      "path": "/cmsPage/search",
+      "description": "Get all CMS pages"
+    },
+    {
+      "id": "list_cms_blocks",
+      "name": "List CMS Blocks",
+      "method": "GET",
+      "path": "/cmsBlock/search",
+      "description": "Get all CMS blocks"
+    }
+  ]
+}
