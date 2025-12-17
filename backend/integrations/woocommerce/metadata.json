@@ -1,0 +1,354 @@
+{
+  "name": "woocommerce",
+  "displayName": "WooCommerce",
+  "version": "1.0.0",
+  "description": "Complete WooCommerce integration with 48 endpoints for products, orders, customers, coupons, shipping, and store management",
+  "category": "ecommerce",
+  "icon": "https://cdn.worldvectorlogo.com/logos/woocommerce.svg",
+  "authentication": {
+    "type": "basic",
+    "tokenType": "Basic",
+    "scopes": [
+      "read",
+      "write",
+      "read_write"
+    ]
+  },
+  "baseUrl": "https://{store_url}/wp-json/wc/v3",
+  "rateLimit": {
+    "quota": 100,
+    "perMinute": 100,
+    "throttle": "per_store"
+  },
+  "endpoints": [
+    {
+      "id": "list_products",
+      "name": "List Products",
+      "method": "GET",
+      "path": "/products",
+      "description": "Get all products"
+    },
+    {
+      "id": "get_product",
+      "name": "Get Product",
+      "method": "GET",
+      "path": "/products/{id}",
+      "description": "Get a specific product"
+    },
+    {
+      "id": "create_product",
+      "name": "Create Product",
+      "method": "POST",
+      "path": "/products",
+      "description": "Create a new product"
+    },
+    {
+      "id": "update_product",
+      "name": "Update Product",
+      "method": "PUT",
+      "path": "/products/{id}",
+      "description": "Update a product"
+    },
+    {
+      "id": "delete_product",
+      "name": "Delete Product",
+      "method": "DELETE",
+      "path": "/products/{id}",
+      "description": "Delete a product"
+    },
+    {
+      "id": "batch_products",
+      "name": "Batch Update Products",
+      "method": "POST",
+      "path": "/products/batch",
+      "description": "Create, update and delete multiple products"
+    },
+    {
+      "id": "list_product_variations",
+      "name": "List Product Variations",
+      "method": "GET",
+      "path": "/products/{product_id}/variations",
+      "description": "Get all variations of a product"
+    },
+    {
+      "id": "create_product_variation",
+      "name": "Create Product Variation",
+      "method": "POST",
+      "path": "/products/{product_id}/variations",
+      "description": "Create a product variation"
+    },
+    {
+      "id": "list_orders",
+      "name": "List Orders",
+      "method": "GET",
+      "path": "/orders",
+      "description": "Get all orders"
+    },
+    {
+      "id": "get_order",
+      "name": "Get Order",
+      "method": "GET",
+      "path": "/orders/{id}",
+      "description": "Get a specific order"
+    },
+    {
+      "id": "create_order",
+      "name": "Create Order",
+      "method": "POST",
+      "path": "/orders",
+      "description": "Create a new order"
+    },
+    {
+      "id": "update_order",
+      "name": "Update Order",
+      "method": "PUT",
+      "path": "/orders/{id}",
+      "description": "Update an order"
+    },
+    {
+      "id": "delete_order",
+      "name": "Delete Order",
+      "method": "DELETE",
+      "path": "/orders/{id}",
+      "description": "Delete an order"
+    },
+    {
+      "id": "batch_orders",
+      "name": "Batch Update Orders",
+      "method": "POST",
+      "path": "/orders/batch",
+      "description": "Create, update and delete multiple orders"
+    },
+    {
+      "id": "list_order_notes",
+      "name": "List Order Notes",
+      "method": "GET",
+      "path": "/orders/{order_id}/notes",
+      "description": "Get all notes for an order"
+    },
+    {
+      "id": "create_order_note",
+      "name": "Create Order Note",
+      "method": "POST",
+      "path": "/orders/{order_id}/notes",
+      "description": "Create an order note"
+    },
+    {
+      "id": "list_customers",
+      "name": "List Customers",
+      "method": "GET",
+      "path": "/customers",
+      "description": "Get all customers"
+    },
+    {
+      "id": "get_customer",
+      "name": "Get Customer",
+      "method": "GET",
+      "path": "/customers/{id}",
+      "description": "Get a specific customer"
+    },
+    {
+      "id": "create_customer",
+      "name": "Create Customer",
+      "method": "POST",
+      "path": "/customers",
+      "description": "Create a new customer"
+    },
+    {
+      "id": "update_customer",
+      "name": "Update Customer",
+      "method": "PUT",
+      "path": "/customers/{id}",
+      "description": "Update a customer"
+    },
+    {
+      "id": "delete_customer",
+      "name": "Delete Customer",
+      "method": "DELETE",
+      "path": "/customers/{id}",
+      "description": "Delete a customer"
+    },
+    {
+      "id": "batch_customers",
+      "name": "Batch Update Customers",
+      "method": "POST",
+      "path": "/customers/batch",
+      "description": "Create, update and delete multiple customers"
+    },
+    {
+      "id": "list_coupons",
+      "name": "List Coupons",
+      "method": "GET",
+      "path": "/coupons",
+      "description": "Get all coupons"
+    },
+    {
+      "id": "get_coupon",
+      "name": "Get Coupon",
+      "method": "GET",
+      "path": "/coupons/{id}",
+      "description": "Get a specific coupon"
+    },
+    {
+      "id": "create_coupon",
+      "name": "Create Coupon",
+      "method": "POST",
+      "path": "/coupons",
+      "description": "Create a new coupon"
+    },
+    {
+      "id": "update_coupon",
+      "name": "Update Coupon",
+      "method": "PUT",
+      "path": "/coupons/{id}",
+      "description": "Update a coupon"
+    },
+    {
+      "id": "delete_coupon",
+      "name": "Delete Coupon",
+      "method": "DELETE",
+      "path": "/coupons/{id}",
+      "description": "Delete a coupon"
+    },
+    {
+      "id": "list_product_categories",
+      "name": "List Product Categories",
+      "method": "GET",
+      "path": "/products/categories",
+      "description": "Get all product categories"
+    },
+    {
+      "id": "create_product_category",
+      "name": "Create Product Category",
+      "method": "POST",
+      "path": "/products/categories",
+      "description": "Create a product category"
+    },
+    {
+      "id": "list_product_tags",
+      "name": "List Product Tags",
+      "method": "GET",
+      "path": "/products/tags",
+      "description": "Get all product tags"
+    },
+    {
+      "id": "create_product_tag",
+      "name": "Create Product Tag",
+      "method": "POST",
+      "path": "/products/tags",
+      "description": "Create a product tag"
+    },
+    {
+      "id": "list_shipping_zones",
+      "name": "List Shipping Zones",
+      "method": "GET",
+      "path": "/shipping/zones",
+      "description": "Get all shipping zones"
+    },
+    {
+      "id": "create_shipping_zone",
+      "name": "Create Shipping Zone",
+      "method": "POST",
+      "path": "/shipping/zones",
+      "description": "Create a shipping zone"
+    },
+    {
+      "id": "list_shipping_methods",
+      "name": "List Shipping Methods",
+      "method": "GET",
+      "path": "/shipping/zones/{zone_id}/methods",
+      "description": "Get shipping methods for a zone"
+    },
+    {
+      "id": "list_tax_rates",
+      "name": "List Tax Rates",
+      "method": "GET",
+      "path": "/taxes",
+      "description": "Get all tax rates"
+    },
+    {
+      "id": "create_tax_rate",
+      "name": "Create Tax Rate",
+      "method": "POST",
+      "path": "/taxes",
+      "description": "Create a tax rate"
+    },
+    {
+      "id": "list_tax_classes",
+      "name": "List Tax Classes",
+      "method": "GET",
+      "path": "/taxes/classes",
+      "description": "Get all tax classes"
+    },
+    {
+      "id": "list_webhooks",
+      "name": "List Webhooks",
+      "method": "GET",
+      "path": "/webhooks",
+      "description": "Get all webhooks"
+    },
+    {
+      "id": "create_webhook",
+      "name": "Create Webhook",
+      "method": "POST",
+      "path": "/webhooks",
+      "description": "Create a webhook"
+    },
+    {
+      "id": "delete_webhook",
+      "name": "Delete Webhook",
+      "method": "DELETE",
+      "path": "/webhooks/{id}",
+      "description": "Delete a webhook"
+    },
+    {
+      "id": "list_refunds",
+      "name": "List Refunds",
+      "method": "GET",
+      "path": "/orders/{order_id}/refunds",
+      "description": "Get all refunds for an order"
+    },
+    {
+      "id": "create_refund",
+      "name": "Create Refund",
+      "method": "POST",
+      "path": "/orders/{order_id}/refunds",
+      "description": "Create a refund"
+    },
+    {
+      "id": "list_payment_gateways",
+      "name": "List Payment Gateways",
+      "method": "GET",
+      "path": "/payment_gateways",
+      "description": "Get all payment gateways"
+    },
+    {
+      "id": "update_payment_gateway",
+      "name": "Update Payment Gateway",
+      "method": "PUT",
+      "path": "/payment_gateways/{id}",
+      "description": "Update payment gateway settings"
+    },
+    {
+      "id": "get_system_status",
+      "name": "Get System Status",
+      "method": "GET",
+      "path": "/system_status",
+      "description": "Get store system status"
+    },
+    {
+      "id": "list_reports_sales",
+      "name": "List Sales Reports",
+      "method": "GET",
+      "path": "/reports/sales",
+      "description": "Get sales reports"
+    },
+    {
+      "id": "list_reports_top_sellers",
+      "name": "List Top Sellers",
+      "method": "GET",
+      "path": "/reports/top_sellers",
+      "description": "Get top selling products"
+    }
+  ]
+}
