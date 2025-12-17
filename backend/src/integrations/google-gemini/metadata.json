@@ -1,0 +1,54 @@
+{
+  "name": "Google Gemini",
+  "id": "google-gemini",
+  "version": "1.0.0",
+  "description": "Google Gemini AI for text generation and chat",
+  "category": "ai",
+  "icon": "🤖",
+  "color": "#4285F4",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "generateText",
+      "name": "Generate Text",
+      "description": "Generate text from prompt"
+    },
+    {
+      "id": "generateChat",
+      "name": "Generate Chat",
+      "description": "Generate chat response"
+    },
+    {
+      "id": "countTokens",
+      "name": "Count Tokens",
+      "description": "Count tokens in text"
+    },
+    {
+      "id": "embedContent",
+      "name": "Embed Content",
+      "description": "Generate embeddings"
+    },
+    {
+      "id": "listModels",
+      "name": "List Models",
+      "description": "List available models"
+    },
+    {
+      "id": "getModel",
+      "name": "Get Model",
+      "description": "Get model details"
+    }
+  ],
+  "documentation": "https://ai.google.dev/docs",
+  "setupGuide": "https://makersuite.google.com/app/apikey"
+}
