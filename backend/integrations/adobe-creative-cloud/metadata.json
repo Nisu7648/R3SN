@@ -1,0 +1,447 @@
+{
+  "name": "adobe-creative-cloud",
+  "displayName": "Adobe Creative Cloud",
+  "version": "1.0.0",
+  "description": "Complete Adobe Creative Cloud integration with 60+ premium endpoints for Photoshop, Illustrator, Lightroom, InDesign, XD, and asset management with full access to all premium features",
+  "category": "design",
+  "icon": "https://cdn.worldvectorlogo.com/logos/adobe-creative-cloud.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "openid",
+      "creative_sdk",
+      "AdobeID",
+      "read_organizations",
+      "additional_info.projectedProductContext"
+    ]
+  },
+  "baseUrl": "https://image.adobe.io",
+  "rateLimit": {
+    "quota": 5000,
+    "perDay": 5000,
+    "concurrent": 50
+  },
+  "endpoints": [
+    {
+      "id": "photoshop_remove_background",
+      "name": "Remove Background (Photoshop)",
+      "method": "POST",
+      "path": "/sensei/cutout",
+      "description": "AI-powered background removal"
+    },
+    {
+      "id": "photoshop_auto_tone",
+      "name": "Auto Tone (Photoshop)",
+      "method": "POST",
+      "path": "/pie/psdService/autoTone",
+      "description": "Automatically adjust image tone"
+    },
+    {
+      "id": "photoshop_smart_crop",
+      "name": "Smart Crop (Photoshop)",
+      "method": "POST",
+      "path": "/pie/psdService/smartCrop",
+      "description": "AI-powered smart cropping"
+    },
+    {
+      "id": "photoshop_apply_preset",
+      "name": "Apply Preset (Photoshop)",
+      "method": "POST",
+      "path": "/pie/psdService/applyPreset",
+      "description": "Apply Lightroom presets"
+    },
+    {
+      "id": "photoshop_edit_text",
+      "name": "Edit Text Layer (Photoshop)",
+      "method": "POST",
+      "path": "/pie/psdService/text",
+      "description": "Edit text in PSD files"
+    },
+    {
+      "id": "photoshop_replace_smart_object",
+      "name": "Replace Smart Object (Photoshop)",
+      "method": "POST",
+      "path": "/pie/psdService/smartObject",
+      "description": "Replace smart objects in PSD"
+    },
+    {
+      "id": "photoshop_create_document",
+      "name": "Create Document (Photoshop)",
+      "method": "POST",
+      "path": "/pie/psdService/documentCreate",
+      "description": "Create new PSD document"
+    },
+    {
+      "id": "photoshop_create_rendition",
+      "name": "Create Rendition (Photoshop)",
+      "method": "POST",
+      "path": "/pie/psdService/renditionCreate",
+      "description": "Generate image renditions"
+    },
+    {
+      "id": "photoshop_apply_actions",
+      "name": "Apply Actions (Photoshop)",
+      "method": "POST",
+      "path": "/pie/psdService/actionJSON",
+      "description": "Apply Photoshop actions"
+    },
+    {
+      "id": "photoshop_depth_blur",
+      "name": "Depth Blur (Photoshop)",
+      "method": "POST",
+      "path": "/sensei/depthBlur",
+      "description": "Apply depth-based blur effect"
+    },
+    {
+      "id": "lightroom_auto_adjust",
+      "name": "Auto Adjust (Lightroom)",
+      "method": "POST",
+      "path": "/lrService/autoTone",
+      "description": "Auto adjust photo settings"
+    },
+    {
+      "id": "lightroom_apply_preset",
+      "name": "Apply Preset (Lightroom)",
+      "method": "POST",
+      "path": "/lrService/applyPreset",
+      "description": "Apply Lightroom presets"
+    },
+    {
+      "id": "lightroom_edit_photo",
+      "name": "Edit Photo (Lightroom)",
+      "method": "POST",
+      "path": "/lrService/edit",
+      "description": "Edit photo with adjustments"
+    },
+    {
+      "id": "lightroom_straighten",
+      "name": "Straighten (Lightroom)",
+      "method": "POST",
+      "path": "/lrService/straighten",
+      "description": "Auto straighten images"
+    },
+    {
+      "id": "illustrator_create_vector",
+      "name": "Create Vector (Illustrator)",
+      "method": "POST",
+      "path": "/vectorize",
+      "description": "Convert raster to vector"
+    },
+    {
+      "id": "illustrator_expand_artwork",
+      "name": "Expand Artwork (Illustrator)",
+      "method": "POST",
+      "path": "/ai/expand",
+      "description": "Expand vector artwork"
+    },
+    {
+      "id": "pdf_create_from_html",
+      "name": "Create PDF from HTML",
+      "method": "POST",
+      "path": "/pdfServices/createPDF",
+      "description": "Generate PDF from HTML"
+    },
+    {
+      "id": "pdf_combine",
+      "name": "Combine PDFs",
+      "method": "POST",
+      "path": "/pdfServices/combinePDF",
+      "description": "Merge multiple PDFs"
+    },
+    {
+      "id": "pdf_compress",
+      "name": "Compress PDF",
+      "method": "POST",
+      "path": "/pdfServices/compressPDF",
+      "description": "Compress PDF file size"
+    },
+    {
+      "id": "pdf_ocr",
+      "name": "OCR PDF",
+      "method": "POST",
+      "path": "/pdfServices/ocr",
+      "description": "Extract text from PDF"
+    },
+    {
+      "id": "pdf_protect",
+      "name": "Protect PDF",
+      "method": "POST",
+      "path": "/pdfServices/protectPDF",
+      "description": "Add password protection"
+    },
+    {
+      "id": "pdf_export",
+      "name": "Export PDF",
+      "method": "POST",
+      "path": "/pdfServices/exportPDF",
+      "description": "Export PDF to other formats"
+    },
+    {
+      "id": "pdf_split",
+      "name": "Split PDF",
+      "method": "POST",
+      "path": "/pdfServices/splitPDF",
+      "description": "Split PDF into pages"
+    },
+    {
+      "id": "pdf_reorder_pages",
+      "name": "Reorder PDF Pages",
+      "method": "POST",
+      "path": "/pdfServices/reorderPages",
+      "description": "Reorder PDF pages"
+    },
+    {
+      "id": "pdf_insert_pages",
+      "name": "Insert PDF Pages",
+      "method": "POST",
+      "path": "/pdfServices/insertPages",
+      "description": "Insert pages into PDF"
+    },
+    {
+      "id": "pdf_delete_pages",
+      "name": "Delete PDF Pages",
+      "method": "POST",
+      "path": "/pdfServices/deletePages",
+      "description": "Delete pages from PDF"
+    },
+    {
+      "id": "pdf_rotate_pages",
+      "name": "Rotate PDF Pages",
+      "method": "POST",
+      "path": "/pdfServices/rotatePages",
+      "description": "Rotate PDF pages"
+    },
+    {
+      "id": "pdf_extract_pages",
+      "name": "Extract PDF Pages",
+      "method": "POST",
+      "path": "/pdfServices/extractPages",
+      "description": "Extract specific pages"
+    },
+    {
+      "id": "pdf_linearize",
+      "name": "Linearize PDF",
+      "method": "POST",
+      "path": "/pdfServices/linearizePDF",
+      "description": "Optimize for web viewing"
+    },
+    {
+      "id": "xd_get_artboards",
+      "name": "Get Artboards (XD)",
+      "method": "GET",
+      "path": "/xd/artboards",
+      "description": "Get XD artboards"
+    },
+    {
+      "id": "xd_export_assets",
+      "name": "Export Assets (XD)",
+      "method": "POST",
+      "path": "/xd/export",
+      "description": "Export XD assets"
+    },
+    {
+      "id": "stock_search",
+      "name": "Search Stock (Adobe Stock)",
+      "method": "GET",
+      "path": "/Rest/Media/1/Search/Files",
+      "description": "Search Adobe Stock assets"
+    },
+    {
+      "id": "stock_license",
+      "name": "License Asset (Adobe Stock)",
+      "method": "POST",
+      "path": "/Rest/Libraries/1/Content/License",
+      "description": "License stock assets"
+    },
+    {
+      "id": "stock_download",
+      "name": "Download Asset (Adobe Stock)",
+      "method": "GET",
+      "path": "/Rest/Libraries/1/Content/Download",
+      "description": "Download licensed assets"
+    },
+    {
+      "id": "fonts_list",
+      "name": "List Fonts (Adobe Fonts)",
+      "method": "GET",
+      "path": "/fonts",
+      "description": "Get available fonts"
+    },
+    {
+      "id": "fonts_activate",
+      "name": "Activate Font (Adobe Fonts)",
+      "method": "POST",
+      "path": "/fonts/activate",
+      "description": "Activate font for use"
+    },
+    {
+      "id": "cc_libraries_list",
+      "name": "List Libraries",
+      "method": "GET",
+      "path": "/libraries",
+      "description": "Get Creative Cloud libraries"
+    },
+    {
+      "id": "cc_libraries_create",
+      "name": "Create Library",
+      "method": "POST",
+      "path": "/libraries",
+      "description": "Create new library"
+    },
+    {
+      "id": "cc_libraries_get_elements",
+      "name": "Get Library Elements",
+      "method": "GET",
+      "path": "/libraries/{library_id}/elements",
+      "description": "Get elements in library"
+    },
+    {
+      "id": "cc_libraries_add_element",
+      "name": "Add Library Element",
+      "method": "POST",
+      "path": "/libraries/{library_id}/elements",
+      "description": "Add element to library"
+    },
+    {
+      "id": "cc_libraries_update_element",
+      "name": "Update Library Element",
+      "method": "PUT",
+      "path": "/libraries/{library_id}/elements/{element_id}",
+      "description": "Update library element"
+    },
+    {
+      "id": "cc_libraries_delete_element",
+      "name": "Delete Library Element",
+      "method": "DELETE",
+      "path": "/libraries/{library_id}/elements/{element_id}",
+      "description": "Delete library element"
+    },
+    {
+      "id": "cc_storage_list_files",
+      "name": "List Cloud Files",
+      "method": "GET",
+      "path": "/files",
+      "description": "List Creative Cloud files"
+    },
+    {
+      "id": "cc_storage_upload",
+      "name": "Upload File",
+      "method": "POST",
+      "path": "/files",
+      "description": "Upload file to cloud"
+    },
+    {
+      "id": "cc_storage_download",
+      "name": "Download File",
+      "method": "GET",
+      "path": "/files/{file_id}",
+      "description": "Download cloud file"
+    },
+    {
+      "id": "cc_storage_delete",
+      "name": "Delete File",
+      "method": "DELETE",
+      "path": "/files/{file_id}",
+      "description": "Delete cloud file"
+    },
+    {
+      "id": "sensei_colorize",
+      "name": "Colorize Image (Sensei AI)",
+      "method": "POST",
+      "path": "/sensei/colorize",
+      "description": "AI colorization of B&W images"
+    },
+    {
+      "id": "sensei_style_transfer",
+      "name": "Style Transfer (Sensei AI)",
+      "method": "POST",
+      "path": "/sensei/styleTransfer",
+      "description": "Apply artistic styles"
+    },
+    {
+      "id": "sensei_super_resolution",
+      "name": "Super Resolution (Sensei AI)",
+      "method": "POST",
+      "path": "/sensei/superResolution",
+      "description": "AI upscaling of images"
+    },
+    {
+      "id": "sensei_neural_filters",
+      "name": "Neural Filters (Sensei AI)",
+      "method": "POST",
+      "path": "/sensei/neuralFilters",
+      "description": "Apply AI-powered filters"
+    },
+    {
+      "id": "indesign_create_document",
+      "name": "Create Document (InDesign)",
+      "method": "POST",
+      "path": "/indesign/document",
+      "description": "Create InDesign document"
+    },
+    {
+      "id": "indesign_export_pdf",
+      "name": "Export PDF (InDesign)",
+      "method": "POST",
+      "path": "/indesign/exportPDF",
+      "description": "Export InDesign to PDF"
+    },
+    {
+      "id": "premiere_create_sequence",
+      "name": "Create Sequence (Premiere)",
+      "method": "POST",
+      "path": "/premiere/sequence",
+      "description": "Create video sequence"
+    },
+    {
+      "id": "premiere_export_video",
+      "name": "Export Video (Premiere)",
+      "method": "POST",
+      "path": "/premiere/export",
+      "description": "Export video file"
+    },
+    {
+      "id": "after_effects_render",
+      "name": "Render Composition (After Effects)",
+      "method": "POST",
+      "path": "/aftereffects/render",
+      "description": "Render AE composition"
+    },
+    {
+      "id": "dimension_render_3d",
+      "name": "Render 3D (Dimension)",
+      "method": "POST",
+      "path": "/dimension/render",
+      "description": "Render 3D scenes"
+    },
+    {
+      "id": "substance_generate_material",
+      "name": "Generate Material (Substance)",
+      "method": "POST",
+      "path": "/substance/material",
+      "description": "Generate 3D materials"
+    },
+    {
+      "id": "express_create_design",
+      "name": "Create Design (Express)",
+      "method": "POST",
+      "path": "/express/design",
+      "description": "Create quick designs"
+    },
+    {
+      "id": "firefly_generate_image",
+      "name": "Generate Image (Firefly AI)",
+      "method": "POST",
+      "path": "/firefly/generate",
+      "description": "AI image generation"
+    },
+    {
+      "id": "firefly_generative_fill",
+      "name": "Generative Fill (Firefly AI)",
+      "method": "POST",
+      "path": "/firefly/generativeFill",
+      "description": "AI-powered content fill"
+    }
+  ]
+}
