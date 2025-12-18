@@ -1,0 +1,39 @@
+{
+  "name": "AbstractAPI Premium",
+  "version": "1.0.0",
+  "description": "Free premium API suite with email validation, phone validation, IP geolocation, VAT validation, holidays, exchange rates, timezone, and web scraping",
+  "category": "utilities",
+  "isPremium": true,
+  "isFree": true,
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://app.abstractapi.com/users/signup"
+  },
+  "features": [
+    "Email validation with auto-correct",
+    "Phone number validation",
+    "IP geolocation",
+    "VAT number validation",
+    "Holiday calendar API",
+    "Exchange rates",
+    "Timezone information",
+    "Web scraping with JS rendering",
+    "Bulk operations support"
+  ],
+  "endpoints": {
+    "validateEmail": "https://emailvalidation.abstractapi.com/v1/",
+    "validatePhone": "https://phonevalidation.abstractapi.com/v1/",
+    "getIPGeolocation": "https://ipgeolocation.abstractapi.com/v1/",
+    "validateVAT": "https://vat.abstractapi.com/v1/",
+    "getHolidays": "https://holidays.abstractapi.com/v1/",
+    "getExchangeRates": "https://exchange-rates.abstractapi.com/v1/live/",
+    "getTimezone": "https://timezone.abstractapi.com/v1/current_time/",
+    "scrapeWebsite": "https://scrape.abstractapi.com/v1/"
+  },
+  "rateLimit": {
+    "requests": 100,
+    "period": "month",
+    "note": "Free tier includes 100 requests per month per API"
+  }
+}
