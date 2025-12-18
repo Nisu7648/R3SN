@@ -1,0 +1,51 @@
+{
+  "name": "Unsplash Free",
+  "id": "unsplash-free",
+  "version": "1.0.0",
+  "description": "FREE high-quality images API - 50 requests/hour free",
+  "category": "images",
+  "icon": "📸",
+  "color": "#000000",
+  "cost": "FREE (50 requests/hour)",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "accessKey",
+        "label": "Access Key (FREE)",
+        "type": "password",
+        "required": true,
+        "description": "Get free at unsplash.com/developers"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "searchPhotos",
+      "name": "Search Photos",
+      "description": "Search for photos"
+    },
+    {
+      "id": "getRandomPhoto",
+      "name": "Get Random Photo",
+      "description": "Get random photo(s)"
+    },
+    {
+      "id": "getPhoto",
+      "name": "Get Photo",
+      "description": "Get photo by ID"
+    },
+    {
+      "id": "listPhotos",
+      "name": "List Photos",
+      "description": "List latest photos"
+    },
+    {
+      "id": "searchCollections",
+      "name": "Search Collections",
+      "description": "Search photo collections"
+    }
+  ],
+  "documentation": "https://unsplash.com/documentation",
+  "setupGuide": "https://unsplash.com/developers"
+}
