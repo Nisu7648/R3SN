@@ -1,0 +1,38 @@
+{
+  "name": "JokeAPI Free",
+  "id": "jokeapi-free",
+  "version": "1.0.0",
+  "description": "100% FREE jokes API - NO API KEY REQUIRED",
+  "category": "entertainment",
+  "icon": "😂",
+  "color": "#FFD93D",
+  "cost": "100% FREE",
+  "authentication": {
+    "type": "none",
+    "fields": []
+  },
+  "actions": [
+    {
+      "id": "getRandomJoke",
+      "name": "Get Random Joke",
+      "description": "Get a random joke"
+    },
+    {
+      "id": "getJokeByCategory",
+      "name": "Get Joke by Category",
+      "description": "Get joke from specific category"
+    },
+    {
+      "id": "getMultipleJokes",
+      "name": "Get Multiple Jokes",
+      "description": "Get multiple jokes at once"
+    },
+    {
+      "id": "searchJokes",
+      "name": "Search Jokes",
+      "description": "Search for jokes"
+    }
+  ],
+  "documentation": "https://jokeapi.dev/",
+  "setupGuide": "No setup required - completely free!"
+}
