@@ -1,0 +1,53 @@
+{
+  "name": "CoinGecko Free",
+  "id": "coingecko-free",
+  "version": "1.0.0",
+  "description": "100% FREE crypto prices API - NO API KEY REQUIRED",
+  "category": "crypto",
+  "icon": "🪙",
+  "color": "#8DC63F",
+  "cost": "100% FREE",
+  "authentication": {
+    "type": "none",
+    "fields": []
+  },
+  "actions": [
+    {
+      "id": "getCoinPrice",
+      "name": "Get Coin Price",
+      "description": "Get current price of any coin"
+    },
+    {
+      "id": "getCoinMarketData",
+      "name": "Get Market Data",
+      "description": "Get detailed market data"
+    },
+    {
+      "id": "getTopCoins",
+      "name": "Get Top Coins",
+      "description": "Get top coins by market cap"
+    },
+    {
+      "id": "getTrendingCoins",
+      "name": "Get Trending",
+      "description": "Get trending coins"
+    },
+    {
+      "id": "searchCoins",
+      "name": "Search Coins",
+      "description": "Search for coins"
+    },
+    {
+      "id": "getGlobalData",
+      "name": "Get Global Data",
+      "description": "Get global crypto market data"
+    },
+    {
+      "id": "getCoinHistory",
+      "name": "Get Price History",
+      "description": "Get historical price data"
+    }
+  ],
+  "documentation": "https://www.coingecko.com/en/api/documentation",
+  "setupGuide": "No setup required - completely free!"
+}
