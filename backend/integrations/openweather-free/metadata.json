@@ -1,0 +1,46 @@
+{
+  "name": "OpenWeatherMap Free",
+  "id": "openweather-free",
+  "version": "1.0.0",
+  "description": "FREE weather API - 1000 calls/day free tier",
+  "category": "weather",
+  "icon": "🌤️",
+  "color": "#EB6E4B",
+  "cost": "FREE (1000 calls/day)",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key (FREE)",
+        "type": "password",
+        "required": true,
+        "description": "Get free at openweathermap.org"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "getCurrentWeather",
+      "name": "Get Current Weather",
+      "description": "Get current weather by city"
+    },
+    {
+      "id": "getForecast",
+      "name": "Get Forecast",
+      "description": "Get 5-day weather forecast"
+    },
+    {
+      "id": "getWeatherByCoords",
+      "name": "Get Weather by Coordinates",
+      "description": "Get weather by lat/lon"
+    },
+    {
+      "id": "getAirPollution",
+      "name": "Get Air Pollution",
+      "description": "Get air quality data"
+    }
+  ],
+  "documentation": "https://openweathermap.org/api",
+  "setupGuide": "https://openweathermap.org/appid"
+}
