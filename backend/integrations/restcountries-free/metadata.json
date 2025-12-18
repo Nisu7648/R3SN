@@ -1,0 +1,48 @@
+{
+  "name": "REST Countries Free",
+  "id": "restcountries-free",
+  "version": "1.0.0",
+  "description": "100% FREE country data API - NO API KEY REQUIRED",
+  "category": "data",
+  "icon": "🌍",
+  "color": "#4A90E2",
+  "cost": "100% FREE",
+  "authentication": {
+    "type": "none",
+    "fields": []
+  },
+  "actions": [
+    {
+      "id": "getAllCountries",
+      "name": "Get All Countries",
+      "description": "Get all countries data"
+    },
+    {
+      "id": "getCountryByName",
+      "name": "Get Country by Name",
+      "description": "Get country by name"
+    },
+    {
+      "id": "getCountryByCode",
+      "name": "Get Country by Code",
+      "description": "Get country by ISO code"
+    },
+    {
+      "id": "getCountriesByRegion",
+      "name": "Get Countries by Region",
+      "description": "Get countries in a region"
+    },
+    {
+      "id": "getCountriesByLanguage",
+      "name": "Get Countries by Language",
+      "description": "Get countries by language"
+    },
+    {
+      "id": "getCountriesByCurrency",
+      "name": "Get Countries by Currency",
+      "description": "Get countries by currency"
+    }
+  ],
+  "documentation": "https://restcountries.com/",
+  "setupGuide": "No setup required - completely free!"
+}
