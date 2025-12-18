@@ -1,0 +1,37 @@
+{
+  "name": "IPGeolocation Premium",
+  "version": "1.0.0",
+  "description": "Free premium IP geolocation, timezone, astronomy, and user agent detection API",
+  "category": "geolocation",
+  "isPremium": true,
+  "isFree": true,
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://ipgeolocation.io/signup.html"
+  },
+  "features": [
+    "IP geolocation with city-level accuracy",
+    "Timezone information",
+    "Astronomy data (sunrise, sunset, moon phases)",
+    "User agent detection",
+    "Bulk IP lookup",
+    "Currency information",
+    "Security threat detection",
+    "ISP and organization data"
+  ],
+  "endpoints": {
+    "getIPGeolocation": "/ipgeo",
+    "getTimezone": "/timezone",
+    "getAstronomy": "/astronomy",
+    "getUserAgent": "/user-agent",
+    "bulkIPLookup": "/ipgeo-bulk",
+    "getCurrency": "/ipgeo?fields=currency",
+    "getSecurityInfo": "/ipgeo?fields=security"
+  },
+  "rateLimit": {
+    "requests": 1000,
+    "period": "day",
+    "note": "Free tier includes 1,000 requests per day"
+  }
+}
