@@ -1,0 +1,307 @@
+{
+  "name": "chatgpt-plus",
+  "displayName": "ChatGPT Plus",
+  "version": "1.0.0",
+  "description": "Complete ChatGPT Plus integration with 40+ advanced endpoints for GPT-4, GPT-4 Turbo, DALL-E 3, code interpreter, web browsing, plugins, and advanced AI features with full premium access",
+  "category": "ai",
+  "icon": "https://cdn.worldvectorlogo.com/logos/chatgpt-4.svg",
+  "authentication": {
+    "type": "bearer",
+    "tokenType": "Bearer",
+    "scopes": [
+      "model.read",
+      "model.request",
+      "conversations.read",
+      "conversations.write",
+      "plugins.execute"
+    ]
+  },
+  "baseUrl": "https://api.openai.com/v1",
+  "rateLimit": {
+    "quota": 10000,
+    "perDay": 10000,
+    "perMinute": 500
+  },
+  "endpoints": [
+    {
+      "id": "chat_gpt4",
+      "name": "Chat with GPT-4 (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Access GPT-4 model for advanced conversations"
+    },
+    {
+      "id": "chat_gpt4_turbo",
+      "name": "Chat with GPT-4 Turbo (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Access GPT-4 Turbo with 128K context"
+    },
+    {
+      "id": "chat_gpt4_vision",
+      "name": "Chat with GPT-4 Vision (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Analyze images with GPT-4 Vision"
+    },
+    {
+      "id": "streaming_chat",
+      "name": "Streaming Chat (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Stream responses in real-time"
+    },
+    {
+      "id": "function_calling",
+      "name": "Function Calling (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Execute functions with GPT-4"
+    },
+    {
+      "id": "json_mode",
+      "name": "JSON Mode (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Get structured JSON responses"
+    },
+    {
+      "id": "generate_image_dalle3",
+      "name": "Generate Image DALL-E 3 (Plus)",
+      "method": "POST",
+      "path": "/images/generations",
+      "description": "Generate images with DALL-E 3"
+    },
+    {
+      "id": "edit_image_dalle",
+      "name": "Edit Image DALL-E (Plus)",
+      "method": "POST",
+      "path": "/images/edits",
+      "description": "Edit images with DALL-E"
+    },
+    {
+      "id": "create_variation_dalle",
+      "name": "Create Image Variation (Plus)",
+      "method": "POST",
+      "path": "/images/variations",
+      "description": "Create image variations"
+    },
+    {
+      "id": "code_interpreter",
+      "name": "Code Interpreter (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Execute Python code with interpreter"
+    },
+    {
+      "id": "analyze_data",
+      "name": "Analyze Data (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Analyze data files and generate insights"
+    },
+    {
+      "id": "create_charts",
+      "name": "Create Charts (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Generate data visualizations"
+    },
+    {
+      "id": "web_browsing",
+      "name": "Web Browsing (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Browse web for real-time information"
+    },
+    {
+      "id": "search_web",
+      "name": "Search Web (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Search internet for current data"
+    },
+    {
+      "id": "read_webpage",
+      "name": "Read Webpage (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Extract content from URLs"
+    },
+    {
+      "id": "list_plugins",
+      "name": "List Plugins (Plus)",
+      "method": "GET",
+      "path": "/plugins",
+      "description": "Get available ChatGPT plugins"
+    },
+    {
+      "id": "execute_plugin",
+      "name": "Execute Plugin (Plus)",
+      "method": "POST",
+      "path": "/plugins/{plugin_id}/execute",
+      "description": "Run ChatGPT plugin"
+    },
+    {
+      "id": "install_plugin",
+      "name": "Install Plugin (Plus)",
+      "method": "POST",
+      "path": "/plugins/install",
+      "description": "Install new plugin"
+    },
+    {
+      "id": "list_conversations",
+      "name": "List Conversations",
+      "method": "GET",
+      "path": "/conversations",
+      "description": "Get conversation history"
+    },
+    {
+      "id": "get_conversation",
+      "name": "Get Conversation",
+      "method": "GET",
+      "path": "/conversations/{conversation_id}",
+      "description": "Get specific conversation"
+    },
+    {
+      "id": "create_conversation",
+      "name": "Create Conversation",
+      "method": "POST",
+      "path": "/conversations",
+      "description": "Start new conversation"
+    },
+    {
+      "id": "update_conversation",
+      "name": "Update Conversation",
+      "method": "PATCH",
+      "path": "/conversations/{conversation_id}",
+      "description": "Update conversation title/settings"
+    },
+    {
+      "id": "delete_conversation",
+      "name": "Delete Conversation",
+      "method": "DELETE",
+      "path": "/conversations/{conversation_id}",
+      "description": "Delete conversation"
+    },
+    {
+      "id": "share_conversation",
+      "name": "Share Conversation (Plus)",
+      "method": "POST",
+      "path": "/conversations/{conversation_id}/share",
+      "description": "Generate shareable link"
+    },
+    {
+      "id": "export_conversation",
+      "name": "Export Conversation",
+      "method": "GET",
+      "path": "/conversations/{conversation_id}/export",
+      "description": "Export conversation data"
+    },
+    {
+      "id": "create_custom_instructions",
+      "name": "Create Custom Instructions (Plus)",
+      "method": "POST",
+      "path": "/custom-instructions",
+      "description": "Set custom AI behavior"
+    },
+    {
+      "id": "get_custom_instructions",
+      "name": "Get Custom Instructions",
+      "method": "GET",
+      "path": "/custom-instructions",
+      "description": "Get current custom instructions"
+    },
+    {
+      "id": "update_custom_instructions",
+      "name": "Update Custom Instructions (Plus)",
+      "method": "PUT",
+      "path": "/custom-instructions",
+      "description": "Update custom instructions"
+    },
+    {
+      "id": "create_gpt",
+      "name": "Create Custom GPT (Plus)",
+      "method": "POST",
+      "path": "/gpts",
+      "description": "Create custom GPT model"
+    },
+    {
+      "id": "list_gpts",
+      "name": "List Custom GPTs (Plus)",
+      "method": "GET",
+      "path": "/gpts",
+      "description": "Get all custom GPTs"
+    },
+    {
+      "id": "get_gpt",
+      "name": "Get Custom GPT (Plus)",
+      "method": "GET",
+      "path": "/gpts/{gpt_id}",
+      "description": "Get specific custom GPT"
+    },
+    {
+      "id": "update_gpt",
+      "name": "Update Custom GPT (Plus)",
+      "method": "PUT",
+      "path": "/gpts/{gpt_id}",
+      "description": "Update custom GPT"
+    },
+    {
+      "id": "delete_gpt",
+      "name": "Delete Custom GPT (Plus)",
+      "method": "DELETE",
+      "path": "/gpts/{gpt_id}",
+      "description": "Delete custom GPT"
+    },
+    {
+      "id": "publish_gpt",
+      "name": "Publish Custom GPT (Plus)",
+      "method": "POST",
+      "path": "/gpts/{gpt_id}/publish",
+      "description": "Publish GPT to store"
+    },
+    {
+      "id": "voice_conversation",
+      "name": "Voice Conversation (Plus)",
+      "method": "POST",
+      "path": "/audio/speech",
+      "description": "Text-to-speech with premium voices"
+    },
+    {
+      "id": "transcribe_audio",
+      "name": "Transcribe Audio (Plus)",
+      "method": "POST",
+      "path": "/audio/transcriptions",
+      "description": "Transcribe audio with Whisper"
+    },
+    {
+      "id": "translate_audio",
+      "name": "Translate Audio (Plus)",
+      "method": "POST",
+      "path": "/audio/translations",
+      "description": "Translate audio to English"
+    },
+    {
+      "id": "priority_access",
+      "name": "Priority Access (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Get priority queue access"
+    },
+    {
+      "id": "faster_response",
+      "name": "Faster Response Times (Plus)",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Get faster response generation"
+    },
+    {
+      "id": "usage_stats",
+      "name": "Get Usage Statistics (Plus)",
+      "method": "GET",
+      "path": "/usage",
+      "description": "Get API usage statistics"
+    }
+  ]
+}
