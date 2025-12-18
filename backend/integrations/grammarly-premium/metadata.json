@@ -1,0 +1,272 @@
+{
+  "name": "grammarly-premium",
+  "displayName": "Grammarly Premium",
+  "version": "1.0.0",
+  "description": "Complete Grammarly Premium integration with 35+ advanced endpoints for grammar checking, style suggestions, plagiarism detection, tone analysis, and writing enhancement with full premium features",
+  "category": "productivity",
+  "icon": "https://cdn.worldvectorlogo.com/logos/grammarly-1.svg",
+  "authentication": {
+    "type": "apikey",
+    "tokenType": "Bearer",
+    "scopes": [
+      "text:check",
+      "text:analyze",
+      "plagiarism:check",
+      "tone:analyze",
+      "vocabulary:enhance"
+    ]
+  },
+  "baseUrl": "https://api.grammarly.com/v1",
+  "rateLimit": {
+    "quota": 10000,
+    "perDay": 10000,
+    "perMinute": 100
+  },
+  "endpoints": [
+    {
+      "id": "check_grammar",
+      "name": "Check Grammar",
+      "method": "POST",
+      "path": "/check",
+      "description": "Check text for grammar errors"
+    },
+    {
+      "id": "check_spelling",
+      "name": "Check Spelling",
+      "method": "POST",
+      "path": "/spelling",
+      "description": "Check spelling mistakes"
+    },
+    {
+      "id": "check_punctuation",
+      "name": "Check Punctuation",
+      "method": "POST",
+      "path": "/punctuation",
+      "description": "Check punctuation errors"
+    },
+    {
+      "id": "analyze_tone",
+      "name": "Analyze Tone (Premium)",
+      "method": "POST",
+      "path": "/tone/analyze",
+      "description": "Analyze writing tone and emotion"
+    },
+    {
+      "id": "detect_tone",
+      "name": "Detect Tone (Premium)",
+      "method": "POST",
+      "path": "/tone/detect",
+      "description": "Detect tone categories (formal, casual, confident, etc.)"
+    },
+    {
+      "id": "suggest_tone_adjustments",
+      "name": "Suggest Tone Adjustments (Premium)",
+      "method": "POST",
+      "path": "/tone/suggestions",
+      "description": "Get tone improvement suggestions"
+    },
+    {
+      "id": "check_plagiarism",
+      "name": "Check Plagiarism (Premium)",
+      "method": "POST",
+      "path": "/plagiarism/check",
+      "description": "Detect plagiarism in text"
+    },
+    {
+      "id": "get_plagiarism_report",
+      "name": "Get Plagiarism Report (Premium)",
+      "method": "GET",
+      "path": "/plagiarism/report/{report_id}",
+      "description": "Get detailed plagiarism report"
+    },
+    {
+      "id": "check_clarity",
+      "name": "Check Clarity (Premium)",
+      "method": "POST",
+      "path": "/clarity",
+      "description": "Analyze text clarity and readability"
+    },
+    {
+      "id": "suggest_clarity_improvements",
+      "name": "Suggest Clarity Improvements (Premium)",
+      "method": "POST",
+      "path": "/clarity/suggestions",
+      "description": "Get clarity enhancement suggestions"
+    },
+    {
+      "id": "check_engagement",
+      "name": "Check Engagement (Premium)",
+      "method": "POST",
+      "path": "/engagement",
+      "description": "Analyze text engagement level"
+    },
+    {
+      "id": "suggest_engagement_improvements",
+      "name": "Suggest Engagement Improvements (Premium)",
+      "method": "POST",
+      "path": "/engagement/suggestions",
+      "description": "Get engagement enhancement tips"
+    },
+    {
+      "id": "check_delivery",
+      "name": "Check Delivery (Premium)",
+      "method": "POST",
+      "path": "/delivery",
+      "description": "Analyze message delivery effectiveness"
+    },
+    {
+      "id": "vocabulary_enhancement",
+      "name": "Vocabulary Enhancement (Premium)",
+      "method": "POST",
+      "path": "/vocabulary/enhance",
+      "description": "Get vocabulary improvement suggestions"
+    },
+    {
+      "id": "word_choice_suggestions",
+      "name": "Word Choice Suggestions (Premium)",
+      "method": "POST",
+      "path": "/vocabulary/alternatives",
+      "description": "Get better word alternatives"
+    },
+    {
+      "id": "check_formality",
+      "name": "Check Formality (Premium)",
+      "method": "POST",
+      "path": "/formality",
+      "description": "Analyze text formality level"
+    },
+    {
+      "id": "adjust_formality",
+      "name": "Adjust Formality (Premium)",
+      "method": "POST",
+      "path": "/formality/adjust",
+      "description": "Adjust text to desired formality"
+    },
+    {
+      "id": "check_conciseness",
+      "name": "Check Conciseness (Premium)",
+      "method": "POST",
+      "path": "/conciseness",
+      "description": "Identify wordy sentences"
+    },
+    {
+      "id": "suggest_concise_alternatives",
+      "name": "Suggest Concise Alternatives (Premium)",
+      "method": "POST",
+      "path": "/conciseness/suggestions",
+      "description": "Get concise rewrites"
+    },
+    {
+      "id": "check_fluency",
+      "name": "Check Fluency (Premium)",
+      "method": "POST",
+      "path": "/fluency",
+      "description": "Analyze text fluency"
+    },
+    {
+      "id": "detect_passive_voice",
+      "name": "Detect Passive Voice (Premium)",
+      "method": "POST",
+      "path": "/style/passive-voice",
+      "description": "Identify passive voice usage"
+    },
+    {
+      "id": "suggest_active_voice",
+      "name": "Suggest Active Voice (Premium)",
+      "method": "POST",
+      "path": "/style/active-voice",
+      "description": "Convert to active voice"
+    },
+    {
+      "id": "check_sentence_variety",
+      "name": "Check Sentence Variety (Premium)",
+      "method": "POST",
+      "path": "/style/sentence-variety",
+      "description": "Analyze sentence structure variety"
+    },
+    {
+      "id": "readability_score",
+      "name": "Readability Score",
+      "method": "POST",
+      "path": "/readability",
+      "description": "Calculate readability scores"
+    },
+    {
+      "id": "genre_specific_check",
+      "name": "Genre-Specific Check (Premium)",
+      "method": "POST",
+      "path": "/genre/check",
+      "description": "Check for specific writing genres (academic, business, creative)"
+    },
+    {
+      "id": "citation_check",
+      "name": "Citation Check (Premium)",
+      "method": "POST",
+      "path": "/citations/check",
+      "description": "Verify citation formatting"
+    },
+    {
+      "id": "suggest_citations",
+      "name": "Suggest Citations (Premium)",
+      "method": "POST",
+      "path": "/citations/suggest",
+      "description": "Generate citation suggestions"
+    },
+    {
+      "id": "full_sentence_rewrite",
+      "name": "Full Sentence Rewrite (Premium)",
+      "method": "POST",
+      "path": "/rewrite/sentence",
+      "description": "AI-powered sentence rewrites"
+    },
+    {
+      "id": "paragraph_rewrite",
+      "name": "Paragraph Rewrite (Premium)",
+      "method": "POST",
+      "path": "/rewrite/paragraph",
+      "description": "Rewrite entire paragraphs"
+    },
+    {
+      "id": "generate_synonyms",
+      "name": "Generate Synonyms",
+      "method": "POST",
+      "path": "/synonyms",
+      "description": "Get word synonyms"
+    },
+    {
+      "id": "context_aware_suggestions",
+      "name": "Context-Aware Suggestions (Premium)",
+      "method": "POST",
+      "path": "/suggestions/contextual",
+      "description": "Get context-aware improvements"
+    },
+    {
+      "id": "writing_goals",
+      "name": "Set Writing Goals (Premium)",
+      "method": "POST",
+      "path": "/goals",
+      "description": "Set audience, formality, domain goals"
+    },
+    {
+      "id": "performance_stats",
+      "name": "Get Performance Stats (Premium)",
+      "method": "GET",
+      "path": "/stats/performance",
+      "description": "Get writing performance statistics"
+    },
+    {
+      "id": "weekly_insights",
+      "name": "Get Weekly Insights (Premium)",
+      "method": "GET",
+      "path": "/insights/weekly",
+      "description": "Get weekly writing insights"
+    },
+    {
+      "id": "custom_style_guide",
+      "name": "Apply Custom Style Guide (Premium)",
+      "method": "POST",
+      "path": "/style-guide/apply",
+      "description": "Apply custom style guide rules"
+    }
+  ]
+}
