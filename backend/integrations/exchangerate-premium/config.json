@@ -1,0 +1,37 @@
+{
+  "name": "ExchangeRate Premium",
+  "version": "1.0.0",
+  "description": "Free premium currency conversion API with 161 currencies and real-time rates",
+  "category": "finance",
+  "isPremium": true,
+  "isFree": true,
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://www.exchangerate-api.com/"
+  },
+  "features": [
+    "161 currency support",
+    "Real-time exchange rates",
+    "Historical data access",
+    "Currency conversion",
+    "Pair conversion rates",
+    "Bulk conversions",
+    "Popular currencies quick access",
+    "Daily rate updates"
+  ],
+  "endpoints": {
+    "getLatestRates": "/latest/:base",
+    "convertCurrency": "/pair/:from/:to/:amount",
+    "getPairRate": "/pair/:from/:to",
+    "getSupportedCurrencies": "/codes",
+    "getHistoricalRates": "/history/:base/:year/:month/:day",
+    "bulkConvert": "Custom bulk conversion",
+    "getPopularCurrencies": "Custom popular currencies"
+  },
+  "rateLimit": {
+    "requests": 1500,
+    "period": "month",
+    "note": "Free tier includes 1,500 requests per month"
+  }
+}
