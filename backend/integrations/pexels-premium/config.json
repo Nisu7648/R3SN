@@ -1,0 +1,38 @@
+{
+  "name": "Pexels Premium",
+  "version": "1.0.0",
+  "description": "Free premium stock photos and videos API with unlimited access",
+  "category": "media",
+  "isPremium": true,
+  "isFree": true,
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://www.pexels.com/api/"
+  },
+  "features": [
+    "Search millions of free stock photos",
+    "Search free stock videos",
+    "Curated photo collections",
+    "Popular videos",
+    "High-resolution downloads",
+    "No attribution required",
+    "Commercial use allowed",
+    "Filter by orientation, size, color"
+  ],
+  "endpoints": {
+    "searchPhotos": "/search",
+    "getCuratedPhotos": "/curated",
+    "getPhotoById": "/photos/:id",
+    "searchVideos": "/videos/search",
+    "getPopularVideos": "/videos/popular",
+    "getVideoById": "/videos/videos/:id",
+    "getCollections": "/collections",
+    "getCollectionMedia": "/collections/:id"
+  },
+  "rateLimit": {
+    "requests": 200,
+    "period": "hour",
+    "note": "Free tier includes 200 requests per hour"
+  }
+}
