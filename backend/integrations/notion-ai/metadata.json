@@ -1,0 +1,315 @@
+{
+  "name": "notion-ai",
+  "displayName": "Notion AI",
+  "version": "1.0.0",
+  "description": "Complete Notion AI integration with 42+ premium endpoints for AI writing, summarization, translation, database queries, automation, and workspace management with full AI features",
+  "category": "productivity",
+  "icon": "https://cdn.worldvectorlogo.com/logos/notion-logo-1.svg",
+  "authentication": {
+    "type": "bearer",
+    "tokenType": "Bearer",
+    "scopes": []
+  },
+  "baseUrl": "https://api.notion.com/v1",
+  "rateLimit": {
+    "quota": 3,
+    "perSecond": 3,
+    "perMinute": 180
+  },
+  "endpoints": [
+    {
+      "id": "ai_write",
+      "name": "AI Write (Premium)",
+      "method": "POST",
+      "path": "/ai/write",
+      "description": "Generate content with AI"
+    },
+    {
+      "id": "ai_continue_writing",
+      "name": "AI Continue Writing (Premium)",
+      "method": "POST",
+      "path": "/ai/continue",
+      "description": "Continue writing with AI"
+    },
+    {
+      "id": "ai_improve_writing",
+      "name": "AI Improve Writing (Premium)",
+      "method": "POST",
+      "path": "/ai/improve",
+      "description": "Improve existing text"
+    },
+    {
+      "id": "ai_fix_spelling",
+      "name": "AI Fix Spelling (Premium)",
+      "method": "POST",
+      "path": "/ai/fix-spelling",
+      "description": "Fix spelling and grammar"
+    },
+    {
+      "id": "ai_make_shorter",
+      "name": "AI Make Shorter (Premium)",
+      "method": "POST",
+      "path": "/ai/make-shorter",
+      "description": "Shorten text content"
+    },
+    {
+      "id": "ai_make_longer",
+      "name": "AI Make Longer (Premium)",
+      "method": "POST",
+      "path": "/ai/make-longer",
+      "description": "Expand text content"
+    },
+    {
+      "id": "ai_change_tone",
+      "name": "AI Change Tone (Premium)",
+      "method": "POST",
+      "path": "/ai/change-tone",
+      "description": "Change writing tone (professional, casual, friendly)"
+    },
+    {
+      "id": "ai_simplify",
+      "name": "AI Simplify (Premium)",
+      "method": "POST",
+      "path": "/ai/simplify",
+      "description": "Simplify complex text"
+    },
+    {
+      "id": "ai_summarize",
+      "name": "AI Summarize (Premium)",
+      "method": "POST",
+      "path": "/ai/summarize",
+      "description": "Summarize long content"
+    },
+    {
+      "id": "ai_key_points",
+      "name": "AI Extract Key Points (Premium)",
+      "method": "POST",
+      "path": "/ai/key-points",
+      "description": "Extract key points from text"
+    },
+    {
+      "id": "ai_translate",
+      "name": "AI Translate (Premium)",
+      "method": "POST",
+      "path": "/ai/translate",
+      "description": "Translate to multiple languages"
+    },
+    {
+      "id": "ai_explain",
+      "name": "AI Explain (Premium)",
+      "method": "POST",
+      "path": "/ai/explain",
+      "description": "Explain complex concepts"
+    },
+    {
+      "id": "ai_brainstorm",
+      "name": "AI Brainstorm (Premium)",
+      "method": "POST",
+      "path": "/ai/brainstorm",
+      "description": "Generate ideas and brainstorm"
+    },
+    {
+      "id": "ai_outline",
+      "name": "AI Create Outline (Premium)",
+      "method": "POST",
+      "path": "/ai/outline",
+      "description": "Create content outlines"
+    },
+    {
+      "id": "ai_blog_post",
+      "name": "AI Write Blog Post (Premium)",
+      "method": "POST",
+      "path": "/ai/blog-post",
+      "description": "Generate blog posts"
+    },
+    {
+      "id": "ai_social_media",
+      "name": "AI Social Media Post (Premium)",
+      "method": "POST",
+      "path": "/ai/social-media",
+      "description": "Create social media content"
+    },
+    {
+      "id": "ai_email",
+      "name": "AI Write Email (Premium)",
+      "method": "POST",
+      "path": "/ai/email",
+      "description": "Draft professional emails"
+    },
+    {
+      "id": "ai_meeting_notes",
+      "name": "AI Meeting Notes (Premium)",
+      "method": "POST",
+      "path": "/ai/meeting-notes",
+      "description": "Generate meeting summaries"
+    },
+    {
+      "id": "ai_action_items",
+      "name": "AI Extract Action Items (Premium)",
+      "method": "POST",
+      "path": "/ai/action-items",
+      "description": "Extract action items from text"
+    },
+    {
+      "id": "ai_database_query",
+      "name": "AI Database Query (Premium)",
+      "method": "POST",
+      "path": "/ai/database/query",
+      "description": "Query databases with natural language"
+    },
+    {
+      "id": "ai_database_insights",
+      "name": "AI Database Insights (Premium)",
+      "method": "POST",
+      "path": "/ai/database/insights",
+      "description": "Get AI insights from database"
+    },
+    {
+      "id": "list_pages",
+      "name": "List Pages",
+      "method": "GET",
+      "path": "/pages",
+      "description": "Get all pages"
+    },
+    {
+      "id": "get_page",
+      "name": "Get Page",
+      "method": "GET",
+      "path": "/pages/{page_id}",
+      "description": "Get specific page"
+    },
+    {
+      "id": "create_page",
+      "name": "Create Page",
+      "method": "POST",
+      "path": "/pages",
+      "description": "Create new page"
+    },
+    {
+      "id": "update_page",
+      "name": "Update Page",
+      "method": "PATCH",
+      "path": "/pages/{page_id}",
+      "description": "Update page properties"
+    },
+    {
+      "id": "archive_page",
+      "name": "Archive Page",
+      "method": "PATCH",
+      "path": "/pages/{page_id}",
+      "description": "Archive a page"
+    },
+    {
+      "id": "list_databases",
+      "name": "List Databases",
+      "method": "GET",
+      "path": "/databases",
+      "description": "Get all databases"
+    },
+    {
+      "id": "get_database",
+      "name": "Get Database",
+      "method": "GET",
+      "path": "/databases/{database_id}",
+      "description": "Get specific database"
+    },
+    {
+      "id": "create_database",
+      "name": "Create Database",
+      "method": "POST",
+      "path": "/databases",
+      "description": "Create new database"
+    },
+    {
+      "id": "update_database",
+      "name": "Update Database",
+      "method": "PATCH",
+      "path": "/databases/{database_id}",
+      "description": "Update database properties"
+    },
+    {
+      "id": "query_database",
+      "name": "Query Database",
+      "method": "POST",
+      "path": "/databases/{database_id}/query",
+      "description": "Query database with filters"
+    },
+    {
+      "id": "get_block",
+      "name": "Get Block",
+      "method": "GET",
+      "path": "/blocks/{block_id}",
+      "description": "Get specific block"
+    },
+    {
+      "id": "get_block_children",
+      "name": "Get Block Children",
+      "method": "GET",
+      "path": "/blocks/{block_id}/children",
+      "description": "Get child blocks"
+    },
+    {
+      "id": "append_block_children",
+      "name": "Append Block Children",
+      "method": "PATCH",
+      "path": "/blocks/{block_id}/children",
+      "description": "Add child blocks"
+    },
+    {
+      "id": "update_block",
+      "name": "Update Block",
+      "method": "PATCH",
+      "path": "/blocks/{block_id}",
+      "description": "Update block content"
+    },
+    {
+      "id": "delete_block",
+      "name": "Delete Block",
+      "method": "DELETE",
+      "path": "/blocks/{block_id}",
+      "description": "Delete a block"
+    },
+    {
+      "id": "search",
+      "name": "Search",
+      "method": "POST",
+      "path": "/search",
+      "description": "Search workspace content"
+    },
+    {
+      "id": "list_users",
+      "name": "List Users",
+      "method": "GET",
+      "path": "/users",
+      "description": "Get all workspace users"
+    },
+    {
+      "id": "get_user",
+      "name": "Get User",
+      "method": "GET",
+      "path": "/users/{user_id}",
+      "description": "Get specific user"
+    },
+    {
+      "id": "get_bot_user",
+      "name": "Get Bot User",
+      "method": "GET",
+      "path": "/users/me",
+      "description": "Get bot user info"
+    },
+    {
+      "id": "list_comments",
+      "name": "List Comments",
+      "method": "GET",
+      "path": "/comments",
+      "description": "Get page comments"
+    },
+    {
+      "id": "create_comment",
+      "name": "Create Comment",
+      "method": "POST",
+      "path": "/comments",
+      "description": "Add comment to page"
+    }
+  ]
+}
