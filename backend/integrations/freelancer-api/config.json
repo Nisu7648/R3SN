@@ -1,0 +1,47 @@
+{
+  "name": "Freelancer.com API",
+  "version": "1.0.0",
+  "description": "Free freelance marketplace API for project management, bidding, messaging, and portfolio management",
+  "category": "freelance",
+  "isPremium": true,
+  "isFree": true,
+  "authentication": {
+    "type": "oauth",
+    "required": true,
+    "signupUrl": "https://www.freelancer.com/api/register"
+  },
+  "features": [
+    "Search freelance projects",
+    "Get project details",
+    "Search freelancers by skills",
+    "Place bids on projects",
+    "Post new projects",
+    "Manage messages and threads",
+    "View user profiles and portfolios",
+    "Get user reviews and ratings",
+    "Browse job categories",
+    "Track project bids",
+    "Filter by budget and skills",
+    "Multi-currency support"
+  ],
+  "endpoints": {
+    "searchProjects": "/projects/0.1/projects/",
+    "getProjectDetails": "/projects/0.1/projects/:id/",
+    "getUserProfile": "/users/0.1/users/:id/",
+    "searchFreelancers": "/users/0.1/users/",
+    "getJobCategories": "/projects/0.1/jobs/",
+    "placeBid": "/projects/0.1/bids/",
+    "getProjectBids": "/projects/0.1/projects/:id/bids/",
+    "getUserBids": "/projects/0.1/bids/",
+    "postProject": "/projects/0.1/projects/",
+    "getMessages": "/messages/0.1/threads/",
+    "sendMessage": "/messages/0.1/threads/:id/messages/",
+    "getUserPortfolio": "/users/0.1/portfolios/",
+    "getUserReviews": "/users/0.1/reviews/"
+  },
+  "rateLimit": {
+    "requests": 1000,
+    "period": "day",
+    "note": "Free tier includes 1,000 API requests per day"
+  }
+}
