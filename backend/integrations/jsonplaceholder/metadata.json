@@ -1,0 +1,73 @@
+{
+  "name": "JSONPlaceholder",
+  "id": "jsonplaceholder",
+  "version": "1.0.0",
+  "description": "FREE fake REST API for testing - NO API KEY REQUIRED",
+  "category": "testing",
+  "icon": "🧪",
+  "color": "#61DAFB",
+  "cost": "FREE",
+  "authentication": {
+    "type": "none",
+    "fields": []
+  },
+  "actions": [
+    {
+      "id": "getPosts",
+      "name": "Get Posts",
+      "description": "Get all posts or by user"
+    },
+    {
+      "id": "getPost",
+      "name": "Get Post",
+      "description": "Get single post"
+    },
+    {
+      "id": "createPost",
+      "name": "Create Post",
+      "description": "Create new post"
+    },
+    {
+      "id": "updatePost",
+      "name": "Update Post",
+      "description": "Update post"
+    },
+    {
+      "id": "deletePost",
+      "name": "Delete Post",
+      "description": "Delete post"
+    },
+    {
+      "id": "getComments",
+      "name": "Get Comments",
+      "description": "Get comments"
+    },
+    {
+      "id": "getUsers",
+      "name": "Get Users",
+      "description": "Get all users"
+    },
+    {
+      "id": "getUser",
+      "name": "Get User",
+      "description": "Get single user"
+    },
+    {
+      "id": "getTodos",
+      "name": "Get Todos",
+      "description": "Get todos"
+    },
+    {
+      "id": "getAlbums",
+      "name": "Get Albums",
+      "description": "Get albums"
+    },
+    {
+      "id": "getPhotos",
+      "name": "Get Photos",
+      "description": "Get photos"
+    }
+  ],
+  "documentation": "https://jsonplaceholder.typicode.com/",
+  "setupGuide": "No setup required - completely free!"
+}
