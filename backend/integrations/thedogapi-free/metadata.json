@@ -1,0 +1,46 @@
+{
+  "name": "The Dog API Free",
+  "id": "thedogapi-free",
+  "version": "1.0.0",
+  "description": "FREE dog images and breed data API",
+  "category": "images",
+  "icon": "🐕",
+  "color": "#FF6B6B",
+  "cost": "FREE (optional API key for more requests)",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key (Optional)",
+        "type": "password",
+        "required": false,
+        "description": "Optional - get free at thedogapi.com"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "getRandomDogs",
+      "name": "Get Random Dogs",
+      "description": "Get random dog images"
+    },
+    {
+      "id": "searchByBreed",
+      "name": "Search by Breed",
+      "description": "Get dogs by breed"
+    },
+    {
+      "id": "getAllBreeds",
+      "name": "Get All Breeds",
+      "description": "Get all dog breeds"
+    },
+    {
+      "id": "getBreedInfo",
+      "name": "Get Breed Info",
+      "description": "Get breed information"
+    }
+  ],
+  "documentation": "https://thedogapi.com/",
+  "setupGuide": "Works without API key - optional key for more requests"
+}
