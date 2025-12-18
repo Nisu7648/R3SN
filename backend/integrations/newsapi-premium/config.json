@@ -1,0 +1,39 @@
+{
+  "name": "NewsAPI Premium",
+  "version": "1.0.0",
+  "description": "Free premium news aggregation API with access to 80,000+ news sources worldwide",
+  "category": "news",
+  "isPremium": true,
+  "isFree": true,
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://newsapi.org/register"
+  },
+  "features": [
+    "Access 80,000+ news sources",
+    "Real-time news updates",
+    "Top headlines by country",
+    "Search historical articles",
+    "Filter by category, language, date",
+    "Business, tech, sports, entertainment news",
+    "Multiple language support",
+    "Source filtering"
+  ],
+  "endpoints": {
+    "getTopHeadlines": "/top-headlines",
+    "searchEverything": "/everything",
+    "getSources": "/top-headlines/sources",
+    "getBusinessNews": "/top-headlines?category=business",
+    "getTechnologyNews": "/top-headlines?category=technology",
+    "getSportsNews": "/top-headlines?category=sports",
+    "getEntertainmentNews": "/top-headlines?category=entertainment",
+    "getHealthNews": "/top-headlines?category=health",
+    "getScienceNews": "/top-headlines?category=science"
+  },
+  "rateLimit": {
+    "requests": 100,
+    "period": "day",
+    "note": "Free tier includes 100 requests per day"
+  }
+}
