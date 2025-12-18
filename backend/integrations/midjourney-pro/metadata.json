@@ -1,0 +1,272 @@
+{
+  "name": "midjourney-pro",
+  "displayName": "Midjourney Pro",
+  "version": "1.0.0",
+  "description": "Complete Midjourney Pro integration with 35+ premium endpoints for AI image generation, upscaling, variations, blending, style references, and advanced features with unlimited fast hours",
+  "category": "ai_art",
+  "icon": "https://cdn.worldvectorlogo.com/logos/midjourney.svg",
+  "authentication": {
+    "type": "bearer",
+    "tokenType": "Bearer",
+    "scopes": [
+      "imagine",
+      "upscale",
+      "variations",
+      "blend",
+      "describe"
+    ]
+  },
+  "baseUrl": "https://api.midjourney.com/v1",
+  "rateLimit": {
+    "quota": 10000,
+    "perDay": 10000,
+    "unlimited": true
+  },
+  "endpoints": [
+    {
+      "id": "imagine",
+      "name": "Imagine (Generate Image)",
+      "method": "POST",
+      "path": "/imagine",
+      "description": "Generate image from text prompt"
+    },
+    {
+      "id": "imagine_fast",
+      "name": "Imagine Fast Mode (Pro)",
+      "method": "POST",
+      "path": "/imagine/fast",
+      "description": "Generate with unlimited fast hours"
+    },
+    {
+      "id": "imagine_turbo",
+      "name": "Imagine Turbo Mode (Pro)",
+      "method": "POST",
+      "path": "/imagine/turbo",
+      "description": "Ultra-fast generation mode"
+    },
+    {
+      "id": "upscale",
+      "name": "Upscale Image",
+      "method": "POST",
+      "path": "/upscale",
+      "description": "Upscale generated image"
+    },
+    {
+      "id": "upscale_2x",
+      "name": "Upscale 2x (Pro)",
+      "method": "POST",
+      "path": "/upscale/2x",
+      "description": "2x upscale resolution"
+    },
+    {
+      "id": "upscale_4x",
+      "name": "Upscale 4x (Pro)",
+      "method": "POST",
+      "path": "/upscale/4x",
+      "description": "4x upscale resolution"
+    },
+    {
+      "id": "upscale_creative",
+      "name": "Creative Upscale (Pro)",
+      "method": "POST",
+      "path": "/upscale/creative",
+      "description": "Creative upscaling with details"
+    },
+    {
+      "id": "upscale_subtle",
+      "name": "Subtle Upscale (Pro)",
+      "method": "POST",
+      "path": "/upscale/subtle",
+      "description": "Subtle upscaling"
+    },
+    {
+      "id": "variations",
+      "name": "Create Variations",
+      "method": "POST",
+      "path": "/variations",
+      "description": "Generate image variations"
+    },
+    {
+      "id": "variations_strong",
+      "name": "Strong Variations (Pro)",
+      "method": "POST",
+      "path": "/variations/strong",
+      "description": "Strong variation changes"
+    },
+    {
+      "id": "variations_subtle",
+      "name": "Subtle Variations (Pro)",
+      "method": "POST",
+      "path": "/variations/subtle",
+      "description": "Subtle variation changes"
+    },
+    {
+      "id": "variations_region",
+      "name": "Regional Variations (Pro)",
+      "method": "POST",
+      "path": "/variations/region",
+      "description": "Vary specific regions"
+    },
+    {
+      "id": "blend",
+      "name": "Blend Images",
+      "method": "POST",
+      "path": "/blend",
+      "description": "Blend multiple images"
+    },
+    {
+      "id": "blend_advanced",
+      "name": "Advanced Blend (Pro)",
+      "method": "POST",
+      "path": "/blend/advanced",
+      "description": "Advanced blending options"
+    },
+    {
+      "id": "describe",
+      "name": "Describe Image",
+      "method": "POST",
+      "path": "/describe",
+      "description": "Generate prompts from image"
+    },
+    {
+      "id": "remix",
+      "name": "Remix Mode (Pro)",
+      "method": "POST",
+      "path": "/remix",
+      "description": "Remix with prompt changes"
+    },
+    {
+      "id": "pan",
+      "name": "Pan Image (Pro)",
+      "method": "POST",
+      "path": "/pan",
+      "description": "Extend image in direction"
+    },
+    {
+      "id": "zoom_out",
+      "name": "Zoom Out (Pro)",
+      "method": "POST",
+      "path": "/zoom/out",
+      "description": "Zoom out and expand canvas"
+    },
+    {
+      "id": "zoom_custom",
+      "name": "Custom Zoom (Pro)",
+      "method": "POST",
+      "path": "/zoom/custom",
+      "description": "Custom zoom levels"
+    },
+    {
+      "id": "style_reference",
+      "name": "Style Reference (Pro)",
+      "method": "POST",
+      "path": "/style-reference",
+      "description": "Use image as style reference"
+    },
+    {
+      "id": "character_reference",
+      "name": "Character Reference (Pro)",
+      "method": "POST",
+      "path": "/character-reference",
+      "description": "Consistent character generation"
+    },
+    {
+      "id": "image_weight",
+      "name": "Image Weight Control (Pro)",
+      "method": "POST",
+      "path": "/image-weight",
+      "description": "Control image prompt weight"
+    },
+    {
+      "id": "stylize",
+      "name": "Stylize Control (Pro)",
+      "method": "POST",
+      "path": "/stylize",
+      "description": "Control artistic stylization"
+    },
+    {
+      "id": "chaos",
+      "name": "Chaos Control (Pro)",
+      "method": "POST",
+      "path": "/chaos",
+      "description": "Control variation randomness"
+    },
+    {
+      "id": "aspect_ratio",
+      "name": "Custom Aspect Ratio (Pro)",
+      "method": "POST",
+      "path": "/aspect-ratio",
+      "description": "Set custom aspect ratios"
+    },
+    {
+      "id": "quality",
+      "name": "Quality Control (Pro)",
+      "method": "POST",
+      "path": "/quality",
+      "description": "Control generation quality"
+    },
+    {
+      "id": "seed",
+      "name": "Seed Control (Pro)",
+      "method": "POST",
+      "path": "/seed",
+      "description": "Use specific seed for consistency"
+    },
+    {
+      "id": "stealth_mode",
+      "name": "Stealth Mode (Pro)",
+      "method": "POST",
+      "path": "/stealth",
+      "description": "Private generation mode"
+    },
+    {
+      "id": "list_jobs",
+      "name": "List Jobs",
+      "method": "GET",
+      "path": "/jobs",
+      "description": "Get all generation jobs"
+    },
+    {
+      "id": "get_job",
+      "name": "Get Job Status",
+      "method": "GET",
+      "path": "/jobs/{job_id}",
+      "description": "Check job status"
+    },
+    {
+      "id": "cancel_job",
+      "name": "Cancel Job",
+      "method": "DELETE",
+      "path": "/jobs/{job_id}",
+      "description": "Cancel generation job"
+    },
+    {
+      "id": "list_gallery",
+      "name": "List Gallery (Pro)",
+      "method": "GET",
+      "path": "/gallery",
+      "description": "Get private gallery images"
+    },
+    {
+      "id": "download_image",
+      "name": "Download Image",
+      "method": "GET",
+      "path": "/images/{image_id}/download",
+      "description": "Download generated image"
+    },
+    {
+      "id": "usage_stats",
+      "name": "Usage Statistics (Pro)",
+      "method": "GET",
+      "path": "/usage",
+      "description": "Get usage statistics"
+    },
+    {
+      "id": "settings",
+      "name": "Get Settings (Pro)",
+      "method": "GET",
+      "path": "/settings",
+      "description": "Get account settings"
+    }
+  ]
+}
