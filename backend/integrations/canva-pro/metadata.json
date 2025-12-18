@@ -1,0 +1,340 @@
+{
+  "name": "canva-pro",
+  "displayName": "Canva Pro",
+  "version": "1.0.0",
+  "description": "Complete Canva Pro integration with 45+ premium endpoints for designs, templates, brand kits, folders, assets, and team collaboration with full access to all pro features",
+  "category": "design",
+  "icon": "https://cdn.worldvectorlogo.com/logos/canva-1.svg",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "design:read",
+      "design:write",
+      "design:content:read",
+      "design:content:write",
+      "asset:read",
+      "asset:write",
+      "folder:read",
+      "folder:write",
+      "brandtemplate:read",
+      "brandtemplate:write"
+    ]
+  },
+  "baseUrl": "https://api.canva.com/v1",
+  "rateLimit": {
+    "quota": 10000,
+    "perDay": 10000,
+    "perMinute": 100
+  },
+  "endpoints": [
+    {
+      "id": "list_designs",
+      "name": "List Designs",
+      "method": "GET",
+      "path": "/designs",
+      "description": "Get all user designs"
+    },
+    {
+      "id": "get_design",
+      "name": "Get Design",
+      "method": "GET",
+      "path": "/designs/{design_id}",
+      "description": "Get specific design details"
+    },
+    {
+      "id": "create_design",
+      "name": "Create Design",
+      "method": "POST",
+      "path": "/designs",
+      "description": "Create new design from template"
+    },
+    {
+      "id": "update_design",
+      "name": "Update Design",
+      "method": "PATCH",
+      "path": "/designs/{design_id}",
+      "description": "Update design properties"
+    },
+    {
+      "id": "delete_design",
+      "name": "Delete Design",
+      "method": "DELETE",
+      "path": "/designs/{design_id}",
+      "description": "Delete a design"
+    },
+    {
+      "id": "duplicate_design",
+      "name": "Duplicate Design",
+      "method": "POST",
+      "path": "/designs/{design_id}/duplicate",
+      "description": "Duplicate existing design"
+    },
+    {
+      "id": "export_design",
+      "name": "Export Design",
+      "method": "POST",
+      "path": "/designs/{design_id}/export",
+      "description": "Export design to various formats (PNG, JPG, PDF, MP4, GIF)"
+    },
+    {
+      "id": "get_export_job",
+      "name": "Get Export Job",
+      "method": "GET",
+      "path": "/exports/{export_id}",
+      "description": "Check export job status"
+    },
+    {
+      "id": "autofill_design",
+      "name": "Autofill Design",
+      "method": "POST",
+      "path": "/designs/{design_id}/autofill",
+      "description": "Auto-populate design with data"
+    },
+    {
+      "id": "list_brand_templates",
+      "name": "List Brand Templates",
+      "method": "GET",
+      "path": "/brand-templates",
+      "description": "Get all brand templates"
+    },
+    {
+      "id": "get_brand_template",
+      "name": "Get Brand Template",
+      "method": "GET",
+      "path": "/brand-templates/{template_id}",
+      "description": "Get specific brand template"
+    },
+    {
+      "id": "create_from_template",
+      "name": "Create from Brand Template",
+      "method": "POST",
+      "path": "/brand-templates/{template_id}/designs",
+      "description": "Create design from brand template"
+    },
+    {
+      "id": "list_folders",
+      "name": "List Folders",
+      "method": "GET",
+      "path": "/folders",
+      "description": "Get all folders"
+    },
+    {
+      "id": "get_folder",
+      "name": "Get Folder",
+      "method": "GET",
+      "path": "/folders/{folder_id}",
+      "description": "Get specific folder"
+    },
+    {
+      "id": "create_folder",
+      "name": "Create Folder",
+      "method": "POST",
+      "path": "/folders",
+      "description": "Create new folder"
+    },
+    {
+      "id": "update_folder",
+      "name": "Update Folder",
+      "method": "PATCH",
+      "path": "/folders/{folder_id}",
+      "description": "Update folder properties"
+    },
+    {
+      "id": "delete_folder",
+      "name": "Delete Folder",
+      "method": "DELETE",
+      "path": "/folders/{folder_id}",
+      "description": "Delete a folder"
+    },
+    {
+      "id": "move_to_folder",
+      "name": "Move to Folder",
+      "method": "POST",
+      "path": "/folders/{folder_id}/items",
+      "description": "Move designs to folder"
+    },
+    {
+      "id": "list_assets",
+      "name": "List Assets",
+      "method": "GET",
+      "path": "/assets",
+      "description": "Get all uploaded assets"
+    },
+    {
+      "id": "get_asset",
+      "name": "Get Asset",
+      "method": "GET",
+      "path": "/assets/{asset_id}",
+      "description": "Get specific asset"
+    },
+    {
+      "id": "upload_asset",
+      "name": "Upload Asset",
+      "method": "POST",
+      "path": "/assets",
+      "description": "Upload new asset (images, videos, audio)"
+    },
+    {
+      "id": "update_asset",
+      "name": "Update Asset",
+      "method": "PATCH",
+      "path": "/assets/{asset_id}",
+      "description": "Update asset metadata"
+    },
+    {
+      "id": "delete_asset",
+      "name": "Delete Asset",
+      "method": "DELETE",
+      "path": "/assets/{asset_id}",
+      "description": "Delete an asset"
+    },
+    {
+      "id": "get_brand_kit",
+      "name": "Get Brand Kit",
+      "method": "GET",
+      "path": "/brand-kits",
+      "description": "Get brand kit details (colors, fonts, logos)"
+    },
+    {
+      "id": "list_brand_colors",
+      "name": "List Brand Colors",
+      "method": "GET",
+      "path": "/brand-kits/colors",
+      "description": "Get brand colors"
+    },
+    {
+      "id": "add_brand_color",
+      "name": "Add Brand Color",
+      "method": "POST",
+      "path": "/brand-kits/colors",
+      "description": "Add color to brand kit"
+    },
+    {
+      "id": "list_brand_fonts",
+      "name": "List Brand Fonts",
+      "method": "GET",
+      "path": "/brand-kits/fonts",
+      "description": "Get brand fonts"
+    },
+    {
+      "id": "add_brand_font",
+      "name": "Add Brand Font",
+      "method": "POST",
+      "path": "/brand-kits/fonts",
+      "description": "Add font to brand kit"
+    },
+    {
+      "id": "list_brand_logos",
+      "name": "List Brand Logos",
+      "method": "GET",
+      "path": "/brand-kits/logos",
+      "description": "Get brand logos"
+    },
+    {
+      "id": "add_brand_logo",
+      "name": "Add Brand Logo",
+      "method": "POST",
+      "path": "/brand-kits/logos",
+      "description": "Add logo to brand kit"
+    },
+    {
+      "id": "list_team_members",
+      "name": "List Team Members",
+      "method": "GET",
+      "path": "/teams/members",
+      "description": "Get team members"
+    },
+    {
+      "id": "invite_team_member",
+      "name": "Invite Team Member",
+      "method": "POST",
+      "path": "/teams/members/invite",
+      "description": "Invite user to team"
+    },
+    {
+      "id": "remove_team_member",
+      "name": "Remove Team Member",
+      "method": "DELETE",
+      "path": "/teams/members/{user_id}",
+      "description": "Remove team member"
+    },
+    {
+      "id": "share_design",
+      "name": "Share Design",
+      "method": "POST",
+      "path": "/designs/{design_id}/share",
+      "description": "Share design with users"
+    },
+    {
+      "id": "get_design_permissions",
+      "name": "Get Design Permissions",
+      "method": "GET",
+      "path": "/designs/{design_id}/permissions",
+      "description": "Get design sharing permissions"
+    },
+    {
+      "id": "update_design_permissions",
+      "name": "Update Design Permissions",
+      "method": "PATCH",
+      "path": "/designs/{design_id}/permissions",
+      "description": "Update sharing permissions"
+    },
+    {
+      "id": "list_comments",
+      "name": "List Comments",
+      "method": "GET",
+      "path": "/designs/{design_id}/comments",
+      "description": "Get design comments"
+    },
+    {
+      "id": "add_comment",
+      "name": "Add Comment",
+      "method": "POST",
+      "path": "/designs/{design_id}/comments",
+      "description": "Add comment to design"
+    },
+    {
+      "id": "delete_comment",
+      "name": "Delete Comment",
+      "method": "DELETE",
+      "path": "/designs/{design_id}/comments/{comment_id}",
+      "description": "Delete a comment"
+    },
+    {
+      "id": "background_remover",
+      "name": "Remove Background (Pro)",
+      "method": "POST",
+      "path": "/images/background-remove",
+      "description": "AI background removal"
+    },
+    {
+      "id": "magic_resize",
+      "name": "Magic Resize (Pro)",
+      "method": "POST",
+      "path": "/designs/{design_id}/resize",
+      "description": "Resize design to multiple formats"
+    },
+    {
+      "id": "brand_hub_search",
+      "name": "Search Brand Hub (Pro)",
+      "method": "GET",
+      "path": "/brand-hub/search",
+      "description": "Search brand assets"
+    },
+    {
+      "id": "schedule_publish",
+      "name": "Schedule Publish (Pro)",
+      "method": "POST",
+      "path": "/designs/{design_id}/schedule",
+      "description": "Schedule design publishing"
+    },
+    {
+      "id": "get_analytics",
+      "name": "Get Analytics (Pro)",
+      "method": "GET",
+      "path": "/designs/{design_id}/analytics",
+      "description": "Get design performance analytics"
+    }
+  ]
+}
