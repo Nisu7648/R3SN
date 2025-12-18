@@ -1,0 +1,54 @@
+{
+  "name": "RapidAPI Hub",
+  "version": "1.0.0",
+  "description": "Free access to 40,000+ APIs including weather, translation, QR codes, OCR, spam detection, YouTube, COVID stats, recipes, movies, crypto, sentiment analysis, and more",
+  "category": "api-hub",
+  "isPremium": true,
+  "isFree": true,
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://rapidapi.com/auth/sign-up"
+  },
+  "features": [
+    "Access to 40,000+ APIs",
+    "Weather forecasting",
+    "Language translation",
+    "QR code generation",
+    "URL shortening",
+    "OCR (Image to Text)",
+    "Spam detection",
+    "YouTube video info",
+    "COVID-19 statistics",
+    "Recipe search",
+    "Movie database",
+    "Cryptocurrency prices",
+    "Sentiment analysis",
+    "IP geolocation",
+    "Random jokes",
+    "Stock market data"
+  ],
+  "endpoints": {
+    "callAPI": "Generic API caller",
+    "getWeather": "Weather API",
+    "translateText": "Translation API",
+    "generateQRCode": "QR Code Generator",
+    "shortenURL": "URL Shortener",
+    "imageToText": "OCR API",
+    "detectSpam": "Spam Detection",
+    "getYouTubeInfo": "YouTube API",
+    "getCOVIDStats": "COVID-19 Stats",
+    "searchRecipes": "Recipe Search",
+    "searchMovies": "Movie Database",
+    "getCryptoPrice": "Crypto Prices",
+    "analyzeSentiment": "Sentiment Analysis",
+    "lookupIP": "IP Lookup",
+    "getRandomJoke": "Jokes API",
+    "getStockQuote": "Stock Market"
+  },
+  "rateLimit": {
+    "requests": 500,
+    "period": "month",
+    "note": "Free tier includes 500 requests per month across all APIs"
+  }
+}
