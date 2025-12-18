@@ -1,0 +1,59 @@
+{
+  "name": "vercel_pro",
+  "displayName": "Vercel Pro",
+  "version": "1.0.0",
+  "description": "Premium Vercel integration with 30 advanced endpoints for deployments, domains, analytics, edge functions, and team management",
+  "category": "deployment",
+  "tier": "premium",
+  "icon": "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico",
+  "authentication": {
+    "type": "bearer",
+    "tokenType": "Bearer"
+  },
+  "baseUrl": "https://api.vercel.com",
+  "rateLimit": {
+    "perHour": 5000
+  },
+  "premiumFeatures": [
+    "Advanced analytics",
+    "Edge functions",
+    "Team collaboration",
+    "Custom domains",
+    "Environment variables",
+    "Deployment protection",
+    "Log streaming",
+    "Performance insights"
+  ],
+  "endpoints": [
+    {"id": "list_deployments", "name": "List Deployments", "method": "GET", "path": "/v6/deployments"},
+    {"id": "get_deployment", "name": "Get Deployment", "method": "GET", "path": "/v13/deployments/{id}"},
+    {"id": "create_deployment", "name": "Create Deployment", "method": "POST", "path": "/v13/deployments"},
+    {"id": "cancel_deployment", "name": "Cancel Deployment", "method": "PATCH", "path": "/v12/deployments/{id}/cancel"},
+    {"id": "delete_deployment", "name": "Delete Deployment", "method": "DELETE", "path": "/v13/deployments/{id}"},
+    {"id": "list_projects", "name": "List Projects", "method": "GET", "path": "/v9/projects"},
+    {"id": "get_project", "name": "Get Project", "method": "GET", "path": "/v9/projects/{id}"},
+    {"id": "create_project", "name": "Create Project", "method": "POST", "path": "/v9/projects"},
+    {"id": "update_project", "name": "Update Project", "method": "PATCH", "path": "/v9/projects/{id}"},
+    {"id": "delete_project", "name": "Delete Project", "method": "DELETE", "path": "/v9/projects/{id}"},
+    {"id": "list_domains", "name": "List Domains", "method": "GET", "path": "/v5/domains"},
+    {"id": "get_domain", "name": "Get Domain", "method": "GET", "path": "/v5/domains/{domain}"},
+    {"id": "add_domain", "name": "Add Domain", "method": "POST", "path": "/v5/domains"},
+    {"id": "verify_domain", "name": "Verify Domain", "method": "POST", "path": "/v5/domains/{domain}/verify"},
+    {"id": "remove_domain", "name": "Remove Domain", "method": "DELETE", "path": "/v6/domains/{domain}"},
+    {"id": "list_env_vars", "name": "List Environment Variables", "method": "GET", "path": "/v9/projects/{id}/env"},
+    {"id": "create_env_var", "name": "Create Environment Variable", "method": "POST", "path": "/v10/projects/{id}/env"},
+    {"id": "update_env_var", "name": "Update Environment Variable", "method": "PATCH", "path": "/v9/projects/{id}/env/{key}"},
+    {"id": "delete_env_var", "name": "Delete Environment Variable", "method": "DELETE", "path": "/v9/projects/{id}/env/{id}"},
+    {"id": "get_analytics", "name": "Get Analytics", "method": "GET", "path": "/v1/analytics"},
+    {"id": "get_deployment_events", "name": "Get Deployment Events", "method": "GET", "path": "/v3/deployments/{id}/events"},
+    {"id": "list_edge_functions", "name": "List Edge Functions", "method": "GET", "path": "/v1/edge-functions"},
+    {"id": "get_edge_function", "name": "Get Edge Function", "method": "GET", "path": "/v1/edge-functions/{id}"},
+    {"id": "list_teams", "name": "List Teams", "method": "GET", "path": "/v2/teams"},
+    {"id": "get_team", "name": "Get Team", "method": "GET", "path": "/v2/teams/{id}"},
+    {"id": "list_team_members", "name": "List Team Members", "method": "GET", "path": "/v2/teams/{id}/members"},
+    {"id": "invite_team_member", "name": "Invite Team Member", "method": "POST", "path": "/v1/teams/{id}/members"},
+    {"id": "get_logs", "name": "Get Deployment Logs", "method": "GET", "path": "/v2/deployments/{id}/events"},
+    {"id": "get_aliases", "name": "Get Aliases", "method": "GET", "path": "/v4/aliases"},
+    {"id": "create_alias", "name": "Create Alias", "method": "POST", "path": "/v2/deployments/{id}/aliases"}
+  ]
+}
