@@ -1,0 +1,291 @@
+{
+  "name": "github-copilot",
+  "displayName": "GitHub Copilot",
+  "version": "1.0.0",
+  "description": "Complete GitHub Copilot integration with 38+ premium endpoints for AI code completion, chat, code explanation, refactoring, testing, and enterprise features with full access",
+  "category": "developer_tools",
+  "icon": "https://cdn.worldvectorlogo.com/logos/github-copilot.svg",
+  "authentication": {
+    "type": "bearer",
+    "tokenType": "Bearer",
+    "scopes": [
+      "copilot",
+      "read:user",
+      "read:org"
+    ]
+  },
+  "baseUrl": "https://api.github.com/copilot",
+  "rateLimit": {
+    "quota": 50000,
+    "perDay": 50000,
+    "perMinute": 1000
+  },
+  "endpoints": [
+    {
+      "id": "code_completion",
+      "name": "Code Completion",
+      "method": "POST",
+      "path": "/completions",
+      "description": "Get AI code suggestions"
+    },
+    {
+      "id": "inline_completion",
+      "name": "Inline Code Completion",
+      "method": "POST",
+      "path": "/completions/inline",
+      "description": "Get inline code completions"
+    },
+    {
+      "id": "multi_line_completion",
+      "name": "Multi-line Completion",
+      "method": "POST",
+      "path": "/completions/multiline",
+      "description": "Get multi-line code suggestions"
+    },
+    {
+      "id": "function_completion",
+      "name": "Function Completion",
+      "method": "POST",
+      "path": "/completions/function",
+      "description": "Complete entire functions"
+    },
+    {
+      "id": "chat_conversation",
+      "name": "Copilot Chat",
+      "method": "POST",
+      "path": "/chat/completions",
+      "description": "Chat with Copilot about code"
+    },
+    {
+      "id": "explain_code",
+      "name": "Explain Code",
+      "method": "POST",
+      "path": "/chat/explain",
+      "description": "Get code explanations"
+    },
+    {
+      "id": "fix_code",
+      "name": "Fix Code",
+      "method": "POST",
+      "path": "/chat/fix",
+      "description": "Get code fix suggestions"
+    },
+    {
+      "id": "optimize_code",
+      "name": "Optimize Code",
+      "method": "POST",
+      "path": "/chat/optimize",
+      "description": "Get optimization suggestions"
+    },
+    {
+      "id": "refactor_code",
+      "name": "Refactor Code",
+      "method": "POST",
+      "path": "/chat/refactor",
+      "description": "Get refactoring suggestions"
+    },
+    {
+      "id": "generate_tests",
+      "name": "Generate Tests",
+      "method": "POST",
+      "path": "/chat/tests",
+      "description": "Generate unit tests"
+    },
+    {
+      "id": "generate_documentation",
+      "name": "Generate Documentation",
+      "method": "POST",
+      "path": "/chat/docs",
+      "description": "Generate code documentation"
+    },
+    {
+      "id": "code_review",
+      "name": "Code Review",
+      "method": "POST",
+      "path": "/review",
+      "description": "Get AI code review"
+    },
+    {
+      "id": "security_scan",
+      "name": "Security Scan",
+      "method": "POST",
+      "path": "/security/scan",
+      "description": "Scan for security vulnerabilities"
+    },
+    {
+      "id": "vulnerability_fix",
+      "name": "Vulnerability Fix",
+      "method": "POST",
+      "path": "/security/fix",
+      "description": "Get vulnerability fix suggestions"
+    },
+    {
+      "id": "code_translation",
+      "name": "Code Translation",
+      "method": "POST",
+      "path": "/translate",
+      "description": "Translate code between languages"
+    },
+    {
+      "id": "convert_syntax",
+      "name": "Convert Syntax",
+      "method": "POST",
+      "path": "/convert",
+      "description": "Convert code syntax/style"
+    },
+    {
+      "id": "generate_regex",
+      "name": "Generate Regex",
+      "method": "POST",
+      "path": "/chat/regex",
+      "description": "Generate regular expressions"
+    },
+    {
+      "id": "generate_sql",
+      "name": "Generate SQL",
+      "method": "POST",
+      "path": "/chat/sql",
+      "description": "Generate SQL queries"
+    },
+    {
+      "id": "debug_assistance",
+      "name": "Debug Assistance",
+      "method": "POST",
+      "path": "/chat/debug",
+      "description": "Get debugging help"
+    },
+    {
+      "id": "error_explanation",
+      "name": "Error Explanation",
+      "method": "POST",
+      "path": "/chat/error",
+      "description": "Explain error messages"
+    },
+    {
+      "id": "workspace_context",
+      "name": "Workspace Context",
+      "method": "POST",
+      "path": "/context/workspace",
+      "description": "Analyze workspace context"
+    },
+    {
+      "id": "file_context",
+      "name": "File Context",
+      "method": "POST",
+      "path": "/context/file",
+      "description": "Get file-specific context"
+    },
+    {
+      "id": "project_analysis",
+      "name": "Project Analysis",
+      "method": "POST",
+      "path": "/analyze/project",
+      "description": "Analyze entire project"
+    },
+    {
+      "id": "dependency_analysis",
+      "name": "Dependency Analysis",
+      "method": "POST",
+      "path": "/analyze/dependencies",
+      "description": "Analyze project dependencies"
+    },
+    {
+      "id": "code_search",
+      "name": "Code Search",
+      "method": "POST",
+      "path": "/search",
+      "description": "Search codebase with AI"
+    },
+    {
+      "id": "semantic_search",
+      "name": "Semantic Code Search",
+      "method": "POST",
+      "path": "/search/semantic",
+      "description": "Semantic code search"
+    },
+    {
+      "id": "commit_message",
+      "name": "Generate Commit Message",
+      "method": "POST",
+      "path": "/git/commit-message",
+      "description": "Generate commit messages"
+    },
+    {
+      "id": "pr_description",
+      "name": "Generate PR Description",
+      "method": "POST",
+      "path": "/git/pr-description",
+      "description": "Generate PR descriptions"
+    },
+    {
+      "id": "code_metrics",
+      "name": "Code Metrics",
+      "method": "GET",
+      "path": "/metrics/code",
+      "description": "Get code quality metrics"
+    },
+    {
+      "id": "usage_analytics",
+      "name": "Usage Analytics",
+      "method": "GET",
+      "path": "/analytics/usage",
+      "description": "Get Copilot usage stats"
+    },
+    {
+      "id": "team_analytics",
+      "name": "Team Analytics (Enterprise)",
+      "method": "GET",
+      "path": "/analytics/team",
+      "description": "Get team usage analytics"
+    },
+    {
+      "id": "org_settings",
+      "name": "Organization Settings (Enterprise)",
+      "method": "GET",
+      "path": "/orgs/{org}/settings",
+      "description": "Get org Copilot settings"
+    },
+    {
+      "id": "update_org_settings",
+      "name": "Update Org Settings (Enterprise)",
+      "method": "PATCH",
+      "path": "/orgs/{org}/settings",
+      "description": "Update org settings"
+    },
+    {
+      "id": "list_seats",
+      "name": "List Seats (Enterprise)",
+      "method": "GET",
+      "path": "/orgs/{org}/seats",
+      "description": "List Copilot seats"
+    },
+    {
+      "id": "assign_seats",
+      "name": "Assign Seats (Enterprise)",
+      "method": "POST",
+      "path": "/orgs/{org}/seats",
+      "description": "Assign Copilot seats"
+    },
+    {
+      "id": "remove_seats",
+      "name": "Remove Seats (Enterprise)",
+      "method": "DELETE",
+      "path": "/orgs/{org}/seats",
+      "description": "Remove Copilot seats"
+    },
+    {
+      "id": "policy_management",
+      "name": "Policy Management (Enterprise)",
+      "method": "GET",
+      "path": "/orgs/{org}/policies",
+      "description": "Manage Copilot policies"
+    },
+    {
+      "id": "billing_info",
+      "name": "Billing Information (Enterprise)",
+      "method": "GET",
+      "path": "/orgs/{org}/billing",
+      "description": "Get billing information"
+    }
+  ]
+}
