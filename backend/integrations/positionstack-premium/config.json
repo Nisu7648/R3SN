@@ -1,0 +1,90 @@
+{
+  "name": "Positionstack Premium",
+  "version": "1.0.0",
+  "description": "FREE forward and reverse geocoding API with 25,000 requests/month. Global coverage with timezone and sun data.",
+  "category": "geolocation",
+  "isPremium": true,
+  "isFree": true,
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://positionstack.com/product"
+  },
+  "features": [
+    "Forward geocoding (address to coordinates)",
+    "Reverse geocoding (coordinates to address)",
+    "Global coverage",
+    "Multiple languages support",
+    "Country and region filtering",
+    "Bounding box filtering",
+    "Timezone information",
+    "Sun data (sunrise/sunset)",
+    "Batch geocoding",
+    "Address autocomplete",
+    "Distance calculation",
+    "Nearby search",
+    "JSON format",
+    "HTTPS encryption"
+  ],
+  "endpoints": {
+    "forwardGeocode": "/v1/forward",
+    "reverseGeocode": "/v1/reverse",
+    "geocodeWithLanguage": "/v1/forward",
+    "geocodeInBounds": "/v1/forward",
+    "getTimezone": "/v1/reverse",
+    "getSunInfo": "/v1/reverse",
+    "batchGeocode": "Custom batch endpoint",
+    "searchNearby": "/v1/reverse",
+    "getPlaceDetails": "/v1/forward",
+    "autocomplete": "/v1/forward",
+    "getCountryInfo": "/v1/forward",
+    "calculateDistance": "Custom distance endpoint"
+  },
+  "rateLimit": {
+    "requests": 25000,
+    "period": "month",
+    "note": "Free tier includes 25,000 API requests per month"
+  },
+  "supportedLanguages": [
+    "en - English",
+    "ar - Arabic",
+    "de - German",
+    "es - Spanish",
+    "fr - French",
+    "it - Italian",
+    "ja - Japanese",
+    "ko - Korean",
+    "nl - Dutch",
+    "pl - Polish",
+    "pt - Portuguese",
+    "ru - Russian",
+    "tr - Turkish",
+    "zh - Chinese"
+  ],
+  "responseFields": [
+    "latitude",
+    "longitude",
+    "label",
+    "name",
+    "type",
+    "number",
+    "street",
+    "postal_code",
+    "confidence",
+    "region",
+    "region_code",
+    "county",
+    "locality",
+    "administrative_area",
+    "neighbourhood",
+    "country",
+    "country_code",
+    "continent",
+    "map_url"
+  ],
+  "modules": {
+    "timezone": "Timezone information including name, abbreviation, offset, and DST",
+    "sun": "Sunrise and sunset times for the location",
+    "bbox": "Bounding box filtering for geographic constraints"
+  }
+}
