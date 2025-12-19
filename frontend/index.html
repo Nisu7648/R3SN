@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R3SN - AI-Powered Automation Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="screen active">
+        <div class="login-container">
+            <div class="logo">
+                <h1>R3SN</h1>
+                <p>AI-Powered Automation Platform</p>
+            </div>
+            <div class="login-form">
+                <input type="email" id="loginEmail" placeholder="Email" />
+                <input type="password" id="loginPassword" placeholder="Password" />
+                <button onclick="login()">Sign In</button>
+                <button onclick="showSignup()" class="secondary">Create Account</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Screen -->
+    <div id="signupScreen" class="screen">
+        <div class="login-container">
+            <div class="logo">
+                <h1>R3SN</h1>
+                <p>Create Your Account</p>
+            </div>
+            <div class="login-form">
+                <input type="text" id="signupName" placeholder="Full Name" />
+                <input type="email" id="signupEmail" placeholder="Email" />
+                <input type="password" id="signupPassword" placeholder="Password" />
+                <button onclick="signup()">Create Account</button>
+                <button onclick="showLogin()" class="secondary">Back to Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Screen -->
+    <div id="appScreen" class="screen">
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <h1>R3SN</h1>
+            </div>
+            <div class="header-right">
+                <span id="userName"></span>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Chat Container -->
+            <div class="chat-container">
+                <div id="chatMessages" class="chat-messages"></div>
+                
+                <!-- Input Area -->
+                <div class="input-area">
+                    <textarea 
+                        id="userInput" 
+                        placeholder="Ask anything or describe what you want to build..."
+                        rows="1"
+                    ></textarea>
+                    <button onclick="sendMessage()" class="send-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2"/>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Quick Actions</h3>
+                    <button onclick="quickAction('api')">Build API</button>
+                    <button onclick="quickAction('plugin')">Create Plugin</button>
+                    <button onclick="quickAction('workflow')">Build Workflow</button>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Your APIs</h3>
+                    <div id="apiList" class="item-list"></div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Your Plugins</h3>
+                    <div id="pluginList" class="item-list"></div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Your Workflows</h3>
+                    <div id="workflowList" class="item-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
