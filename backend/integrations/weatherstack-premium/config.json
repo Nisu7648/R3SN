@@ -1,0 +1,80 @@
+{
+  "name": "Weatherstack Premium",
+  "version": "1.0.0",
+  "description": "FREE real-time weather data API for any location worldwide with 1,000 requests/month. Current weather, historical data, and forecasts.",
+  "category": "weather",
+  "isPremium": true,
+  "isFree": true,
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://weatherstack.com/product"
+  },
+  "features": [
+    "Real-time weather data",
+    "Historical weather data",
+    "Weather forecasts",
+    "Global coverage (200,000+ locations)",
+    "Multiple query types (city, coordinates, IP, zip)",
+    "Temperature in multiple units",
+    "Wind speed and direction",
+    "Humidity and pressure",
+    "Cloud cover",
+    "UV index",
+    "Visibility",
+    "Precipitation data",
+    "Weather descriptions",
+    "Location autocomplete",
+    "JSON format",
+    "HTTPS encryption"
+  ],
+  "endpoints": {
+    "getCurrentWeather": "/current",
+    "getHistoricalWeather": "/historical",
+    "getWeatherByCoordinates": "/current",
+    "getWeatherByCity": "/current",
+    "getWeatherByZipCode": "/current",
+    "getWeatherByIP": "/current",
+    "getMultipleLocations": "Custom batch endpoint",
+    "getForecast": "/forecast",
+    "getTemperatureAllUnits": "Custom multi-unit endpoint",
+    "getWeatherSummary": "Custom summary endpoint",
+    "isRaining": "Custom rain check endpoint",
+    "getAirQuality": "Custom air quality endpoint",
+    "compareWeather": "Custom comparison endpoint"
+  },
+  "rateLimit": {
+    "requests": 1000,
+    "period": "month",
+    "note": "Free tier includes 1,000 API requests per month"
+  },
+  "queryTypes": [
+    "City name (e.g., 'New York')",
+    "City with country (e.g., 'New York, US')",
+    "Coordinates (e.g., '40.7128,-74.0060')",
+    "IP address (e.g., '134.201.250.155')",
+    "ZIP code (e.g., '10001')",
+    "Auto IP detection (use 'fetch:ip')"
+  ],
+  "units": {
+    "m": "Metric (Celsius, km/h, mm)",
+    "s": "Scientific (Kelvin, m/s, mm)",
+    "f": "Fahrenheit (Fahrenheit, mph, inches)"
+  },
+  "weatherData": [
+    "Temperature",
+    "Feels like temperature",
+    "Weather descriptions",
+    "Weather icons",
+    "Wind speed",
+    "Wind degree",
+    "Wind direction",
+    "Pressure",
+    "Precipitation",
+    "Humidity",
+    "Cloud cover",
+    "UV index",
+    "Visibility",
+    "Is day/night"
+  ]
+}
