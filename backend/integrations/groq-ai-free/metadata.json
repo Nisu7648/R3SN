@@ -1,0 +1,39 @@
+{
+  "name": "Groq AI Free",
+  "id": "groq-ai-free",
+  "version": "1.0.0",
+  "description": "Ultra-fast LLM inference - FREE tier with premium speed",
+  "category": "ai",
+  "icon": "⚡",
+  "color": "#F55036",
+  "cost": "FREE",
+  "premium": true,
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key (FREE)",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "chatCompletion",
+      "name": "Chat Completion",
+      "description": "Ultra-fast chat with Llama3"
+    },
+    {
+      "id": "streamChat",
+      "name": "Stream Chat",
+      "description": "Stream chat responses"
+    },
+    {
+      "id": "listModels",
+      "name": "List Models",
+      "description": "List available models"
+    }
+  ]
+}
