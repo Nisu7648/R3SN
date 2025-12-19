@@ -1,0 +1,406 @@
+{
+  "name": "dropbox-business",
+  "displayName": "Dropbox Business",
+  "version": "1.0.0",
+  "description": "Complete Dropbox Business integration with 55+ endpoints for file storage, sharing, team collaboration, and admin tools with UNLIMITED FREE BUSINESS ACCESS - unlimited storage, advanced sharing, team management, version history, smart sync",
+  "category": "cloud_storage",
+  "icon": "https://cdn.worldvectorlogo.com/logos/dropbox-1.svg",
+  "premiumTier": "unlimited_free",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "account_info.read",
+      "files.metadata.write",
+      "files.metadata.read",
+      "files.content.write",
+      "files.content.read",
+      "sharing.write",
+      "sharing.read",
+      "team_data.member",
+      "team_data.team_space"
+    ]
+  },
+  "baseUrl": "https://api.dropboxapi.com/2",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "unlimitedStorage": true,
+    "advancedSharing": true,
+    "teamManagement": true,
+    "versionHistory": "unlimited",
+    "smartSync": true,
+    "adminControls": true,
+    "auditLogs": true,
+    "prioritySupport": true
+  },
+  "endpoints": [
+    {
+      "id": "get_current_account",
+      "name": "Get Current Account",
+      "method": "POST",
+      "path": "/users/get_current_account",
+      "description": "Get current user account info"
+    },
+    {
+      "id": "get_space_usage",
+      "name": "Get Space Usage (Business Unlimited)",
+      "method": "POST",
+      "path": "/users/get_space_usage",
+      "description": "Get storage usage"
+    },
+    {
+      "id": "list_folder",
+      "name": "List Folder",
+      "method": "POST",
+      "path": "/files/list_folder",
+      "description": "List folder contents"
+    },
+    {
+      "id": "list_folder_continue",
+      "name": "List Folder Continue",
+      "method": "POST",
+      "path": "/files/list_folder/continue",
+      "description": "Continue listing folder"
+    },
+    {
+      "id": "get_metadata",
+      "name": "Get File/Folder Metadata",
+      "method": "POST",
+      "path": "/files/get_metadata",
+      "description": "Get file or folder metadata"
+    },
+    {
+      "id": "download_file",
+      "name": "Download File",
+      "method": "POST",
+      "path": "/files/download",
+      "description": "Download file content"
+    },
+    {
+      "id": "upload_file",
+      "name": "Upload File (Business Unlimited)",
+      "method": "POST",
+      "path": "/files/upload",
+      "description": "Upload file with unlimited storage"
+    },
+    {
+      "id": "upload_session_start",
+      "name": "Upload Session Start",
+      "method": "POST",
+      "path": "/files/upload_session/start",
+      "description": "Start upload session for large files"
+    },
+    {
+      "id": "upload_session_append",
+      "name": "Upload Session Append",
+      "method": "POST",
+      "path": "/files/upload_session/append_v2",
+      "description": "Append data to upload session"
+    },
+    {
+      "id": "upload_session_finish",
+      "name": "Upload Session Finish",
+      "method": "POST",
+      "path": "/files/upload_session/finish",
+      "description": "Finish upload session"
+    },
+    {
+      "id": "create_folder",
+      "name": "Create Folder",
+      "method": "POST",
+      "path": "/files/create_folder_v2",
+      "description": "Create new folder"
+    },
+    {
+      "id": "delete_file",
+      "name": "Delete File/Folder",
+      "method": "POST",
+      "path": "/files/delete_v2",
+      "description": "Delete file or folder"
+    },
+    {
+      "id": "permanently_delete",
+      "name": "Permanently Delete (Business)",
+      "method": "POST",
+      "path": "/files/permanently_delete",
+      "description": "Permanently delete file"
+    },
+    {
+      "id": "move_file",
+      "name": "Move File/Folder",
+      "method": "POST",
+      "path": "/files/move_v2",
+      "description": "Move file or folder"
+    },
+    {
+      "id": "copy_file",
+      "name": "Copy File/Folder",
+      "method": "POST",
+      "path": "/files/copy_v2",
+      "description": "Copy file or folder"
+    },
+    {
+      "id": "restore_file",
+      "name": "Restore File (Business)",
+      "method": "POST",
+      "path": "/files/restore",
+      "description": "Restore deleted file"
+    },
+    {
+      "id": "search_files",
+      "name": "Search Files (Business)",
+      "method": "POST",
+      "path": "/files/search_v2",
+      "description": "Advanced file search"
+    },
+    {
+      "id": "get_thumbnail",
+      "name": "Get Thumbnail",
+      "method": "POST",
+      "path": "/files/get_thumbnail_v2",
+      "description": "Get file thumbnail"
+    },
+    {
+      "id": "get_preview",
+      "name": "Get Preview",
+      "method": "POST",
+      "path": "/files/get_preview",
+      "description": "Get file preview"
+    },
+    {
+      "id": "list_revisions",
+      "name": "List File Revisions (Business Unlimited)",
+      "method": "POST",
+      "path": "/files/list_revisions",
+      "description": "Get unlimited version history"
+    },
+    {
+      "id": "restore_revision",
+      "name": "Restore Revision (Business)",
+      "method": "POST",
+      "path": "/files/restore",
+      "description": "Restore file to previous version"
+    },
+    {
+      "id": "create_shared_link",
+      "name": "Create Shared Link (Business)",
+      "method": "POST",
+      "path": "/sharing/create_shared_link_with_settings",
+      "description": "Create advanced shared link"
+    },
+    {
+      "id": "list_shared_links",
+      "name": "List Shared Links",
+      "method": "POST",
+      "path": "/sharing/list_shared_links",
+      "description": "List all shared links"
+    },
+    {
+      "id": "revoke_shared_link",
+      "name": "Revoke Shared Link",
+      "method": "POST",
+      "path": "/sharing/revoke_shared_link",
+      "description": "Revoke shared link"
+    },
+    {
+      "id": "share_folder",
+      "name": "Share Folder (Business)",
+      "method": "POST",
+      "path": "/sharing/share_folder",
+      "description": "Share folder with team"
+    },
+    {
+      "id": "list_folders",
+      "name": "List Shared Folders",
+      "method": "POST",
+      "path": "/sharing/list_folders",
+      "description": "List shared folders"
+    },
+    {
+      "id": "add_folder_member",
+      "name": "Add Folder Member (Business)",
+      "method": "POST",
+      "path": "/sharing/add_folder_member",
+      "description": "Add member to shared folder"
+    },
+    {
+      "id": "remove_folder_member",
+      "name": "Remove Folder Member",
+      "method": "POST",
+      "path": "/sharing/remove_folder_member",
+      "description": "Remove member from folder"
+    },
+    {
+      "id": "update_folder_member",
+      "name": "Update Folder Member (Business)",
+      "method": "POST",
+      "path": "/sharing/update_folder_member",
+      "description": "Update member permissions"
+    },
+    {
+      "id": "list_folder_members",
+      "name": "List Folder Members",
+      "method": "POST",
+      "path": "/sharing/list_folder_members",
+      "description": "Get folder members"
+    },
+    {
+      "id": "get_team_info",
+      "name": "Get Team Info (Business)",
+      "method": "POST",
+      "path": "/team/get_info",
+      "description": "Get team information"
+    },
+    {
+      "id": "list_team_members",
+      "name": "List Team Members (Business)",
+      "method": "POST",
+      "path": "/team/members/list_v2",
+      "description": "List all team members"
+    },
+    {
+      "id": "add_team_member",
+      "name": "Add Team Member (Business)",
+      "method": "POST",
+      "path": "/team/members/add_v2",
+      "description": "Add member to team"
+    },
+    {
+      "id": "remove_team_member",
+      "name": "Remove Team Member (Business)",
+      "method": "POST",
+      "path": "/team/members/remove",
+      "description": "Remove team member"
+    },
+    {
+      "id": "suspend_team_member",
+      "name": "Suspend Team Member (Business)",
+      "method": "POST",
+      "path": "/team/members/suspend",
+      "description": "Suspend team member"
+    },
+    {
+      "id": "unsuspend_team_member",
+      "name": "Unsuspend Team Member (Business)",
+      "method": "POST",
+      "path": "/team/members/unsuspend",
+      "description": "Unsuspend team member"
+    },
+    {
+      "id": "set_admin_permissions",
+      "name": "Set Admin Permissions (Business)",
+      "method": "POST",
+      "path": "/team/members/set_admin_permissions_v2",
+      "description": "Set admin permissions"
+    },
+    {
+      "id": "list_team_devices",
+      "name": "List Team Devices (Business)",
+      "method": "POST",
+      "path": "/team/devices/list_team_devices",
+      "description": "List all team devices"
+    },
+    {
+      "id": "revoke_device_session",
+      "name": "Revoke Device Session (Business)",
+      "method": "POST",
+      "path": "/team/devices/revoke_device_session",
+      "description": "Revoke device access"
+    },
+    {
+      "id": "get_activity_report",
+      "name": "Get Activity Report (Business)",
+      "method": "POST",
+      "path": "/team/reports/get_activity",
+      "description": "Get team activity report"
+    },
+    {
+      "id": "get_storage_report",
+      "name": "Get Storage Report (Business)",
+      "method": "POST",
+      "path": "/team/reports/get_storage",
+      "description": "Get storage usage report"
+    },
+    {
+      "id": "get_membership_report",
+      "name": "Get Membership Report (Business)",
+      "method": "POST",
+      "path": "/team/reports/get_membership",
+      "description": "Get membership report"
+    },
+    {
+      "id": "get_devices_report",
+      "name": "Get Devices Report (Business)",
+      "method": "POST",
+      "path": "/team/reports/get_devices",
+      "description": "Get devices report"
+    },
+    {
+      "id": "list_team_folders",
+      "name": "List Team Folders (Business)",
+      "method": "POST",
+      "path": "/team/team_folder/list",
+      "description": "List team folders"
+    },
+    {
+      "id": "create_team_folder",
+      "name": "Create Team Folder (Business)",
+      "method": "POST",
+      "path": "/team/team_folder/create",
+      "description": "Create team folder"
+    },
+    {
+      "id": "archive_team_folder",
+      "name": "Archive Team Folder (Business)",
+      "method": "POST",
+      "path": "/team/team_folder/archive",
+      "description": "Archive team folder"
+    },
+    {
+      "id": "get_events",
+      "name": "Get Audit Events (Business)",
+      "method": "POST",
+      "path": "/team_log/get_events",
+      "description": "Get audit log events"
+    },
+    {
+      "id": "paper_create",
+      "name": "Create Paper Doc (Business)",
+      "method": "POST",
+      "path": "/paper/docs/create",
+      "description": "Create Paper document"
+    },
+    {
+      "id": "paper_download",
+      "name": "Download Paper Doc",
+      "method": "POST",
+      "path": "/paper/docs/download",
+      "description": "Download Paper document"
+    },
+    {
+      "id": "paper_update",
+      "name": "Update Paper Doc",
+      "method": "POST",
+      "path": "/paper/docs/update",
+      "description": "Update Paper document"
+    },
+    {
+      "id": "smart_sync_policy",
+      "name": "Set Smart Sync Policy (Business)",
+      "method": "POST",
+      "path": "/files/set_smart_sync_policy",
+      "description": "Configure Smart Sync"
+    },
+    {
+      "id": "get_account_batch",
+      "name": "Get Account Batch (Business)",
+      "method": "POST",
+      "path": "/users/get_account_batch",
+      "description": "Get multiple account info"
+    }
+  ]
+}
