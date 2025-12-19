@@ -1,0 +1,370 @@
+{
+  "name": "zoom-pro",
+  "displayName": "Zoom Pro",
+  "version": "1.0.0",
+  "description": "Complete Zoom Pro integration with 50+ endpoints for meetings, webinars, recordings, cloud storage, and team collaboration with UNLIMITED FREE PRO ACCESS - unlimited meeting duration, cloud recording, 1GB cloud storage, custom branding",
+  "category": "video_conferencing",
+  "icon": "https://cdn.worldvectorlogo.com/logos/zoom-communications-logo.svg",
+  "premiumTier": "unlimited_free",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "meeting:write",
+      "meeting:read",
+      "webinar:write",
+      "webinar:read",
+      "recording:write",
+      "recording:read",
+      "user:write",
+      "user:read"
+    ]
+  },
+  "baseUrl": "https://api.zoom.us/v2",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "unlimitedMeetingDuration": true,
+    "cloudRecording": true,
+    "cloudStorage": "1GB",
+    "customBranding": true,
+    "pollsAndSurveys": true,
+    "breakoutRooms": true,
+    "waitingRoom": true,
+    "reportingAnalytics": true
+  },
+  "endpoints": [
+    {
+      "id": "get_user",
+      "name": "Get User",
+      "method": "GET",
+      "path": "/users/{userId}",
+      "description": "Get user details"
+    },
+    {
+      "id": "list_users",
+      "name": "List Users",
+      "method": "GET",
+      "path": "/users",
+      "description": "List all users"
+    },
+    {
+      "id": "create_user",
+      "name": "Create User",
+      "method": "POST",
+      "path": "/users",
+      "description": "Create new user"
+    },
+    {
+      "id": "update_user",
+      "name": "Update User",
+      "method": "PATCH",
+      "path": "/users/{userId}",
+      "description": "Update user information"
+    },
+    {
+      "id": "delete_user",
+      "name": "Delete User",
+      "method": "DELETE",
+      "path": "/users/{userId}",
+      "description": "Delete user"
+    },
+    {
+      "id": "list_meetings",
+      "name": "List Meetings",
+      "method": "GET",
+      "path": "/users/{userId}/meetings",
+      "description": "List user's meetings"
+    },
+    {
+      "id": "get_meeting",
+      "name": "Get Meeting",
+      "method": "GET",
+      "path": "/meetings/{meetingId}",
+      "description": "Get meeting details"
+    },
+    {
+      "id": "create_meeting",
+      "name": "Create Meeting (Pro Unlimited)",
+      "method": "POST",
+      "path": "/users/{userId}/meetings",
+      "description": "Create unlimited duration meeting"
+    },
+    {
+      "id": "update_meeting",
+      "name": "Update Meeting",
+      "method": "PATCH",
+      "path": "/meetings/{meetingId}",
+      "description": "Update meeting details"
+    },
+    {
+      "id": "delete_meeting",
+      "name": "Delete Meeting",
+      "method": "DELETE",
+      "path": "/meetings/{meetingId}",
+      "description": "Delete meeting"
+    },
+    {
+      "id": "end_meeting",
+      "name": "End Meeting",
+      "method": "PUT",
+      "path": "/meetings/{meetingId}/status",
+      "description": "End active meeting"
+    },
+    {
+      "id": "get_meeting_invitation",
+      "name": "Get Meeting Invitation",
+      "method": "GET",
+      "path": "/meetings/{meetingId}/invitation",
+      "description": "Get meeting invitation"
+    },
+    {
+      "id": "list_meeting_registrants",
+      "name": "List Meeting Registrants",
+      "method": "GET",
+      "path": "/meetings/{meetingId}/registrants",
+      "description": "Get meeting registrants"
+    },
+    {
+      "id": "add_meeting_registrant",
+      "name": "Add Meeting Registrant",
+      "method": "POST",
+      "path": "/meetings/{meetingId}/registrants",
+      "description": "Add meeting registrant"
+    },
+    {
+      "id": "update_registrant_status",
+      "name": "Update Registrant Status",
+      "method": "PUT",
+      "path": "/meetings/{meetingId}/registrants/status",
+      "description": "Approve/deny registrant"
+    },
+    {
+      "id": "list_past_meetings",
+      "name": "List Past Meetings (Pro)",
+      "method": "GET",
+      "path": "/past_meetings/{meetingId}",
+      "description": "Get past meeting details"
+    },
+    {
+      "id": "get_meeting_participants",
+      "name": "Get Meeting Participants (Pro)",
+      "method": "GET",
+      "path": "/past_meetings/{meetingId}/participants",
+      "description": "Get past meeting participants"
+    },
+    {
+      "id": "list_webinars",
+      "name": "List Webinars (Pro)",
+      "method": "GET",
+      "path": "/users/{userId}/webinars",
+      "description": "List user's webinars"
+    },
+    {
+      "id": "create_webinar",
+      "name": "Create Webinar (Pro)",
+      "method": "POST",
+      "path": "/users/{userId}/webinars",
+      "description": "Create webinar"
+    },
+    {
+      "id": "get_webinar",
+      "name": "Get Webinar",
+      "method": "GET",
+      "path": "/webinars/{webinarId}",
+      "description": "Get webinar details"
+    },
+    {
+      "id": "update_webinar",
+      "name": "Update Webinar",
+      "method": "PATCH",
+      "path": "/webinars/{webinarId}",
+      "description": "Update webinar"
+    },
+    {
+      "id": "delete_webinar",
+      "name": "Delete Webinar",
+      "method": "DELETE",
+      "path": "/webinars/{webinarId}",
+      "description": "Delete webinar"
+    },
+    {
+      "id": "list_recordings",
+      "name": "List Cloud Recordings (Pro)",
+      "method": "GET",
+      "path": "/users/{userId}/recordings",
+      "description": "List cloud recordings"
+    },
+    {
+      "id": "get_recording",
+      "name": "Get Recording (Pro)",
+      "method": "GET",
+      "path": "/meetings/{meetingId}/recordings",
+      "description": "Get meeting recording"
+    },
+    {
+      "id": "delete_recording",
+      "name": "Delete Recording",
+      "method": "DELETE",
+      "path": "/meetings/{meetingId}/recordings",
+      "description": "Delete recording"
+    },
+    {
+      "id": "recover_recording",
+      "name": "Recover Recording (Pro)",
+      "method": "PUT",
+      "path": "/meetings/{meetingId}/recordings/status",
+      "description": "Recover deleted recording"
+    },
+    {
+      "id": "get_recording_settings",
+      "name": "Get Recording Settings (Pro)",
+      "method": "GET",
+      "path": "/meetings/{meetingId}/recordings/settings",
+      "description": "Get recording settings"
+    },
+    {
+      "id": "update_recording_settings",
+      "name": "Update Recording Settings (Pro)",
+      "method": "PATCH",
+      "path": "/meetings/{meetingId}/recordings/settings",
+      "description": "Update recording settings"
+    },
+    {
+      "id": "create_poll",
+      "name": "Create Poll (Pro)",
+      "method": "POST",
+      "path": "/meetings/{meetingId}/polls",
+      "description": "Create meeting poll"
+    },
+    {
+      "id": "list_polls",
+      "name": "List Polls (Pro)",
+      "method": "GET",
+      "path": "/meetings/{meetingId}/polls",
+      "description": "Get meeting polls"
+    },
+    {
+      "id": "get_poll",
+      "name": "Get Poll",
+      "method": "GET",
+      "path": "/meetings/{meetingId}/polls/{pollId}",
+      "description": "Get poll details"
+    },
+    {
+      "id": "update_poll",
+      "name": "Update Poll",
+      "method": "PUT",
+      "path": "/meetings/{meetingId}/polls/{pollId}",
+      "description": "Update poll"
+    },
+    {
+      "id": "delete_poll",
+      "name": "Delete Poll",
+      "method": "DELETE",
+      "path": "/meetings/{meetingId}/polls/{pollId}",
+      "description": "Delete poll"
+    },
+    {
+      "id": "get_meeting_reports",
+      "name": "Get Meeting Reports (Pro)",
+      "method": "GET",
+      "path": "/report/meetings/{meetingId}",
+      "description": "Get meeting analytics"
+    },
+    {
+      "id": "get_daily_usage",
+      "name": "Get Daily Usage Report (Pro)",
+      "method": "GET",
+      "path": "/report/daily",
+      "description": "Get daily usage report"
+    },
+    {
+      "id": "get_active_inactive_hosts",
+      "name": "Get Active/Inactive Hosts (Pro)",
+      "method": "GET",
+      "path": "/report/users",
+      "description": "Get host activity report"
+    },
+    {
+      "id": "list_breakout_rooms",
+      "name": "List Breakout Rooms (Pro)",
+      "method": "GET",
+      "path": "/meetings/{meetingId}/breakout_rooms",
+      "description": "Get breakout rooms"
+    },
+    {
+      "id": "create_breakout_rooms",
+      "name": "Create Breakout Rooms (Pro)",
+      "method": "POST",
+      "path": "/meetings/{meetingId}/breakout_rooms",
+      "description": "Create breakout rooms"
+    },
+    {
+      "id": "update_breakout_rooms",
+      "name": "Update Breakout Rooms",
+      "method": "PATCH",
+      "path": "/meetings/{meetingId}/breakout_rooms",
+      "description": "Update breakout rooms"
+    },
+    {
+      "id": "delete_breakout_rooms",
+      "name": "Delete Breakout Rooms",
+      "method": "DELETE",
+      "path": "/meetings/{meetingId}/breakout_rooms",
+      "description": "Delete breakout rooms"
+    },
+    {
+      "id": "get_account_settings",
+      "name": "Get Account Settings (Pro)",
+      "method": "GET",
+      "path": "/accounts/{accountId}/settings",
+      "description": "Get account settings"
+    },
+    {
+      "id": "update_account_settings",
+      "name": "Update Account Settings (Pro)",
+      "method": "PATCH",
+      "path": "/accounts/{accountId}/settings",
+      "description": "Update account settings"
+    },
+    {
+      "id": "get_branding",
+      "name": "Get Custom Branding (Pro)",
+      "method": "GET",
+      "path": "/accounts/{accountId}/branding",
+      "description": "Get custom branding"
+    },
+    {
+      "id": "update_branding",
+      "name": "Update Custom Branding (Pro)",
+      "method": "PATCH",
+      "path": "/accounts/{accountId}/branding",
+      "description": "Update custom branding"
+    },
+    {
+      "id": "get_waiting_room",
+      "name": "Get Waiting Room (Pro)",
+      "method": "GET",
+      "path": "/meetings/{meetingId}/waiting_room",
+      "description": "Get waiting room participants"
+    },
+    {
+      "id": "admit_from_waiting_room",
+      "name": "Admit from Waiting Room (Pro)",
+      "method": "PUT",
+      "path": "/meetings/{meetingId}/waiting_room/{participantId}",
+      "description": "Admit participant"
+    },
+    {
+      "id": "get_cloud_storage",
+      "name": "Get Cloud Storage Usage (Pro)",
+      "method": "GET",
+      "path": "/accounts/{accountId}/storage",
+      "description": "Get cloud storage usage"
+    }
+  ]
+}
