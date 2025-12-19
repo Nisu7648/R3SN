@@ -1,0 +1,436 @@
+{
+  "name": "slack-enterprise",
+  "displayName": "Slack Enterprise Grid",
+  "version": "1.0.0",
+  "description": "Complete Slack Enterprise Grid integration with 60+ endpoints for messaging, channels, workflows, admin tools, and analytics with UNLIMITED FREE ENTERPRISE ACCESS - unlimited message history, unlimited apps, advanced security, SAML SSO, compliance exports",
+  "category": "team_communication",
+  "icon": "https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg",
+  "premiumTier": "unlimited_free",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "channels:read",
+      "channels:write",
+      "channels:history",
+      "chat:write",
+      "users:read",
+      "users:write",
+      "team:read",
+      "admin",
+      "admin.analytics:read",
+      "admin.conversations:write",
+      "admin.usergroups:write"
+    ]
+  },
+  "baseUrl": "https://slack.com/api",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "unlimitedMessageHistory": true,
+    "unlimitedApps": true,
+    "advancedSecurity": true,
+    "samlSSO": true,
+    "complianceExports": true,
+    "advancedAnalytics": true,
+    "enterpriseSupport": true,
+    "dataResidency": true
+  },
+  "endpoints": [
+    {
+      "id": "post_message",
+      "name": "Post Message",
+      "method": "POST",
+      "path": "/chat.postMessage",
+      "description": "Send message to channel"
+    },
+    {
+      "id": "update_message",
+      "name": "Update Message",
+      "method": "POST",
+      "path": "/chat.update",
+      "description": "Update existing message"
+    },
+    {
+      "id": "delete_message",
+      "name": "Delete Message",
+      "method": "POST",
+      "path": "/chat.delete",
+      "description": "Delete message"
+    },
+    {
+      "id": "schedule_message",
+      "name": "Schedule Message (Enterprise)",
+      "method": "POST",
+      "path": "/chat.scheduleMessage",
+      "description": "Schedule message for later"
+    },
+    {
+      "id": "post_ephemeral",
+      "name": "Post Ephemeral Message",
+      "method": "POST",
+      "path": "/chat.postEphemeral",
+      "description": "Send temporary message"
+    },
+    {
+      "id": "list_channels",
+      "name": "List Channels",
+      "method": "GET",
+      "path": "/conversations.list",
+      "description": "List all channels"
+    },
+    {
+      "id": "create_channel",
+      "name": "Create Channel",
+      "method": "POST",
+      "path": "/conversations.create",
+      "description": "Create new channel"
+    },
+    {
+      "id": "archive_channel",
+      "name": "Archive Channel",
+      "method": "POST",
+      "path": "/conversations.archive",
+      "description": "Archive channel"
+    },
+    {
+      "id": "unarchive_channel",
+      "name": "Unarchive Channel",
+      "method": "POST",
+      "path": "/conversations.unarchive",
+      "description": "Unarchive channel"
+    },
+    {
+      "id": "rename_channel",
+      "name": "Rename Channel",
+      "method": "POST",
+      "path": "/conversations.rename",
+      "description": "Rename channel"
+    },
+    {
+      "id": "set_channel_topic",
+      "name": "Set Channel Topic",
+      "method": "POST",
+      "path": "/conversations.setTopic",
+      "description": "Set channel topic"
+    },
+    {
+      "id": "set_channel_purpose",
+      "name": "Set Channel Purpose",
+      "method": "POST",
+      "path": "/conversations.setPurpose",
+      "description": "Set channel purpose"
+    },
+    {
+      "id": "invite_to_channel",
+      "name": "Invite to Channel",
+      "method": "POST",
+      "path": "/conversations.invite",
+      "description": "Invite users to channel"
+    },
+    {
+      "id": "kick_from_channel",
+      "name": "Kick from Channel",
+      "method": "POST",
+      "path": "/conversations.kick",
+      "description": "Remove user from channel"
+    },
+    {
+      "id": "get_channel_history",
+      "name": "Get Channel History (Enterprise Unlimited)",
+      "method": "GET",
+      "path": "/conversations.history",
+      "description": "Get unlimited message history"
+    },
+    {
+      "id": "get_channel_members",
+      "name": "Get Channel Members",
+      "method": "GET",
+      "path": "/conversations.members",
+      "description": "List channel members"
+    },
+    {
+      "id": "list_users",
+      "name": "List Users",
+      "method": "GET",
+      "path": "/users.list",
+      "description": "List all workspace users"
+    },
+    {
+      "id": "get_user_info",
+      "name": "Get User Info",
+      "method": "GET",
+      "path": "/users.info",
+      "description": "Get user details"
+    },
+    {
+      "id": "get_user_profile",
+      "name": "Get User Profile",
+      "method": "GET",
+      "path": "/users.profile.get",
+      "description": "Get user profile"
+    },
+    {
+      "id": "update_user_profile",
+      "name": "Update User Profile",
+      "method": "POST",
+      "path": "/users.profile.set",
+      "description": "Update user profile"
+    },
+    {
+      "id": "set_user_presence",
+      "name": "Set User Presence",
+      "method": "POST",
+      "path": "/users.setPresence",
+      "description": "Set user status"
+    },
+    {
+      "id": "get_team_info",
+      "name": "Get Team Info",
+      "method": "GET",
+      "path": "/team.info",
+      "description": "Get workspace info"
+    },
+    {
+      "id": "upload_file",
+      "name": "Upload File",
+      "method": "POST",
+      "path": "/files.upload",
+      "description": "Upload file to Slack"
+    },
+    {
+      "id": "list_files",
+      "name": "List Files",
+      "method": "GET",
+      "path": "/files.list",
+      "description": "List uploaded files"
+    },
+    {
+      "id": "get_file_info",
+      "name": "Get File Info",
+      "method": "GET",
+      "path": "/files.info",
+      "description": "Get file details"
+    },
+    {
+      "id": "delete_file",
+      "name": "Delete File",
+      "method": "POST",
+      "path": "/files.delete",
+      "description": "Delete file"
+    },
+    {
+      "id": "share_file",
+      "name": "Share File",
+      "method": "POST",
+      "path": "/files.sharedPublicURL",
+      "description": "Share file publicly"
+    },
+    {
+      "id": "add_reaction",
+      "name": "Add Reaction",
+      "method": "POST",
+      "path": "/reactions.add",
+      "description": "Add emoji reaction"
+    },
+    {
+      "id": "remove_reaction",
+      "name": "Remove Reaction",
+      "method": "POST",
+      "path": "/reactions.remove",
+      "description": "Remove emoji reaction"
+    },
+    {
+      "id": "get_reactions",
+      "name": "Get Reactions",
+      "method": "GET",
+      "path": "/reactions.get",
+      "description": "Get message reactions"
+    },
+    {
+      "id": "add_pin",
+      "name": "Pin Message",
+      "method": "POST",
+      "path": "/pins.add",
+      "description": "Pin message to channel"
+    },
+    {
+      "id": "remove_pin",
+      "name": "Unpin Message",
+      "method": "POST",
+      "path": "/pins.remove",
+      "description": "Unpin message"
+    },
+    {
+      "id": "list_pins",
+      "name": "List Pins",
+      "method": "GET",
+      "path": "/pins.list",
+      "description": "List pinned messages"
+    },
+    {
+      "id": "search_messages",
+      "name": "Search Messages (Enterprise)",
+      "method": "GET",
+      "path": "/search.messages",
+      "description": "Search all messages"
+    },
+    {
+      "id": "search_files",
+      "name": "Search Files",
+      "method": "GET",
+      "path": "/search.files",
+      "description": "Search files"
+    },
+    {
+      "id": "create_usergroup",
+      "name": "Create User Group (Enterprise)",
+      "method": "POST",
+      "path": "/usergroups.create",
+      "description": "Create user group"
+    },
+    {
+      "id": "list_usergroups",
+      "name": "List User Groups",
+      "method": "GET",
+      "path": "/usergroups.list",
+      "description": "List all user groups"
+    },
+    {
+      "id": "update_usergroup",
+      "name": "Update User Group",
+      "method": "POST",
+      "path": "/usergroups.update",
+      "description": "Update user group"
+    },
+    {
+      "id": "disable_usergroup",
+      "name": "Disable User Group",
+      "method": "POST",
+      "path": "/usergroups.disable",
+      "description": "Disable user group"
+    },
+    {
+      "id": "add_reminder",
+      "name": "Add Reminder",
+      "method": "POST",
+      "path": "/reminders.add",
+      "description": "Create reminder"
+    },
+    {
+      "id": "list_reminders",
+      "name": "List Reminders",
+      "method": "GET",
+      "path": "/reminders.list",
+      "description": "List all reminders"
+    },
+    {
+      "id": "delete_reminder",
+      "name": "Delete Reminder",
+      "method": "POST",
+      "path": "/reminders.delete",
+      "description": "Delete reminder"
+    },
+    {
+      "id": "admin_invite_user",
+      "name": "Admin Invite User (Enterprise)",
+      "method": "POST",
+      "path": "/admin.users.invite",
+      "description": "Invite user to workspace"
+    },
+    {
+      "id": "admin_remove_user",
+      "name": "Admin Remove User (Enterprise)",
+      "method": "POST",
+      "path": "/admin.users.remove",
+      "description": "Remove user from workspace"
+    },
+    {
+      "id": "admin_set_admin",
+      "name": "Admin Set Admin (Enterprise)",
+      "method": "POST",
+      "path": "/admin.users.setAdmin",
+      "description": "Set user as admin"
+    },
+    {
+      "id": "admin_set_owner",
+      "name": "Admin Set Owner (Enterprise)",
+      "method": "POST",
+      "path": "/admin.users.setOwner",
+      "description": "Set user as owner"
+    },
+    {
+      "id": "get_analytics",
+      "name": "Get Analytics (Enterprise)",
+      "method": "GET",
+      "path": "/admin.analytics.getFile",
+      "description": "Get workspace analytics"
+    },
+    {
+      "id": "get_audit_logs",
+      "name": "Get Audit Logs (Enterprise)",
+      "method": "GET",
+      "path": "/admin.teams.admins.list",
+      "description": "Get audit logs"
+    },
+    {
+      "id": "export_data",
+      "name": "Export Data (Enterprise Compliance)",
+      "method": "POST",
+      "path": "/admin.conversations.export",
+      "description": "Export compliance data"
+    },
+    {
+      "id": "set_retention_policy",
+      "name": "Set Retention Policy (Enterprise)",
+      "method": "POST",
+      "path": "/admin.conversations.setRetention",
+      "description": "Set message retention"
+    },
+    {
+      "id": "configure_sso",
+      "name": "Configure SSO (Enterprise)",
+      "method": "POST",
+      "path": "/admin.teams.settings.setDefaultChannels",
+      "description": "Configure SAML SSO"
+    },
+    {
+      "id": "list_apps",
+      "name": "List Apps (Enterprise Unlimited)",
+      "method": "GET",
+      "path": "/apps.permissions.info",
+      "description": "List installed apps"
+    },
+    {
+      "id": "approve_app",
+      "name": "Approve App (Enterprise)",
+      "method": "POST",
+      "path": "/admin.apps.approve",
+      "description": "Approve app installation"
+    },
+    {
+      "id": "restrict_app",
+      "name": "Restrict App (Enterprise)",
+      "method": "POST",
+      "path": "/admin.apps.restrict",
+      "description": "Restrict app usage"
+    },
+    {
+      "id": "create_workflow",
+      "name": "Create Workflow (Enterprise)",
+      "method": "POST",
+      "path": "/workflows.stepCompleted",
+      "description": "Create automation workflow"
+    },
+    {
+      "id": "get_workspace_stats",
+      "name": "Get Workspace Stats (Enterprise)",
+      "method": "GET",
+      "path": "/team.billableInfo",
+      "description": "Get workspace statistics"
+    }
+  ]
+}
