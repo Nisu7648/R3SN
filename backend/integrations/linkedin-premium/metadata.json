@@ -1,0 +1,392 @@
+{
+  "name": "linkedin-premium",
+  "displayName": "LinkedIn Premium",
+  "version": "1.0.0",
+  "description": "Complete LinkedIn Premium integration with 52+ endpoints for networking, InMail, job search, learning, recruiter tools, and analytics with UNLIMITED FREE PREMIUM ACCESS - InMail credits, profile views, advanced search, LinkedIn Learning",
+  "category": "professional_networking",
+  "icon": "https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg",
+  "premiumTier": "unlimited_free",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "r_liteprofile",
+      "r_emailaddress",
+      "w_member_social",
+      "r_organization_social",
+      "w_organization_social",
+      "rw_organization_admin",
+      "r_1st_connections_size",
+      "r_ads",
+      "r_ads_reporting"
+    ]
+  },
+  "baseUrl": "https://api.linkedin.com/v2",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "inmailCredits": "unlimited",
+    "profileViews": "unlimited",
+    "advancedSearch": true,
+    "linkedinLearning": true,
+    "recruiterLite": true,
+    "businessInsights": true,
+    "openProfile": true,
+    "featuredApplicant": true
+  },
+  "endpoints": [
+    {
+      "id": "get_profile",
+      "name": "Get Profile",
+      "method": "GET",
+      "path": "/me",
+      "description": "Get current user profile"
+    },
+    {
+      "id": "get_profile_by_id",
+      "name": "Get Profile by ID",
+      "method": "GET",
+      "path": "/people/{person_id}",
+      "description": "Get specific user profile"
+    },
+    {
+      "id": "update_profile",
+      "name": "Update Profile",
+      "method": "POST",
+      "path": "/me",
+      "description": "Update profile information"
+    },
+    {
+      "id": "get_connections",
+      "name": "Get Connections (Premium)",
+      "method": "GET",
+      "path": "/connections",
+      "description": "Get user connections"
+    },
+    {
+      "id": "search_people",
+      "name": "Advanced People Search (Premium)",
+      "method": "GET",
+      "path": "/people-search",
+      "description": "Advanced people search with filters"
+    },
+    {
+      "id": "search_companies",
+      "name": "Search Companies (Premium)",
+      "method": "GET",
+      "path": "/companies",
+      "description": "Search for companies"
+    },
+    {
+      "id": "get_company",
+      "name": "Get Company Details",
+      "method": "GET",
+      "path": "/companies/{company_id}",
+      "description": "Get company information"
+    },
+    {
+      "id": "follow_company",
+      "name": "Follow Company",
+      "method": "POST",
+      "path": "/companies/{company_id}/follow",
+      "description": "Follow a company"
+    },
+    {
+      "id": "unfollow_company",
+      "name": "Unfollow Company",
+      "method": "DELETE",
+      "path": "/companies/{company_id}/follow",
+      "description": "Unfollow a company"
+    },
+    {
+      "id": "send_inmail",
+      "name": "Send InMail (Premium Unlimited)",
+      "method": "POST",
+      "path": "/messages",
+      "description": "Send InMail to anyone"
+    },
+    {
+      "id": "get_messages",
+      "name": "Get Messages",
+      "method": "GET",
+      "path": "/messages",
+      "description": "Get inbox messages"
+    },
+    {
+      "id": "send_message",
+      "name": "Send Message",
+      "method": "POST",
+      "path": "/messages",
+      "description": "Send direct message"
+    },
+    {
+      "id": "get_conversation",
+      "name": "Get Conversation",
+      "method": "GET",
+      "path": "/conversations/{conversation_id}",
+      "description": "Get conversation thread"
+    },
+    {
+      "id": "search_jobs",
+      "name": "Search Jobs (Premium)",
+      "method": "GET",
+      "path": "/jobs",
+      "description": "Advanced job search"
+    },
+    {
+      "id": "get_job",
+      "name": "Get Job Details",
+      "method": "GET",
+      "path": "/jobs/{job_id}",
+      "description": "Get job posting details"
+    },
+    {
+      "id": "apply_to_job",
+      "name": "Apply to Job (Featured Applicant)",
+      "method": "POST",
+      "path": "/jobs/{job_id}/apply",
+      "description": "Apply to job as featured applicant"
+    },
+    {
+      "id": "save_job",
+      "name": "Save Job",
+      "method": "POST",
+      "path": "/jobs/{job_id}/save",
+      "description": "Save job for later"
+    },
+    {
+      "id": "get_saved_jobs",
+      "name": "Get Saved Jobs",
+      "method": "GET",
+      "path": "/jobs/saved",
+      "description": "Get saved jobs"
+    },
+    {
+      "id": "get_job_recommendations",
+      "name": "Get Job Recommendations (Premium)",
+      "method": "GET",
+      "path": "/jobs/recommendations",
+      "description": "Get personalized job recommendations"
+    },
+    {
+      "id": "post_update",
+      "name": "Post Update",
+      "method": "POST",
+      "path": "/ugcPosts",
+      "description": "Share post on LinkedIn"
+    },
+    {
+      "id": "get_feed",
+      "name": "Get Feed",
+      "method": "GET",
+      "path": "/feed",
+      "description": "Get user feed"
+    },
+    {
+      "id": "like_post",
+      "name": "Like Post",
+      "method": "POST",
+      "path": "/socialActions/{post_id}/likes",
+      "description": "Like a post"
+    },
+    {
+      "id": "comment_on_post",
+      "name": "Comment on Post",
+      "method": "POST",
+      "path": "/socialActions/{post_id}/comments",
+      "description": "Comment on post"
+    },
+    {
+      "id": "share_post",
+      "name": "Share Post",
+      "method": "POST",
+      "path": "/ugcPosts",
+      "description": "Share/repost content"
+    },
+    {
+      "id": "get_profile_views",
+      "name": "Get Profile Views (Premium Unlimited)",
+      "method": "GET",
+      "path": "/analytics/profile-views",
+      "description": "See who viewed your profile"
+    },
+    {
+      "id": "get_post_analytics",
+      "name": "Get Post Analytics (Premium)",
+      "method": "GET",
+      "path": "/analytics/posts/{post_id}",
+      "description": "Get post performance analytics"
+    },
+    {
+      "id": "get_search_appearances",
+      "name": "Get Search Appearances (Premium)",
+      "method": "GET",
+      "path": "/analytics/search-appearances",
+      "description": "See how you appear in searches"
+    },
+    {
+      "id": "get_learning_courses",
+      "name": "Get LinkedIn Learning Courses (Premium)",
+      "method": "GET",
+      "path": "/learning/courses",
+      "description": "Access LinkedIn Learning"
+    },
+    {
+      "id": "enroll_course",
+      "name": "Enroll in Course (Premium)",
+      "method": "POST",
+      "path": "/learning/courses/{course_id}/enroll",
+      "description": "Enroll in learning course"
+    },
+    {
+      "id": "get_course_progress",
+      "name": "Get Course Progress (Premium)",
+      "method": "GET",
+      "path": "/learning/progress",
+      "description": "Get learning progress"
+    },
+    {
+      "id": "get_recommendations",
+      "name": "Get Recommendations",
+      "method": "GET",
+      "path": "/recommendations",
+      "description": "Get profile recommendations"
+    },
+    {
+      "id": "give_recommendation",
+      "name": "Give Recommendation",
+      "method": "POST",
+      "path": "/recommendations",
+      "description": "Write recommendation"
+    },
+    {
+      "id": "get_skills",
+      "name": "Get Skills",
+      "method": "GET",
+      "path": "/skills",
+      "description": "Get profile skills"
+    },
+    {
+      "id": "add_skill",
+      "name": "Add Skill",
+      "method": "POST",
+      "path": "/skills",
+      "description": "Add skill to profile"
+    },
+    {
+      "id": "endorse_skill",
+      "name": "Endorse Skill",
+      "method": "POST",
+      "path": "/skills/{skill_id}/endorse",
+      "description": "Endorse someone's skill"
+    },
+    {
+      "id": "get_endorsements",
+      "name": "Get Endorsements (Premium)",
+      "method": "GET",
+      "path": "/endorsements",
+      "description": "Get skill endorsements"
+    },
+    {
+      "id": "create_group",
+      "name": "Create Group",
+      "method": "POST",
+      "path": "/groups",
+      "description": "Create LinkedIn group"
+    },
+    {
+      "id": "get_groups",
+      "name": "Get Groups",
+      "method": "GET",
+      "path": "/groups",
+      "description": "Get user's groups"
+    },
+    {
+      "id": "join_group",
+      "name": "Join Group",
+      "method": "POST",
+      "path": "/groups/{group_id}/join",
+      "description": "Join a group"
+    },
+    {
+      "id": "post_to_group",
+      "name": "Post to Group",
+      "method": "POST",
+      "path": "/groups/{group_id}/posts",
+      "description": "Post in group"
+    },
+    {
+      "id": "get_notifications",
+      "name": "Get Notifications (Premium)",
+      "method": "GET",
+      "path": "/notifications",
+      "description": "Get notifications"
+    },
+    {
+      "id": "get_invitations",
+      "name": "Get Connection Invitations",
+      "method": "GET",
+      "path": "/invitations",
+      "description": "Get pending invitations"
+    },
+    {
+      "id": "send_invitation",
+      "name": "Send Connection Request",
+      "method": "POST",
+      "path": "/invitations",
+      "description": "Send connection request"
+    },
+    {
+      "id": "accept_invitation",
+      "name": "Accept Invitation",
+      "method": "PUT",
+      "path": "/invitations/{invitation_id}",
+      "description": "Accept connection request"
+    },
+    {
+      "id": "recruiter_search",
+      "name": "Recruiter Search (Premium)",
+      "method": "GET",
+      "path": "/recruiter/search",
+      "description": "Advanced recruiter search"
+    },
+    {
+      "id": "get_candidate_insights",
+      "name": "Get Candidate Insights (Premium)",
+      "method": "GET",
+      "path": "/recruiter/insights/{person_id}",
+      "description": "Get candidate insights"
+    },
+    {
+      "id": "save_candidate",
+      "name": "Save Candidate (Premium)",
+      "method": "POST",
+      "path": "/recruiter/candidates",
+      "description": "Save candidate to project"
+    },
+    {
+      "id": "get_business_insights",
+      "name": "Get Business Insights (Premium)",
+      "method": "GET",
+      "path": "/analytics/business-insights",
+      "description": "Get business analytics"
+    },
+    {
+      "id": "get_salary_insights",
+      "name": "Get Salary Insights (Premium)",
+      "method": "GET",
+      "path": "/salary-insights",
+      "description": "Get salary data and insights"
+    },
+    {
+      "id": "open_profile_badge",
+      "name": "Enable Open Profile (Premium)",
+      "method": "POST",
+      "path": "/settings/open-profile",
+      "description": "Enable open profile badge"
+    }
+  ]
+}
