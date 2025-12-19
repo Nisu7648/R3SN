@@ -1,0 +1,81 @@
+{
+  "name": "Pixabay Premium",
+  "version": "1.0.0",
+  "description": "FREE access to 1.9+ million royalty-free stock photos, videos, and illustrations. No attribution required, commercial use allowed.",
+  "category": "media",
+  "isPremium": true,
+  "isFree": true,
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://pixabay.com/api/docs/"
+  },
+  "features": [
+    "1.9+ million free images",
+    "Free stock videos",
+    "Illustrations and vectors",
+    "No attribution required",
+    "Commercial use allowed",
+    "High-resolution downloads",
+    "Search by color",
+    "Category filtering",
+    "Editor's choice collections",
+    "Safe search filtering",
+    "Multiple orientations",
+    "Advanced search filters"
+  ],
+  "endpoints": {
+    "searchImages": "/api/",
+    "searchVideos": "/api/videos/",
+    "getImageById": "/api/",
+    "getPopularImages": "/api/",
+    "getLatestImages": "/api/",
+    "getEditorsChoice": "/api/",
+    "searchHighResImages": "/api/",
+    "getImagesByColor": "/api/",
+    "getImagesByCategory": "/api/"
+  },
+  "rateLimit": {
+    "requests": 5000,
+    "period": "hour",
+    "note": "Free tier includes 5,000 requests per hour"
+  },
+  "categories": [
+    "backgrounds",
+    "fashion",
+    "nature",
+    "science",
+    "education",
+    "feelings",
+    "health",
+    "people",
+    "religion",
+    "places",
+    "animals",
+    "industry",
+    "computer",
+    "food",
+    "sports",
+    "transportation",
+    "travel",
+    "buildings",
+    "business",
+    "music"
+  ],
+  "colors": [
+    "grayscale",
+    "transparent",
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "turquoise",
+    "blue",
+    "lilac",
+    "pink",
+    "white",
+    "gray",
+    "black",
+    "brown"
+  ]
+}
