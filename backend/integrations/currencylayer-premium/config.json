@@ -1,0 +1,71 @@
+{
+  "name": "Currencylayer Premium",
+  "version": "1.0.0",
+  "description": "FREE real-time and historical currency exchange rates API supporting 168 world currencies with 1,000 requests/month.",
+  "category": "finance",
+  "isPremium": true,
+  "isFree": true,
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://currencylayer.com/product"
+  },
+  "features": [
+    "Real-time exchange rates",
+    "168 world currencies",
+    "Historical data (back to 1999)",
+    "Currency conversion",
+    "Time-frame queries",
+    "Currency change data",
+    "Batch conversions",
+    "Popular currency pairs",
+    "JSON format",
+    "HTTPS encryption",
+    "Reliable data sources",
+    "Daily updates"
+  ],
+  "endpoints": {
+    "getLiveRates": "/live",
+    "getHistoricalRates": "/historical",
+    "convertCurrency": "/convert",
+    "getTimeFrame": "/timeframe",
+    "getCurrencyChange": "/change",
+    "getSupportedCurrencies": "/list",
+    "batchConvert": "Custom batch endpoint",
+    "getExchangeRate": "Custom rate endpoint",
+    "compareCurrencies": "Custom comparison endpoint",
+    "getPopularPairs": "Custom popular pairs endpoint"
+  },
+  "rateLimit": {
+    "requests": 1000,
+    "period": "month",
+    "note": "Free tier includes 1,000 API requests per month"
+  },
+  "supportedCurrencies": 168,
+  "majorCurrencies": [
+    "USD - US Dollar",
+    "EUR - Euro",
+    "GBP - British Pound",
+    "JPY - Japanese Yen",
+    "CHF - Swiss Franc",
+    "CAD - Canadian Dollar",
+    "AUD - Australian Dollar",
+    "NZD - New Zealand Dollar",
+    "CNY - Chinese Yuan",
+    "INR - Indian Rupee",
+    "BRL - Brazilian Real",
+    "RUB - Russian Ruble",
+    "KRW - South Korean Won",
+    "MXN - Mexican Peso",
+    "SGD - Singapore Dollar",
+    "HKD - Hong Kong Dollar",
+    "NOK - Norwegian Krone",
+    "SEK - Swedish Krona",
+    "DKK - Danish Krone",
+    "PLN - Polish Zloty",
+    "THB - Thai Baht",
+    "MYR - Malaysian Ringgit",
+    "ZAR - South African Rand",
+    "TRY - Turkish Lira"
+  ]
+}
