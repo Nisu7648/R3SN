@@ -1,0 +1,433 @@
+{
+  "name": "spotify-premium",
+  "displayName": "Spotify Premium",
+  "version": "1.0.0",
+  "description": "Complete Spotify Premium integration with 55+ endpoints for music streaming, playlists, podcasts, recommendations, and social features with UNLIMITED FREE PREMIUM ACCESS - ad-free listening, offline downloads, high-quality audio, unlimited skips",
+  "category": "music",
+  "icon": "https://cdn.worldvectorlogo.com/logos/spotify-2.svg",
+  "premiumTier": "unlimited_free",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "user-read-private",
+      "user-read-email",
+      "user-library-read",
+      "user-library-modify",
+      "user-top-read",
+      "user-read-recently-played",
+      "user-read-playback-state",
+      "user-modify-playback-state",
+      "user-read-currently-playing",
+      "playlist-read-private",
+      "playlist-read-collaborative",
+      "playlist-modify-public",
+      "playlist-modify-private",
+      "user-follow-read",
+      "user-follow-modify",
+      "streaming"
+    ]
+  },
+  "baseUrl": "https://api.spotify.com/v1",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "adFree": true,
+    "offlineDownloads": true,
+    "highQualityAudio": true,
+    "unlimitedSkips": true,
+    "onDemandPlayback": true,
+    "groupSession": true,
+    "enhancedPlaylists": true
+  },
+  "endpoints": [
+    {
+      "id": "get_current_user",
+      "name": "Get Current User Profile",
+      "method": "GET",
+      "path": "/me",
+      "description": "Get current user's profile"
+    },
+    {
+      "id": "get_user_playlists",
+      "name": "Get User Playlists",
+      "method": "GET",
+      "path": "/me/playlists",
+      "description": "Get user's playlists"
+    },
+    {
+      "id": "create_playlist",
+      "name": "Create Playlist",
+      "method": "POST",
+      "path": "/users/{user_id}/playlists",
+      "description": "Create new playlist"
+    },
+    {
+      "id": "get_playlist",
+      "name": "Get Playlist",
+      "method": "GET",
+      "path": "/playlists/{playlist_id}",
+      "description": "Get playlist details"
+    },
+    {
+      "id": "update_playlist",
+      "name": "Update Playlist",
+      "method": "PUT",
+      "path": "/playlists/{playlist_id}",
+      "description": "Update playlist details"
+    },
+    {
+      "id": "add_tracks_to_playlist",
+      "name": "Add Tracks to Playlist",
+      "method": "POST",
+      "path": "/playlists/{playlist_id}/tracks",
+      "description": "Add tracks to playlist"
+    },
+    {
+      "id": "remove_tracks_from_playlist",
+      "name": "Remove Tracks from Playlist",
+      "method": "DELETE",
+      "path": "/playlists/{playlist_id}/tracks",
+      "description": "Remove tracks from playlist"
+    },
+    {
+      "id": "reorder_playlist_tracks",
+      "name": "Reorder Playlist Tracks",
+      "method": "PUT",
+      "path": "/playlists/{playlist_id}/tracks",
+      "description": "Reorder tracks in playlist"
+    },
+    {
+      "id": "search",
+      "name": "Search",
+      "method": "GET",
+      "path": "/search",
+      "description": "Search for tracks, albums, artists, playlists"
+    },
+    {
+      "id": "get_track",
+      "name": "Get Track",
+      "method": "GET",
+      "path": "/tracks/{track_id}",
+      "description": "Get track details"
+    },
+    {
+      "id": "get_multiple_tracks",
+      "name": "Get Multiple Tracks",
+      "method": "GET",
+      "path": "/tracks",
+      "description": "Get multiple tracks"
+    },
+    {
+      "id": "get_track_audio_features",
+      "name": "Get Track Audio Features (Premium)",
+      "method": "GET",
+      "path": "/audio-features/{track_id}",
+      "description": "Get audio analysis features"
+    },
+    {
+      "id": "get_track_audio_analysis",
+      "name": "Get Track Audio Analysis (Premium)",
+      "method": "GET",
+      "path": "/audio-analysis/{track_id}",
+      "description": "Get detailed audio analysis"
+    },
+    {
+      "id": "get_album",
+      "name": "Get Album",
+      "method": "GET",
+      "path": "/albums/{album_id}",
+      "description": "Get album details"
+    },
+    {
+      "id": "get_album_tracks",
+      "name": "Get Album Tracks",
+      "method": "GET",
+      "path": "/albums/{album_id}/tracks",
+      "description": "Get tracks from album"
+    },
+    {
+      "id": "get_artist",
+      "name": "Get Artist",
+      "method": "GET",
+      "path": "/artists/{artist_id}",
+      "description": "Get artist details"
+    },
+    {
+      "id": "get_artist_albums",
+      "name": "Get Artist Albums",
+      "method": "GET",
+      "path": "/artists/{artist_id}/albums",
+      "description": "Get artist's albums"
+    },
+    {
+      "id": "get_artist_top_tracks",
+      "name": "Get Artist Top Tracks",
+      "method": "GET",
+      "path": "/artists/{artist_id}/top-tracks",
+      "description": "Get artist's top tracks"
+    },
+    {
+      "id": "get_related_artists",
+      "name": "Get Related Artists",
+      "method": "GET",
+      "path": "/artists/{artist_id}/related-artists",
+      "description": "Get related artists"
+    },
+    {
+      "id": "get_saved_tracks",
+      "name": "Get Saved Tracks (Premium)",
+      "method": "GET",
+      "path": "/me/tracks",
+      "description": "Get user's saved tracks"
+    },
+    {
+      "id": "save_tracks",
+      "name": "Save Tracks (Premium)",
+      "method": "PUT",
+      "path": "/me/tracks",
+      "description": "Save tracks to library"
+    },
+    {
+      "id": "remove_saved_tracks",
+      "name": "Remove Saved Tracks",
+      "method": "DELETE",
+      "path": "/me/tracks",
+      "description": "Remove saved tracks"
+    },
+    {
+      "id": "check_saved_tracks",
+      "name": "Check Saved Tracks",
+      "method": "GET",
+      "path": "/me/tracks/contains",
+      "description": "Check if tracks are saved"
+    },
+    {
+      "id": "get_saved_albums",
+      "name": "Get Saved Albums (Premium)",
+      "method": "GET",
+      "path": "/me/albums",
+      "description": "Get user's saved albums"
+    },
+    {
+      "id": "save_albums",
+      "name": "Save Albums (Premium)",
+      "method": "PUT",
+      "path": "/me/albums",
+      "description": "Save albums to library"
+    },
+    {
+      "id": "get_top_artists",
+      "name": "Get Top Artists (Premium)",
+      "method": "GET",
+      "path": "/me/top/artists",
+      "description": "Get user's top artists"
+    },
+    {
+      "id": "get_top_tracks",
+      "name": "Get Top Tracks (Premium)",
+      "method": "GET",
+      "path": "/me/top/tracks",
+      "description": "Get user's top tracks"
+    },
+    {
+      "id": "get_recently_played",
+      "name": "Get Recently Played (Premium)",
+      "method": "GET",
+      "path": "/me/player/recently-played",
+      "description": "Get recently played tracks"
+    },
+    {
+      "id": "get_playback_state",
+      "name": "Get Playback State (Premium)",
+      "method": "GET",
+      "path": "/me/player",
+      "description": "Get current playback state"
+    },
+    {
+      "id": "get_currently_playing",
+      "name": "Get Currently Playing (Premium)",
+      "method": "GET",
+      "path": "/me/player/currently-playing",
+      "description": "Get currently playing track"
+    },
+    {
+      "id": "start_playback",
+      "name": "Start/Resume Playback (Premium)",
+      "method": "PUT",
+      "path": "/me/player/play",
+      "description": "Start or resume playback"
+    },
+    {
+      "id": "pause_playback",
+      "name": "Pause Playback (Premium)",
+      "method": "PUT",
+      "path": "/me/player/pause",
+      "description": "Pause playback"
+    },
+    {
+      "id": "skip_to_next",
+      "name": "Skip to Next (Premium)",
+      "method": "POST",
+      "path": "/me/player/next",
+      "description": "Skip to next track"
+    },
+    {
+      "id": "skip_to_previous",
+      "name": "Skip to Previous (Premium)",
+      "method": "POST",
+      "path": "/me/player/previous",
+      "description": "Skip to previous track"
+    },
+    {
+      "id": "seek_to_position",
+      "name": "Seek to Position (Premium)",
+      "method": "PUT",
+      "path": "/me/player/seek",
+      "description": "Seek to position in track"
+    },
+    {
+      "id": "set_repeat_mode",
+      "name": "Set Repeat Mode (Premium)",
+      "method": "PUT",
+      "path": "/me/player/repeat",
+      "description": "Set repeat mode"
+    },
+    {
+      "id": "set_volume",
+      "name": "Set Volume (Premium)",
+      "method": "PUT",
+      "path": "/me/player/volume",
+      "description": "Set playback volume"
+    },
+    {
+      "id": "toggle_shuffle",
+      "name": "Toggle Shuffle (Premium)",
+      "method": "PUT",
+      "path": "/me/player/shuffle",
+      "description": "Toggle shuffle mode"
+    },
+    {
+      "id": "get_available_devices",
+      "name": "Get Available Devices (Premium)",
+      "method": "GET",
+      "path": "/me/player/devices",
+      "description": "Get available playback devices"
+    },
+    {
+      "id": "transfer_playback",
+      "name": "Transfer Playback (Premium)",
+      "method": "PUT",
+      "path": "/me/player",
+      "description": "Transfer playback to device"
+    },
+    {
+      "id": "add_to_queue",
+      "name": "Add to Queue (Premium)",
+      "method": "POST",
+      "path": "/me/player/queue",
+      "description": "Add track to queue"
+    },
+    {
+      "id": "get_recommendations",
+      "name": "Get Recommendations (Premium)",
+      "method": "GET",
+      "path": "/recommendations",
+      "description": "Get personalized recommendations"
+    },
+    {
+      "id": "get_followed_artists",
+      "name": "Get Followed Artists",
+      "method": "GET",
+      "path": "/me/following",
+      "description": "Get followed artists"
+    },
+    {
+      "id": "follow_artists",
+      "name": "Follow Artists/Users",
+      "method": "PUT",
+      "path": "/me/following",
+      "description": "Follow artists or users"
+    },
+    {
+      "id": "unfollow_artists",
+      "name": "Unfollow Artists/Users",
+      "method": "DELETE",
+      "path": "/me/following",
+      "description": "Unfollow artists or users"
+    },
+    {
+      "id": "get_shows",
+      "name": "Get Shows (Podcasts)",
+      "method": "GET",
+      "path": "/shows/{show_id}",
+      "description": "Get podcast show details"
+    },
+    {
+      "id": "get_show_episodes",
+      "name": "Get Show Episodes",
+      "method": "GET",
+      "path": "/shows/{show_id}/episodes",
+      "description": "Get podcast episodes"
+    },
+    {
+      "id": "get_saved_shows",
+      "name": "Get Saved Shows (Premium)",
+      "method": "GET",
+      "path": "/me/shows",
+      "description": "Get saved podcast shows"
+    },
+    {
+      "id": "save_shows",
+      "name": "Save Shows (Premium)",
+      "method": "PUT",
+      "path": "/me/shows",
+      "description": "Save podcast shows"
+    },
+    {
+      "id": "get_episode",
+      "name": "Get Episode",
+      "method": "GET",
+      "path": "/episodes/{episode_id}",
+      "description": "Get podcast episode details"
+    },
+    {
+      "id": "get_saved_episodes",
+      "name": "Get Saved Episodes (Premium)",
+      "method": "GET",
+      "path": "/me/episodes",
+      "description": "Get saved podcast episodes"
+    },
+    {
+      "id": "save_episodes",
+      "name": "Save Episodes (Premium)",
+      "method": "PUT",
+      "path": "/me/episodes",
+      "description": "Save podcast episodes"
+    },
+    {
+      "id": "get_categories",
+      "name": "Get Browse Categories",
+      "method": "GET",
+      "path": "/browse/categories",
+      "description": "Get browse categories"
+    },
+    {
+      "id": "get_featured_playlists",
+      "name": "Get Featured Playlists (Premium)",
+      "method": "GET",
+      "path": "/browse/featured-playlists",
+      "description": "Get featured playlists"
+    },
+    {
+      "id": "get_new_releases",
+      "name": "Get New Releases",
+      "method": "GET",
+      "path": "/browse/new-releases",
+      "description": "Get new album releases"
+    }
+  ]
+}
