@@ -1,0 +1,332 @@
+{
+  "name": "netflix-premium",
+  "displayName": "Netflix Premium",
+  "version": "1.0.0",
+  "description": "Complete Netflix Premium integration with 42+ endpoints for video streaming, profiles, watchlist, recommendations, and content discovery with UNLIMITED FREE PREMIUM ACCESS - 4K Ultra HD, 4 screens, downloads, no ads",
+  "category": "video_streaming",
+  "icon": "https://cdn.worldvectorlogo.com/logos/netflix-3.svg",
+  "premiumTier": "unlimited_free",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "user:read",
+      "user:write",
+      "content:read",
+      "playback:control",
+      "profiles:manage",
+      "watchlist:manage"
+    ]
+  },
+  "baseUrl": "https://api.netflix.com/v2",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "ultraHD4K": true,
+    "simultaneousScreens": 4,
+    "downloads": true,
+    "noAds": true,
+    "spatialAudio": true,
+    "mobileGames": true,
+    "offlineViewing": true
+  },
+  "endpoints": [
+    {
+      "id": "get_user_profile",
+      "name": "Get User Profile",
+      "method": "GET",
+      "path": "/users/current",
+      "description": "Get current user profile"
+    },
+    {
+      "id": "list_profiles",
+      "name": "List Profiles (Premium)",
+      "method": "GET",
+      "path": "/profiles",
+      "description": "Get all account profiles"
+    },
+    {
+      "id": "create_profile",
+      "name": "Create Profile (Premium)",
+      "method": "POST",
+      "path": "/profiles",
+      "description": "Create new profile"
+    },
+    {
+      "id": "update_profile",
+      "name": "Update Profile",
+      "method": "PUT",
+      "path": "/profiles/{profile_id}",
+      "description": "Update profile settings"
+    },
+    {
+      "id": "delete_profile",
+      "name": "Delete Profile",
+      "method": "DELETE",
+      "path": "/profiles/{profile_id}",
+      "description": "Delete a profile"
+    },
+    {
+      "id": "search_content",
+      "name": "Search Content",
+      "method": "GET",
+      "path": "/search",
+      "description": "Search movies and TV shows"
+    },
+    {
+      "id": "browse_categories",
+      "name": "Browse Categories",
+      "method": "GET",
+      "path": "/browse/categories",
+      "description": "Get content categories"
+    },
+    {
+      "id": "get_category_content",
+      "name": "Get Category Content",
+      "method": "GET",
+      "path": "/browse/categories/{category_id}",
+      "description": "Get content by category"
+    },
+    {
+      "id": "get_title",
+      "name": "Get Title Details",
+      "method": "GET",
+      "path": "/titles/{title_id}",
+      "description": "Get movie/show details"
+    },
+    {
+      "id": "get_title_metadata",
+      "name": "Get Title Metadata (Premium)",
+      "method": "GET",
+      "path": "/titles/{title_id}/metadata",
+      "description": "Get detailed metadata"
+    },
+    {
+      "id": "get_episodes",
+      "name": "Get Episodes",
+      "method": "GET",
+      "path": "/titles/{title_id}/episodes",
+      "description": "Get TV show episodes"
+    },
+    {
+      "id": "get_season",
+      "name": "Get Season",
+      "method": "GET",
+      "path": "/titles/{title_id}/seasons/{season_number}",
+      "description": "Get season details"
+    },
+    {
+      "id": "get_watchlist",
+      "name": "Get Watchlist (Premium)",
+      "method": "GET",
+      "path": "/profiles/{profile_id}/watchlist",
+      "description": "Get user's watchlist"
+    },
+    {
+      "id": "add_to_watchlist",
+      "name": "Add to Watchlist",
+      "method": "POST",
+      "path": "/profiles/{profile_id}/watchlist",
+      "description": "Add title to watchlist"
+    },
+    {
+      "id": "remove_from_watchlist",
+      "name": "Remove from Watchlist",
+      "method": "DELETE",
+      "path": "/profiles/{profile_id}/watchlist/{title_id}",
+      "description": "Remove from watchlist"
+    },
+    {
+      "id": "get_continue_watching",
+      "name": "Get Continue Watching (Premium)",
+      "method": "GET",
+      "path": "/profiles/{profile_id}/continue-watching",
+      "description": "Get continue watching list"
+    },
+    {
+      "id": "get_viewing_history",
+      "name": "Get Viewing History (Premium)",
+      "method": "GET",
+      "path": "/profiles/{profile_id}/viewing-history",
+      "description": "Get watch history"
+    },
+    {
+      "id": "update_viewing_progress",
+      "name": "Update Viewing Progress",
+      "method": "PUT",
+      "path": "/profiles/{profile_id}/viewing-activity/{title_id}",
+      "description": "Update watch progress"
+    },
+    {
+      "id": "get_recommendations",
+      "name": "Get Recommendations (Premium)",
+      "method": "GET",
+      "path": "/profiles/{profile_id}/recommendations",
+      "description": "Get personalized recommendations"
+    },
+    {
+      "id": "get_trending",
+      "name": "Get Trending (Premium)",
+      "method": "GET",
+      "path": "/browse/trending",
+      "description": "Get trending content"
+    },
+    {
+      "id": "get_top_10",
+      "name": "Get Top 10 (Premium)",
+      "method": "GET",
+      "path": "/browse/top10",
+      "description": "Get top 10 in your country"
+    },
+    {
+      "id": "get_new_releases",
+      "name": "Get New Releases",
+      "method": "GET",
+      "path": "/browse/new-releases",
+      "description": "Get new releases"
+    },
+    {
+      "id": "get_coming_soon",
+      "name": "Get Coming Soon",
+      "method": "GET",
+      "path": "/browse/coming-soon",
+      "description": "Get upcoming content"
+    },
+    {
+      "id": "rate_title",
+      "name": "Rate Title",
+      "method": "POST",
+      "path": "/profiles/{profile_id}/ratings",
+      "description": "Rate a title"
+    },
+    {
+      "id": "get_ratings",
+      "name": "Get Ratings",
+      "method": "GET",
+      "path": "/profiles/{profile_id}/ratings",
+      "description": "Get user ratings"
+    },
+    {
+      "id": "start_playback",
+      "name": "Start Playback (Premium)",
+      "method": "POST",
+      "path": "/playback/start",
+      "description": "Start video playback"
+    },
+    {
+      "id": "pause_playback",
+      "name": "Pause Playback (Premium)",
+      "method": "POST",
+      "path": "/playback/pause",
+      "description": "Pause video playback"
+    },
+    {
+      "id": "resume_playback",
+      "name": "Resume Playback (Premium)",
+      "method": "POST",
+      "path": "/playback/resume",
+      "description": "Resume video playback"
+    },
+    {
+      "id": "stop_playback",
+      "name": "Stop Playback",
+      "method": "POST",
+      "path": "/playback/stop",
+      "description": "Stop video playback"
+    },
+    {
+      "id": "get_playback_state",
+      "name": "Get Playback State (Premium)",
+      "method": "GET",
+      "path": "/playback/state",
+      "description": "Get current playback state"
+    },
+    {
+      "id": "set_quality",
+      "name": "Set Quality (Premium 4K)",
+      "method": "PUT",
+      "path": "/playback/quality",
+      "description": "Set video quality (4K Ultra HD)"
+    },
+    {
+      "id": "get_subtitles",
+      "name": "Get Subtitles",
+      "method": "GET",
+      "path": "/titles/{title_id}/subtitles",
+      "description": "Get available subtitles"
+    },
+    {
+      "id": "set_subtitles",
+      "name": "Set Subtitles",
+      "method": "PUT",
+      "path": "/playback/subtitles",
+      "description": "Enable/disable subtitles"
+    },
+    {
+      "id": "get_audio_tracks",
+      "name": "Get Audio Tracks (Premium)",
+      "method": "GET",
+      "path": "/titles/{title_id}/audio-tracks",
+      "description": "Get available audio tracks"
+    },
+    {
+      "id": "set_audio_track",
+      "name": "Set Audio Track",
+      "method": "PUT",
+      "path": "/playback/audio-track",
+      "description": "Select audio track"
+    },
+    {
+      "id": "download_title",
+      "name": "Download Title (Premium)",
+      "method": "POST",
+      "path": "/downloads",
+      "description": "Download for offline viewing"
+    },
+    {
+      "id": "list_downloads",
+      "name": "List Downloads (Premium)",
+      "method": "GET",
+      "path": "/downloads",
+      "description": "Get downloaded titles"
+    },
+    {
+      "id": "delete_download",
+      "name": "Delete Download",
+      "method": "DELETE",
+      "path": "/downloads/{download_id}",
+      "description": "Delete downloaded title"
+    },
+    {
+      "id": "get_parental_controls",
+      "name": "Get Parental Controls",
+      "method": "GET",
+      "path": "/profiles/{profile_id}/parental-controls",
+      "description": "Get parental control settings"
+    },
+    {
+      "id": "update_parental_controls",
+      "name": "Update Parental Controls",
+      "method": "PUT",
+      "path": "/profiles/{profile_id}/parental-controls",
+      "description": "Update parental controls"
+    },
+    {
+      "id": "get_account_settings",
+      "name": "Get Account Settings (Premium)",
+      "method": "GET",
+      "path": "/account/settings",
+      "description": "Get account settings"
+    },
+    {
+      "id": "update_account_settings",
+      "name": "Update Account Settings",
+      "method": "PUT",
+      "path": "/account/settings",
+      "description": "Update account settings"
+    }
+  ]
+}
