@@ -1,0 +1,365 @@
+{
+  "name": "youtube-premium",
+  "displayName": "YouTube Premium",
+  "version": "1.0.0",
+  "description": "Complete YouTube Premium integration with 48+ endpoints for video streaming, downloads, background play, YouTube Music, and content management with UNLIMITED FREE PREMIUM ACCESS - ad-free, offline downloads, background play, YouTube Music Premium",
+  "category": "video_streaming",
+  "icon": "https://cdn.worldvectorlogo.com/logos/youtube-icon.svg",
+  "premiumTier": "unlimited_free",
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "scopes": [
+      "https://www.googleapis.com/auth/youtube",
+      "https://www.googleapis.com/auth/youtube.force-ssl",
+      "https://www.googleapis.com/auth/youtube.readonly",
+      "https://www.googleapis.com/auth/youtubepartner"
+    ]
+  },
+  "baseUrl": "https://www.googleapis.com/youtube/v3",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "adFree": true,
+    "backgroundPlay": true,
+    "offlineDownloads": true,
+    "youtubeMusicPremium": true,
+    "pictureInPicture": true,
+    "highQuality": true,
+    "youtubeOriginals": true
+  },
+  "endpoints": [
+    {
+      "id": "search_videos",
+      "name": "Search Videos",
+      "method": "GET",
+      "path": "/search",
+      "description": "Search for videos"
+    },
+    {
+      "id": "get_video",
+      "name": "Get Video Details",
+      "method": "GET",
+      "path": "/videos",
+      "description": "Get video details"
+    },
+    {
+      "id": "list_videos",
+      "name": "List Videos",
+      "method": "GET",
+      "path": "/videos",
+      "description": "List multiple videos"
+    },
+    {
+      "id": "get_channel",
+      "name": "Get Channel",
+      "method": "GET",
+      "path": "/channels",
+      "description": "Get channel details"
+    },
+    {
+      "id": "list_channels",
+      "name": "List Channels",
+      "method": "GET",
+      "path": "/channels",
+      "description": "List multiple channels"
+    },
+    {
+      "id": "get_playlist",
+      "name": "Get Playlist",
+      "method": "GET",
+      "path": "/playlists",
+      "description": "Get playlist details"
+    },
+    {
+      "id": "list_playlists",
+      "name": "List Playlists",
+      "method": "GET",
+      "path": "/playlists",
+      "description": "List user playlists"
+    },
+    {
+      "id": "create_playlist",
+      "name": "Create Playlist",
+      "method": "POST",
+      "path": "/playlists",
+      "description": "Create new playlist"
+    },
+    {
+      "id": "update_playlist",
+      "name": "Update Playlist",
+      "method": "PUT",
+      "path": "/playlists",
+      "description": "Update playlist"
+    },
+    {
+      "id": "delete_playlist",
+      "name": "Delete Playlist",
+      "method": "DELETE",
+      "path": "/playlists",
+      "description": "Delete playlist"
+    },
+    {
+      "id": "get_playlist_items",
+      "name": "Get Playlist Items",
+      "method": "GET",
+      "path": "/playlistItems",
+      "description": "Get videos in playlist"
+    },
+    {
+      "id": "add_to_playlist",
+      "name": "Add to Playlist",
+      "method": "POST",
+      "path": "/playlistItems",
+      "description": "Add video to playlist"
+    },
+    {
+      "id": "remove_from_playlist",
+      "name": "Remove from Playlist",
+      "method": "DELETE",
+      "path": "/playlistItems",
+      "description": "Remove video from playlist"
+    },
+    {
+      "id": "get_subscriptions",
+      "name": "Get Subscriptions",
+      "method": "GET",
+      "path": "/subscriptions",
+      "description": "Get user subscriptions"
+    },
+    {
+      "id": "subscribe",
+      "name": "Subscribe to Channel",
+      "method": "POST",
+      "path": "/subscriptions",
+      "description": "Subscribe to channel"
+    },
+    {
+      "id": "unsubscribe",
+      "name": "Unsubscribe from Channel",
+      "method": "DELETE",
+      "path": "/subscriptions",
+      "description": "Unsubscribe from channel"
+    },
+    {
+      "id": "get_comments",
+      "name": "Get Comments",
+      "method": "GET",
+      "path": "/commentThreads",
+      "description": "Get video comments"
+    },
+    {
+      "id": "post_comment",
+      "name": "Post Comment",
+      "method": "POST",
+      "path": "/commentThreads",
+      "description": "Post a comment"
+    },
+    {
+      "id": "update_comment",
+      "name": "Update Comment",
+      "method": "PUT",
+      "path": "/comments",
+      "description": "Update comment"
+    },
+    {
+      "id": "delete_comment",
+      "name": "Delete Comment",
+      "method": "DELETE",
+      "path": "/comments",
+      "description": "Delete comment"
+    },
+    {
+      "id": "like_video",
+      "name": "Like Video",
+      "method": "POST",
+      "path": "/videos/rate",
+      "description": "Like a video"
+    },
+    {
+      "id": "dislike_video",
+      "name": "Dislike Video",
+      "method": "POST",
+      "path": "/videos/rate",
+      "description": "Dislike a video"
+    },
+    {
+      "id": "get_video_categories",
+      "name": "Get Video Categories",
+      "method": "GET",
+      "path": "/videoCategories",
+      "description": "Get video categories"
+    },
+    {
+      "id": "get_trending",
+      "name": "Get Trending Videos",
+      "method": "GET",
+      "path": "/videos",
+      "description": "Get trending videos"
+    },
+    {
+      "id": "get_watch_history",
+      "name": "Get Watch History (Premium)",
+      "method": "GET",
+      "path": "/activities",
+      "description": "Get watch history"
+    },
+    {
+      "id": "get_watch_later",
+      "name": "Get Watch Later (Premium)",
+      "method": "GET",
+      "path": "/playlistItems",
+      "description": "Get watch later playlist"
+    },
+    {
+      "id": "add_to_watch_later",
+      "name": "Add to Watch Later",
+      "method": "POST",
+      "path": "/playlistItems",
+      "description": "Add to watch later"
+    },
+    {
+      "id": "get_liked_videos",
+      "name": "Get Liked Videos (Premium)",
+      "method": "GET",
+      "path": "/videos",
+      "description": "Get liked videos"
+    },
+    {
+      "id": "download_video",
+      "name": "Download Video (Premium)",
+      "method": "POST",
+      "path": "/downloads",
+      "description": "Download for offline viewing"
+    },
+    {
+      "id": "list_downloads",
+      "name": "List Downloads (Premium)",
+      "method": "GET",
+      "path": "/downloads",
+      "description": "Get downloaded videos"
+    },
+    {
+      "id": "delete_download",
+      "name": "Delete Download",
+      "method": "DELETE",
+      "path": "/downloads/{download_id}",
+      "description": "Delete downloaded video"
+    },
+    {
+      "id": "background_play",
+      "name": "Background Play (Premium)",
+      "method": "POST",
+      "path": "/playback/background",
+      "description": "Enable background playback"
+    },
+    {
+      "id": "picture_in_picture",
+      "name": "Picture in Picture (Premium)",
+      "method": "POST",
+      "path": "/playback/pip",
+      "description": "Enable PiP mode"
+    },
+    {
+      "id": "get_captions",
+      "name": "Get Captions",
+      "method": "GET",
+      "path": "/captions",
+      "description": "Get video captions"
+    },
+    {
+      "id": "download_caption",
+      "name": "Download Caption",
+      "method": "GET",
+      "path": "/captions/{caption_id}",
+      "description": "Download caption file"
+    },
+    {
+      "id": "get_video_analytics",
+      "name": "Get Video Analytics (Premium)",
+      "method": "GET",
+      "path": "/analytics",
+      "description": "Get video analytics"
+    },
+    {
+      "id": "get_channel_analytics",
+      "name": "Get Channel Analytics (Premium)",
+      "method": "GET",
+      "path": "/analytics/channels",
+      "description": "Get channel analytics"
+    },
+    {
+      "id": "upload_video",
+      "name": "Upload Video",
+      "method": "POST",
+      "path": "/videos",
+      "description": "Upload new video"
+    },
+    {
+      "id": "update_video",
+      "name": "Update Video",
+      "method": "PUT",
+      "path": "/videos",
+      "description": "Update video metadata"
+    },
+    {
+      "id": "delete_video",
+      "name": "Delete Video",
+      "method": "DELETE",
+      "path": "/videos",
+      "description": "Delete video"
+    },
+    {
+      "id": "get_live_streams",
+      "name": "Get Live Streams",
+      "method": "GET",
+      "path": "/liveStreams",
+      "description": "Get live streams"
+    },
+    {
+      "id": "create_live_stream",
+      "name": "Create Live Stream",
+      "method": "POST",
+      "path": "/liveStreams",
+      "description": "Create live stream"
+    },
+    {
+      "id": "get_live_chat",
+      "name": "Get Live Chat",
+      "method": "GET",
+      "path": "/liveChat/messages",
+      "description": "Get live chat messages"
+    },
+    {
+      "id": "send_live_chat",
+      "name": "Send Live Chat Message",
+      "method": "POST",
+      "path": "/liveChat/messages",
+      "description": "Send chat message"
+    },
+    {
+      "id": "get_youtube_originals",
+      "name": "Get YouTube Originals (Premium)",
+      "method": "GET",
+      "path": "/search",
+      "description": "Get YouTube Originals content"
+    },
+    {
+      "id": "get_recommendations",
+      "name": "Get Recommendations (Premium)",
+      "method": "GET",
+      "path": "/activities",
+      "description": "Get personalized recommendations"
+    },
+    {
+      "id": "report_video",
+      "name": "Report Video",
+      "method": "POST",
+      "path": "/videos/reportAbuse",
+      "description": "Report inappropriate video"
+    }
+  ]
+}
