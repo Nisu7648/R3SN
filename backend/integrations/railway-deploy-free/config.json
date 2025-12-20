@@ -1,0 +1,136 @@
+{
+  "name": "Railway Deploy FREE",
+  "version": "1.0.0",
+  "description": "FREE Deployment Platform with $5 credit/month + 500 hours. Deploy apps, databases, cron jobs instantly. Normally costs $300+/month - GET IT FREE!",
+  "category": "deployment",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$300+",
+  "authentication": {
+    "type": "api_token",
+    "required": true,
+    "signupUrl": "https://railway.app/new"
+  },
+  "features": [
+    "$5 credit/month FREE",
+    "500 execution hours",
+    "Instant deployments",
+    "GitHub integration",
+    "PostgreSQL, MySQL, Redis",
+    "MongoDB, Elasticsearch",
+    "Custom domains",
+    "SSL certificates",
+    "Environment variables",
+    "Automatic rollbacks",
+    "Zero-downtime deploys",
+    "Logs & monitoring",
+    "Cron jobs",
+    "Private networking"
+  ],
+  "endpoints": {
+    "listProjects": "GraphQL: projects",
+    "createProject": "GraphQL: projectCreate",
+    "deleteProject": "GraphQL: projectDelete",
+    "listServices": "GraphQL: project.services",
+    "createService": "GraphQL: serviceCreate",
+    "deleteService": "GraphQL: serviceDelete",
+    "listDeployments": "GraphQL: service.deployments",
+    "triggerDeployment": "GraphQL: deploymentTrigger",
+    "getDeploymentLogs": "GraphQL: deployment.logs",
+    "listEnvironmentVariables": "GraphQL: service.variables",
+    "setEnvironmentVariable": "GraphQL: variableUpsert",
+    "deleteEnvironmentVariable": "GraphQL: variableDelete",
+    "listDatabases": "GraphQL: project.plugins",
+    "createDatabase": "GraphQL: pluginCreate",
+    "getServiceMetrics": "GraphQL: service.metrics",
+    "getProjectUsage": "GraphQL: project.usage",
+    "createCustomDomain": "GraphQL: customDomainCreate",
+    "deleteCustomDomain": "GraphQL: customDomainDelete"
+  },
+  "freeTier": {
+    "credit": "$5 per month",
+    "executionHours": "500 hours",
+    "projects": "Unlimited",
+    "services": "Unlimited",
+    "databases": "Unlimited",
+    "customDomains": "Unlimited",
+    "note": "Paid plan: Pay as you go"
+  },
+  "useCases": [
+    "Web applications",
+    "API backends",
+    "Microservices",
+    "Databases",
+    "Cron jobs",
+    "Bots & workers",
+    "Static sites",
+    "Full-stack apps",
+    "Monorepos",
+    "Docker containers",
+    "Background jobs",
+    "Webhooks"
+  ],
+  "pricingComparison": {
+    "railway": "$0 ($5 credit/month)",
+    "heroku": "$300/month",
+    "render": "$250/month",
+    "digitalOcean": "$200/month",
+    "awsECS": "$350/month",
+    "savings": "$300+/month"
+  },
+  "supportedDatabases": [
+    "PostgreSQL",
+    "MySQL",
+    "Redis",
+    "MongoDB",
+    "Elasticsearch",
+    "Meilisearch"
+  ],
+  "supportedLanguages": [
+    "Node.js",
+    "Python",
+    "Go",
+    "Ruby",
+    "PHP",
+    "Java",
+    "Rust",
+    ".NET",
+    "Elixir",
+    "Deno",
+    "Bun"
+  ],
+  "deploymentFeatures": {
+    "git": [
+      "GitHub integration",
+      "GitLab integration",
+      "Bitbucket integration",
+      "Auto-deploy on push",
+      "Branch deployments",
+      "PR previews"
+    ],
+    "runtime": [
+      "Automatic buildpacks",
+      "Docker support",
+      "Nixpacks",
+      "Custom start commands",
+      "Health checks",
+      "Auto-scaling"
+    ],
+    "networking": [
+      "Custom domains",
+      "SSL/TLS certificates",
+      "Private networking",
+      "Load balancing",
+      "IPv6 support",
+      "DDoS protection"
+    ],
+    "monitoring": [
+      "Real-time logs",
+      "Metrics dashboard",
+      "CPU & memory usage",
+      "Network traffic",
+      "Deployment history",
+      "Alerts"
+    ]
+  }
+}
