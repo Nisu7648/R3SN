@@ -1,0 +1,161 @@
+{
+  "name": "Inngest Workflows FREE",
+  "version": "1.0.0",
+  "description": "FREE Event-Driven Workflows & Background Jobs. 1M function runs/month FREE. Durable execution, retries, scheduling - SAVE $100+/month!",
+  "category": "automation",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$100+",
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://www.inngest.com/signup"
+  },
+  "features": [
+    "1M function runs/month FREE",
+    "Event-driven architecture",
+    "Durable execution",
+    "Automatic retries",
+    "Scheduled functions (cron)",
+    "Delayed execution",
+    "Fan-out patterns",
+    "Parallel execution",
+    "Step functions",
+    "Error handling",
+    "Observability dashboard",
+    "Replay events",
+    "Cancel runs",
+    "TypeScript support",
+    "Local development",
+    "Version control",
+    "Webhooks",
+    "API access"
+  ],
+  "endpoints": {
+    "sendEvent": "/v1/events",
+    "listFunctions": "/v1/functions",
+    "getFunction": "/v1/functions/{id}",
+    "listRuns": "/v1/runs",
+    "getRun": "/v1/runs/{id}",
+    "cancelRun": "/v1/runs/{id}/cancel",
+    "replayRun": "/v1/runs/{id}/replay",
+    "listEvents": "/v1/events",
+    "getEvent": "/v1/events/{id}"
+  },
+  "freeTier": {
+    "functionRuns": "1,000,000/month",
+    "events": "Unlimited",
+    "functions": "Unlimited",
+    "retries": "Unlimited",
+    "concurrency": "100",
+    "retention": "30 days",
+    "note": "Paid plan: $20/month for 5M runs"
+  },
+  "useCases": [
+    "Background job processing",
+    "Email sending workflows",
+    "Data synchronization",
+    "Webhook processing",
+    "Scheduled tasks",
+    "Multi-step workflows",
+    "Payment processing",
+    "User onboarding flows",
+    "Notification systems",
+    "Data pipelines",
+    "API orchestration",
+    "Event-driven microservices",
+    "Async operations",
+    "Long-running tasks"
+  ],
+  "pricingComparison": {
+    "inngest": "$0 (1M runs/month)",
+    "temporal": "$100/month",
+    "zapier": "$50/month (limited tasks)",
+    "n8n": "$20/month (self-hosted)",
+    "make": "$40/month",
+    "savings": "$100+/month"
+  },
+  "workflowFeatures": [
+    "Event triggers",
+    "Cron triggers",
+    "Webhook triggers",
+    "Step functions",
+    "Parallel steps",
+    "Conditional logic",
+    "Loops & iterations",
+    "Error boundaries",
+    "Timeouts",
+    "Rate limiting",
+    "Debouncing",
+    "Throttling"
+  ],
+  "durability": [
+    "Automatic retries",
+    "Exponential backoff",
+    "Custom retry policies",
+    "Dead letter queues",
+    "State persistence",
+    "Resume from failure",
+    "Idempotency",
+    "At-least-once delivery"
+  ],
+  "observability": [
+    "Real-time dashboard",
+    "Function logs",
+    "Execution traces",
+    "Performance metrics",
+    "Error tracking",
+    "Event history",
+    "Replay capability",
+    "Debug mode"
+  ],
+  "integrations": [
+    "Next.js",
+    "Vercel",
+    "Netlify",
+    "Cloudflare Workers",
+    "AWS Lambda",
+    "Supabase",
+    "Stripe",
+    "SendGrid",
+    "Twilio",
+    "Slack"
+  ],
+  "features_detailed": {
+    "events": [
+      "Send events via API",
+      "Event schemas",
+      "Event versioning",
+      "Event batching",
+      "Event filtering",
+      "Event replay",
+      "Event history"
+    ],
+    "functions": [
+      "TypeScript/JavaScript",
+      "Async/await support",
+      "Step-by-step execution",
+      "State management",
+      "Error handling",
+      "Logging",
+      "Monitoring"
+    ],
+    "scheduling": [
+      "Cron expressions",
+      "One-time delays",
+      "Recurring schedules",
+      "Timezone support",
+      "Dynamic scheduling",
+      "Cancel scheduled runs"
+    ],
+    "execution": [
+      "Durable execution",
+      "Automatic retries",
+      "Parallel execution",
+      "Sequential steps",
+      "Conditional branching",
+      "Fan-out/fan-in",
+      "Timeouts"
+    ]
+  }
+}
