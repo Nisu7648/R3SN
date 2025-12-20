@@ -1,0 +1,45 @@
+{
+  "name": "Stability AI FREE",
+  "id": "stability-ai-free",
+  "version": "1.0.0",
+  "description": "FREE Stable Diffusion Image Generation - Sign in to R3SN = FREE!",
+  "category": "ai",
+  "icon": "🎨",
+  "color": "#7C3AED",
+  "cost": "FREE",
+  "premium": true,
+  "r3sn_free": true,
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key (FREE)",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "textToImage",
+      "name": "Text to Image",
+      "description": "Generate images from text"
+    },
+    {
+      "id": "imageToImage",
+      "name": "Image to Image",
+      "description": "Transform images"
+    },
+    {
+      "id": "upscale",
+      "name": "Upscale Image",
+      "description": "Upscale images"
+    },
+    {
+      "id": "listEngines",
+      "name": "List Engines",
+      "description": "List available engines"
+    }
+  ]
+}
