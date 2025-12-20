@@ -1,0 +1,40 @@
+{
+  "name": "Mistral AI FREE",
+  "id": "mistral-ai-free",
+  "version": "1.0.0",
+  "description": "FREE Open-source LLM - Sign in to R3SN = FREE!",
+  "category": "ai",
+  "icon": "🌊",
+  "color": "#FF7000",
+  "cost": "FREE",
+  "premium": true,
+  "r3sn_free": true,
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key (FREE)",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "chatCompletion",
+      "name": "Chat Completion",
+      "description": "Chat with Mistral models"
+    },
+    {
+      "id": "embeddings",
+      "name": "Embeddings",
+      "description": "Generate embeddings"
+    },
+    {
+      "id": "listModels",
+      "name": "List Models",
+      "description": "List available models"
+    }
+  ]
+}
