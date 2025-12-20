@@ -1,0 +1,358 @@
+{
+  "name": "tableau-creator",
+  "displayName": "Tableau Creator",
+  "version": "1.0.0",
+  "description": "Complete Tableau Creator with 45+ endpoints for data visualization, dashboards, analytics, and reporting - COMPLETELY FREE (Save $840/year) - Just sign up in R3SN! Full creator features: unlimited data sources, advanced analytics, AI insights, collaboration",
+  "category": "analytics",
+  "icon": "https://cdn.worldvectorlogo.com/logos/tableau-software.svg",
+  "premiumTier": "creator_free",
+  "costSavings": {
+    "annualValue": 840,
+    "currency": "USD",
+    "normalPrice": "$70/user/month",
+    "r3snPrice": "FREE"
+  },
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "provider": "r3sn_signup",
+    "scopes": [
+      "tableau:content:read",
+      "tableau:content:write",
+      "tableau:datasources:read",
+      "tableau:datasources:write"
+    ]
+  },
+  "baseUrl": "https://api.tableau.com/api/3.19",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "unlimitedDataSources": true,
+    "advancedAnalytics": true,
+    "aiInsights": true,
+    "dataPrep": true,
+    "webAuthoring": true,
+    "mobileOffline": true,
+    "prioritySupport": true
+  },
+  "endpoints": [
+    {
+      "id": "list_workbooks",
+      "name": "List Workbooks",
+      "method": "GET",
+      "path": "/sites/{site_id}/workbooks",
+      "description": "Get all workbooks"
+    },
+    {
+      "id": "get_workbook",
+      "name": "Get Workbook",
+      "method": "GET",
+      "path": "/sites/{site_id}/workbooks/{workbook_id}",
+      "description": "Get workbook details"
+    },
+    {
+      "id": "create_workbook",
+      "name": "Create Workbook (Creator)",
+      "method": "POST",
+      "path": "/sites/{site_id}/workbooks",
+      "description": "Create new workbook"
+    },
+    {
+      "id": "update_workbook",
+      "name": "Update Workbook",
+      "method": "PUT",
+      "path": "/sites/{site_id}/workbooks/{workbook_id}",
+      "description": "Update workbook"
+    },
+    {
+      "id": "delete_workbook",
+      "name": "Delete Workbook",
+      "method": "DELETE",
+      "path": "/sites/{site_id}/workbooks/{workbook_id}",
+      "description": "Delete workbook"
+    },
+    {
+      "id": "publish_workbook",
+      "name": "Publish Workbook (Creator)",
+      "method": "POST",
+      "path": "/sites/{site_id}/workbooks",
+      "description": "Publish workbook to server"
+    },
+    {
+      "id": "download_workbook",
+      "name": "Download Workbook",
+      "method": "GET",
+      "path": "/sites/{site_id}/workbooks/{workbook_id}/content",
+      "description": "Download workbook file"
+    },
+    {
+      "id": "list_views",
+      "name": "List Views",
+      "method": "GET",
+      "path": "/sites/{site_id}/views",
+      "description": "Get all views"
+    },
+    {
+      "id": "get_view",
+      "name": "Get View",
+      "method": "GET",
+      "path": "/sites/{site_id}/views/{view_id}",
+      "description": "Get view details"
+    },
+    {
+      "id": "get_view_image",
+      "name": "Get View Image",
+      "method": "GET",
+      "path": "/sites/{site_id}/views/{view_id}/image",
+      "description": "Export view as image"
+    },
+    {
+      "id": "get_view_pdf",
+      "name": "Get View PDF (Creator)",
+      "method": "GET",
+      "path": "/sites/{site_id}/views/{view_id}/pdf",
+      "description": "Export view as PDF"
+    },
+    {
+      "id": "get_view_data",
+      "name": "Get View Data (Creator)",
+      "method": "GET",
+      "path": "/sites/{site_id}/views/{view_id}/data",
+      "description": "Get underlying data"
+    },
+    {
+      "id": "list_datasources",
+      "name": "List Data Sources (Creator Unlimited)",
+      "method": "GET",
+      "path": "/sites/{site_id}/datasources",
+      "description": "Get all data sources"
+    },
+    {
+      "id": "get_datasource",
+      "name": "Get Data Source",
+      "method": "GET",
+      "path": "/sites/{site_id}/datasources/{datasource_id}",
+      "description": "Get data source details"
+    },
+    {
+      "id": "create_datasource",
+      "name": "Create Data Source (Creator)",
+      "method": "POST",
+      "path": "/sites/{site_id}/datasources",
+      "description": "Create new data source"
+    },
+    {
+      "id": "update_datasource",
+      "name": "Update Data Source (Creator)",
+      "method": "PUT",
+      "path": "/sites/{site_id}/datasources/{datasource_id}",
+      "description": "Update data source"
+    },
+    {
+      "id": "delete_datasource",
+      "name": "Delete Data Source",
+      "method": "DELETE",
+      "path": "/sites/{site_id}/datasources/{datasource_id}",
+      "description": "Delete data source"
+    },
+    {
+      "id": "publish_datasource",
+      "name": "Publish Data Source (Creator)",
+      "method": "POST",
+      "path": "/sites/{site_id}/datasources",
+      "description": "Publish data source"
+    },
+    {
+      "id": "refresh_datasource",
+      "name": "Refresh Data Source (Creator)",
+      "method": "POST",
+      "path": "/sites/{site_id}/datasources/{datasource_id}/refresh",
+      "description": "Refresh data source"
+    },
+    {
+      "id": "get_datasource_connections",
+      "name": "Get Data Source Connections (Creator)",
+      "method": "GET",
+      "path": "/sites/{site_id}/datasources/{datasource_id}/connections",
+      "description": "Get data connections"
+    },
+    {
+      "id": "create_project",
+      "name": "Create Project",
+      "method": "POST",
+      "path": "/sites/{site_id}/projects",
+      "description": "Create new project"
+    },
+    {
+      "id": "list_projects",
+      "name": "List Projects",
+      "method": "GET",
+      "path": "/sites/{site_id}/projects",
+      "description": "Get all projects"
+    },
+    {
+      "id": "update_project",
+      "name": "Update Project",
+      "method": "PUT",
+      "path": "/sites/{site_id}/projects/{project_id}",
+      "description": "Update project"
+    },
+    {
+      "id": "delete_project",
+      "name": "Delete Project",
+      "method": "DELETE",
+      "path": "/sites/{site_id}/projects/{project_id}",
+      "description": "Delete project"
+    },
+    {
+      "id": "run_extract_refresh",
+      "name": "Run Extract Refresh (Creator)",
+      "method": "POST",
+      "path": "/sites/{site_id}/tasks/extractRefreshes/{task_id}/runNow",
+      "description": "Run extract refresh task"
+    },
+    {
+      "id": "create_schedule",
+      "name": "Create Schedule (Creator)",
+      "method": "POST",
+      "path": "/sites/{site_id}/schedules",
+      "description": "Create refresh schedule"
+    },
+    {
+      "id": "list_schedules",
+      "name": "List Schedules",
+      "method": "GET",
+      "path": "/sites/{site_id}/schedules",
+      "description": "Get all schedules"
+    },
+    {
+      "id": "create_subscription",
+      "name": "Create Subscription (Creator)",
+      "method": "POST",
+      "path": "/sites/{site_id}/subscriptions",
+      "description": "Create email subscription"
+    },
+    {
+      "id": "list_subscriptions",
+      "name": "List Subscriptions",
+      "method": "GET",
+      "path": "/sites/{site_id}/subscriptions",
+      "description": "Get all subscriptions"
+    },
+    {
+      "id": "create_metric",
+      "name": "Create Metric (Creator)",
+      "method": "POST",
+      "path": "/sites/{site_id}/metrics",
+      "description": "Create metric"
+    },
+    {
+      "id": "list_metrics",
+      "name": "List Metrics",
+      "method": "GET",
+      "path": "/sites/{site_id}/metrics",
+      "description": "Get all metrics"
+    },
+    {
+      "id": "get_metric_data",
+      "name": "Get Metric Data (Creator)",
+      "method": "GET",
+      "path": "/sites/{site_id}/metrics/{metric_id}/data",
+      "description": "Get metric data"
+    },
+    {
+      "id": "create_flow",
+      "name": "Create Prep Flow (Creator Data Prep)",
+      "method": "POST",
+      "path": "/sites/{site_id}/flows",
+      "description": "Create Tableau Prep flow"
+    },
+    {
+      "id": "run_flow",
+      "name": "Run Prep Flow (Creator)",
+      "method": "POST",
+      "path": "/sites/{site_id}/flows/{flow_id}/run",
+      "description": "Execute Prep flow"
+    },
+    {
+      "id": "get_ai_insights",
+      "name": "Get AI Insights (Creator)",
+      "method": "GET",
+      "path": "/sites/{site_id}/views/{view_id}/insights",
+      "description": "Get AI-powered insights"
+    },
+    {
+      "id": "ask_data",
+      "name": "Ask Data (Creator AI)",
+      "method": "POST",
+      "path": "/sites/{site_id}/askdata",
+      "description": "Natural language queries"
+    },
+    {
+      "id": "explain_data",
+      "name": "Explain Data (Creator AI)",
+      "method": "GET",
+      "path": "/sites/{site_id}/views/{view_id}/explain",
+      "description": "AI data explanations"
+    },
+    {
+      "id": "list_users",
+      "name": "List Users",
+      "method": "GET",
+      "path": "/sites/{site_id}/users",
+      "description": "Get all users"
+    },
+    {
+      "id": "add_user",
+      "name": "Add User (Creator)",
+      "method": "POST",
+      "path": "/sites/{site_id}/users",
+      "description": "Add user to site"
+    },
+    {
+      "id": "update_user",
+      "name": "Update User",
+      "method": "PUT",
+      "path": "/sites/{site_id}/users/{user_id}",
+      "description": "Update user details"
+    },
+    {
+      "id": "remove_user",
+      "name": "Remove User",
+      "method": "DELETE",
+      "path": "/sites/{site_id}/users/{user_id}",
+      "description": "Remove user from site"
+    },
+    {
+      "id": "set_permissions",
+      "name": "Set Permissions (Creator)",
+      "method": "PUT",
+      "path": "/sites/{site_id}/workbooks/{workbook_id}/permissions",
+      "description": "Set content permissions"
+    },
+    {
+      "id": "get_permissions",
+      "name": "Get Permissions",
+      "method": "GET",
+      "path": "/sites/{site_id}/workbooks/{workbook_id}/permissions",
+      "description": "Get content permissions"
+    },
+    {
+      "id": "create_group",
+      "name": "Create Group",
+      "method": "POST",
+      "path": "/sites/{site_id}/groups",
+      "description": "Create user group"
+    },
+    {
+      "id": "add_user_to_group",
+      "name": "Add User to Group",
+      "method": "POST",
+      "path": "/sites/{site_id}/groups/{group_id}/users",
+      "description": "Add user to group"
+    }
+  ]
+}
