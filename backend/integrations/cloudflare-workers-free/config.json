@@ -1,0 +1,82 @@
+{
+  "name": "Cloudflare Workers FREE",
+  "version": "1.0.0",
+  "description": "FREE serverless computing platform with 100,000 requests/day. Deploy edge functions globally in 200+ cities. Normally costs $200+/month - GET IT FREE!",
+  "category": "serverless",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$200+",
+  "authentication": {
+    "type": "api_token",
+    "required": true,
+    "signupUrl": "https://dash.cloudflare.com/sign-up/workers"
+  },
+  "features": [
+    "100,000 requests/day FREE",
+    "Deploy in 200+ cities globally",
+    "0ms cold starts",
+    "Unlimited scripts",
+    "KV storage (1GB FREE)",
+    "Durable Objects",
+    "WebSockets support",
+    "Cron triggers",
+    "Custom domains",
+    "Analytics included",
+    "Edge computing",
+    "Auto-scaling",
+    "DDoS protection",
+    "SSL/TLS included"
+  ],
+  "endpoints": {
+    "listWorkers": "/accounts/{account_id}/workers/scripts",
+    "deployWorker": "/accounts/{account_id}/workers/scripts/{script_name}",
+    "getWorker": "/accounts/{account_id}/workers/scripts/{script_name}",
+    "deleteWorker": "/accounts/{account_id}/workers/scripts/{script_name}",
+    "createRoute": "/zones/{zone_id}/workers/routes",
+    "listRoutes": "/zones/{zone_id}/workers/routes",
+    "createKVNamespace": "/accounts/{account_id}/storage/kv/namespaces",
+    "listKVNamespaces": "/accounts/{account_id}/storage/kv/namespaces",
+    "writeKV": "/accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key}",
+    "readKV": "/accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key}",
+    "deleteKV": "/accounts/{account_id}/storage/kv/namespaces/{namespace_id}/values/{key}",
+    "listKVKeys": "/accounts/{account_id}/storage/kv/namespaces/{namespace_id}/keys",
+    "getAnalytics": "/accounts/{account_id}/workers/scripts/{script_name}/analytics",
+    "createDurableObjectNamespace": "/accounts/{account_id}/workers/durable_objects/namespaces",
+    "listDurableObjectNamespaces": "/accounts/{account_id}/workers/durable_objects/namespaces",
+    "getUsage": "/accounts/{account_id}/workers/usage"
+  },
+  "freeTier": {
+    "requests": "100,000 per day",
+    "kvStorage": "1 GB",
+    "kvReads": "100,000 per day",
+    "kvWrites": "1,000 per day",
+    "kvDeletes": "1,000 per day",
+    "kvLists": "1,000 per day",
+    "durableObjects": "Limited",
+    "cpuTime": "10ms per request",
+    "note": "Paid plan: $5/month for 10M requests"
+  },
+  "useCases": [
+    "API endpoints",
+    "Serverless functions",
+    "Edge computing",
+    "A/B testing",
+    "Authentication",
+    "Image optimization",
+    "Redirects & routing",
+    "Bot detection",
+    "Rate limiting",
+    "Caching",
+    "Webhooks",
+    "Microservices",
+    "Real-time apps",
+    "CDN customization"
+  ],
+  "pricingComparison": {
+    "cloudflare": "$0 (100K req/day)",
+    "awsLambda": "$200/month (100K req/day)",
+    "vercel": "$150/month (100K req/day)",
+    "netlify": "$180/month (100K req/day)",
+    "savings": "$200+/month"
+  }
+}
