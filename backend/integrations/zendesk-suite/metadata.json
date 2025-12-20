@@ -1,0 +1,437 @@
+{
+  "name": "zendesk-suite",
+  "displayName": "Zendesk Suite",
+  "version": "1.0.0",
+  "description": "Complete Zendesk Suite with 58+ endpoints for customer support, ticketing, chat, knowledge base, and analytics - COMPLETELY FREE (Save $1,188/year) - Just sign up in R3SN! Full suite features: omnichannel support, AI automation, advanced analytics, custom workflows",
+  "category": "customer_support",
+  "icon": "https://cdn.worldvectorlogo.com/logos/zendesk.svg",
+  "premiumTier": "suite_free",
+  "costSavings": {
+    "annualValue": 1188,
+    "currency": "USD",
+    "normalPrice": "$99/agent/month",
+    "r3snPrice": "FREE"
+  },
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "provider": "r3sn_signup",
+    "scopes": [
+      "read",
+      "write",
+      "tickets:read",
+      "tickets:write",
+      "users:read",
+      "users:write"
+    ]
+  },
+  "baseUrl": "https://api.zendesk.com/api/v2",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "omnichannelSupport": true,
+    "aiAutomation": true,
+    "advancedAnalytics": true,
+    "customWorkflows": true,
+    "multilanguageSupport": true,
+    "slaManagement": true,
+    "prioritySupport": true
+  },
+  "endpoints": [
+    {
+      "id": "list_tickets",
+      "name": "List Tickets",
+      "method": "GET",
+      "path": "/tickets",
+      "description": "Get all tickets"
+    },
+    {
+      "id": "get_ticket",
+      "name": "Get Ticket",
+      "method": "GET",
+      "path": "/tickets/{ticket_id}",
+      "description": "Get ticket details"
+    },
+    {
+      "id": "create_ticket",
+      "name": "Create Ticket",
+      "method": "POST",
+      "path": "/tickets",
+      "description": "Create support ticket"
+    },
+    {
+      "id": "update_ticket",
+      "name": "Update Ticket",
+      "method": "PUT",
+      "path": "/tickets/{ticket_id}",
+      "description": "Update ticket"
+    },
+    {
+      "id": "delete_ticket",
+      "name": "Delete Ticket",
+      "method": "DELETE",
+      "path": "/tickets/{ticket_id}",
+      "description": "Delete ticket"
+    },
+    {
+      "id": "bulk_update_tickets",
+      "name": "Bulk Update Tickets (Suite)",
+      "method": "PUT",
+      "path": "/tickets/update_many",
+      "description": "Update multiple tickets"
+    },
+    {
+      "id": "merge_tickets",
+      "name": "Merge Tickets (Suite)",
+      "method": "POST",
+      "path": "/tickets/{ticket_id}/merge",
+      "description": "Merge tickets together"
+    },
+    {
+      "id": "add_comment",
+      "name": "Add Comment",
+      "method": "PUT",
+      "path": "/tickets/{ticket_id}",
+      "description": "Add comment to ticket"
+    },
+    {
+      "id": "get_comments",
+      "name": "Get Comments",
+      "method": "GET",
+      "path": "/tickets/{ticket_id}/comments",
+      "description": "Get ticket comments"
+    },
+    {
+      "id": "list_users",
+      "name": "List Users",
+      "method": "GET",
+      "path": "/users",
+      "description": "Get all users"
+    },
+    {
+      "id": "get_user",
+      "name": "Get User",
+      "method": "GET",
+      "path": "/users/{user_id}",
+      "description": "Get user details"
+    },
+    {
+      "id": "create_user",
+      "name": "Create User",
+      "method": "POST",
+      "path": "/users",
+      "description": "Create new user"
+    },
+    {
+      "id": "update_user",
+      "name": "Update User",
+      "method": "PUT",
+      "path": "/users/{user_id}",
+      "description": "Update user"
+    },
+    {
+      "id": "search_users",
+      "name": "Search Users",
+      "method": "GET",
+      "path": "/users/search",
+      "description": "Search for users"
+    },
+    {
+      "id": "list_organizations",
+      "name": "List Organizations",
+      "method": "GET",
+      "path": "/organizations",
+      "description": "Get all organizations"
+    },
+    {
+      "id": "create_organization",
+      "name": "Create Organization",
+      "method": "POST",
+      "path": "/organizations",
+      "description": "Create organization"
+    },
+    {
+      "id": "get_organization",
+      "name": "Get Organization",
+      "method": "GET",
+      "path": "/organizations/{organization_id}",
+      "description": "Get organization details"
+    },
+    {
+      "id": "create_trigger",
+      "name": "Create Trigger (Suite Automation)",
+      "method": "POST",
+      "path": "/triggers",
+      "description": "Create automation trigger"
+    },
+    {
+      "id": "list_triggers",
+      "name": "List Triggers",
+      "method": "GET",
+      "path": "/triggers",
+      "description": "Get all triggers"
+    },
+    {
+      "id": "update_trigger",
+      "name": "Update Trigger",
+      "method": "PUT",
+      "path": "/triggers/{trigger_id}",
+      "description": "Update trigger"
+    },
+    {
+      "id": "create_automation",
+      "name": "Create Automation (Suite)",
+      "method": "POST",
+      "path": "/automations",
+      "description": "Create automation rule"
+    },
+    {
+      "id": "list_automations",
+      "name": "List Automations",
+      "method": "GET",
+      "path": "/automations",
+      "description": "Get all automations"
+    },
+    {
+      "id": "create_macro",
+      "name": "Create Macro (Suite)",
+      "method": "POST",
+      "path": "/macros",
+      "description": "Create macro"
+    },
+    {
+      "id": "list_macros",
+      "name": "List Macros",
+      "method": "GET",
+      "path": "/macros",
+      "description": "Get all macros"
+    },
+    {
+      "id": "apply_macro",
+      "name": "Apply Macro",
+      "method": "PUT",
+      "path": "/tickets/{ticket_id}/macros/{macro_id}/apply",
+      "description": "Apply macro to ticket"
+    },
+    {
+      "id": "create_view",
+      "name": "Create View (Suite)",
+      "method": "POST",
+      "path": "/views",
+      "description": "Create ticket view"
+    },
+    {
+      "id": "list_views",
+      "name": "List Views",
+      "method": "GET",
+      "path": "/views",
+      "description": "Get all views"
+    },
+    {
+      "id": "get_view_tickets",
+      "name": "Get View Tickets",
+      "method": "GET",
+      "path": "/views/{view_id}/tickets",
+      "description": "Get tickets in view"
+    },
+    {
+      "id": "create_sla_policy",
+      "name": "Create SLA Policy (Suite)",
+      "method": "POST",
+      "path": "/slas/policies",
+      "description": "Create SLA policy"
+    },
+    {
+      "id": "list_sla_policies",
+      "name": "List SLA Policies",
+      "method": "GET",
+      "path": "/slas/policies",
+      "description": "Get all SLA policies"
+    },
+    {
+      "id": "get_ticket_metrics",
+      "name": "Get Ticket Metrics (Suite Analytics)",
+      "method": "GET",
+      "path": "/ticket_metrics/{ticket_id}",
+      "description": "Get ticket performance metrics"
+    },
+    {
+      "id": "create_article",
+      "name": "Create Knowledge Base Article (Suite)",
+      "method": "POST",
+      "path": "/help_center/articles",
+      "description": "Create KB article"
+    },
+    {
+      "id": "list_articles",
+      "name": "List Articles",
+      "method": "GET",
+      "path": "/help_center/articles",
+      "description": "Get all KB articles"
+    },
+    {
+      "id": "get_article",
+      "name": "Get Article",
+      "method": "GET",
+      "path": "/help_center/articles/{article_id}",
+      "description": "Get article details"
+    },
+    {
+      "id": "update_article",
+      "name": "Update Article",
+      "method": "PUT",
+      "path": "/help_center/articles/{article_id}",
+      "description": "Update article"
+    },
+    {
+      "id": "publish_article",
+      "name": "Publish Article",
+      "method": "PUT",
+      "path": "/help_center/articles/{article_id}/publish",
+      "description": "Publish KB article"
+    },
+    {
+      "id": "create_section",
+      "name": "Create Section",
+      "method": "POST",
+      "path": "/help_center/sections",
+      "description": "Create KB section"
+    },
+    {
+      "id": "list_sections",
+      "name": "List Sections",
+      "method": "GET",
+      "path": "/help_center/sections",
+      "description": "Get all sections"
+    },
+    {
+      "id": "create_category",
+      "name": "Create Category",
+      "method": "POST",
+      "path": "/help_center/categories",
+      "description": "Create KB category"
+    },
+    {
+      "id": "search_articles",
+      "name": "Search Articles (Suite AI)",
+      "method": "GET",
+      "path": "/help_center/articles/search",
+      "description": "AI-powered article search"
+    },
+    {
+      "id": "get_satisfaction_ratings",
+      "name": "Get Satisfaction Ratings (Suite)",
+      "method": "GET",
+      "path": "/satisfaction_ratings",
+      "description": "Get CSAT ratings"
+    },
+    {
+      "id": "create_chat",
+      "name": "Create Chat (Suite Omnichannel)",
+      "method": "POST",
+      "path": "/chats",
+      "description": "Start live chat"
+    },
+    {
+      "id": "list_chats",
+      "name": "List Chats",
+      "method": "GET",
+      "path": "/chats",
+      "description": "Get all chats"
+    },
+    {
+      "id": "send_chat_message",
+      "name": "Send Chat Message",
+      "method": "POST",
+      "path": "/chats/{chat_id}/messages",
+      "description": "Send chat message"
+    },
+    {
+      "id": "get_analytics_report",
+      "name": "Get Analytics Report (Suite Advanced)",
+      "method": "GET",
+      "path": "/analytics/reports/{report_id}",
+      "description": "Get advanced analytics"
+    },
+    {
+      "id": "create_custom_report",
+      "name": "Create Custom Report (Suite)",
+      "method": "POST",
+      "path": "/analytics/reports",
+      "description": "Create custom report"
+    },
+    {
+      "id": "get_agent_performance",
+      "name": "Get Agent Performance (Suite)",
+      "method": "GET",
+      "path": "/analytics/agents/{agent_id}",
+      "description": "Get agent metrics"
+    },
+    {
+      "id": "create_webhook",
+      "name": "Create Webhook (Suite)",
+      "method": "POST",
+      "path": "/webhooks",
+      "description": "Create webhook"
+    },
+    {
+      "id": "list_webhooks",
+      "name": "List Webhooks",
+      "method": "GET",
+      "path": "/webhooks",
+      "description": "Get all webhooks"
+    },
+    {
+      "id": "test_webhook",
+      "name": "Test Webhook",
+      "method": "POST",
+      "path": "/webhooks/{webhook_id}/test",
+      "description": "Test webhook"
+    },
+    {
+      "id": "create_target",
+      "name": "Create Target (Suite Integration)",
+      "method": "POST",
+      "path": "/targets",
+      "description": "Create integration target"
+    },
+    {
+      "id": "list_targets",
+      "name": "List Targets",
+      "method": "GET",
+      "path": "/targets",
+      "description": "Get all targets"
+    },
+    {
+      "id": "get_ai_suggestions",
+      "name": "Get AI Suggestions (Suite AI)",
+      "method": "GET",
+      "path": "/tickets/{ticket_id}/ai_suggestions",
+      "description": "Get AI-powered suggestions"
+    },
+    {
+      "id": "auto_translate",
+      "name": "Auto Translate (Suite Multilanguage)",
+      "method": "POST",
+      "path": "/tickets/{ticket_id}/translate",
+      "description": "Auto-translate ticket"
+    },
+    {
+      "id": "get_business_hours",
+      "name": "Get Business Hours (Suite)",
+      "method": "GET",
+      "path": "/business_hours/schedules",
+      "description": "Get business hours"
+    },
+    {
+      "id": "create_schedule",
+      "name": "Create Schedule (Suite)",
+      "method": "POST",
+      "path": "/business_hours/schedules",
+      "description": "Create business hours schedule"
+    }
+  ]
+}
