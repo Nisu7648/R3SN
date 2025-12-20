@@ -1,0 +1,406 @@
+{
+  "name": "jira-premium",
+  "displayName": "Jira Software Premium",
+  "version": "1.0.0",
+  "description": "Complete Jira Software Premium with 55+ endpoints for agile project management, issue tracking, sprints, and reporting - COMPLETELY FREE (Save $1,400/year) - Just sign up in R3SN! Full premium features: unlimited storage, advanced roadmaps, insights, automation",
+  "category": "project_management",
+  "icon": "https://cdn.worldvectorlogo.com/logos/jira-1.svg",
+  "premiumTier": "premium_free",
+  "costSavings": {
+    "annualValue": 1400,
+    "currency": "USD",
+    "normalPrice": "$14/user/month",
+    "r3snPrice": "FREE"
+  },
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "provider": "r3sn_signup",
+    "scopes": [
+      "read:jira-work",
+      "write:jira-work",
+      "read:jira-user",
+      "manage:jira-project"
+    ]
+  },
+  "baseUrl": "https://api.atlassian.com/ex/jira",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "unlimitedStorage": true,
+    "advancedRoadmaps": true,
+    "insightsReporting": true,
+    "automationRules": "unlimited",
+    "sandboxEnvironment": true,
+    "prioritySupport": true
+  },
+  "endpoints": [
+    {
+      "id": "list_projects",
+      "name": "List Projects",
+      "method": "GET",
+      "path": "/rest/api/3/project",
+      "description": "Get all projects"
+    },
+    {
+      "id": "create_project",
+      "name": "Create Project (Premium)",
+      "method": "POST",
+      "path": "/rest/api/3/project",
+      "description": "Create new project"
+    },
+    {
+      "id": "get_project",
+      "name": "Get Project",
+      "method": "GET",
+      "path": "/rest/api/3/project/{project_id}",
+      "description": "Get project details"
+    },
+    {
+      "id": "update_project",
+      "name": "Update Project",
+      "method": "PUT",
+      "path": "/rest/api/3/project/{project_id}",
+      "description": "Update project"
+    },
+    {
+      "id": "delete_project",
+      "name": "Delete Project",
+      "method": "DELETE",
+      "path": "/rest/api/3/project/{project_id}",
+      "description": "Delete project"
+    },
+    {
+      "id": "list_issues",
+      "name": "List Issues",
+      "method": "GET",
+      "path": "/rest/api/3/search",
+      "description": "Search and list issues"
+    },
+    {
+      "id": "create_issue",
+      "name": "Create Issue",
+      "method": "POST",
+      "path": "/rest/api/3/issue",
+      "description": "Create new issue"
+    },
+    {
+      "id": "get_issue",
+      "name": "Get Issue",
+      "method": "GET",
+      "path": "/rest/api/3/issue/{issue_id}",
+      "description": "Get issue details"
+    },
+    {
+      "id": "update_issue",
+      "name": "Update Issue",
+      "method": "PUT",
+      "path": "/rest/api/3/issue/{issue_id}",
+      "description": "Update issue"
+    },
+    {
+      "id": "delete_issue",
+      "name": "Delete Issue",
+      "method": "DELETE",
+      "path": "/rest/api/3/issue/{issue_id}",
+      "description": "Delete issue"
+    },
+    {
+      "id": "assign_issue",
+      "name": "Assign Issue",
+      "method": "PUT",
+      "path": "/rest/api/3/issue/{issue_id}/assignee",
+      "description": "Assign issue to user"
+    },
+    {
+      "id": "transition_issue",
+      "name": "Transition Issue",
+      "method": "POST",
+      "path": "/rest/api/3/issue/{issue_id}/transitions",
+      "description": "Move issue through workflow"
+    },
+    {
+      "id": "add_comment",
+      "name": "Add Comment",
+      "method": "POST",
+      "path": "/rest/api/3/issue/{issue_id}/comment",
+      "description": "Add comment to issue"
+    },
+    {
+      "id": "get_comments",
+      "name": "Get Comments",
+      "method": "GET",
+      "path": "/rest/api/3/issue/{issue_id}/comment",
+      "description": "Get issue comments"
+    },
+    {
+      "id": "add_attachment",
+      "name": "Add Attachment (Premium Unlimited)",
+      "method": "POST",
+      "path": "/rest/api/3/issue/{issue_id}/attachments",
+      "description": "Add file attachment"
+    },
+    {
+      "id": "create_sprint",
+      "name": "Create Sprint (Premium)",
+      "method": "POST",
+      "path": "/rest/agile/1.0/sprint",
+      "description": "Create agile sprint"
+    },
+    {
+      "id": "get_sprint",
+      "name": "Get Sprint",
+      "method": "GET",
+      "path": "/rest/agile/1.0/sprint/{sprint_id}",
+      "description": "Get sprint details"
+    },
+    {
+      "id": "start_sprint",
+      "name": "Start Sprint",
+      "method": "POST",
+      "path": "/rest/agile/1.0/sprint/{sprint_id}",
+      "description": "Start sprint"
+    },
+    {
+      "id": "close_sprint",
+      "name": "Close Sprint",
+      "method": "POST",
+      "path": "/rest/agile/1.0/sprint/{sprint_id}/close",
+      "description": "Close sprint"
+    },
+    {
+      "id": "move_to_sprint",
+      "name": "Move to Sprint",
+      "method": "POST",
+      "path": "/rest/agile/1.0/sprint/{sprint_id}/issue",
+      "description": "Move issues to sprint"
+    },
+    {
+      "id": "get_backlog",
+      "name": "Get Backlog",
+      "method": "GET",
+      "path": "/rest/agile/1.0/backlog/{board_id}/issue",
+      "description": "Get backlog issues"
+    },
+    {
+      "id": "create_board",
+      "name": "Create Board (Premium)",
+      "method": "POST",
+      "path": "/rest/agile/1.0/board",
+      "description": "Create agile board"
+    },
+    {
+      "id": "get_board",
+      "name": "Get Board",
+      "method": "GET",
+      "path": "/rest/agile/1.0/board/{board_id}",
+      "description": "Get board details"
+    },
+    {
+      "id": "get_board_issues",
+      "name": "Get Board Issues",
+      "method": "GET",
+      "path": "/rest/agile/1.0/board/{board_id}/issue",
+      "description": "Get issues on board"
+    },
+    {
+      "id": "create_epic",
+      "name": "Create Epic (Premium)",
+      "method": "POST",
+      "path": "/rest/agile/1.0/epic",
+      "description": "Create epic"
+    },
+    {
+      "id": "get_epic",
+      "name": "Get Epic",
+      "method": "GET",
+      "path": "/rest/agile/1.0/epic/{epic_id}",
+      "description": "Get epic details"
+    },
+    {
+      "id": "add_to_epic",
+      "name": "Add to Epic",
+      "method": "POST",
+      "path": "/rest/agile/1.0/epic/{epic_id}/issue",
+      "description": "Add issues to epic"
+    },
+    {
+      "id": "create_version",
+      "name": "Create Version",
+      "method": "POST",
+      "path": "/rest/api/3/version",
+      "description": "Create release version"
+    },
+    {
+      "id": "get_version",
+      "name": "Get Version",
+      "method": "GET",
+      "path": "/rest/api/3/version/{version_id}",
+      "description": "Get version details"
+    },
+    {
+      "id": "release_version",
+      "name": "Release Version",
+      "method": "PUT",
+      "path": "/rest/api/3/version/{version_id}",
+      "description": "Release version"
+    },
+    {
+      "id": "create_roadmap",
+      "name": "Create Roadmap (Premium Advanced)",
+      "method": "POST",
+      "path": "/rest/roadmap/1.0/plan",
+      "description": "Create advanced roadmap"
+    },
+    {
+      "id": "get_roadmap",
+      "name": "Get Roadmap (Premium)",
+      "method": "GET",
+      "path": "/rest/roadmap/1.0/plan/{plan_id}",
+      "description": "Get roadmap details"
+    },
+    {
+      "id": "create_automation",
+      "name": "Create Automation (Premium Unlimited)",
+      "method": "POST",
+      "path": "/rest/api/3/automation/rule",
+      "description": "Create automation rule"
+    },
+    {
+      "id": "get_automations",
+      "name": "Get Automations (Premium)",
+      "method": "GET",
+      "path": "/rest/api/3/automation/rule",
+      "description": "List automation rules"
+    },
+    {
+      "id": "enable_automation",
+      "name": "Enable Automation",
+      "method": "PUT",
+      "path": "/rest/api/3/automation/rule/{rule_id}",
+      "description": "Enable automation rule"
+    },
+    {
+      "id": "get_insights",
+      "name": "Get Insights (Premium)",
+      "method": "GET",
+      "path": "/rest/insights/1.0/report",
+      "description": "Get insights reports"
+    },
+    {
+      "id": "create_custom_report",
+      "name": "Create Custom Report (Premium)",
+      "method": "POST",
+      "path": "/rest/insights/1.0/report",
+      "description": "Create custom report"
+    },
+    {
+      "id": "get_velocity_report",
+      "name": "Get Velocity Report (Premium)",
+      "method": "GET",
+      "path": "/rest/agile/1.0/board/{board_id}/velocity",
+      "description": "Get velocity chart"
+    },
+    {
+      "id": "get_burndown_chart",
+      "name": "Get Burndown Chart (Premium)",
+      "method": "GET",
+      "path": "/rest/agile/1.0/sprint/{sprint_id}/burndown",
+      "description": "Get burndown chart"
+    },
+    {
+      "id": "get_cumulative_flow",
+      "name": "Get Cumulative Flow (Premium)",
+      "method": "GET",
+      "path": "/rest/agile/1.0/board/{board_id}/cumulativeflow",
+      "description": "Get cumulative flow diagram"
+    },
+    {
+      "id": "create_filter",
+      "name": "Create Filter",
+      "method": "POST",
+      "path": "/rest/api/3/filter",
+      "description": "Create issue filter"
+    },
+    {
+      "id": "get_filter",
+      "name": "Get Filter",
+      "method": "GET",
+      "path": "/rest/api/3/filter/{filter_id}",
+      "description": "Get filter details"
+    },
+    {
+      "id": "share_filter",
+      "name": "Share Filter",
+      "method": "POST",
+      "path": "/rest/api/3/filter/{filter_id}/permission",
+      "description": "Share filter with users"
+    },
+    {
+      "id": "create_dashboard",
+      "name": "Create Dashboard (Premium)",
+      "method": "POST",
+      "path": "/rest/api/3/dashboard",
+      "description": "Create dashboard"
+    },
+    {
+      "id": "get_dashboard",
+      "name": "Get Dashboard",
+      "method": "GET",
+      "path": "/rest/api/3/dashboard/{dashboard_id}",
+      "description": "Get dashboard"
+    },
+    {
+      "id": "add_gadget",
+      "name": "Add Gadget (Premium)",
+      "method": "POST",
+      "path": "/rest/api/3/dashboard/{dashboard_id}/gadget",
+      "description": "Add gadget to dashboard"
+    },
+    {
+      "id": "get_users",
+      "name": "Get Users",
+      "method": "GET",
+      "path": "/rest/api/3/users/search",
+      "description": "Search users"
+    },
+    {
+      "id": "get_user",
+      "name": "Get User",
+      "method": "GET",
+      "path": "/rest/api/3/user",
+      "description": "Get user details"
+    },
+    {
+      "id": "create_webhook",
+      "name": "Create Webhook (Premium)",
+      "method": "POST",
+      "path": "/rest/webhooks/1.0/webhook",
+      "description": "Create webhook"
+    },
+    {
+      "id": "get_webhooks",
+      "name": "Get Webhooks",
+      "method": "GET",
+      "path": "/rest/webhooks/1.0/webhook",
+      "description": "List webhooks"
+    },
+    {
+      "id": "export_issues",
+      "name": "Export Issues (Premium)",
+      "method": "POST",
+      "path": "/rest/api/3/search/export",
+      "description": "Export issues to CSV"
+    },
+    {
+      "id": "bulk_update",
+      "name": "Bulk Update (Premium)",
+      "method": "POST",
+      "path": "/rest/api/3/issue/bulk",
+      "description": "Update multiple issues"
+    }
+  ]
+}
