@@ -1,0 +1,102 @@
+{
+  "name": "Neon Database FREE",
+  "version": "1.0.0",
+  "description": "FREE Serverless PostgreSQL with instant branching. 10 projects, 3GB storage, autoscaling. Normally costs $700+/month - GET IT FREE!",
+  "category": "database",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$700+",
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://console.neon.tech/signup"
+  },
+  "features": [
+    "10 projects FREE",
+    "3 GB storage per project",
+    "Instant database branching",
+    "Autoscaling compute",
+    "Serverless PostgreSQL",
+    "0.5 GB RAM per compute",
+    "Point-in-time restore",
+    "Connection pooling",
+    "Read replicas",
+    "Auto-suspend (scale to zero)",
+    "PostgreSQL 15 & 16",
+    "Full SQL support",
+    "pgvector extension",
+    "PostGIS support"
+  ],
+  "endpoints": {
+    "listProjects": "/projects",
+    "createProject": "/projects",
+    "getProject": "/projects/{project_id}",
+    "updateProject": "/projects/{project_id}",
+    "deleteProject": "/projects/{project_id}",
+    "listBranches": "/projects/{project_id}/branches",
+    "createBranch": "/projects/{project_id}/branches",
+    "getBranch": "/projects/{project_id}/branches/{branch_id}",
+    "deleteBranch": "/projects/{project_id}/branches/{branch_id}",
+    "listEndpoints": "/projects/{project_id}/endpoints",
+    "createEndpoint": "/projects/{project_id}/endpoints",
+    "startEndpoint": "/projects/{project_id}/endpoints/{endpoint_id}/start",
+    "suspendEndpoint": "/projects/{project_id}/endpoints/{endpoint_id}/suspend",
+    "getConnectionUri": "/projects/{project_id}/connection_uri",
+    "getConsumption": "/projects/{project_id}/consumption",
+    "listDatabases": "/projects/{project_id}/branches/{branch_id}/databases",
+    "createDatabase": "/projects/{project_id}/branches/{branch_id}/databases",
+    "listRoles": "/projects/{project_id}/branches/{branch_id}/roles",
+    "createRole": "/projects/{project_id}/branches/{branch_id}/roles"
+  },
+  "freeTier": {
+    "projects": "10",
+    "storage": "3 GB per project",
+    "compute": "0.5 GB RAM",
+    "branches": "10 per project",
+    "computeHours": "300 hours/month",
+    "dataTransfer": "5 GB/month",
+    "note": "Paid plan: $19/month for unlimited"
+  },
+  "useCases": [
+    "Production databases",
+    "Development environments",
+    "Testing & staging",
+    "Database branching for features",
+    "Preview deployments",
+    "Multi-tenant apps",
+    "SaaS applications",
+    "AI/ML with pgvector",
+    "Geospatial apps with PostGIS",
+    "Serverless apps",
+    "Jamstack sites",
+    "API backends"
+  ],
+  "pricingComparison": {
+    "neon": "$0 (10 projects, 3GB each)",
+    "awsRDS": "$700/month (10 instances)",
+    "planetscale": "$400/month (10 databases)",
+    "supabase": "$250/month (10 projects)",
+    "heroku": "$500/month (10 databases)",
+    "savings": "$700+/month"
+  },
+  "regions": [
+    "aws-us-east-1 - US East (N. Virginia)",
+    "aws-us-east-2 - US East (Ohio)",
+    "aws-us-west-2 - US West (Oregon)",
+    "aws-eu-central-1 - Europe (Frankfurt)",
+    "aws-ap-southeast-1 - Asia Pacific (Singapore)",
+    "aws-ap-southeast-2 - Asia Pacific (Sydney)"
+  ],
+  "postgresExtensions": [
+    "pgvector - Vector similarity search",
+    "PostGIS - Geospatial data",
+    "pg_trgm - Text similarity",
+    "uuid-ossp - UUID generation",
+    "pg_stat_statements - Query statistics",
+    "btree_gin - GIN indexes",
+    "btree_gist - GiST indexes",
+    "citext - Case-insensitive text",
+    "hstore - Key-value store",
+    "ltree - Hierarchical data"
+  ]
+}
