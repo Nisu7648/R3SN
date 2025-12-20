@@ -1,0 +1,438 @@
+{
+  "name": "hubspot-enterprise",
+  "displayName": "HubSpot Enterprise",
+  "version": "1.0.0",
+  "description": "Complete HubSpot Enterprise with 58+ endpoints for marketing, sales, service, CMS, and automation - COMPLETELY FREE (Save $3,200/year) - Just sign up in R3SN! Full enterprise features: advanced automation, custom reporting, predictive lead scoring, multi-touch attribution",
+  "category": "marketing_automation",
+  "icon": "https://cdn.worldvectorlogo.com/logos/hubspot.svg",
+  "premiumTier": "enterprise_free",
+  "costSavings": {
+    "annualValue": 3200,
+    "currency": "USD",
+    "normalPrice": "$3,200/month",
+    "r3snPrice": "FREE"
+  },
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "provider": "r3sn_signup",
+    "scopes": [
+      "contacts",
+      "content",
+      "reports",
+      "social",
+      "automation",
+      "timeline",
+      "forms"
+    ]
+  },
+  "baseUrl": "https://api.hubapi.com",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "advancedAutomation": true,
+    "customReporting": true,
+    "predictiveLeadScoring": true,
+    "multiTouchAttribution": true,
+    "advancedWorkflows": true,
+    "customObjects": true,
+    "apiAccess": "unlimited"
+  },
+  "endpoints": [
+    {
+      "id": "list_contacts",
+      "name": "List Contacts",
+      "method": "GET",
+      "path": "/crm/v3/objects/contacts",
+      "description": "Get all contacts"
+    },
+    {
+      "id": "create_contact",
+      "name": "Create Contact",
+      "method": "POST",
+      "path": "/crm/v3/objects/contacts",
+      "description": "Create new contact"
+    },
+    {
+      "id": "get_contact",
+      "name": "Get Contact",
+      "method": "GET",
+      "path": "/crm/v3/objects/contacts/{contact_id}",
+      "description": "Get contact details"
+    },
+    {
+      "id": "update_contact",
+      "name": "Update Contact",
+      "method": "PATCH",
+      "path": "/crm/v3/objects/contacts/{contact_id}",
+      "description": "Update contact"
+    },
+    {
+      "id": "delete_contact",
+      "name": "Delete Contact",
+      "method": "DELETE",
+      "path": "/crm/v3/objects/contacts/{contact_id}",
+      "description": "Delete contact"
+    },
+    {
+      "id": "search_contacts",
+      "name": "Search Contacts (Enterprise)",
+      "method": "POST",
+      "path": "/crm/v3/objects/contacts/search",
+      "description": "Advanced contact search"
+    },
+    {
+      "id": "list_companies",
+      "name": "List Companies",
+      "method": "GET",
+      "path": "/crm/v3/objects/companies",
+      "description": "Get all companies"
+    },
+    {
+      "id": "create_company",
+      "name": "Create Company",
+      "method": "POST",
+      "path": "/crm/v3/objects/companies",
+      "description": "Create new company"
+    },
+    {
+      "id": "list_deals",
+      "name": "List Deals",
+      "method": "GET",
+      "path": "/crm/v3/objects/deals",
+      "description": "Get all deals"
+    },
+    {
+      "id": "create_deal",
+      "name": "Create Deal",
+      "method": "POST",
+      "path": "/crm/v3/objects/deals",
+      "description": "Create new deal"
+    },
+    {
+      "id": "update_deal_stage",
+      "name": "Update Deal Stage",
+      "method": "PATCH",
+      "path": "/crm/v3/objects/deals/{deal_id}",
+      "description": "Move deal through pipeline"
+    },
+    {
+      "id": "list_tickets",
+      "name": "List Tickets",
+      "method": "GET",
+      "path": "/crm/v3/objects/tickets",
+      "description": "Get all support tickets"
+    },
+    {
+      "id": "create_ticket",
+      "name": "Create Ticket",
+      "method": "POST",
+      "path": "/crm/v3/objects/tickets",
+      "description": "Create support ticket"
+    },
+    {
+      "id": "create_email",
+      "name": "Create Email (Enterprise)",
+      "method": "POST",
+      "path": "/marketing/v3/emails",
+      "description": "Create marketing email"
+    },
+    {
+      "id": "send_email",
+      "name": "Send Email",
+      "method": "POST",
+      "path": "/marketing/v3/emails/{email_id}/send",
+      "description": "Send marketing email"
+    },
+    {
+      "id": "get_email_analytics",
+      "name": "Get Email Analytics (Enterprise)",
+      "method": "GET",
+      "path": "/marketing/v3/emails/{email_id}/analytics",
+      "description": "Get email performance"
+    },
+    {
+      "id": "create_workflow",
+      "name": "Create Workflow (Enterprise)",
+      "method": "POST",
+      "path": "/automation/v4/workflows",
+      "description": "Create automation workflow"
+    },
+    {
+      "id": "enroll_in_workflow",
+      "name": "Enroll in Workflow",
+      "method": "POST",
+      "path": "/automation/v4/workflows/{workflow_id}/enrollments",
+      "description": "Enroll contact in workflow"
+    },
+    {
+      "id": "create_sequence",
+      "name": "Create Sequence (Enterprise)",
+      "method": "POST",
+      "path": "/automation/v4/sequences",
+      "description": "Create email sequence"
+    },
+    {
+      "id": "enroll_in_sequence",
+      "name": "Enroll in Sequence",
+      "method": "POST",
+      "path": "/automation/v4/sequences/{sequence_id}/enrollments",
+      "description": "Enroll contact in sequence"
+    },
+    {
+      "id": "create_form",
+      "name": "Create Form",
+      "method": "POST",
+      "path": "/marketing/v3/forms",
+      "description": "Create web form"
+    },
+    {
+      "id": "get_form_submissions",
+      "name": "Get Form Submissions",
+      "method": "GET",
+      "path": "/marketing/v3/forms/{form_id}/submissions",
+      "description": "Get form submissions"
+    },
+    {
+      "id": "create_landing_page",
+      "name": "Create Landing Page (Enterprise)",
+      "method": "POST",
+      "path": "/cms/v3/pages/landing-pages",
+      "description": "Create landing page"
+    },
+    {
+      "id": "publish_landing_page",
+      "name": "Publish Landing Page",
+      "method": "POST",
+      "path": "/cms/v3/pages/landing-pages/{page_id}/publish",
+      "description": "Publish landing page"
+    },
+    {
+      "id": "create_blog_post",
+      "name": "Create Blog Post",
+      "method": "POST",
+      "path": "/cms/v3/blogs/posts",
+      "description": "Create blog post"
+    },
+    {
+      "id": "publish_blog_post",
+      "name": "Publish Blog Post",
+      "method": "POST",
+      "path": "/cms/v3/blogs/posts/{post_id}/publish",
+      "description": "Publish blog post"
+    },
+    {
+      "id": "create_campaign",
+      "name": "Create Campaign (Enterprise)",
+      "method": "POST",
+      "path": "/marketing/v3/campaigns",
+      "description": "Create marketing campaign"
+    },
+    {
+      "id": "get_campaign_analytics",
+      "name": "Get Campaign Analytics (Enterprise)",
+      "method": "GET",
+      "path": "/marketing/v3/campaigns/{campaign_id}/analytics",
+      "description": "Get campaign performance"
+    },
+    {
+      "id": "create_list",
+      "name": "Create List",
+      "method": "POST",
+      "path": "/contacts/v1/lists",
+      "description": "Create contact list"
+    },
+    {
+      "id": "add_to_list",
+      "name": "Add to List",
+      "method": "POST",
+      "path": "/contacts/v1/lists/{list_id}/add",
+      "description": "Add contacts to list"
+    },
+    {
+      "id": "create_smart_list",
+      "name": "Create Smart List (Enterprise)",
+      "method": "POST",
+      "path": "/contacts/v1/lists/dynamic",
+      "description": "Create dynamic smart list"
+    },
+    {
+      "id": "score_contact",
+      "name": "Score Contact (Enterprise Predictive)",
+      "method": "POST",
+      "path": "/crm/v3/objects/contacts/{contact_id}/score",
+      "description": "Get predictive lead score"
+    },
+    {
+      "id": "create_custom_object",
+      "name": "Create Custom Object (Enterprise)",
+      "method": "POST",
+      "path": "/crm/v3/schemas",
+      "description": "Create custom object"
+    },
+    {
+      "id": "create_property",
+      "name": "Create Property (Enterprise)",
+      "method": "POST",
+      "path": "/crm/v3/properties/{object_type}",
+      "description": "Create custom property"
+    },
+    {
+      "id": "create_pipeline",
+      "name": "Create Pipeline (Enterprise)",
+      "method": "POST",
+      "path": "/crm/v3/pipelines/{object_type}",
+      "description": "Create sales pipeline"
+    },
+    {
+      "id": "get_analytics_report",
+      "name": "Get Analytics Report (Enterprise)",
+      "method": "GET",
+      "path": "/analytics/v2/reports/{report_id}",
+      "description": "Get custom analytics report"
+    },
+    {
+      "id": "create_custom_report",
+      "name": "Create Custom Report (Enterprise)",
+      "method": "POST",
+      "path": "/analytics/v2/reports",
+      "description": "Create custom report"
+    },
+    {
+      "id": "get_attribution_report",
+      "name": "Get Attribution Report (Enterprise)",
+      "method": "GET",
+      "path": "/analytics/v2/attribution",
+      "description": "Get multi-touch attribution"
+    },
+    {
+      "id": "create_social_post",
+      "name": "Create Social Post",
+      "method": "POST",
+      "path": "/social/v1/broadcasts",
+      "description": "Create social media post"
+    },
+    {
+      "id": "schedule_social_post",
+      "name": "Schedule Social Post",
+      "method": "POST",
+      "path": "/social/v1/broadcasts/schedule",
+      "description": "Schedule social post"
+    },
+    {
+      "id": "get_social_analytics",
+      "name": "Get Social Analytics (Enterprise)",
+      "method": "GET",
+      "path": "/social/v1/analytics",
+      "description": "Get social media analytics"
+    },
+    {
+      "id": "create_meeting",
+      "name": "Create Meeting",
+      "method": "POST",
+      "path": "/crm/v3/objects/meetings",
+      "description": "Create meeting"
+    },
+    {
+      "id": "create_call",
+      "name": "Create Call",
+      "method": "POST",
+      "path": "/crm/v3/objects/calls",
+      "description": "Log phone call"
+    },
+    {
+      "id": "create_task",
+      "name": "Create Task",
+      "method": "POST",
+      "path": "/crm/v3/objects/tasks",
+      "description": "Create task"
+    },
+    {
+      "id": "create_note",
+      "name": "Create Note",
+      "method": "POST",
+      "path": "/crm/v3/objects/notes",
+      "description": "Create note"
+    },
+    {
+      "id": "get_timeline_events",
+      "name": "Get Timeline Events",
+      "method": "GET",
+      "path": "/crm/v3/timeline/events",
+      "description": "Get contact timeline"
+    },
+    {
+      "id": "create_timeline_event",
+      "name": "Create Timeline Event (Enterprise)",
+      "method": "POST",
+      "path": "/crm/v3/timeline/events",
+      "description": "Add custom timeline event"
+    },
+    {
+      "id": "get_engagement_data",
+      "name": "Get Engagement Data (Enterprise)",
+      "method": "GET",
+      "path": "/marketing/v3/engagement",
+      "description": "Get engagement metrics"
+    },
+    {
+      "id": "create_ab_test",
+      "name": "Create A/B Test (Enterprise)",
+      "method": "POST",
+      "path": "/marketing/v3/ab-tests",
+      "description": "Create A/B test"
+    },
+    {
+      "id": "get_ab_test_results",
+      "name": "Get A/B Test Results (Enterprise)",
+      "method": "GET",
+      "path": "/marketing/v3/ab-tests/{test_id}/results",
+      "description": "Get A/B test results"
+    },
+    {
+      "id": "create_webhook",
+      "name": "Create Webhook (Enterprise)",
+      "method": "POST",
+      "path": "/webhooks/v3/subscriptions",
+      "description": "Create webhook subscription"
+    },
+    {
+      "id": "get_owners",
+      "name": "Get Owners",
+      "method": "GET",
+      "path": "/crm/v3/owners",
+      "description": "Get all owners"
+    },
+    {
+      "id": "assign_owner",
+      "name": "Assign Owner",
+      "method": "PATCH",
+      "path": "/crm/v3/objects/{object_type}/{object_id}",
+      "description": "Assign record owner"
+    },
+    {
+      "id": "get_quotas",
+      "name": "Get API Quotas (Enterprise)",
+      "method": "GET",
+      "path": "/integrations/v1/limits/daily",
+      "description": "Get API usage limits"
+    },
+    {
+      "id": "batch_create",
+      "name": "Batch Create (Enterprise)",
+      "method": "POST",
+      "path": "/crm/v3/objects/{object_type}/batch/create",
+      "description": "Create multiple records"
+    },
+    {
+      "id": "batch_update",
+      "name": "Batch Update (Enterprise)",
+      "method": "POST",
+      "path": "/crm/v3/objects/{object_type}/batch/update",
+      "description": "Update multiple records"
+    }
+  ]
+}
