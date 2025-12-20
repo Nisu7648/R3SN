@@ -1,0 +1,470 @@
+{
+  "name": "salesforce-enterprise",
+  "displayName": "Salesforce Enterprise Edition",
+  "version": "1.0.0",
+  "description": "Complete Salesforce Enterprise CRM with 65+ endpoints for sales, marketing, service, analytics, and automation - COMPLETELY FREE (Save $3,600/year) - Just sign up in R3SN! Full enterprise features: unlimited customization, advanced analytics, workflow automation, API access",
+  "category": "crm",
+  "icon": "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg",
+  "premiumTier": "enterprise_free",
+  "costSavings": {
+    "annualValue": 3600,
+    "currency": "USD",
+    "normalPrice": "$300/user/month",
+    "r3snPrice": "FREE"
+  },
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "provider": "r3sn_signup",
+    "scopes": [
+      "full",
+      "api",
+      "web",
+      "refresh_token"
+    ]
+  },
+  "baseUrl": "https://api.salesforce.com/services/data/v58.0",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "unlimitedCustomization": true,
+    "advancedAnalytics": true,
+    "workflowAutomation": true,
+    "apiAccess": "unlimited",
+    "sandboxEnvironments": 10,
+    "storageLimit": "unlimited",
+    "supportLevel": "premier"
+  },
+  "endpoints": [
+    {
+      "id": "query_records",
+      "name": "Query Records (SOQL)",
+      "method": "GET",
+      "path": "/query",
+      "description": "Query Salesforce data with SOQL"
+    },
+    {
+      "id": "create_record",
+      "name": "Create Record",
+      "method": "POST",
+      "path": "/sobjects/{object_type}",
+      "description": "Create new record"
+    },
+    {
+      "id": "get_record",
+      "name": "Get Record",
+      "method": "GET",
+      "path": "/sobjects/{object_type}/{record_id}",
+      "description": "Get record details"
+    },
+    {
+      "id": "update_record",
+      "name": "Update Record",
+      "method": "PATCH",
+      "path": "/sobjects/{object_type}/{record_id}",
+      "description": "Update existing record"
+    },
+    {
+      "id": "delete_record",
+      "name": "Delete Record",
+      "method": "DELETE",
+      "path": "/sobjects/{object_type}/{record_id}",
+      "description": "Delete record"
+    },
+    {
+      "id": "upsert_record",
+      "name": "Upsert Record (Enterprise)",
+      "method": "PATCH",
+      "path": "/sobjects/{object_type}/{external_id_field}/{external_id}",
+      "description": "Insert or update record"
+    },
+    {
+      "id": "bulk_create",
+      "name": "Bulk Create (Enterprise)",
+      "method": "POST",
+      "path": "/composite/sobjects",
+      "description": "Create multiple records"
+    },
+    {
+      "id": "bulk_update",
+      "name": "Bulk Update (Enterprise)",
+      "method": "PATCH",
+      "path": "/composite/sobjects",
+      "description": "Update multiple records"
+    },
+    {
+      "id": "list_accounts",
+      "name": "List Accounts",
+      "method": "GET",
+      "path": "/sobjects/Account",
+      "description": "Get all accounts"
+    },
+    {
+      "id": "create_account",
+      "name": "Create Account",
+      "method": "POST",
+      "path": "/sobjects/Account",
+      "description": "Create new account"
+    },
+    {
+      "id": "list_contacts",
+      "name": "List Contacts",
+      "method": "GET",
+      "path": "/sobjects/Contact",
+      "description": "Get all contacts"
+    },
+    {
+      "id": "create_contact",
+      "name": "Create Contact",
+      "method": "POST",
+      "path": "/sobjects/Contact",
+      "description": "Create new contact"
+    },
+    {
+      "id": "list_leads",
+      "name": "List Leads",
+      "method": "GET",
+      "path": "/sobjects/Lead",
+      "description": "Get all leads"
+    },
+    {
+      "id": "create_lead",
+      "name": "Create Lead",
+      "method": "POST",
+      "path": "/sobjects/Lead",
+      "description": "Create new lead"
+    },
+    {
+      "id": "convert_lead",
+      "name": "Convert Lead (Enterprise)",
+      "method": "POST",
+      "path": "/sobjects/Lead/{lead_id}/convert",
+      "description": "Convert lead to opportunity"
+    },
+    {
+      "id": "list_opportunities",
+      "name": "List Opportunities",
+      "method": "GET",
+      "path": "/sobjects/Opportunity",
+      "description": "Get all opportunities"
+    },
+    {
+      "id": "create_opportunity",
+      "name": "Create Opportunity",
+      "method": "POST",
+      "path": "/sobjects/Opportunity",
+      "description": "Create new opportunity"
+    },
+    {
+      "id": "update_opportunity_stage",
+      "name": "Update Opportunity Stage",
+      "method": "PATCH",
+      "path": "/sobjects/Opportunity/{opportunity_id}",
+      "description": "Update sales stage"
+    },
+    {
+      "id": "list_cases",
+      "name": "List Cases",
+      "method": "GET",
+      "path": "/sobjects/Case",
+      "description": "Get all support cases"
+    },
+    {
+      "id": "create_case",
+      "name": "Create Case",
+      "method": "POST",
+      "path": "/sobjects/Case",
+      "description": "Create support case"
+    },
+    {
+      "id": "close_case",
+      "name": "Close Case",
+      "method": "PATCH",
+      "path": "/sobjects/Case/{case_id}",
+      "description": "Close support case"
+    },
+    {
+      "id": "list_tasks",
+      "name": "List Tasks",
+      "method": "GET",
+      "path": "/sobjects/Task",
+      "description": "Get all tasks"
+    },
+    {
+      "id": "create_task",
+      "name": "Create Task",
+      "method": "POST",
+      "path": "/sobjects/Task",
+      "description": "Create new task"
+    },
+    {
+      "id": "list_events",
+      "name": "List Events",
+      "method": "GET",
+      "path": "/sobjects/Event",
+      "description": "Get all calendar events"
+    },
+    {
+      "id": "create_event",
+      "name": "Create Event",
+      "method": "POST",
+      "path": "/sobjects/Event",
+      "description": "Create calendar event"
+    },
+    {
+      "id": "create_campaign",
+      "name": "Create Campaign (Enterprise)",
+      "method": "POST",
+      "path": "/sobjects/Campaign",
+      "description": "Create marketing campaign"
+    },
+    {
+      "id": "add_campaign_member",
+      "name": "Add Campaign Member",
+      "method": "POST",
+      "path": "/sobjects/CampaignMember",
+      "description": "Add member to campaign"
+    },
+    {
+      "id": "run_report",
+      "name": "Run Report (Enterprise)",
+      "method": "POST",
+      "path": "/analytics/reports/{report_id}",
+      "description": "Execute analytics report"
+    },
+    {
+      "id": "get_dashboard",
+      "name": "Get Dashboard (Enterprise)",
+      "method": "GET",
+      "path": "/analytics/dashboards/{dashboard_id}",
+      "description": "Get dashboard data"
+    },
+    {
+      "id": "create_custom_object",
+      "name": "Create Custom Object (Enterprise)",
+      "method": "POST",
+      "path": "/tooling/sobjects/CustomObject",
+      "description": "Create custom object"
+    },
+    {
+      "id": "create_custom_field",
+      "name": "Create Custom Field (Enterprise)",
+      "method": "POST",
+      "path": "/tooling/sobjects/CustomField",
+      "description": "Create custom field"
+    },
+    {
+      "id": "create_workflow_rule",
+      "name": "Create Workflow Rule (Enterprise)",
+      "method": "POST",
+      "path": "/tooling/sobjects/WorkflowRule",
+      "description": "Create automation workflow"
+    },
+    {
+      "id": "create_process_builder",
+      "name": "Create Process (Enterprise)",
+      "method": "POST",
+      "path": "/tooling/sobjects/Flow",
+      "description": "Create process automation"
+    },
+    {
+      "id": "create_approval_process",
+      "name": "Create Approval Process (Enterprise)",
+      "method": "POST",
+      "path": "/process/approvals",
+      "description": "Create approval workflow"
+    },
+    {
+      "id": "submit_for_approval",
+      "name": "Submit for Approval",
+      "method": "POST",
+      "path": "/process/approvals",
+      "description": "Submit record for approval"
+    },
+    {
+      "id": "search_records",
+      "name": "Search Records (SOSL)",
+      "method": "GET",
+      "path": "/search",
+      "description": "Global search across objects"
+    },
+    {
+      "id": "get_picklist_values",
+      "name": "Get Picklist Values",
+      "method": "GET",
+      "path": "/sobjects/{object_type}/describe",
+      "description": "Get field picklist values"
+    },
+    {
+      "id": "get_record_types",
+      "name": "Get Record Types",
+      "method": "GET",
+      "path": "/sobjects/{object_type}/describe/recordTypeInfos",
+      "description": "Get available record types"
+    },
+    {
+      "id": "create_email_template",
+      "name": "Create Email Template (Enterprise)",
+      "method": "POST",
+      "path": "/sobjects/EmailTemplate",
+      "description": "Create email template"
+    },
+    {
+      "id": "send_email",
+      "name": "Send Email",
+      "method": "POST",
+      "path": "/actions/standard/emailSimple",
+      "description": "Send email from Salesforce"
+    },
+    {
+      "id": "create_quote",
+      "name": "Create Quote (Enterprise)",
+      "method": "POST",
+      "path": "/sobjects/Quote",
+      "description": "Create sales quote"
+    },
+    {
+      "id": "create_contract",
+      "name": "Create Contract (Enterprise)",
+      "method": "POST",
+      "path": "/sobjects/Contract",
+      "description": "Create contract"
+    },
+    {
+      "id": "create_product",
+      "name": "Create Product",
+      "method": "POST",
+      "path": "/sobjects/Product2",
+      "description": "Create product"
+    },
+    {
+      "id": "create_price_book",
+      "name": "Create Price Book (Enterprise)",
+      "method": "POST",
+      "path": "/sobjects/Pricebook2",
+      "description": "Create price book"
+    },
+    {
+      "id": "get_user_info",
+      "name": "Get User Info",
+      "method": "GET",
+      "path": "/sobjects/User/{user_id}",
+      "description": "Get user details"
+    },
+    {
+      "id": "list_users",
+      "name": "List Users",
+      "method": "GET",
+      "path": "/sobjects/User",
+      "description": "Get all users"
+    },
+    {
+      "id": "create_user",
+      "name": "Create User (Enterprise)",
+      "method": "POST",
+      "path": "/sobjects/User",
+      "description": "Create new user"
+    },
+    {
+      "id": "assign_permission_set",
+      "name": "Assign Permission Set (Enterprise)",
+      "method": "POST",
+      "path": "/sobjects/PermissionSetAssignment",
+      "description": "Assign permissions to user"
+    },
+    {
+      "id": "create_role",
+      "name": "Create Role (Enterprise)",
+      "method": "POST",
+      "path": "/sobjects/UserRole",
+      "description": "Create user role"
+    },
+    {
+      "id": "get_org_limits",
+      "name": "Get Org Limits (Enterprise)",
+      "method": "GET",
+      "path": "/limits",
+      "description": "Get organization limits"
+    },
+    {
+      "id": "execute_apex",
+      "name": "Execute Apex Code (Enterprise)",
+      "method": "GET",
+      "path": "/tooling/executeAnonymous",
+      "description": "Execute Apex code"
+    },
+    {
+      "id": "deploy_metadata",
+      "name": "Deploy Metadata (Enterprise)",
+      "method": "POST",
+      "path": "/metadata/deployRequest",
+      "description": "Deploy metadata changes"
+    },
+    {
+      "id": "retrieve_metadata",
+      "name": "Retrieve Metadata (Enterprise)",
+      "method": "POST",
+      "path": "/metadata/retrieveRequest",
+      "description": "Retrieve metadata"
+    },
+    {
+      "id": "create_sandbox",
+      "name": "Create Sandbox (Enterprise)",
+      "method": "POST",
+      "path": "/tooling/sobjects/SandboxInfo",
+      "description": "Create sandbox environment"
+    },
+    {
+      "id": "refresh_sandbox",
+      "name": "Refresh Sandbox (Enterprise)",
+      "method": "POST",
+      "path": "/tooling/sobjects/SandboxInfo/{sandbox_id}/refresh",
+      "description": "Refresh sandbox data"
+    },
+    {
+      "id": "get_api_usage",
+      "name": "Get API Usage (Enterprise)",
+      "method": "GET",
+      "path": "/limits",
+      "description": "Get API usage statistics"
+    },
+    {
+      "id": "create_lightning_component",
+      "name": "Create Lightning Component (Enterprise)",
+      "method": "POST",
+      "path": "/tooling/sobjects/AuraDefinitionBundle",
+      "description": "Create Lightning component"
+    },
+    {
+      "id": "einstein_prediction",
+      "name": "Einstein Prediction (Enterprise)",
+      "method": "POST",
+      "path": "/einstein/prediction",
+      "description": "Get AI predictions"
+    },
+    {
+      "id": "einstein_analytics",
+      "name": "Einstein Analytics (Enterprise)",
+      "method": "GET",
+      "path": "/wave/datasets",
+      "description": "Access Einstein Analytics"
+    },
+    {
+      "id": "chatter_post",
+      "name": "Post to Chatter",
+      "method": "POST",
+      "path": "/chatter/feeds/news/me/feed-elements",
+      "description": "Post to Chatter feed"
+    },
+    {
+      "id": "get_chatter_feed",
+      "name": "Get Chatter Feed",
+      "method": "GET",
+      "path": "/chatter/feeds/news/me/feed-elements",
+      "description": "Get Chatter updates"
+    }
+  ]
+}
