@@ -1,0 +1,60 @@
+{
+  "name": "Cohere AI FREE",
+  "id": "cohere-ai-free",
+  "version": "1.0.0",
+  "description": "FREE NLP & LLM Platform - Sign in to R3SN = FREE!",
+  "category": "ai",
+  "icon": "🧠",
+  "color": "#39594D",
+  "cost": "FREE",
+  "premium": true,
+  "r3sn_free": true,
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key (FREE)",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "generate",
+      "name": "Generate Text",
+      "description": "Generate text with LLM"
+    },
+    {
+      "id": "chat",
+      "name": "Chat",
+      "description": "Chat with AI"
+    },
+    {
+      "id": "embed",
+      "name": "Embeddings",
+      "description": "Generate embeddings"
+    },
+    {
+      "id": "classify",
+      "name": "Classify",
+      "description": "Classify text"
+    },
+    {
+      "id": "summarize",
+      "name": "Summarize",
+      "description": "Summarize text"
+    },
+    {
+      "id": "rerank",
+      "name": "Rerank",
+      "description": "Rerank documents"
+    },
+    {
+      "id": "detectLanguage",
+      "name": "Detect Language",
+      "description": "Detect language"
+    }
+  ]
+}
