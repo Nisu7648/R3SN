@@ -1,0 +1,143 @@
+{
+  "name": "Clerk Authentication FREE",
+  "version": "1.0.0",
+  "description": "FREE Authentication & User Management with 10,000 MAU. Social logins, MFA, sessions, organizations. Normally costs $500+/month - GET IT FREE!",
+  "category": "authentication",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$500+",
+  "authentication": {
+    "type": "secret_key",
+    "required": true,
+    "signupUrl": "https://clerk.com/sign-up"
+  },
+  "features": [
+    "10,000 MAU FREE",
+    "Social logins (Google, GitHub, etc.)",
+    "Email/password authentication",
+    "Phone number authentication",
+    "Multi-factor authentication (MFA)",
+    "Session management",
+    "User management",
+    "Organizations & teams",
+    "Role-based access control",
+    "Webhooks",
+    "Customizable UI components",
+    "Email templates",
+    "SMS verification",
+    "Magic links"
+  ],
+  "endpoints": {
+    "listUsers": "/users",
+    "getUser": "/users/{user_id}",
+    "createUser": "/users",
+    "updateUser": "/users/{user_id}",
+    "deleteUser": "/users/{user_id}",
+    "banUser": "/users/{user_id}/ban",
+    "unbanUser": "/users/{user_id}/unban",
+    "listSessions": "/users/{user_id}/sessions",
+    "revokeSession": "/sessions/{session_id}/revoke",
+    "verifyToken": "/sessions/verify",
+    "listOrganizations": "/organizations",
+    "createOrganization": "/organizations",
+    "getOrganization": "/organizations/{organization_id}",
+    "updateOrganization": "/organizations/{organization_id}",
+    "deleteOrganization": "/organizations/{organization_id}",
+    "listOrganizationMemberships": "/organizations/{organization_id}/memberships",
+    "createOrganizationMembership": "/organizations/{organization_id}/memberships",
+    "sendEmailVerification": "/users/{user_id}/email_addresses/{email_address_id}/send_verification",
+    "getUserCount": "/users/count"
+  },
+  "freeTier": {
+    "monthlyActiveUsers": "10,000",
+    "socialLogins": "Unlimited",
+    "organizations": "Unlimited",
+    "sessions": "Unlimited",
+    "webhooks": "Included",
+    "customDomains": "1",
+    "note": "Paid plan: $25/month for 10K+ MAU"
+  },
+  "useCases": [
+    "SaaS applications",
+    "Multi-tenant apps",
+    "B2B platforms",
+    "Consumer apps",
+    "Mobile apps",
+    "Web applications",
+    "API authentication",
+    "Team collaboration tools",
+    "Membership sites",
+    "E-commerce platforms",
+    "Internal tools",
+    "Admin dashboards"
+  ],
+  "pricingComparison": {
+    "clerk": "$0 (10K MAU)",
+    "auth0": "$500/month (10K MAU)",
+    "firebase": "$300/month (10K MAU)",
+    "cognito": "$400/month (10K MAU)",
+    "okta": "$600/month (10K MAU)",
+    "savings": "$500+/month"
+  },
+  "socialProviders": [
+    "Google",
+    "GitHub",
+    "Facebook",
+    "Twitter",
+    "LinkedIn",
+    "Microsoft",
+    "Apple",
+    "Discord",
+    "Twitch",
+    "TikTok",
+    "GitLab",
+    "Bitbucket",
+    "Dropbox",
+    "Notion",
+    "Slack"
+  ],
+  "authMethods": [
+    "Email & password",
+    "Phone number & SMS",
+    "Magic links",
+    "Social OAuth",
+    "SAML SSO",
+    "Multi-factor authentication",
+    "Passkeys (WebAuthn)",
+    "One-time passwords"
+  ],
+  "features_detailed": {
+    "userManagement": [
+      "User profiles",
+      "Custom metadata",
+      "User search",
+      "Bulk operations",
+      "User banning",
+      "Email verification",
+      "Phone verification"
+    ],
+    "organizations": [
+      "Multi-tenancy",
+      "Team management",
+      "Role-based permissions",
+      "Invitations",
+      "Member management",
+      "Organization metadata"
+    ],
+    "sessions": [
+      "Session tokens",
+      "Token refresh",
+      "Session revocation",
+      "Multi-device support",
+      "Session analytics"
+    ],
+    "security": [
+      "Rate limiting",
+      "Bot detection",
+      "Password policies",
+      "Account lockout",
+      "Audit logs",
+      "Compliance (SOC 2, GDPR)"
+    ]
+  }
+}
