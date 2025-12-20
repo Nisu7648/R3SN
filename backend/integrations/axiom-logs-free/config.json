@@ -1,0 +1,148 @@
+{
+  "name": "Axiom Log Management FREE",
+  "version": "1.0.0",
+  "description": "FREE Log Management & Analytics. 500GB/month FREE ingestion, unlimited retention. Better than Datadog/Splunk - SAVE $200+/month!",
+  "category": "monitoring",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$200+",
+  "authentication": {
+    "type": "api_token",
+    "required": true,
+    "signupUrl": "https://app.axiom.co/register"
+  },
+  "features": [
+    "500GB/month FREE ingestion",
+    "Unlimited retention",
+    "Real-time log streaming",
+    "Advanced querying (APL)",
+    "Dashboards & visualizations",
+    "Alerts & notifications",
+    "Team collaboration",
+    "API access",
+    "Webhooks",
+    "Integrations (Vercel, Cloudflare, etc.)",
+    "Log aggregation",
+    "Full-text search",
+    "Time-series analysis",
+    "Anomaly detection",
+    "Custom fields",
+    "JSON support",
+    "High-speed ingestion",
+    "99.9% uptime SLA"
+  ],
+  "endpoints": {
+    "ingestLogs": "/v1/datasets/{dataset}/ingest",
+    "query": "/v1/datasets/{dataset}/query",
+    "listDatasets": "/v1/datasets",
+    "createDataset": "/v1/datasets",
+    "getDataset": "/v1/datasets/{dataset}",
+    "deleteDataset": "/v1/datasets/{dataset}",
+    "listMonitors": "/v1/monitors",
+    "createMonitor": "/v1/monitors",
+    "updateMonitor": "/v1/monitors/{id}",
+    "deleteMonitor": "/v1/monitors/{id}",
+    "listNotifiers": "/v1/notifiers",
+    "createNotifier": "/v1/notifiers"
+  },
+  "freeTier": {
+    "ingestion": "500GB/month",
+    "retention": "Unlimited",
+    "queries": "Unlimited",
+    "datasets": "Unlimited",
+    "users": "Unlimited",
+    "monitors": "Unlimited",
+    "dashboards": "Unlimited",
+    "note": "Paid plan: $25/month for 1TB"
+  },
+  "useCases": [
+    "Application logging",
+    "Error tracking",
+    "Performance monitoring",
+    "Security auditing",
+    "User activity tracking",
+    "API monitoring",
+    "Infrastructure logs",
+    "Serverless function logs",
+    "Container logs",
+    "Database query logs",
+    "Web server logs",
+    "CDN logs",
+    "Real-time analytics",
+    "Compliance logging"
+  ],
+  "pricingComparison": {
+    "axiom": "$0 (500GB/month)",
+    "datadog": "$200/month (500GB)",
+    "splunk": "$300/month (500GB)",
+    "newrelic": "$150/month (500GB)",
+    "loggly": "$180/month (500GB)",
+    "savings": "$200+/month"
+  },
+  "queryLanguage": [
+    "APL (Axiom Processing Language)",
+    "SQL-like syntax",
+    "Aggregations",
+    "Filtering",
+    "Grouping",
+    "Time-series functions",
+    "Statistical functions",
+    "String operations",
+    "JSON parsing"
+  ],
+  "integrations": [
+    "Vercel",
+    "Cloudflare Workers",
+    "AWS Lambda",
+    "Google Cloud Functions",
+    "Azure Functions",
+    "Docker",
+    "Kubernetes",
+    "Grafana",
+    "Slack",
+    "PagerDuty",
+    "Discord",
+    "Webhook"
+  ],
+  "features_detailed": {
+    "ingestion": [
+      "HTTP API",
+      "Bulk ingestion",
+      "Streaming ingestion",
+      "JSON format",
+      "NDJSON support",
+      "Gzip compression",
+      "Auto-parsing",
+      "Schema detection"
+    ],
+    "querying": [
+      "APL query language",
+      "Real-time queries",
+      "Historical queries",
+      "Aggregations",
+      "Joins",
+      "Subqueries",
+      "Time-based filtering",
+      "Full-text search"
+    ],
+    "visualization": [
+      "Custom dashboards",
+      "Charts & graphs",
+      "Tables",
+      "Time-series plots",
+      "Heatmaps",
+      "Pie charts",
+      "Bar charts",
+      "Line charts"
+    ],
+    "alerting": [
+      "Threshold alerts",
+      "Anomaly detection",
+      "Custom conditions",
+      "Multiple channels",
+      "Alert history",
+      "Snooze alerts",
+      "Alert grouping"
+    ]
+  }
+}
