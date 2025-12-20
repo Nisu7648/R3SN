@@ -1,0 +1,171 @@
+{
+  "name": "Dub.co Link Management FREE",
+  "version": "1.0.0",
+  "description": "FREE Link Management & Analytics. Custom domains, QR codes, analytics. Better than Bitly - SAVE $80+/month!",
+  "category": "marketing",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$80+",
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://dub.co/register"
+  },
+  "features": [
+    "FREE tier with generous limits",
+    "Custom domains",
+    "Branded short links",
+    "QR code generation",
+    "Link analytics",
+    "Click tracking",
+    "Geographic data",
+    "Device analytics",
+    "Referrer tracking",
+    "UTM parameters",
+    "Link expiration",
+    "Password protection",
+    "iOS/Android deep links",
+    "Link cloaking",
+    "Bulk link creation",
+    "API access",
+    "Webhooks",
+    "Team collaboration"
+  ],
+  "endpoints": {
+    "createLink": "/links",
+    "getLink": "/links/{linkId}",
+    "updateLink": "/links/{linkId}",
+    "deleteLink": "/links/{linkId}",
+    "listLinks": "/links",
+    "getLinkAnalytics": "/links/{linkId}/stats",
+    "createQRCode": "/qr",
+    "listDomains": "/domains",
+    "addDomain": "/domains",
+    "deleteDomain": "/domains/{domain}",
+    "bulkCreateLinks": "/links/bulk"
+  },
+  "freeTier": {
+    "links": "1,000/month",
+    "clicks": "25,000/month",
+    "customDomains": "1",
+    "qrCodes": "Unlimited",
+    "analytics": "Full analytics",
+    "retention": "90 days",
+    "teamMembers": "3",
+    "note": "Paid plan: $24/month for unlimited"
+  },
+  "useCases": [
+    "Marketing campaigns",
+    "Social media links",
+    "Email marketing",
+    "QR code campaigns",
+    "Affiliate marketing",
+    "Product launches",
+    "Event promotion",
+    "Content sharing",
+    "Link tracking",
+    "A/B testing",
+    "Influencer marketing",
+    "SMS campaigns",
+    "Print materials",
+    "Business cards"
+  ],
+  "pricingComparison": {
+    "dubco": "$0 (1K links/month)",
+    "bitly": "$80/month",
+    "rebrandly": "$60/month",
+    "shortio": "$50/month",
+    "tinyurl": "$40/month",
+    "savings": "$80+/month"
+  },
+  "linkFeatures": [
+    "Custom slugs",
+    "Custom domains",
+    "Link expiration",
+    "Password protection",
+    "iOS targeting",
+    "Android targeting",
+    "Geographic targeting",
+    "Device targeting",
+    "UTM builder",
+    "Link cloaking",
+    "Link preview",
+    "Social cards"
+  ],
+  "analytics": [
+    "Click count",
+    "Unique visitors",
+    "Geographic location",
+    "Device type",
+    "Browser",
+    "Operating system",
+    "Referrer source",
+    "Time-based analytics",
+    "Real-time tracking",
+    "Export data"
+  ],
+  "qrCodeFeatures": [
+    "Dynamic QR codes",
+    "Custom colors",
+    "Logo embedding",
+    "Multiple formats (PNG, SVG)",
+    "High resolution",
+    "Error correction",
+    "Tracking enabled",
+    "Editable destination"
+  ],
+  "features_detailed": {
+    "links": [
+      "Unlimited redirects",
+      "Custom back-half",
+      "Link preview",
+      "Social media cards",
+      "Meta tags",
+      "Favicon",
+      "Link notes",
+      "Tags & labels"
+    ],
+    "domains": [
+      "Custom domains",
+      "SSL certificates",
+      "DNS management",
+      "Domain verification",
+      "Subdomain support",
+      "Wildcard domains"
+    ],
+    "tracking": [
+      "Real-time analytics",
+      "Click events",
+      "Conversion tracking",
+      "Event tracking",
+      "Custom events",
+      "Webhook notifications"
+    ],
+    "security": [
+      "Password protection",
+      "Link expiration",
+      "IP whitelisting",
+      "Rate limiting",
+      "Spam protection",
+      "HTTPS encryption"
+    ],
+    "collaboration": [
+      "Team workspaces",
+      "Role-based access",
+      "Link sharing",
+      "Comments",
+      "Activity log",
+      "Audit trail"
+    ]
+  },
+  "integrations": [
+    "Zapier",
+    "Make",
+    "Slack",
+    "Discord",
+    "Notion",
+    "Airtable",
+    "Google Sheets",
+    "Webhooks"
+  ]
+}
