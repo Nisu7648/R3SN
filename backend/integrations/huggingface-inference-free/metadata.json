@@ -1,0 +1,85 @@
+{
+  "name": "Hugging Face Inference FREE",
+  "id": "huggingface-inference-free",
+  "version": "1.0.0",
+  "description": "100,000+ AI models FREE - Sign in to R3SN = Everything FREE!",
+  "category": "ai",
+  "icon": "🤗",
+  "color": "#FFD21E",
+  "cost": "FREE",
+  "premium": true,
+  "r3sn_free": true,
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key (FREE)",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "textGeneration",
+      "name": "Text Generation",
+      "description": "Generate text with LLMs"
+    },
+    {
+      "id": "textToImage",
+      "name": "Text to Image",
+      "description": "Generate images from text"
+    },
+    {
+      "id": "imageToText",
+      "name": "Image to Text",
+      "description": "Generate captions"
+    },
+    {
+      "id": "translation",
+      "name": "Translation",
+      "description": "Translate text"
+    },
+    {
+      "id": "summarization",
+      "name": "Summarization",
+      "description": "Summarize text"
+    },
+    {
+      "id": "questionAnswering",
+      "name": "Question Answering",
+      "description": "Answer questions"
+    },
+    {
+      "id": "sentimentAnalysis",
+      "name": "Sentiment Analysis",
+      "description": "Analyze sentiment"
+    },
+    {
+      "id": "zeroShotClassification",
+      "name": "Zero-Shot Classification",
+      "description": "Classify without training"
+    },
+    {
+      "id": "featureExtraction",
+      "name": "Feature Extraction",
+      "description": "Get embeddings"
+    },
+    {
+      "id": "textToSpeech",
+      "name": "Text to Speech",
+      "description": "Generate speech"
+    },
+    {
+      "id": "automaticSpeechRecognition",
+      "name": "Speech Recognition",
+      "description": "Transcribe audio"
+    },
+    {
+      "id": "objectDetection",
+      "name": "Object Detection",
+      "description": "Detect objects in images"
+    }
+  ]
+}
