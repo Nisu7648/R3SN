@@ -1,0 +1,121 @@
+{
+  "name": "Resend Email FREE",
+  "version": "1.0.0",
+  "description": "FREE Transactional Email API with 3,000 emails/month. Best-in-class deliverability, React templates, webhooks. Normally costs $250+/month - GET IT FREE!",
+  "category": "email",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$250+",
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://resend.com/signup"
+  },
+  "features": [
+    "3,000 emails/month FREE",
+    "1 custom domain",
+    "React email templates",
+    "99.9% deliverability",
+    "Email analytics",
+    "Webhooks",
+    "Batch sending",
+    "Audience management",
+    "Broadcast emails",
+    "Email validation",
+    "Attachment support",
+    "Custom headers",
+    "Reply-to support",
+    "Email tracking"
+  ],
+  "endpoints": {
+    "sendEmail": "/emails",
+    "sendWithReact": "/emails",
+    "sendBatch": "/emails/batch",
+    "getEmail": "/emails/{email_id}",
+    "createDomain": "/domains",
+    "listDomains": "/domains",
+    "getDomain": "/domains/{domain_id}",
+    "verifyDomain": "/domains/{domain_id}/verify",
+    "deleteDomain": "/domains/{domain_id}",
+    "createApiKey": "/api-keys",
+    "listApiKeys": "/api-keys",
+    "deleteApiKey": "/api-keys/{api_key_id}",
+    "createAudience": "/audiences",
+    "listAudiences": "/audiences",
+    "addContact": "/audiences/{audience_id}/contacts",
+    "listContacts": "/audiences/{audience_id}/contacts",
+    "removeContact": "/audiences/{audience_id}/contacts/{contact_id}",
+    "sendBroadcast": "/broadcasts"
+  },
+  "freeTier": {
+    "emails": "3,000 per month",
+    "domains": "1 custom domain",
+    "apiKeys": "Unlimited",
+    "audiences": "Unlimited",
+    "contacts": "Unlimited",
+    "webhooks": "Included",
+    "analytics": "Included",
+    "note": "Paid plan: $20/month for 50K emails"
+  },
+  "useCases": [
+    "Transactional emails",
+    "Password resets",
+    "Email verification",
+    "Order confirmations",
+    "Receipts & invoices",
+    "Welcome emails",
+    "Notifications",
+    "Marketing emails",
+    "Newsletters",
+    "Drip campaigns",
+    "User onboarding",
+    "Account updates"
+  ],
+  "pricingComparison": {
+    "resend": "$0 (3K emails/month)",
+    "sendgrid": "$250/month (3K emails/month)",
+    "mailgun": "$200/month (3K emails/month)",
+    "postmark": "$180/month (3K emails/month)",
+    "amazonSES": "$150/month (3K emails/month)",
+    "savings": "$250+/month"
+  },
+  "emailFeatures": {
+    "templates": [
+      "React email components",
+      "HTML templates",
+      "Plain text fallback",
+      "Dynamic content",
+      "Personalization",
+      "Template variables"
+    ],
+    "deliverability": [
+      "99.9% inbox rate",
+      "DKIM signing",
+      "SPF records",
+      "DMARC alignment",
+      "Dedicated IPs (paid)",
+      "Reputation monitoring"
+    ],
+    "analytics": [
+      "Open tracking",
+      "Click tracking",
+      "Bounce tracking",
+      "Spam reports",
+      "Delivery status",
+      "Real-time events"
+    ],
+    "webhooks": [
+      "Email sent",
+      "Email delivered",
+      "Email opened",
+      "Email clicked",
+      "Email bounced",
+      "Email complained"
+    ]
+  },
+  "regions": [
+    "us-east-1 - US East (N. Virginia)",
+    "eu-west-1 - Europe (Ireland)",
+    "sa-east-1 - South America (São Paulo)"
+  ]
+}
