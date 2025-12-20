@@ -1,0 +1,129 @@
+{
+  "name": "Mintlify Documentation FREE",
+  "version": "1.0.0",
+  "description": "FREE AI-Powered Documentation Platform. Beautiful docs, API references, guides. Free for open source - SAVE $120+/month!",
+  "category": "documentation",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$120+",
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://mintlify.com/start"
+  },
+  "features": [
+    "FREE for open source",
+    "AI-powered search",
+    "Beautiful UI components",
+    "API reference generation",
+    "Code snippets",
+    "Interactive examples",
+    "Custom branding",
+    "Analytics",
+    "SEO optimized",
+    "Mobile responsive",
+    "Dark mode",
+    "Multi-language support",
+    "Version control",
+    "GitHub integration",
+    "Custom domains",
+    "Markdown support",
+    "MDX support",
+    "Auto-generated navigation"
+  ],
+  "endpoints": {
+    "getDocumentation": "/api/docs",
+    "searchDocs": "/api/search",
+    "getPage": "/api/pages/{slug}",
+    "updatePage": "/api/pages/{slug}",
+    "getAnalytics": "/api/analytics",
+    "getSuggestions": "/api/suggestions"
+  },
+  "freeTier": {
+    "openSource": "Completely FREE",
+    "pages": "Unlimited",
+    "users": "Unlimited",
+    "search": "AI-powered included",
+    "analytics": "Included",
+    "customDomain": "Included",
+    "branding": "Custom branding",
+    "note": "Paid plan: $120/month for private docs"
+  },
+  "useCases": [
+    "API documentation",
+    "Product guides",
+    "Developer docs",
+    "Knowledge bases",
+    "Technical documentation",
+    "User manuals",
+    "SDK documentation",
+    "Integration guides",
+    "Tutorials",
+    "Changelog",
+    "Release notes",
+    "Internal wikis"
+  ],
+  "pricingComparison": {
+    "mintlify": "$0 (open source)",
+    "readme": "$120/month",
+    "gitbook": "$100/month",
+    "docusaurus": "$0 (self-hosted)",
+    "stoplight": "$150/month",
+    "savings": "$120+/month"
+  },
+  "features_detailed": {
+    "content": [
+      "Markdown/MDX support",
+      "Code syntax highlighting",
+      "Interactive code blocks",
+      "Tabs & accordions",
+      "Callouts & alerts",
+      "Images & videos",
+      "Diagrams",
+      "Tables"
+    ],
+    "api": [
+      "OpenAPI/Swagger support",
+      "Auto-generated references",
+      "Request/response examples",
+      "Authentication docs",
+      "Error codes",
+      "Rate limits",
+      "Webhooks",
+      "SDKs"
+    ],
+    "search": [
+      "AI-powered search",
+      "Instant results",
+      "Fuzzy matching",
+      "Keyboard shortcuts",
+      "Search analytics",
+      "Popular queries"
+    ],
+    "customization": [
+      "Custom branding",
+      "Logo & colors",
+      "Custom CSS",
+      "Custom fonts",
+      "Navigation structure",
+      "Footer links",
+      "Social links"
+    ],
+    "analytics": [
+      "Page views",
+      "Search queries",
+      "User behavior",
+      "Popular pages",
+      "Traffic sources",
+      "Conversion tracking"
+    ],
+    "collaboration": [
+      "GitHub sync",
+      "Version control",
+      "Multi-author",
+      "Review workflow",
+      "Comments",
+      "Suggestions"
+    ]
+  }
+}
