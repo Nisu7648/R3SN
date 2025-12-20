@@ -1,0 +1,61 @@
+{
+  "name": "Dify AI FREE",
+  "id": "dify-ai-free",
+  "version": "1.0.0",
+  "description": "FREE LLM Application Platform - Sign in to R3SN = FREE!",
+  "category": "ai",
+  "icon": "🚀",
+  "color": "#155EEF",
+  "cost": "FREE",
+  "premium": true,
+  "r3sn_free": true,
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key (FREE)",
+        "type": "password",
+        "required": true
+      },
+      {
+        "name": "baseUrl",
+        "label": "Base URL (Optional)",
+        "type": "text",
+        "required": false
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "chatMessages",
+      "name": "Chat Messages",
+      "description": "Send chat messages"
+    },
+    {
+      "id": "completionMessages",
+      "name": "Completion Messages",
+      "description": "Get completions"
+    },
+    {
+      "id": "feedbackMessage",
+      "name": "Feedback Message",
+      "description": "Provide feedback"
+    },
+    {
+      "id": "getConversations",
+      "name": "Get Conversations",
+      "description": "List conversations"
+    },
+    {
+      "id": "getMessages",
+      "name": "Get Messages",
+      "description": "Get conversation messages"
+    },
+    {
+      "id": "uploadFile",
+      "name": "Upload File",
+      "description": "Upload files"
+    }
+  ]
+}
