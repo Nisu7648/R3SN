@@ -1,0 +1,50 @@
+{
+  "name": "ElevenLabs FREE",
+  "id": "elevenlabs-free",
+  "version": "1.0.0",
+  "description": "FREE Voice Synthesis & Cloning - Sign in to R3SN = FREE!",
+  "category": "ai",
+  "icon": "🎙️",
+  "color": "#6366F1",
+  "cost": "FREE",
+  "premium": true,
+  "r3sn_free": true,
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key (FREE)",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "textToSpeech",
+      "name": "Text to Speech",
+      "description": "Convert text to speech"
+    },
+    {
+      "id": "getVoices",
+      "name": "Get Voices",
+      "description": "List available voices"
+    },
+    {
+      "id": "getVoice",
+      "name": "Get Voice",
+      "description": "Get voice details"
+    },
+    {
+      "id": "getUserInfo",
+      "name": "Get User Info",
+      "description": "Get user information"
+    },
+    {
+      "id": "getHistory",
+      "name": "Get History",
+      "description": "Get generation history"
+    }
+  ]
+}
