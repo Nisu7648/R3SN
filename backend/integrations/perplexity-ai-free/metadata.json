@@ -1,0 +1,35 @@
+{
+  "name": "Perplexity AI FREE",
+  "id": "perplexity-ai-free",
+  "version": "1.0.0",
+  "description": "FREE AI-Powered Search - Sign in to R3SN = FREE!",
+  "category": "ai",
+  "icon": "🔍",
+  "color": "#20808D",
+  "cost": "FREE",
+  "premium": true,
+  "r3sn_free": true,
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "API Key (FREE)",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "chat",
+      "name": "Chat",
+      "description": "Chat with AI search"
+    },
+    {
+      "id": "search",
+      "name": "Search",
+      "description": "AI-powered search with citations"
+    }
+  ]
+}
