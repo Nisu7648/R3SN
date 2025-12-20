@@ -1,0 +1,202 @@
+{
+  "name": "Convex Backend FREE",
+  "version": "1.0.0",
+  "description": "FREE Backend as a Service. Unlimited free tier with database, real-time sync, serverless functions, file storage. Firebase/Supabase alternative - COMPLETELY FREE for hobby projects!",
+  "category": "backend",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$50+",
+  "authentication": {
+    "type": "deploy_key",
+    "required": true,
+    "signupUrl": "https://www.convex.dev/signup"
+  },
+  "features": [
+    "Unlimited free tier (hobby projects)",
+    "Real-time database",
+    "Serverless functions",
+    "File storage",
+    "Real-time subscriptions",
+    "TypeScript support",
+    "Automatic API generation",
+    "Built-in authentication",
+    "Scheduled functions (cron jobs)",
+    "Full-text search",
+    "Vector search",
+    "Transactions",
+    "Optimistic updates",
+    "Offline support",
+    "React hooks",
+    "Next.js integration",
+    "Edge deployment",
+    "Automatic scaling"
+  ],
+  "endpoints": {
+    "query": "/api/query",
+    "mutation": "/api/mutation",
+    "action": "/api/action",
+    "listFunctions": "/api/list_functions",
+    "uploadFile": "/api/storage/upload",
+    "getFileUrl": "/api/storage/getUrl",
+    "deleteFile": "/api/storage/delete",
+    "scheduleFunction": "/api/schedule",
+    "cancelScheduledFunction": "/api/cancel_job",
+    "search": "/api/search",
+    "vectorSearch": "/api/vector_search"
+  },
+  "freeTier": {
+    "database": "Unlimited",
+    "functions": "Unlimited",
+    "storage": "1GB",
+    "bandwidth": "10GB/month",
+    "users": "Unlimited",
+    "realTimeConnections": "100 concurrent",
+    "scheduledFunctions": "Unlimited",
+    "deployments": "Unlimited",
+    "note": "Paid plan: $25/month for production apps"
+  },
+  "useCases": [
+    "Real-time chat applications",
+    "Collaborative tools",
+    "Social media apps",
+    "E-commerce platforms",
+    "Task management apps",
+    "Gaming leaderboards",
+    "Live dashboards",
+    "Notification systems",
+    "Content management",
+    "User authentication",
+    "File uploads",
+    "Scheduled tasks",
+    "Search functionality",
+    "AI applications with vector search"
+  ],
+  "pricingComparison": {
+    "convex": "$0 (unlimited hobby tier)",
+    "firebase": "$25/month (Blaze plan)",
+    "supabase": "$25/month (Pro plan)",
+    "planetscale": "$29/month",
+    "railway": "$20/month",
+    "savings": "$50+/month"
+  },
+  "databaseFeatures": [
+    "Document database",
+    "Real-time queries",
+    "Reactive queries",
+    "Indexes",
+    "Compound indexes",
+    "Full-text search indexes",
+    "Vector indexes",
+    "Transactions",
+    "Optimistic concurrency",
+    "Schema validation",
+    "TypeScript types"
+  ],
+  "functionTypes": [
+    "Queries (read data)",
+    "Mutations (write data)",
+    "Actions (external APIs)",
+    "HTTP actions (webhooks)",
+    "Scheduled functions (cron)"
+  ],
+  "realTimeFeatures": [
+    "Live queries",
+    "Automatic re-rendering",
+    "WebSocket connections",
+    "Optimistic updates",
+    "Conflict resolution",
+    "Presence tracking",
+    "Typing indicators",
+    "Read receipts"
+  ],
+  "features_detailed": {
+    "database": [
+      "Document-based storage",
+      "Automatic indexing",
+      "Query optimization",
+      "Real-time subscriptions",
+      "Pagination support",
+      "Sorting and filtering",
+      "Aggregations",
+      "Joins via references"
+    ],
+    "functions": [
+      "TypeScript/JavaScript",
+      "Automatic deployment",
+      "Hot reloading",
+      "Environment variables",
+      "Error handling",
+      "Logging",
+      "Monitoring",
+      "Version control"
+    ],
+    "storage": [
+      "File uploads",
+      "Image optimization",
+      "CDN delivery",
+      "Signed URLs",
+      "Access control",
+      "Metadata storage",
+      "Multiple file formats"
+    ],
+    "authentication": [
+      "Email/password",
+      "OAuth providers",
+      "Magic links",
+      "Session management",
+      "User profiles",
+      "Role-based access",
+      "Custom claims"
+    ],
+    "search": [
+      "Full-text search",
+      "Vector similarity search",
+      "Fuzzy matching",
+      "Ranking",
+      "Highlighting",
+      "Faceted search",
+      "Auto-complete"
+    ],
+    "scheduling": [
+      "Cron expressions",
+      "One-time jobs",
+      "Recurring jobs",
+      "Job cancellation",
+      "Job monitoring",
+      "Retry logic",
+      "Error handling"
+    ]
+  },
+  "sdks": [
+    "React",
+    "Next.js",
+    "Vue",
+    "Svelte",
+    "React Native",
+    "Node.js",
+    "Python (coming soon)"
+  ],
+  "integrations": [
+    "Clerk (auth)",
+    "Auth0",
+    "Vercel",
+    "Netlify",
+    "GitHub Actions",
+    "OpenAI",
+    "Stripe",
+    "SendGrid",
+    "Twilio"
+  ],
+  "developerExperience": [
+    "TypeScript-first",
+    "Auto-generated types",
+    "Local development",
+    "Hot reloading",
+    "CLI tools",
+    "VS Code extension",
+    "Dashboard UI",
+    "Logs and monitoring",
+    "Version control",
+    "Rollback support"
+  ]
+}
