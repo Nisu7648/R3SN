@@ -1,0 +1,124 @@
+{
+  "name": "Trigger.dev FREE",
+  "version": "1.0.0",
+  "description": "FREE Background Jobs & Workflows with 500,000 runs/month. Scheduled jobs, webhooks, long-running tasks, retries. Normally costs $500+/month - GET IT FREE!",
+  "category": "background-jobs",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$500+",
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://trigger.dev/signup"
+  },
+  "features": [
+    "500,000 runs/month FREE",
+    "Scheduled jobs (cron)",
+    "Webhook triggers",
+    "Long-running tasks",
+    "Automatic retries",
+    "Job queues",
+    "Delayed jobs",
+    "Job chaining",
+    "Real-time monitoring",
+    "Error tracking",
+    "Logs & debugging",
+    "Environment variables",
+    "Replay failed jobs",
+    "Cancel running jobs"
+  ],
+  "endpoints": {
+    "triggerJob": "/api/v1/jobs/{job_id}/trigger",
+    "getRunStatus": "/api/v1/runs/{run_id}",
+    "listRuns": "/api/v1/runs",
+    "cancelRun": "/api/v1/runs/{run_id}/cancel",
+    "replayRun": "/api/v1/runs/{run_id}/replay",
+    "listJobs": "/api/v1/jobs",
+    "getJob": "/api/v1/jobs/{job_id}",
+    "createSchedule": "/api/v1/schedules",
+    "listSchedules": "/api/v1/schedules",
+    "deleteSchedule": "/api/v1/schedules/{schedule_id}",
+    "createWebhook": "/api/v1/webhooks",
+    "listWebhooks": "/api/v1/webhooks",
+    "deleteWebhook": "/api/v1/webhooks/{webhook_id}",
+    "getEnvironmentVariables": "/api/v1/environment-variables",
+    "setEnvironmentVariable": "/api/v1/environment-variables",
+    "deleteEnvironmentVariable": "/api/v1/environment-variables/{key}",
+    "getUsage": "/api/v1/usage"
+  },
+  "freeTier": {
+    "runs": "500,000 per month",
+    "concurrency": "10 concurrent jobs",
+    "duration": "5 minutes per job",
+    "schedules": "Unlimited",
+    "webhooks": "Unlimited",
+    "retries": "Automatic",
+    "note": "Paid plan: $20/month for 1M runs"
+  },
+  "useCases": [
+    "Email sending",
+    "Data processing",
+    "Report generation",
+    "Image processing",
+    "Video transcoding",
+    "Database backups",
+    "Scheduled tasks",
+    "Webhook processing",
+    "API integrations",
+    "Batch operations",
+    "Data synchronization",
+    "Notification delivery",
+    "File uploads",
+    "ETL pipelines"
+  ],
+  "pricingComparison": {
+    "triggerDev": "$0 (500K runs/month)",
+    "temporal": "$500/month (500K runs/month)",
+    "inngest": "$400/month (500K runs/month)",
+    "qstash": "$300/month (500K runs/month)",
+    "bullmq": "$250/month (self-hosted)",
+    "savings": "$500+/month"
+  },
+  "jobFeatures": {
+    "triggers": [
+      "Manual trigger",
+      "Scheduled (cron)",
+      "Webhook",
+      "Event-based",
+      "Delayed execution",
+      "Recurring jobs"
+    ],
+    "execution": [
+      "Automatic retries",
+      "Exponential backoff",
+      "Timeout handling",
+      "Concurrency control",
+      "Job chaining",
+      "Parallel execution"
+    ],
+    "monitoring": [
+      "Real-time status",
+      "Execution logs",
+      "Error tracking",
+      "Performance metrics",
+      "Run history",
+      "Alerts & notifications"
+    ],
+    "management": [
+      "Cancel jobs",
+      "Replay failed jobs",
+      "Pause/resume",
+      "Job prioritization",
+      "Environment variables",
+      "Version control"
+    ]
+  },
+  "cronExamples": [
+    "*/5 * * * * - Every 5 minutes",
+    "0 * * * * - Every hour",
+    "0 0 * * * - Daily at midnight",
+    "0 0 * * 0 - Weekly on Sunday",
+    "0 0 1 * * - Monthly on 1st",
+    "0 9 * * 1-5 - Weekdays at 9am"
+  ]
+}
