@@ -1,0 +1,430 @@
+{
+  "name": "mailchimp-premium",
+  "displayName": "Mailchimp Premium",
+  "version": "1.0.0",
+  "description": "Complete Mailchimp Premium with 60+ endpoints for email marketing, automation, analytics, and CRM - COMPLETELY FREE (Save $3,500/year) - Just sign up in R3SN! Full premium features: unlimited sends, advanced segmentation, multivariate testing, predictive analytics",
+  "category": "email_marketing",
+  "icon": "https://cdn.worldvectorlogo.com/logos/mailchimp-freddie-icon.svg",
+  "premiumTier": "premium_free",
+  "costSavings": {
+    "annualValue": 3500,
+    "currency": "USD",
+    "normalPrice": "$350/month",
+    "r3snPrice": "FREE"
+  },
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "provider": "r3sn_signup",
+    "scopes": []
+  },
+  "baseUrl": "https://api.mailchimp.com/3.0",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "unlimitedSends": true,
+    "advancedSegmentation": true,
+    "multivariateTestin": true,
+    "predictiveAnalytics": true,
+    "advancedAutomation": true,
+    "comparativeReporting": true,
+    "prioritySupport": true
+  },
+  "endpoints": [
+    {
+      "id": "list_campaigns",
+      "name": "List Campaigns",
+      "method": "GET",
+      "path": "/campaigns",
+      "description": "Get all campaigns"
+    },
+    {
+      "id": "get_campaign",
+      "name": "Get Campaign",
+      "method": "GET",
+      "path": "/campaigns/{campaign_id}",
+      "description": "Get campaign details"
+    },
+    {
+      "id": "create_campaign",
+      "name": "Create Campaign (Premium Unlimited)",
+      "method": "POST",
+      "path": "/campaigns",
+      "description": "Create email campaign"
+    },
+    {
+      "id": "update_campaign",
+      "name": "Update Campaign",
+      "method": "PATCH",
+      "path": "/campaigns/{campaign_id}",
+      "description": "Update campaign"
+    },
+    {
+      "id": "delete_campaign",
+      "name": "Delete Campaign",
+      "method": "DELETE",
+      "path": "/campaigns/{campaign_id}",
+      "description": "Delete campaign"
+    },
+    {
+      "id": "send_campaign",
+      "name": "Send Campaign (Premium Unlimited)",
+      "method": "POST",
+      "path": "/campaigns/{campaign_id}/actions/send",
+      "description": "Send campaign immediately"
+    },
+    {
+      "id": "schedule_campaign",
+      "name": "Schedule Campaign",
+      "method": "POST",
+      "path": "/campaigns/{campaign_id}/actions/schedule",
+      "description": "Schedule campaign send"
+    },
+    {
+      "id": "test_campaign",
+      "name": "Test Campaign",
+      "method": "POST",
+      "path": "/campaigns/{campaign_id}/actions/test",
+      "description": "Send test email"
+    },
+    {
+      "id": "get_campaign_report",
+      "name": "Get Campaign Report (Premium)",
+      "method": "GET",
+      "path": "/reports/{campaign_id}",
+      "description": "Get campaign analytics"
+    },
+    {
+      "id": "list_lists",
+      "name": "List Audience Lists",
+      "method": "GET",
+      "path": "/lists",
+      "description": "Get all audience lists"
+    },
+    {
+      "id": "create_list",
+      "name": "Create List",
+      "method": "POST",
+      "path": "/lists",
+      "description": "Create audience list"
+    },
+    {
+      "id": "get_list",
+      "name": "Get List",
+      "method": "GET",
+      "path": "/lists/{list_id}",
+      "description": "Get list details"
+    },
+    {
+      "id": "update_list",
+      "name": "Update List",
+      "method": "PATCH",
+      "path": "/lists/{list_id}",
+      "description": "Update list settings"
+    },
+    {
+      "id": "delete_list",
+      "name": "Delete List",
+      "method": "DELETE",
+      "path": "/lists/{list_id}",
+      "description": "Delete list"
+    },
+    {
+      "id": "list_members",
+      "name": "List Members",
+      "method": "GET",
+      "path": "/lists/{list_id}/members",
+      "description": "Get list subscribers"
+    },
+    {
+      "id": "add_member",
+      "name": "Add Member",
+      "method": "POST",
+      "path": "/lists/{list_id}/members",
+      "description": "Add subscriber to list"
+    },
+    {
+      "id": "get_member",
+      "name": "Get Member",
+      "method": "GET",
+      "path": "/lists/{list_id}/members/{subscriber_hash}",
+      "description": "Get subscriber details"
+    },
+    {
+      "id": "update_member",
+      "name": "Update Member",
+      "method": "PATCH",
+      "path": "/lists/{list_id}/members/{subscriber_hash}",
+      "description": "Update subscriber"
+    },
+    {
+      "id": "delete_member",
+      "name": "Delete Member",
+      "method": "DELETE",
+      "path": "/lists/{list_id}/members/{subscriber_hash}",
+      "description": "Remove subscriber"
+    },
+    {
+      "id": "create_segment",
+      "name": "Create Segment (Premium Advanced)",
+      "method": "POST",
+      "path": "/lists/{list_id}/segments",
+      "description": "Create advanced segment"
+    },
+    {
+      "id": "list_segments",
+      "name": "List Segments",
+      "method": "GET",
+      "path": "/lists/{list_id}/segments",
+      "description": "Get all segments"
+    },
+    {
+      "id": "get_segment",
+      "name": "Get Segment",
+      "method": "GET",
+      "path": "/lists/{list_id}/segments/{segment_id}",
+      "description": "Get segment details"
+    },
+    {
+      "id": "update_segment",
+      "name": "Update Segment (Premium)",
+      "method": "PATCH",
+      "path": "/lists/{list_id}/segments/{segment_id}",
+      "description": "Update segment conditions"
+    },
+    {
+      "id": "create_automation",
+      "name": "Create Automation (Premium Advanced)",
+      "method": "POST",
+      "path": "/automations",
+      "description": "Create automation workflow"
+    },
+    {
+      "id": "list_automations",
+      "name": "List Automations",
+      "method": "GET",
+      "path": "/automations",
+      "description": "Get all automations"
+    },
+    {
+      "id": "get_automation",
+      "name": "Get Automation",
+      "method": "GET",
+      "path": "/automations/{workflow_id}",
+      "description": "Get automation details"
+    },
+    {
+      "id": "start_automation",
+      "name": "Start Automation",
+      "method": "POST",
+      "path": "/automations/{workflow_id}/actions/start-all-emails",
+      "description": "Start automation"
+    },
+    {
+      "id": "pause_automation",
+      "name": "Pause Automation",
+      "method": "POST",
+      "path": "/automations/{workflow_id}/actions/pause-all-emails",
+      "description": "Pause automation"
+    },
+    {
+      "id": "add_automation_email",
+      "name": "Add Automation Email (Premium)",
+      "method": "POST",
+      "path": "/automations/{workflow_id}/emails",
+      "description": "Add email to automation"
+    },
+    {
+      "id": "create_template",
+      "name": "Create Template",
+      "method": "POST",
+      "path": "/templates",
+      "description": "Create email template"
+    },
+    {
+      "id": "list_templates",
+      "name": "List Templates",
+      "method": "GET",
+      "path": "/templates",
+      "description": "Get all templates"
+    },
+    {
+      "id": "get_template",
+      "name": "Get Template",
+      "method": "GET",
+      "path": "/templates/{template_id}",
+      "description": "Get template details"
+    },
+    {
+      "id": "update_template",
+      "name": "Update Template",
+      "method": "PATCH",
+      "path": "/templates/{template_id}",
+      "description": "Update template"
+    },
+    {
+      "id": "delete_template",
+      "name": "Delete Template",
+      "method": "DELETE",
+      "path": "/templates/{template_id}",
+      "description": "Delete template"
+    },
+    {
+      "id": "create_ab_test",
+      "name": "Create A/B Test (Premium Multivariate)",
+      "method": "POST",
+      "path": "/campaigns/{campaign_id}/content/variate-contents",
+      "description": "Create multivariate test"
+    },
+    {
+      "id": "get_ab_test_results",
+      "name": "Get A/B Test Results (Premium)",
+      "method": "GET",
+      "path": "/reports/{campaign_id}/ab-tests",
+      "description": "Get test results"
+    },
+    {
+      "id": "get_predictive_insights",
+      "name": "Get Predictive Insights (Premium AI)",
+      "method": "GET",
+      "path": "/reports/{campaign_id}/insights",
+      "description": "Get AI predictions"
+    },
+    {
+      "id": "get_comparative_report",
+      "name": "Get Comparative Report (Premium)",
+      "method": "GET",
+      "path": "/reports/comparative",
+      "description": "Compare campaign performance"
+    },
+    {
+      "id": "get_click_details",
+      "name": "Get Click Details (Premium)",
+      "method": "GET",
+      "path": "/reports/{campaign_id}/click-details",
+      "description": "Get detailed click data"
+    },
+    {
+      "id": "get_email_activity",
+      "name": "Get Email Activity (Premium)",
+      "method": "GET",
+      "path": "/reports/{campaign_id}/email-activity",
+      "description": "Get subscriber activity"
+    },
+    {
+      "id": "get_domain_performance",
+      "name": "Get Domain Performance (Premium)",
+      "method": "GET",
+      "path": "/reports/{campaign_id}/domain-performance",
+      "description": "Get performance by domain"
+    },
+    {
+      "id": "get_ecommerce_report",
+      "name": "Get E-commerce Report (Premium)",
+      "method": "GET",
+      "path": "/reports/{campaign_id}/ecommerce-product-activity",
+      "description": "Get e-commerce analytics"
+    },
+    {
+      "id": "create_landing_page",
+      "name": "Create Landing Page (Premium)",
+      "method": "POST",
+      "path": "/landing-pages",
+      "description": "Create landing page"
+    },
+    {
+      "id": "list_landing_pages",
+      "name": "List Landing Pages",
+      "method": "GET",
+      "path": "/landing-pages",
+      "description": "Get all landing pages"
+    },
+    {
+      "id": "publish_landing_page",
+      "name": "Publish Landing Page",
+      "method": "POST",
+      "path": "/landing-pages/{page_id}/actions/publish",
+      "description": "Publish landing page"
+    },
+    {
+      "id": "add_ecommerce_store",
+      "name": "Add E-commerce Store (Premium)",
+      "method": "POST",
+      "path": "/ecommerce/stores",
+      "description": "Connect e-commerce store"
+    },
+    {
+      "id": "add_ecommerce_order",
+      "name": "Add E-commerce Order",
+      "method": "POST",
+      "path": "/ecommerce/stores/{store_id}/orders",
+      "description": "Add order data"
+    },
+    {
+      "id": "add_ecommerce_product",
+      "name": "Add E-commerce Product",
+      "method": "POST",
+      "path": "/ecommerce/stores/{store_id}/products",
+      "description": "Add product data"
+    },
+    {
+      "id": "create_survey",
+      "name": "Create Survey (Premium)",
+      "method": "POST",
+      "path": "/surveys",
+      "description": "Create survey"
+    },
+    {
+      "id": "get_survey_responses",
+      "name": "Get Survey Responses (Premium)",
+      "method": "GET",
+      "path": "/surveys/{survey_id}/responses",
+      "description": "Get survey responses"
+    },
+    {
+      "id": "create_tag",
+      "name": "Create Tag",
+      "method": "POST",
+      "path": "/lists/{list_id}/tag-search",
+      "description": "Create subscriber tag"
+    },
+    {
+      "id": "tag_members",
+      "name": "Tag Members (Premium)",
+      "method": "POST",
+      "path": "/lists/{list_id}/members/tags",
+      "description": "Tag multiple subscribers"
+    },
+    {
+      "id": "get_account",
+      "name": "Get Account",
+      "method": "GET",
+      "path": "/",
+      "description": "Get account details"
+    },
+    {
+      "id": "get_api_health",
+      "name": "Get API Health",
+      "method": "GET",
+      "path": "/ping",
+      "description": "Check API status"
+    },
+    {
+      "id": "batch_operations",
+      "name": "Batch Operations (Premium)",
+      "method": "POST",
+      "path": "/batches",
+      "description": "Execute batch operations"
+    },
+    {
+      "id": "get_batch_status",
+      "name": "Get Batch Status",
+      "method": "GET",
+      "path": "/batches/{batch_id}",
+      "description": "Check batch operation status"
+    }
+  ]
+}
