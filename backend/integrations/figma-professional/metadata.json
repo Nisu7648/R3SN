@@ -1,0 +1,379 @@
+{
+  "name": "figma-professional",
+  "displayName": "Figma Professional",
+  "version": "1.0.0",
+  "description": "Complete Figma Professional with 50+ endpoints for design, prototyping, collaboration, and dev handoff - COMPLETELY FREE (Save $1,800/year) - Just sign up in R3SN! Full professional features: unlimited files, version history, team libraries, advanced prototyping",
+  "category": "design",
+  "icon": "https://cdn.worldvectorlogo.com/logos/figma-5.svg",
+  "premiumTier": "professional_free",
+  "costSavings": {
+    "annualValue": 1800,
+    "currency": "USD",
+    "normalPrice": "$15/editor/month",
+    "r3snPrice": "FREE"
+  },
+  "authentication": {
+    "type": "oauth2",
+    "tokenType": "Bearer",
+    "provider": "r3sn_signup",
+    "scopes": [
+      "file_read",
+      "file_write",
+      "file_dev_resources:read",
+      "file_comments:write"
+    ]
+  },
+  "baseUrl": "https://api.figma.com/v1",
+  "rateLimit": {
+    "quota": "unlimited",
+    "premium": true,
+    "cost": "free"
+  },
+  "premiumFeatures": {
+    "unlimitedFiles": true,
+    "unlimitedVersionHistory": true,
+    "teamLibraries": true,
+    "advancedPrototyping": true,
+    "devMode": true,
+    "sharedFonts": true,
+    "privatePlugins": true
+  },
+  "endpoints": [
+    {
+      "id": "get_file",
+      "name": "Get File",
+      "method": "GET",
+      "path": "/files/{file_key}",
+      "description": "Get Figma file"
+    },
+    {
+      "id": "get_file_nodes",
+      "name": "Get File Nodes",
+      "method": "GET",
+      "path": "/files/{file_key}/nodes",
+      "description": "Get specific nodes from file"
+    },
+    {
+      "id": "get_images",
+      "name": "Get Images",
+      "method": "GET",
+      "path": "/images/{file_key}",
+      "description": "Export images from file"
+    },
+    {
+      "id": "get_image_fills",
+      "name": "Get Image Fills",
+      "method": "GET",
+      "path": "/files/{file_key}/images",
+      "description": "Get image fill URLs"
+    },
+    {
+      "id": "list_files",
+      "name": "List Files (Professional Unlimited)",
+      "method": "GET",
+      "path": "/teams/{team_id}/projects/{project_id}/files",
+      "description": "List all team files"
+    },
+    {
+      "id": "get_file_versions",
+      "name": "Get File Versions (Professional Unlimited)",
+      "method": "GET",
+      "path": "/files/{file_key}/versions",
+      "description": "Get unlimited version history"
+    },
+    {
+      "id": "restore_version",
+      "name": "Restore Version (Professional)",
+      "method": "POST",
+      "path": "/files/{file_key}/versions/{version_id}/restore",
+      "description": "Restore previous version"
+    },
+    {
+      "id": "get_comments",
+      "name": "Get Comments",
+      "method": "GET",
+      "path": "/files/{file_key}/comments",
+      "description": "Get file comments"
+    },
+    {
+      "id": "post_comment",
+      "name": "Post Comment",
+      "method": "POST",
+      "path": "/files/{file_key}/comments",
+      "description": "Add comment to file"
+    },
+    {
+      "id": "delete_comment",
+      "name": "Delete Comment",
+      "method": "DELETE",
+      "path": "/files/{file_key}/comments/{comment_id}",
+      "description": "Delete comment"
+    },
+    {
+      "id": "get_team_projects",
+      "name": "Get Team Projects",
+      "method": "GET",
+      "path": "/teams/{team_id}/projects",
+      "description": "List team projects"
+    },
+    {
+      "id": "create_project",
+      "name": "Create Project (Professional)",
+      "method": "POST",
+      "path": "/teams/{team_id}/projects",
+      "description": "Create new project"
+    },
+    {
+      "id": "get_project_files",
+      "name": "Get Project Files",
+      "method": "GET",
+      "path": "/projects/{project_id}/files",
+      "description": "List project files"
+    },
+    {
+      "id": "get_team_components",
+      "name": "Get Team Components (Professional)",
+      "method": "GET",
+      "path": "/teams/{team_id}/components",
+      "description": "Get team library components"
+    },
+    {
+      "id": "get_component",
+      "name": "Get Component",
+      "method": "GET",
+      "path": "/components/{component_key}",
+      "description": "Get component details"
+    },
+    {
+      "id": "get_component_sets",
+      "name": "Get Component Sets (Professional)",
+      "method": "GET",
+      "path": "/teams/{team_id}/component_sets",
+      "description": "Get component sets"
+    },
+    {
+      "id": "get_team_styles",
+      "name": "Get Team Styles (Professional)",
+      "method": "GET",
+      "path": "/teams/{team_id}/styles",
+      "description": "Get team library styles"
+    },
+    {
+      "id": "get_style",
+      "name": "Get Style",
+      "method": "GET",
+      "path": "/styles/{style_key}",
+      "description": "Get style details"
+    },
+    {
+      "id": "publish_styles",
+      "name": "Publish Styles (Professional)",
+      "method": "POST",
+      "path": "/files/{file_key}/styles/publish",
+      "description": "Publish styles to library"
+    },
+    {
+      "id": "publish_components",
+      "name": "Publish Components (Professional)",
+      "method": "POST",
+      "path": "/files/{file_key}/components/publish",
+      "description": "Publish components to library"
+    },
+    {
+      "id": "get_dev_resources",
+      "name": "Get Dev Resources (Professional Dev Mode)",
+      "method": "GET",
+      "path": "/files/{file_key}/dev_resources",
+      "description": "Get dev mode resources"
+    },
+    {
+      "id": "create_dev_resource",
+      "name": "Create Dev Resource (Professional)",
+      "method": "POST",
+      "path": "/files/{file_key}/dev_resources",
+      "description": "Add dev resource link"
+    },
+    {
+      "id": "get_variables",
+      "name": "Get Variables (Professional)",
+      "method": "GET",
+      "path": "/files/{file_key}/variables/local",
+      "description": "Get local variables"
+    },
+    {
+      "id": "get_published_variables",
+      "name": "Get Published Variables (Professional)",
+      "method": "GET",
+      "path": "/files/{file_key}/variables/published",
+      "description": "Get published variables"
+    },
+    {
+      "id": "create_prototype",
+      "name": "Create Prototype (Professional Advanced)",
+      "method": "POST",
+      "path": "/files/{file_key}/prototype",
+      "description": "Create advanced prototype"
+    },
+    {
+      "id": "get_prototype_interactions",
+      "name": "Get Prototype Interactions (Professional)",
+      "method": "GET",
+      "path": "/files/{file_key}/prototype/interactions",
+      "description": "Get prototype interactions"
+    },
+    {
+      "id": "share_file",
+      "name": "Share File",
+      "method": "POST",
+      "path": "/files/{file_key}/share",
+      "description": "Share file with users"
+    },
+    {
+      "id": "get_file_permissions",
+      "name": "Get File Permissions",
+      "method": "GET",
+      "path": "/files/{file_key}/permissions",
+      "description": "Get file permissions"
+    },
+    {
+      "id": "update_permissions",
+      "name": "Update Permissions (Professional)",
+      "method": "PUT",
+      "path": "/files/{file_key}/permissions",
+      "description": "Update file permissions"
+    },
+    {
+      "id": "duplicate_file",
+      "name": "Duplicate File",
+      "method": "POST",
+      "path": "/files/{file_key}/duplicate",
+      "description": "Duplicate file"
+    },
+    {
+      "id": "move_file",
+      "name": "Move File",
+      "method": "PUT",
+      "path": "/files/{file_key}/move",
+      "description": "Move file to project"
+    },
+    {
+      "id": "delete_file",
+      "name": "Delete File",
+      "method": "DELETE",
+      "path": "/files/{file_key}",
+      "description": "Delete file"
+    },
+    {
+      "id": "get_team_members",
+      "name": "Get Team Members",
+      "method": "GET",
+      "path": "/teams/{team_id}/members",
+      "description": "List team members"
+    },
+    {
+      "id": "invite_member",
+      "name": "Invite Member (Professional)",
+      "method": "POST",
+      "path": "/teams/{team_id}/members/invite",
+      "description": "Invite team member"
+    },
+    {
+      "id": "remove_member",
+      "name": "Remove Member",
+      "method": "DELETE",
+      "path": "/teams/{team_id}/members/{user_id}",
+      "description": "Remove team member"
+    },
+    {
+      "id": "get_user",
+      "name": "Get User",
+      "method": "GET",
+      "path": "/users/{user_id}",
+      "description": "Get user details"
+    },
+    {
+      "id": "get_me",
+      "name": "Get Current User",
+      "method": "GET",
+      "path": "/me",
+      "description": "Get current user info"
+    },
+    {
+      "id": "create_webhook",
+      "name": "Create Webhook (Professional)",
+      "method": "POST",
+      "path": "/webhooks",
+      "description": "Create webhook"
+    },
+    {
+      "id": "list_webhooks",
+      "name": "List Webhooks",
+      "method": "GET",
+      "path": "/webhooks",
+      "description": "List all webhooks"
+    },
+    {
+      "id": "delete_webhook",
+      "name": "Delete Webhook",
+      "method": "DELETE",
+      "path": "/webhooks/{webhook_id}",
+      "description": "Delete webhook"
+    },
+    {
+      "id": "get_activity_logs",
+      "name": "Get Activity Logs (Professional)",
+      "method": "GET",
+      "path": "/teams/{team_id}/activity",
+      "description": "Get team activity logs"
+    },
+    {
+      "id": "export_pdf",
+      "name": "Export PDF (Professional)",
+      "method": "GET",
+      "path": "/files/{file_key}/export/pdf",
+      "description": "Export file as PDF"
+    },
+    {
+      "id": "export_svg",
+      "name": "Export SVG",
+      "method": "GET",
+      "path": "/files/{file_key}/export/svg",
+      "description": "Export as SVG"
+    },
+    {
+      "id": "export_png",
+      "name": "Export PNG",
+      "method": "GET",
+      "path": "/files/{file_key}/export/png",
+      "description": "Export as PNG"
+    },
+    {
+      "id": "get_plugins",
+      "name": "Get Plugins (Professional Private)",
+      "method": "GET",
+      "path": "/teams/{team_id}/plugins",
+      "description": "Get team plugins"
+    },
+    {
+      "id": "install_plugin",
+      "name": "Install Plugin (Professional)",
+      "method": "POST",
+      "path": "/teams/{team_id}/plugins/install",
+      "description": "Install private plugin"
+    },
+    {
+      "id": "get_fonts",
+      "name": "Get Shared Fonts (Professional)",
+      "method": "GET",
+      "path": "/teams/{team_id}/fonts",
+      "description": "Get team shared fonts"
+    },
+    {
+      "id": "upload_font",
+      "name": "Upload Font (Professional)",
+      "method": "POST",
+      "path": "/teams/{team_id}/fonts",
+      "description": "Upload shared font"
+    }
+  ]
+}
