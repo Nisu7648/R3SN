@@ -1,0 +1,142 @@
+{
+  "name": "Vercel Hosting FREE",
+  "version": "1.0.0",
+  "description": "FREE Hosting & Deployment with 100GB bandwidth/month. Serverless functions, edge network, instant deployments. Normally costs $400+/month - GET IT FREE!",
+  "category": "hosting",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$400+",
+  "authentication": {
+    "type": "api_token",
+    "required": true,
+    "signupUrl": "https://vercel.com/signup"
+  },
+  "features": [
+    "100GB bandwidth/month FREE",
+    "Unlimited deployments",
+    "Serverless functions",
+    "Edge network (CDN)",
+    "Instant rollbacks",
+    "Preview deployments",
+    "Custom domains",
+    "SSL certificates",
+    "Environment variables",
+    "Analytics",
+    "Web vitals monitoring",
+    "Git integration",
+    "Zero-config deployments",
+    "Automatic HTTPS"
+  ],
+  "endpoints": {
+    "listDeployments": "/v6/deployments",
+    "getDeployment": "/v13/deployments/{deployment_id}",
+    "createDeployment": "/v13/deployments",
+    "cancelDeployment": "/v12/deployments/{deployment_id}/cancel",
+    "listProjects": "/v9/projects",
+    "getProject": "/v9/projects/{project_id}",
+    "createProject": "/v9/projects",
+    "updateProject": "/v9/projects/{project_id}",
+    "deleteProject": "/v9/projects/{project_id}",
+    "listDomains": "/v5/domains",
+    "addDomain": "/v10/domains",
+    "removeDomain": "/v6/domains/{domain}",
+    "listEnvironmentVariables": "/v9/projects/{project_id}/env",
+    "createEnvironmentVariable": "/v10/projects/{project_id}/env",
+    "deleteEnvironmentVariable": "/v9/projects/{project_id}/env/{env_id}",
+    "getDeploymentLogs": "/v2/deployments/{deployment_id}/events",
+    "listTeams": "/v2/teams",
+    "getUserInfo": "/v2/user",
+    "redeploy": "/v13/deployments"
+  },
+  "freeTier": {
+    "bandwidth": "100 GB per month",
+    "deployments": "Unlimited",
+    "projects": "Unlimited",
+    "serverlessFunctions": "100 GB-hours",
+    "edgeFunctions": "500K invocations",
+    "customDomains": "Unlimited",
+    "teamMembers": "Unlimited",
+    "note": "Paid plan: $20/month for 1TB bandwidth"
+  },
+  "useCases": [
+    "Static websites",
+    "Next.js applications",
+    "React applications",
+    "Vue.js applications",
+    "Svelte applications",
+    "API routes",
+    "Serverless functions",
+    "JAMstack sites",
+    "Landing pages",
+    "Documentation sites",
+    "Blogs",
+    "E-commerce sites"
+  ],
+  "pricingComparison": {
+    "vercel": "$0 (100GB bandwidth)",
+    "netlify": "$400/month (100GB bandwidth)",
+    "awsCloudFront": "$350/month (100GB bandwidth)",
+    "cloudflare": "$300/month (100GB bandwidth)",
+    "fastly": "$450/month (100GB bandwidth)",
+    "savings": "$400+/month"
+  },
+  "supportedFrameworks": [
+    "Next.js",
+    "React",
+    "Vue.js",
+    "Nuxt.js",
+    "Svelte",
+    "SvelteKit",
+    "Angular",
+    "Gatsby",
+    "Hugo",
+    "Astro",
+    "Remix",
+    "SolidJS",
+    "Qwik",
+    "Vite"
+  ],
+  "deploymentFeatures": {
+    "git": [
+      "GitHub integration",
+      "GitLab integration",
+      "Bitbucket integration",
+      "Auto-deploy on push",
+      "Branch deployments",
+      "PR previews",
+      "Commit comments"
+    ],
+    "performance": [
+      "Global edge network",
+      "Automatic caching",
+      "Image optimization",
+      "Compression (Brotli, Gzip)",
+      "HTTP/2 & HTTP/3",
+      "Smart CDN"
+    ],
+    "serverless": [
+      "Serverless functions",
+      "Edge functions",
+      "Edge middleware",
+      "ISR (Incremental Static Regeneration)",
+      "On-demand revalidation",
+      "Streaming SSR"
+    ],
+    "monitoring": [
+      "Real-time analytics",
+      "Web vitals",
+      "Error tracking",
+      "Deployment logs",
+      "Function logs",
+      "Performance insights"
+    ]
+  },
+  "edgeLocations": [
+    "North America (20+ cities)",
+    "Europe (15+ cities)",
+    "Asia Pacific (10+ cities)",
+    "South America (3+ cities)",
+    "Africa (2+ cities)",
+    "Middle East (2+ cities)"
+  ]
+}
