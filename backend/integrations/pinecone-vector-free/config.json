@@ -1,0 +1,141 @@
+{
+  "name": "Pinecone Vector Database FREE",
+  "version": "1.0.0",
+  "description": "FREE Vector Database for AI & ML. 100K vectors, 1 index, 1 pod FREE. Perfect for embeddings, semantic search, RAG applications. Normally costs $70+/month - GET IT FREE!",
+  "category": "database",
+  "isPremium": true,
+  "isFree": true,
+  "savingsPerMonth": "$70+",
+  "authentication": {
+    "type": "api_key",
+    "required": true,
+    "signupUrl": "https://app.pinecone.io/signup"
+  },
+  "features": [
+    "100K vectors FREE",
+    "1 index included",
+    "Serverless architecture",
+    "Vector similarity search",
+    "Metadata filtering",
+    "Hybrid search",
+    "Namespaces support",
+    "Real-time updates",
+    "High availability",
+    "Low latency queries (<100ms)",
+    "Python & JavaScript SDKs",
+    "REST API",
+    "Automatic scaling",
+    "Built-in monitoring"
+  ],
+  "endpoints": {
+    "createIndex": "/indexes",
+    "listIndexes": "/indexes",
+    "describeIndex": "/indexes/{index_name}",
+    "deleteIndex": "/indexes/{index_name}",
+    "upsertVectors": "/indexes/{index_name}/vectors/upsert",
+    "queryVectors": "/indexes/{index_name}/query",
+    "fetchVectors": "/indexes/{index_name}/vectors/fetch",
+    "updateVector": "/indexes/{index_name}/vectors/update",
+    "deleteVectors": "/indexes/{index_name}/vectors/delete",
+    "describeIndexStats": "/indexes/{index_name}/describe_index_stats",
+    "listCollections": "/collections",
+    "createCollection": "/collections",
+    "describeCollection": "/collections/{collection_name}",
+    "deleteCollection": "/collections/{collection_name}"
+  },
+  "freeTier": {
+    "vectors": "100,000",
+    "indexes": "1",
+    "pods": "1 serverless pod",
+    "dimensions": "Up to 20,000",
+    "queries": "Unlimited",
+    "storage": "Included",
+    "bandwidth": "Included",
+    "note": "Paid plan: $70/month for 1M vectors"
+  },
+  "useCases": [
+    "Semantic search",
+    "Recommendation systems",
+    "RAG (Retrieval Augmented Generation)",
+    "Question answering",
+    "Image similarity search",
+    "Anomaly detection",
+    "Personalization",
+    "Content discovery",
+    "Chatbots with memory",
+    "Document search",
+    "Product recommendations",
+    "Fraud detection",
+    "Customer support automation",
+    "Knowledge bases"
+  ],
+  "pricingComparison": {
+    "pinecone": "$0 (100K vectors)",
+    "weaviate": "$50/month (100K vectors)",
+    "qdrant": "$60/month (100K vectors)",
+    "milvus": "$70/month (100K vectors)",
+    "chromadb": "$40/month (100K vectors)",
+    "savings": "$70+/month"
+  },
+  "vectorOperations": [
+    "Upsert (insert/update)",
+    "Query by vector",
+    "Query by ID",
+    "Fetch by ID",
+    "Delete by ID",
+    "Delete by filter",
+    "Update metadata",
+    "Batch operations"
+  ],
+  "searchCapabilities": [
+    "Cosine similarity",
+    "Euclidean distance",
+    "Dot product",
+    "Top-K search",
+    "Metadata filtering",
+    "Namespace isolation",
+    "Hybrid search (vector + metadata)",
+    "Approximate nearest neighbor (ANN)"
+  ],
+  "integrations": [
+    "OpenAI embeddings",
+    "Cohere embeddings",
+    "Hugging Face",
+    "LangChain",
+    "LlamaIndex",
+    "Haystack",
+    "Python SDK",
+    "JavaScript SDK",
+    "REST API"
+  ],
+  "features_detailed": {
+    "performance": [
+      "Sub-100ms query latency",
+      "Horizontal scaling",
+      "Auto-sharding",
+      "Load balancing",
+      "99.9% uptime SLA"
+    ],
+    "security": [
+      "API key authentication",
+      "TLS encryption",
+      "VPC peering (paid)",
+      "SOC 2 Type II certified",
+      "GDPR compliant"
+    ],
+    "monitoring": [
+      "Query metrics",
+      "Index statistics",
+      "Performance dashboards",
+      "Usage analytics",
+      "Alert notifications"
+    ],
+    "dataManagement": [
+      "Namespaces for multi-tenancy",
+      "Metadata storage",
+      "Sparse-dense vectors",
+      "Collections for backups",
+      "Index cloning"
+    ]
+  }
+}
