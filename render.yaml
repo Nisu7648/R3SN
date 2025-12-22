@@ -1,22 +1,23 @@
 services:
-  # Backend API Service
+  # Main application
   - type: web
-    name: r3sn-backend
+    name: r3sn-app
     env: node
     region: oregon
     plan: free
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: npm install --production
+    startCommand: node backend/server-production.js
+    healthCheckPath: /health
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: 10000
-      - key: MONGODB_URI
-        sync: false
-      - key: JWT_SECRET
-        generateValue: true
-      - key: ENCRYPTION_KEY
-        generateValue: true
-    healthCheckPath: /health
+        value: 3000
     autoDeploy: true
+    numInstances: 1
+
+# Note: Use free tier external services instead of Render's paid services
+# - Redis: Use Upstash (10K commands/day free)
+# - PostgreSQL: Use Neon (10 projects, 3GB each free)
+# - Email: Use Resend (3K emails/month free)
+# - Auth: Use Clerk (10K MAU free)
