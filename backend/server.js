@@ -10,12 +10,14 @@ const path = require('path');
 // Core Systems
 const AuthSystem = require('./auth/AuthSystem');
 const NaturalLanguageProcessor = require('./core/NaturalLanguageProcessor');
+const IntegrationManager = require('./core/IntegrationManager');
 const DynamicAPIBuilder = require('./core/DynamicAPIBuilder');
 const PluginMaker = require('./core/PluginMaker');
 
 // Routes
 const dynamicBuilderRoutes = require('./routes/dynamic-builder');
 const apiIntegrationsRoutes = require('./routes/api-integrations');
+const integrationsRoutes = require('./routes/integrations');
 
 // Initialize
 const app = express();
@@ -31,7 +33,12 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 
 // Initialize systems
 const authSystem = new AuthSystem();
+const integrationManager = new IntegrationManager();
 const nlp = new NaturalLanguageProcessor();
+
+// Inject dependencies into routes
+integrationsRoutes.setIntegrationManager(integrationManager);
+integrationsRoutes.setAuthSystem(authSystem);
 
 // ============================================
 // AUTHENTICATION ROUTES
@@ -112,6 +119,12 @@ app.post('/api/process', async (req, res) => {
 });
 
 // ============================================
+// INTEGRATION ROUTES
+// ============================================
+
+app.use('/api/integrations', integrationsRoutes.router);
+
+// ============================================
 // DYNAMIC BUILDER ROUTES
 // ============================================
 
@@ -135,6 +148,7 @@ app.get('/api/health', (req, res) => {
         systems: {
             auth: 'operational',
             nlp: 'operational',
+            integrationManager: 'operational',
             apiBuilder: 'operational',
             pluginMaker: 'operational'
         }
@@ -177,10 +191,16 @@ app.listen(PORT, () => {
 ║                                                           ║
 ║   Systems:                                                ║
 ║   ✅ Authentication System                                ║
+║   ✅ Integration Manager (User-Specific APIs)            ║
 ║   ✅ Natural Language Processor                           ║
 ║   ✅ Dynamic API Builder                                  ║
 ║   ✅ Plugin Maker                                         ║
 ║   ✅ Workflow Engine                                      ║
+║                                                           ║
+║   Available Integrations: 12                              ║
+║   - Stripe, Slack, Google, GitHub, Twitter                ║
+║   - Twilio, SendGrid, Notion, OpenAI                      ║
+║   - Shopify, Discord, Zoom                                ║
 ║                                                           ║
 ║   Default Login:                                          ║
 ║   Email: admin@r3sn.com                                   ║
