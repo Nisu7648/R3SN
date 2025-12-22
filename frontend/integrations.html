@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrations - R3SN</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .integrations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .integration-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .integration-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+        }
+
+        .integration-card.connected {
+            border-color: var(--success);
+        }
+
+        .integration-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .integration-icon {
+            font-size: 2.5rem;
+        }
+
+        .integration-info h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .integration-info p {
+            margin: 0.25rem 0 0 0;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .integration-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .status-connected {
+            background: var(--success);
+            color: white;
+        }
+
+        .status-disconnected {
+            background: var(--bg-tertiary);
+            color: var(--text-secondary);
+        }
+
+        .integration-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .integration-actions button {
+            flex: 1;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-connect {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-disconnect {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-configure {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            flex: 1;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .form-actions button {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .back-btn {
+            padding: 0.5rem 1rem;
+            background: var(--bg-tertiary);
+            border: none;
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <h1>R3SN - Integrations</h1>
+        </div>
+        <div class="header-actions">
+            <button onclick="goBack()" class="back-btn">← Back to App</button>
+            <span id="userName"></span>
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <!-- Integrations Grid -->
+    <div class="integrations-grid" id="integrationsGrid"></div>
+
+    <!-- Connection Modal -->
+    <div id="connectionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="modalIcon" class="integration-icon"></span>
+                <h2 id="modalTitle"></h2>
+                <button onclick="closeModal()" class="close-btn">×</button>
+            </div>
+            <form id="connectionForm">
+                <div id="formFields"></div>
+                <div class="form-actions">
+                    <button type="button" onclick="testConnection()" class="btn-configure">Test Connection</button>
+                    <button type="submit" class="btn-connect">Connect</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p>Processing...</p>
+    </div>
+
+    <script src="integrations.js"></script>
+</body>
+</html>
