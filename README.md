@@ -1,311 +1,227 @@
-# 🚀 R3SN - AI-Powered Automation Platform
+# R3SN - Revolutionary Self-Sustaining Network
 
-**Build APIs, Plugins, and Workflows using Natural Language**
-
-R3SN is a revolutionary platform that lets you create integrations, automate workflows, and build custom APIs just by describing what you want in plain text - no coding required!
-
----
-
-## ✨ Features
-
-### 🤖 Natural Language Interface
-- Chat with AI to build anything
-- Ask questions and get instant answers
-- Execute workflows with simple commands
-
-### 🔌 Dynamic API Builder
-- Build ANY API from text descriptions
-- Support for REST, GraphQL, SOAP
-- All authentication types (API Key, Bearer, OAuth2, Basic)
-- Import from OpenAPI/Swagger specs
-- Export generated code
-
-### 🛠️ Plugin Maker
-- Create custom plugins from descriptions
-- Multi-step actions and workflows
-- Conditional logic and error handling
-- Execute on demand or schedule
-
-### ⚡ Workflow Engine
-- Build complex workflows
-- Sequential and parallel execution
-- Triggers (schedule, webhook, event)
-- Error recovery and retry logic
-
-### 🔐 Complete Authentication
-- User registration and login
-- Secure session management
-- Token-based authentication
-
-### 📱 Responsive UI
-- Works on desktop, tablet, and mobile
-- Dark theme optimized for long sessions
-- Real-time chat interface
-
----
+**The most advanced AI automation platform with 170+ integrations, all FREE when you sign in!**
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Node.js 14+ installed
-- OpenAI API key
+### Deploy to Render (Recommended)
 
-### Installation
+1. Fork this repository
+2. Connect to Render
+3. Deploy automatically with `render.yaml`
+4. Set environment variables:
+   - `MONGODB_URI` - Your MongoDB connection string
+   - `JWT_SECRET` - Auto-generated
+   - `ENCRYPTION_KEY` - Auto-generated
 
-1. **Clone the repository**
+### Local Development
+
 ```bash
-git clone https://github.com/Nisu7648/R3SN.git
-cd R3SN
-```
-
-2. **Install dependencies**
-```bash
-cd backend
+# Install dependencies
 npm install
-```
 
-3. **Set environment variables**
-```bash
-cp .env.example .env
-# Edit .env and add your OpenAI API key
-```
-
-4. **Start the server**
-```bash
+# Start server
 npm start
+
+# Development mode
+npm run dev
 ```
 
-5. **Open your browser**
-```
-http://localhost:3000
-```
+## 📦 Integrations (170+)
 
-### Default Login
-```
-Email: admin@r3sn.com
-Password: admin123
-```
+### 🆕 NEW: 7 Premium FREE Apps (Sign in to R3SN = Everything FREE!)
 
----
+1. **Hugging Face Inference FREE** 🤗
+   - 100,000+ AI models
+   - 12 actions: Text gen, image gen, translation, summarization, Q&A, sentiment, classification, embeddings, TTS, ASR, object detection
+   - Location: `backend/integrations/huggingface-inference-free/`
 
-## 💡 Usage Examples
+2. **Stability AI FREE** 🎨
+   - Stable Diffusion image generation
+   - 4 actions: Text-to-image, image-to-image, upscale, list engines
+   - Location: `backend/integrations/stability-ai-free/`
 
-### Build an API
-```
-"Create an API for JSONPlaceholder at https://jsonplaceholder.typicode.com. 
-No auth needed. Endpoints: get posts, create post, update post, delete post."
-```
+3. **ElevenLabs FREE** 🎙️
+   - Voice synthesis & cloning
+   - 5 actions: Text-to-speech, get voices, get voice, user info, history
+   - Location: `backend/integrations/elevenlabs-free/`
 
-### Create a Plugin
-```
-"Create a plugin that monitors GitHub repos for new issues, 
-checks if they contain 'bug', creates a Notion page for each bug, 
-and sends a Slack notification."
-```
+4. **Mistral AI FREE** 🌊
+   - Open-source LLM
+   - 3 actions: Chat completion, embeddings, list models
+   - Location: `backend/integrations/mistral-ai-free/`
 
-### Build a Workflow
-```
-"Create a workflow that runs daily at 9 AM. 
-It fetches sales data from Shopify, calculates total revenue, 
-generates a PDF report, and emails it to admin@company.com."
-```
+5. **Cohere AI FREE** 🧠
+   - NLP & LLM platform
+   - 7 actions: Generate, chat, embed, classify, summarize, rerank, detect language
+   - Location: `backend/integrations/cohere-ai-free/`
 
-### Ask Questions
-```
-"How do I execute my API?"
-"Show me all my workflows"
-"What can you help me with?"
-```
+6. **Perplexity AI FREE** 🔍
+   - AI-powered search with citations
+   - 2 actions: Chat, search
+   - Location: `backend/integrations/perplexity-ai-free/`
 
----
+7. **Dify AI FREE** 🚀
+   - LLM application platform
+   - 6 actions: Chat messages, completions, feedback, conversations, messages, upload files
+   - Location: `backend/integrations/dify-ai-free/`
 
-## 📁 Project Structure
+### Other Premium Integrations
+
+- **Groq AI FREE** ⚡ - Ultra-fast LLM inference
+- **AWS Free Tier** ☁️ - Cloud services
+- **Azure Free Tier** 🔷 - Microsoft cloud
+- **GCP Free Tier** 🌐 - Google cloud
+- **Cloudflare Workers FREE** 🔥 - Edge computing
+- **Vercel Hosting FREE** ▲ - Frontend hosting
+- **Railway Deploy FREE** 🚂 - Backend hosting
+- **Neon Database FREE** 🐘 - Serverless Postgres
+- **Upstash Redis FREE** 📦 - Serverless Redis
+- **Clerk Auth FREE** 🔐 - Authentication
+- **Resend Email FREE** 📧 - Email API
+- **Trigger.dev FREE** ⚡ - Background jobs
+
+And 150+ more integrations including:
+- Stripe, PayPal, Square (Payments)
+- Slack, Discord, Telegram (Communication)
+- GitHub, GitLab, Bitbucket (Development)
+- Google Workspace, Microsoft 365 (Productivity)
+- Shopify, WooCommerce, BigCommerce (E-commerce)
+- And many more...
+
+## 🏗️ Architecture
 
 ```
 R3SN/
-├── frontend/              # Web UI
-│   ├── index.html        # Main HTML
-│   ├── styles.css        # Responsive CSS
-│   └── app.js            # Frontend logic
-│
-├── backend/              # Server
-│   ├── server.js         # Main server
-│   ├── auth/             # Authentication
-│   │   ├── AuthSystem.js
-│   │   └── OAuth2Handler.js
-│   ├── core/             # Core systems
-│   │   ├── NaturalLanguageProcessor.js
-│   │   ├── DynamicAPIBuilder.js
-│   │   └── PluginMaker.js
-│   ├── integrations/     # API integrations
-│   │   ├── APIManager.js
-│   │   └── apis/         # Individual APIs
-│   └── routes/           # API routes
-│
-└── android/              # Android app (optional)
+├── backend/
+│   ├── integrations/          # 170+ integrations
+│   │   ├── huggingface-inference-free/
+│   │   ├── stability-ai-free/
+│   │   ├── elevenlabs-free/
+│   │   ├── mistral-ai-free/
+│   │   ├── cohere-ai-free/
+│   │   ├── perplexity-ai-free/
+│   │   ├── dify-ai-free/
+│   │   └── ... (163 more)
+│   ├── routes/                # API routes
+│   │   └── index.js          # Master routes
+│   └── server.js             # Main server
+├── frontend/                  # Web interface
+├── package.json              # Dependencies
+└── render.yaml               # Deployment config
 ```
 
----
+## 🔌 API Endpoints
 
-## 🔧 Configuration
+### Health Check
+```
+GET /health
+GET /api/health
+```
 
-### Environment Variables
+### Integrations
+```
+GET  /api/integrations              # List all integrations
+GET  /api/integrations/:id          # Get integration details
+POST /api/integrations/:id/execute  # Execute integration action
+```
+
+### Example Request
+```bash
+curl -X POST http://localhost:10000/api/integrations/huggingface-inference-free/execute \
+  -H "Content-Type: application/json" \
+  -d '{
+    "config": {
+      "apiKey": "your-api-key"
+    },
+    "action": "textGeneration",
+    "params": {
+      "text": "Hello, world!",
+      "maxLength": 100
+    }
+  }'
+```
+
+## 🌟 Features
+
+- ✅ **170+ Integrations** - All major platforms
+- ✅ **7 NEW Premium FREE Apps** - Sign in = Everything FREE
+- ✅ **Dynamic Integration Loader** - Auto-discovers integrations
+- ✅ **Production Ready** - Optimized for deployment
+- ✅ **Health Monitoring** - Built-in health checks
+- ✅ **Error Handling** - Graceful error management
+- ✅ **Scalable** - Designed for growth
+- ✅ **Well Documented** - Clear API documentation
+
+## 🔧 Environment Variables
 
 ```env
-# OpenAI (Required)
-OPENAI_API_KEY=sk-...
+# Required
+MONGODB_URI=mongodb+srv://...
+PORT=10000
 
-# Server
-PORT=3000
+# Auto-generated
+JWT_SECRET=auto-generated
+ENCRYPTION_KEY=auto-generated
 
-# Optional API Keys
-STRIPE_SECRET_KEY=sk_test_...
-SLACK_BOT_TOKEN=xoxb-...
-GITHUB_TOKEN=ghp_...
-TWILIO_ACCOUNT_SID=AC...
-SENDGRID_API_KEY=SG...
+# Optional
+NODE_ENV=production
 ```
 
----
+## 📝 Adding New Integrations
 
-## 🎯 Core Capabilities
-
-### Supported API Types
-- ✅ REST APIs
-- ✅ GraphQL APIs
-- ✅ SOAP APIs
-
-### Authentication Methods
-- ✅ No Auth
-- ✅ API Key
-- ✅ Bearer Token
-- ✅ Basic Auth
-- ✅ OAuth 2.0
-
-### Built-in Integrations
-- ✅ Stripe (Payments)
-- ✅ Slack (Messaging)
-- ✅ Google (Gmail, Calendar, Drive, Docs, Sheets)
-- ✅ GitHub (Repos, Issues, PRs)
-- ✅ Twitter (Tweets, Timeline)
-- ✅ Twilio (SMS, Voice, WhatsApp)
-- ✅ SendGrid (Email)
-- ✅ Notion (Workspace)
-- ✅ OpenAI (AI)
-- ✅ Shopify (E-commerce)
-- ✅ Discord (Community)
-- ✅ Zoom (Video)
-
----
-
-## 📱 Mobile Support
-
-The UI is fully responsive and works on:
-- ✅ Desktop (1920x1080+)
-- ✅ Laptop (1366x768+)
-- ✅ Tablet (768x1024)
-- ✅ Mobile (375x667+)
-
----
-
-## 🔒 Security
-
-- Passwords are hashed using SHA-256
-- Token-based authentication
-- Session expiry (24 hours)
-- CORS enabled
-- Input validation
-
----
+1. Create integration folder: `backend/integrations/your-integration/`
+2. Add `index.js` with integration class
+3. Add `metadata.json` with integration details
+4. Create route file: `backend/routes/your-integration.js`
+5. Integration auto-loads on server start!
 
 ## 🚀 Deployment
 
-### Deploy to Production
+### Render
+- Automatic deployment with `render.yaml`
+- Free tier available
+- Auto-scaling enabled
 
-1. **Set production environment variables**
-2. **Build and start**
-```bash
-npm run start
-```
-
-3. **Use a process manager**
-```bash
-npm install -g pm2
-pm2 start backend/server.js --name r3sn
-```
-
-### Deploy to Cloud
-
-**Heroku:**
-```bash
-heroku create r3sn-app
-git push heroku main
-```
-
-**Docker:**
+### Docker
 ```bash
 docker build -t r3sn .
-docker run -p 3000:3000 r3sn
+docker run -p 10000:10000 r3sn
 ```
 
----
+### Manual
+```bash
+npm install
+npm start
+```
 
-## 📊 System Requirements
+## 📊 Status
 
-### Minimum
-- Node.js 14+
-- 512MB RAM
-- 1GB Storage
-
-### Recommended
-- Node.js 18+
-- 2GB RAM
-- 5GB Storage
-
----
+- **Version**: 2.0.0
+- **Status**: ✅ Production Ready
+- **Integrations**: 170+
+- **New Today**: 7 Premium FREE Apps
+- **Deployment**: ✅ Fixed & Optimized
 
 ## 🤝 Contributing
 
-We welcome contributions! Please:
+Contributions welcome! Please:
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
----
+2. Create feature branch
+3. Commit changes
+4. Push to branch
+5. Open pull request
 
 ## 📄 License
 
-MIT License - see LICENSE file for details
-
----
+MIT License - See LICENSE file
 
 ## 🆘 Support
 
-- **Documentation**: [docs.r3sn.io](https://docs.r3sn.io)
-- **Issues**: [GitHub Issues](https://github.com/Nisu7648/R3SN/issues)
-- **Email**: support@r3sn.io
+- Issues: GitHub Issues
+- Email: support@r3sn.com
+- Docs: https://docs.r3sn.com
 
 ---
 
-## 🎉 What Makes R3SN Special?
-
-### Before R3SN
-- ❌ Write 100+ lines of code per API
-- ❌ Spend hours reading documentation
-- ❌ Debug authentication issues
-- ❌ Maintain boilerplate code
-- ❌ 2-4 hours per integration
-
-### With R3SN
-- ✅ Describe what you want in plain text
-- ✅ AI generates complete code
-- ✅ Ready to use in 30 seconds
-- ✅ No maintenance needed
-- ✅ 99% time savings
-
----
-
-**Built with ❤️ by the R3SN Team**
-
-**Start building with natural language today!**
+**Built with ❤️ by R3SN Team**
