@@ -113,6 +113,14 @@ function logout() {
 }
 
 // ============================================
+// NAVIGATION
+// ============================================
+
+function openIntegrations() {
+    window.location.href = '/integrations.html';
+}
+
+// ============================================
 // NATURAL LANGUAGE LOOP SYSTEM
 // ============================================
 
