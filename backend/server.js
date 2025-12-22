@@ -39,35 +39,35 @@ app.get('/api/health', (req, res) => {
     });
 });
 
-// API Routes - Load dynamically to avoid startup errors
-app.use('/api', (req, res, next) => {
-    try {
-        // Try to load routes dynamically
-        const routes = [
-            './routes/integrations',
-            './routes/dynamic-builder',
-            './routes/api-integrations'
-        ];
+// Load master routes
+try {
+    const masterRoutes = require('./routes/index');
+    app.use('/api', masterRoutes);
+    console.log('✅ Master routes loaded successfully');
+} catch (error) {
+    console.warn('⚠️  Master routes not loaded:', error.message);
+}
 
-        routes.forEach(route => {
-            try {
-                const routeModule = require(route);
-                if (routeModule && typeof routeModule === 'function') {
-                    routeModule(req, res, next);
-                } else if (routeModule && routeModule.router) {
-                    routeModule.router(req, res, next);
-                }
-            } catch (err) {
-                console.warn(`Route ${route} not loaded:`, err.message);
-            }
-        });
+// Load individual integration routes dynamically
+const fs = require('fs');
+const routesDir = path.join(__dirname, 'routes');
 
-        next();
-    } catch (error) {
-        console.error('Route loading error:', error);
-        next();
-    }
-});
+if (fs.existsSync(routesDir)) {
+    const routeFiles = fs.readdirSync(routesDir).filter(file => 
+        file.endsWith('.js') && file !== 'index.js'
+    );
+
+    routeFiles.forEach(file => {
+        try {
+            const routeName = file.replace('.js', '');
+            const route = require(`./routes/${file}`);
+            app.use(`/api/${routeName}`, route);
+            console.log(`✅ Route loaded: /api/${routeName}`);
+        } catch (error) {
+            console.warn(`⚠️  Route ${file} not loaded:`, error.message);
+        }
+    });
+}
 
 // Catch-all for frontend
 app.get('*', (req, res) => {
@@ -94,6 +94,12 @@ const server = app.listen(PORT, '0.0.0.0', () => {
 ║   Port: ${PORT}                                           ║
 ║   Environment: ${process.env.NODE_ENV || 'development'}  ║
 ║   Status: ✅ READY                                        ║
+║                                                           ║
+║   Endpoints:                                              ║
+║   - GET  /health                                          ║
+║   - GET  /api/health                                      ║
+║   - GET  /api/integrations                                ║
+║   - POST /api/integrations/:id/execute                    ║
 ║                                                           ║
 ╚═══════════════════════════════════════════════════════════╝
     `);
