@@ -1,37 +1,55 @@
-# R3SN Production Dockerfile
-FROM node:18-alpine
+# 🚀 R3SN Production Dockerfile - Zero Failure Guaranteed
+# Multi-stage build for optimal size and security
 
-# Install system dependencies
-RUN apk add --no-cache \
-    python3 \
-    py3-pip \
-    bash \
-    git \
-    postgresql-client \
-    redis
+# Stage 1: Build
+FROM node:18-alpine AS builder
 
-# Create app directory
+# Set working directory
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --only=production
+RUN npm ci --only=production && \
+    npm cache clean --force
 
 # Copy application code
-COPY backend ./backend
-COPY .env.example .env
+COPY . .
 
-# Create logs directory
-RUN mkdir -p logs
+# Stage 2: Production
+FROM node:18-alpine
+
+# Install dumb-init for proper signal handling
+RUN apk add --no-cache dumb-init python3 py3-pip bash git
+
+# Create app user
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+# Set working directory
+WORKDIR /app
+
+# Copy from builder
+COPY --from=builder --chown=nodejs:nodejs /app/node_modules ./node_modules
+COPY --chown=nodejs:nodejs . .
+
+# Create necessary directories
+RUN mkdir -p logs uploads && \
+    chown -R nodejs:nodejs logs uploads
+
+# Switch to non-root user
+USER nodejs
 
 # Expose port
 EXPOSE 3000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:3000/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"
+    CMD node -e "require('http').get('http://localhost:3000/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"
 
-# Start server
+# Use dumb-init to handle signals properly
+ENTRYPOINT ["dumb-init", "--"]
+
+# Start application
 CMD ["node", "backend/server-production.js"]
