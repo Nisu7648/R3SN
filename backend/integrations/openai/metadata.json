@@ -1,0 +1,53 @@
+{
+  "name": "OpenAI",
+  "id": "openai",
+  "version": "1.0.0",
+  "description": "GPT-4, GPT-3.5, DALL-E, Whisper - Complete OpenAI API access",
+  "category": "ai",
+  "icon": "🤖",
+  "color": "#10A37F",
+  "cost": "PAID",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "OpenAI API Key",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "chatCompletion",
+      "name": "Chat Completion",
+      "description": "Generate chat responses with GPT models"
+    },
+    {
+      "id": "createImage",
+      "name": "Create Image",
+      "description": "Generate images with DALL-E"
+    },
+    {
+      "id": "createEmbedding",
+      "name": "Create Embedding",
+      "description": "Generate text embeddings"
+    },
+    {
+      "id": "transcribeAudio",
+      "name": "Transcribe Audio",
+      "description": "Transcribe audio with Whisper"
+    },
+    {
+      "id": "moderateContent",
+      "name": "Moderate Content",
+      "description": "Check content for policy violations"
+    },
+    {
+      "id": "listModels",
+      "name": "List Models",
+      "description": "Get available models"
+    }
+  ]
+}
