@@ -1,0 +1,43 @@
+{
+  "name": "SendGrid Email",
+  "id": "sendgrid",
+  "version": "1.0.0",
+  "description": "Email delivery service - Send transactional and marketing emails",
+  "category": "communication",
+  "icon": "📧",
+  "color": "#1A82E2",
+  "cost": "FREE",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "SendGrid API Key",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "sendEmail",
+      "name": "Send Email",
+      "description": "Send a single email"
+    },
+    {
+      "id": "sendBulkEmail",
+      "name": "Send Bulk Email",
+      "description": "Send emails to multiple recipients"
+    },
+    {
+      "id": "createTemplate",
+      "name": "Create Template",
+      "description": "Create email template"
+    },
+    {
+      "id": "getEmailStats",
+      "name": "Get Email Stats",
+      "description": "Get email delivery statistics"
+    }
+  ]
+}
