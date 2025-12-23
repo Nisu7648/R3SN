@@ -251,6 +251,47 @@ class IntegrationManager {
     }
 
     /**
+     * Map credentials to API constructor parameters
+     */
+    mapCredentialsToConstructor(integrationId, credentials) {
+        const credentialMappings = {
+            'stripe': credentials.secretKey,
+            'slack': credentials.botToken,
+            'google': {
+                clientId: credentials.clientId,
+                clientSecret: credentials.clientSecret,
+                refreshToken: credentials.refreshToken
+            },
+            'github': credentials.token,
+            'twitter': {
+                apiKey: credentials.apiKey,
+                apiSecret: credentials.apiSecret,
+                accessToken: credentials.accessToken,
+                accessSecret: credentials.accessSecret
+            },
+            'twilio': {
+                accountSid: credentials.accountSid,
+                authToken: credentials.authToken
+            },
+            'sendgrid': credentials.apiKey,
+            'notion': credentials.token,
+            'openai': credentials.apiKey,
+            'shopify': {
+                shopName: credentials.shopName,
+                accessToken: credentials.accessToken
+            },
+            'discord': credentials.botToken,
+            'zoom': {
+                accountId: credentials.accountId,
+                clientId: credentials.clientId,
+                clientSecret: credentials.clientSecret
+            }
+        };
+
+        return credentialMappings[integrationId];
+    }
+
+    /**
      * Test connection to an integration
      */
     async testConnection(integrationId, credentials) {
@@ -262,8 +303,11 @@ class IntegrationManager {
                 return { success: false, error: 'API class not found' };
             }
 
+            // Map credentials to constructor format
+            const constructorParams = this.mapCredentialsToConstructor(integrationId, credentials);
+
             // Create instance with credentials
-            const api = new APIClass(credentials);
+            const api = new APIClass(constructorParams);
 
             // Test based on integration type
             let testResult;
@@ -319,22 +363,27 @@ class IntegrationManager {
      * Get API class for integration
      */
     getAPIClass(integrationId) {
-        const apiMap = {
-            'stripe': require('../integrations/apis/StripeAPI'),
-            'slack': require('../integrations/apis/SlackAPI'),
-            'google': require('../integrations/apis/GoogleAPI'),
-            'github': require('../integrations/apis/GitHubAPI'),
-            'twitter': require('../integrations/apis/TwitterAPI'),
-            'twilio': require('../integrations/apis/TwilioAPI'),
-            'sendgrid': require('../integrations/apis/SendGridAPI'),
-            'notion': require('../integrations/apis/NotionAPI'),
-            'openai': require('../integrations/apis/OpenAIAPI'),
-            'shopify': require('../integrations/apis/ShopifyAPI'),
-            'discord': require('../integrations/apis/DiscordAPI'),
-            'zoom': require('../integrations/apis/ZoomAPI')
-        };
+        try {
+            const apiMap = {
+                'stripe': require('../integrations/apis/StripeAPI'),
+                'slack': require('../integrations/apis/SlackAPI'),
+                'google': require('../integrations/apis/GoogleAPI'),
+                'github': require('../integrations/apis/GitHubAPI'),
+                'twitter': require('../integrations/apis/TwitterAPI'),
+                'twilio': require('../integrations/apis/TwilioAPI'),
+                'sendgrid': require('../integrations/apis/SendGridAPI'),
+                'notion': require('../integrations/apis/NotionAPI'),
+                'openai': require('../integrations/apis/OpenAIAPI'),
+                'shopify': require('../integrations/apis/ShopifyAPI'),
+                'discord': require('../integrations/apis/DiscordAPI'),
+                'zoom': require('../integrations/apis/ZoomAPI')
+            };
 
-        return apiMap[integrationId];
+            return apiMap[integrationId];
+        } catch (error) {
+            console.error(`Error loading API class for ${integrationId}:`, error.message);
+            return null;
+        }
     }
 
     /**
@@ -353,7 +402,10 @@ class IntegrationManager {
             throw new Error(`API class not found for ${integrationId}`);
         }
 
-        return new APIClass(credentials);
+        // Map credentials to constructor format
+        const constructorParams = this.mapCredentialsToConstructor(integrationId, credentials);
+
+        return new APIClass(constructorParams);
     }
 
     /**
