@@ -1,0 +1,49 @@
+{
+  "name": "Twilio SMS & Voice",
+  "id": "twilio",
+  "version": "1.0.0",
+  "description": "Send SMS, make calls, and more with Twilio",
+  "category": "communication",
+  "icon": "📱",
+  "color": "#F22F46",
+  "cost": "PAID",
+  "authentication": {
+    "type": "credentials",
+    "fields": [
+      {
+        "name": "accountSid",
+        "label": "Account SID",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "authToken",
+        "label": "Auth Token",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "sendSMS",
+      "name": "Send SMS",
+      "description": "Send text message"
+    },
+    {
+      "id": "makeCall",
+      "name": "Make Call",
+      "description": "Make phone call"
+    },
+    {
+      "id": "sendWhatsApp",
+      "name": "Send WhatsApp",
+      "description": "Send WhatsApp message"
+    },
+    {
+      "id": "getMessages",
+      "name": "Get Messages",
+      "description": "Retrieve message history"
+    }
+  ]
+}
