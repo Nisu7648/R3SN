@@ -1,6 +1,6 @@
 /**
  * R3SN Production Server
- * Simplified and optimized for deployment
+ * REAL WORKING VERSION - NO BS
  */
 
 const express = require('express');
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 // Serve static frontend
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-// Health check endpoint
+// Health check endpoints
 app.get('/health', (req, res) => {
     res.json({
         success: true,
@@ -33,41 +33,95 @@ app.get('/api/health', (req, res) => {
     res.json({
         success: true,
         status: 'healthy',
-        timestamp: new Date().toISOString(),
-        service: 'R3SN API',
-        version: '2.0.0'
+        timestamp: new Date().toISOString()
     });
 });
 
-// Load master routes
+// Load integration loader
+let integrationLoader;
 try {
-    const masterRoutes = require('./routes/index');
-    app.use('/api', masterRoutes);
-    console.log('✅ Master routes loaded successfully');
+    integrationLoader = require('./integrations/index');
+    console.log('✅ Integration loader initialized');
 } catch (error) {
-    console.warn('⚠️  Master routes not loaded:', error.message);
+    console.error('❌ Integration loader failed:', error.message);
 }
 
-// Load individual integration routes dynamically
-const fs = require('fs');
-const routesDir = path.join(__dirname, 'routes');
-
-if (fs.existsSync(routesDir)) {
-    const routeFiles = fs.readdirSync(routesDir).filter(file => 
-        file.endsWith('.js') && file !== 'index.js'
-    );
-
-    routeFiles.forEach(file => {
-        try {
-            const routeName = file.replace('.js', '');
-            const route = require(`./routes/${file}`);
-            app.use(`/api/${routeName}`, route);
-            console.log(`✅ Route loaded: /api/${routeName}`);
-        } catch (error) {
-            console.warn(`⚠️  Route ${file} not loaded:`, error.message);
+// Integration routes
+app.get('/api/integrations', (req, res) => {
+    try {
+        if (!integrationLoader) {
+            return res.status(500).json({
+                success: false,
+                error: 'Integration loader not available'
+            });
         }
-    });
-}
+
+        const integrations = integrationLoader.getAllIntegrations();
+        res.json({
+            success: true,
+            count: integrations.length,
+            integrations
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+app.get('/api/integrations/:id', (req, res) => {
+    try {
+        if (!integrationLoader) {
+            return res.status(500).json({
+                success: false,
+                error: 'Integration loader not available'
+            });
+        }
+
+        const { id } = req.params;
+        const integration = integrationLoader.getIntegration(id);
+
+        if (!integration) {
+            return res.status(404).json({
+                success: false,
+                error: 'Integration not found'
+            });
+        }
+
+        res.json({
+            success: true,
+            integration: integration.metadata
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
+app.post('/api/integrations/:id/execute', async (req, res) => {
+    try {
+        if (!integrationLoader) {
+            return res.status(500).json({
+                success: false,
+                error: 'Integration loader not available'
+            });
+        }
+
+        const { id } = req.params;
+        const { config, action, params } = req.body;
+
+        const result = await integrationLoader.executeIntegration(id, config, action, params);
+        res.json(result);
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
 
 // Catch-all for frontend
 app.get('*', (req, res) => {
@@ -89,17 +143,17 @@ const server = app.listen(PORT, '0.0.0.0', () => {
     console.log(`
 ╔═══════════════════════════════════════════════════════════╗
 ║                                                           ║
-║   🚀 R3SN Server Running                                  ║
+║   🚀 R3SN Server LIVE                                     ║
 ║                                                           ║
 ║   Port: ${PORT}                                           ║
 ║   Environment: ${process.env.NODE_ENV || 'development'}  ║
-║   Status: ✅ READY                                        ║
 ║                                                           ║
-║   Endpoints:                                              ║
-║   - GET  /health                                          ║
-║   - GET  /api/health                                      ║
-║   - GET  /api/integrations                                ║
-║   - POST /api/integrations/:id/execute                    ║
+║   API Endpoints:                                          ║
+║   GET  /health                                            ║
+║   GET  /api/health                                        ║
+║   GET  /api/integrations                                  ║
+║   GET  /api/integrations/:id                              ║
+║   POST /api/integrations/:id/execute                      ║
 ║                                                           ║
 ╚═══════════════════════════════════════════════════════════╝
     `);
@@ -107,7 +161,7 @@ const server = app.listen(PORT, '0.0.0.0', () => {
 
 // Graceful shutdown
 process.on('SIGTERM', () => {
-    console.log('SIGTERM received, shutting down gracefully...');
+    console.log('SIGTERM received, shutting down...');
     server.close(() => {
         console.log('Server closed');
         process.exit(0);
@@ -115,7 +169,7 @@ process.on('SIGTERM', () => {
 });
 
 process.on('SIGINT', () => {
-    console.log('SIGINT received, shutting down gracefully...');
+    console.log('SIGINT received, shutting down...');
     server.close(() => {
         console.log('Server closed');
         process.exit(0);
