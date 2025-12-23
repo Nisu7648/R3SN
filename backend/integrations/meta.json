@@ -1,0 +1,463 @@
+{
+  "integrations": [
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "description": "Payment processing and subscription management",
+      "icon": "💳",
+      "category": "payments",
+      "status": "active",
+      "requiresAuth": true,
+      "authType": "apiKey",
+      "fields": [
+        {
+          "name": "secretKey",
+          "label": "Secret Key",
+          "type": "password",
+          "required": true,
+          "placeholder": "sk_test_...",
+          "helpText": "Get from Stripe Dashboard → Developers → API keys"
+        }
+      ],
+      "endpoints": [
+        "createPaymentIntent",
+        "getBalance",
+        "createCustomer",
+        "createSubscription",
+        "listCharges"
+      ],
+      "testEndpoint": "getBalance",
+      "docs": "https://stripe.com/docs/api"
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "description": "Team messaging and collaboration",
+      "icon": "💬",
+      "category": "communication",
+      "status": "active",
+      "requiresAuth": true,
+      "authType": "oauth",
+      "fields": [
+        {
+          "name": "botToken",
+          "label": "Bot Token",
+          "type": "password",
+          "required": true,
+          "placeholder": "xoxb-...",
+          "helpText": "Get from Slack App → OAuth & Permissions → Bot User OAuth Token"
+        }
+      ],
+      "endpoints": [
+        "sendMessage",
+        "listChannels",
+        "getUserInfo",
+        "uploadFile",
+        "testAuth"
+      ],
+      "testEndpoint": "testAuth",
+      "docs": "https://api.slack.com/docs"
+    },
+    {
+      "id": "google",
+      "name": "Google",
+      "description": "Gmail, Calendar, Drive, Docs, Sheets",
+      "icon": "📧",
+      "category": "productivity",
+      "status": "active",
+      "requiresAuth": true,
+      "authType": "oauth2",
+      "fields": [
+        {
+          "name": "clientId",
+          "label": "Client ID",
+          "type": "text",
+          "required": true,
+          "placeholder": "123456789.apps.googleusercontent.com",
+          "helpText": "Get from Google Cloud Console → Credentials"
+        },
+        {
+          "name": "clientSecret",
+          "label": "Client Secret",
+          "type": "password",
+          "required": true,
+          "placeholder": "GOCSPX-...",
+          "helpText": "Get from Google Cloud Console → Credentials"
+        },
+        {
+          "name": "refreshToken",
+          "label": "Refresh Token",
+          "type": "password",
+          "required": true,
+          "placeholder": "1//...",
+          "helpText": "Get via OAuth 2.0 flow"
+        }
+      ],
+      "endpoints": [
+        "sendEmail",
+        "listEmails",
+        "createCalendarEvent",
+        "uploadToDrive",
+        "getUserInfo"
+      ],
+      "testEndpoint": "getUserInfo",
+      "docs": "https://developers.google.com/apis-explorer"
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "description": "Code repositories and version control",
+      "icon": "🐙",
+      "category": "development",
+      "status": "active",
+      "requiresAuth": true,
+      "authType": "token",
+      "fields": [
+        {
+          "name": "token",
+          "label": "Personal Access Token",
+          "type": "password",
+          "required": true,
+          "placeholder": "ghp_...",
+          "helpText": "Get from GitHub → Settings → Developer settings → Personal access tokens"
+        }
+      ],
+      "endpoints": [
+        "getUser",
+        "listRepos",
+        "createIssue",
+        "createPullRequest",
+        "getRepo"
+      ],
+      "testEndpoint": "getUser",
+      "docs": "https://docs.github.com/en/rest"
+    },
+    {
+      "id": "twitter",
+      "name": "Twitter",
+      "description": "Social media and microblogging",
+      "icon": "🐦",
+      "category": "social",
+      "status": "active",
+      "requiresAuth": true,
+      "authType": "oauth1",
+      "fields": [
+        {
+          "name": "apiKey",
+          "label": "API Key",
+          "type": "password",
+          "required": true,
+          "placeholder": "Your API Key",
+          "helpText": "Get from Twitter Developer Portal → Keys and tokens"
+        },
+        {
+          "name": "apiSecret",
+          "label": "API Secret",
+          "type": "password",
+          "required": true,
+          "placeholder": "Your API Secret",
+          "helpText": "Get from Twitter Developer Portal → Keys and tokens"
+        },
+        {
+          "name": "accessToken",
+          "label": "Access Token",
+          "type": "password",
+          "required": true,
+          "placeholder": "Your Access Token",
+          "helpText": "Get from Twitter Developer Portal → Keys and tokens"
+        },
+        {
+          "name": "accessSecret",
+          "label": "Access Secret",
+          "type": "password",
+          "required": true,
+          "placeholder": "Your Access Secret",
+          "helpText": "Get from Twitter Developer Portal → Keys and tokens"
+        }
+      ],
+      "endpoints": [
+        "postTweet",
+        "getTimeline",
+        "searchTweets",
+        "verifyCredentials",
+        "getUserProfile"
+      ],
+      "testEndpoint": "verifyCredentials",
+      "docs": "https://developer.twitter.com/en/docs"
+    },
+    {
+      "id": "twilio",
+      "name": "Twilio",
+      "description": "SMS, Voice, and WhatsApp messaging",
+      "icon": "📱",
+      "category": "communication",
+      "status": "active",
+      "requiresAuth": true,
+      "authType": "basic",
+      "fields": [
+        {
+          "name": "accountSid",
+          "label": "Account SID",
+          "type": "text",
+          "required": true,
+          "placeholder": "AC...",
+          "helpText": "Get from Twilio Console Dashboard"
+        },
+        {
+          "name": "authToken",
+          "label": "Auth Token",
+          "type": "password",
+          "required": true,
+          "placeholder": "Your Auth Token",
+          "helpText": "Get from Twilio Console Dashboard"
+        }
+      ],
+      "endpoints": [
+        "sendSMS",
+        "makeCall",
+        "sendWhatsApp",
+        "getAccount",
+        "listMessages"
+      ],
+      "testEndpoint": "getAccount",
+      "docs": "https://www.twilio.com/docs/usage/api"
+    },
+    {
+      "id": "sendgrid",
+      "name": "SendGrid",
+      "description": "Email delivery and marketing",
+      "icon": "✉️",
+      "category": "communication",
+      "status": "active",
+      "requiresAuth": true,
+      "authType": "apiKey",
+      "fields": [
+        {
+          "name": "apiKey",
+          "label": "API Key",
+          "type": "password",
+          "required": true,
+          "placeholder": "SG...",
+          "helpText": "Get from SendGrid → Settings → API Keys"
+        }
+      ],
+      "endpoints": [
+        "sendEmail",
+        "getProfile",
+        "listTemplates",
+        "getStats",
+        "validateEmail"
+      ],
+      "testEndpoint": "getProfile",
+      "docs": "https://docs.sendgrid.com/api-reference"
+    },
+    {
+      "id": "notion",
+      "name": "Notion",
+      "description": "Workspace and knowledge management",
+      "icon": "📝",
+      "category": "productivity",
+      "status": "active",
+      "requiresAuth": true,
+      "authType": "token",
+      "fields": [
+        {
+          "name": "token",
+          "label": "Integration Token",
+          "type": "password",
+          "required": true,
+          "placeholder": "secret_...",
+          "helpText": "Get from Notion → My integrations → Internal Integration Token"
+        }
+      ],
+      "endpoints": [
+        "createPage",
+        "getPage",
+        "updatePage",
+        "searchPages",
+        "getMe"
+      ],
+      "testEndpoint": "getMe",
+      "docs": "https://developers.notion.com/reference"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "description": "AI models and language processing",
+      "icon": "🤖",
+      "category": "ai",
+      "status": "active",
+      "requiresAuth": true,
+      "authType": "apiKey",
+      "fields": [
+        {
+          "name": "apiKey",
+          "label": "API Key",
+          "type": "password",
+          "required": true,
+          "placeholder": "sk-...",
+          "helpText": "Get from OpenAI → API keys"
+        }
+      ],
+      "endpoints": [
+        "createCompletion",
+        "createChatCompletion",
+        "createImage",
+        "listModels",
+        "createEmbedding"
+      ],
+      "testEndpoint": "listModels",
+      "docs": "https://platform.openai.com/docs/api-reference"
+    },
+    {
+      "id": "shopify",
+      "name": "Shopify",
+      "description": "E-commerce and online store management",
+      "icon": "🛍️",
+      "category": "ecommerce",
+      "status": "active",
+      "requiresAuth": true,
+      "authType": "token",
+      "fields": [
+        {
+          "name": "shopName",
+          "label": "Shop Name",
+          "type": "text",
+          "required": true,
+          "placeholder": "mystore",
+          "helpText": "Your Shopify store name (mystore.myshopify.com)"
+        },
+        {
+          "name": "accessToken",
+          "label": "Access Token",
+          "type": "password",
+          "required": true,
+          "placeholder": "shpat_...",
+          "helpText": "Get from Shopify Admin → Apps → Develop apps"
+        }
+      ],
+      "endpoints": [
+        "getShop",
+        "listProducts",
+        "createProduct",
+        "listOrders",
+        "getOrder"
+      ],
+      "testEndpoint": "getShop",
+      "docs": "https://shopify.dev/api/admin-rest"
+    },
+    {
+      "id": "discord",
+      "name": "Discord",
+      "description": "Community chat and voice communication",
+      "icon": "🎮",
+      "category": "communication",
+      "status": "active",
+      "requiresAuth": true,
+      "authType": "token",
+      "fields": [
+        {
+          "name": "botToken",
+          "label": "Bot Token",
+          "type": "password",
+          "required": true,
+          "placeholder": "Your Bot Token",
+          "helpText": "Get from Discord Developer Portal → Bot → Token"
+        }
+      ],
+      "endpoints": [
+        "sendMessage",
+        "getMe",
+        "listGuilds",
+        "createChannel",
+        "getChannel"
+      ],
+      "testEndpoint": "getMe",
+      "docs": "https://discord.com/developers/docs/intro"
+    },
+    {
+      "id": "zoom",
+      "name": "Zoom",
+      "description": "Video conferencing and meetings",
+      "icon": "📹",
+      "category": "communication",
+      "status": "active",
+      "requiresAuth": true,
+      "authType": "oauth2",
+      "fields": [
+        {
+          "name": "accountId",
+          "label": "Account ID",
+          "type": "text",
+          "required": true,
+          "placeholder": "Your Account ID",
+          "helpText": "Get from Zoom Marketplace → App Credentials"
+        },
+        {
+          "name": "clientId",
+          "label": "Client ID",
+          "type": "text",
+          "required": true,
+          "placeholder": "Your Client ID",
+          "helpText": "Get from Zoom Marketplace → App Credentials"
+        },
+        {
+          "name": "clientSecret",
+          "label": "Client Secret",
+          "type": "password",
+          "required": true,
+          "placeholder": "Your Client Secret",
+          "helpText": "Get from Zoom Marketplace → App Credentials"
+        }
+      ],
+      "endpoints": [
+        "createMeeting",
+        "getMeeting",
+        "listMeetings",
+        "getMe",
+        "updateMeeting"
+      ],
+      "testEndpoint": "getMe",
+      "docs": "https://marketplace.zoom.us/docs/api-reference"
+    }
+  ],
+  "categories": [
+    {
+      "id": "payments",
+      "name": "Payments",
+      "icon": "💳"
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "icon": "💬"
+    },
+    {
+      "id": "productivity",
+      "name": "Productivity",
+      "icon": "📊"
+    },
+    {
+      "id": "development",
+      "name": "Development",
+      "icon": "💻"
+    },
+    {
+      "id": "social",
+      "name": "Social Media",
+      "icon": "🌐"
+    },
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "icon": "🤖"
+    },
+    {
+      "id": "ecommerce",
+      "name": "E-commerce",
+      "icon": "🛒"
+    }
+  ],
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-23"
+}
