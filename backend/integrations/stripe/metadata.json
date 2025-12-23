@@ -1,0 +1,63 @@
+{
+  "name": "Stripe Payments",
+  "id": "stripe",
+  "version": "1.0.0",
+  "description": "Complete payment processing with Stripe - Accept payments, manage subscriptions, handle refunds",
+  "category": "payments",
+  "icon": "💳",
+  "color": "#635BFF",
+  "cost": "FREE",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "Stripe Secret Key",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "actions": [
+    {
+      "id": "createPaymentIntent",
+      "name": "Create Payment Intent",
+      "description": "Create a payment intent for processing payments"
+    },
+    {
+      "id": "createCustomer",
+      "name": "Create Customer",
+      "description": "Create a new customer in Stripe"
+    },
+    {
+      "id": "createSubscription",
+      "name": "Create Subscription",
+      "description": "Create a recurring subscription"
+    },
+    {
+      "id": "createRefund",
+      "name": "Create Refund",
+      "description": "Refund a payment"
+    },
+    {
+      "id": "listPayments",
+      "name": "List Payments",
+      "description": "Get list of all payments"
+    },
+    {
+      "id": "getCustomer",
+      "name": "Get Customer",
+      "description": "Retrieve customer details"
+    },
+    {
+      "id": "updateCustomer",
+      "name": "Update Customer",
+      "description": "Update customer information"
+    },
+    {
+      "id": "cancelSubscription",
+      "name": "Cancel Subscription",
+      "description": "Cancel a subscription"
+    }
+  ]
+}
