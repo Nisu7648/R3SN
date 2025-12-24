@@ -1,0 +1,19 @@
+{
+  "name": "Google Drive Complete",
+  "id": "google-drive-complete",
+  "category": "storage",
+  "description": "Complete Google Drive integration for file storage and sharing",
+  "version": "1.0.0",
+  "authentication": {"type": "oauth2", "fields": [{"name": "accessToken", "label": "Access Token", "type": "password", "required": true}]},
+  "endpoints": [
+    {"name": "listFiles", "method": "GET", "path": "/files"},
+    {"name": "getFile", "method": "GET", "path": "/files/:id"},
+    {"name": "uploadFile", "method": "POST", "path": "/files"},
+    {"name": "deleteFile", "method": "DELETE", "path": "/files/:id"},
+    {"name": "createFolder", "method": "POST", "path": "/folders"},
+    {"name": "shareFile", "method": "POST", "path": "/files/:id/share"}
+  ],
+  "pricing": {"model": "freemium", "free_tier": "15GB", "paid": "$1.99/month for 100GB"},
+  "documentation": "https://developers.google.com/drive",
+  "website": "https://drive.google.com"
+}
