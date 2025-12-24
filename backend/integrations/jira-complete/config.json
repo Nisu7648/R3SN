@@ -1,0 +1,26 @@
+{
+  "name": "Jira Complete",
+  "id": "jira-complete",
+  "category": "project-management",
+  "description": "Complete Jira integration for issue tracking and project management",
+  "version": "1.0.0",
+  "authentication": {
+    "type": "basic_auth",
+    "fields": [
+      {"name": "domain", "label": "Domain", "type": "text", "required": true},
+      {"name": "email", "label": "Email", "type": "email", "required": true},
+      {"name": "apiToken", "label": "API Token", "type": "password", "required": true}
+    ]
+  },
+  "endpoints": [
+    {"name": "getProjects", "method": "GET", "path": "/projects"},
+    {"name": "getIssues", "method": "GET", "path": "/issues"},
+    {"name": "createIssue", "method": "POST", "path": "/issues"},
+    {"name": "updateIssue", "method": "PUT", "path": "/issues/:key"},
+    {"name": "deleteIssue", "method": "DELETE", "path": "/issues/:key"},
+    {"name": "addComment", "method": "POST", "path": "/issues/:key/comments"}
+  ],
+  "pricing": {"model": "freemium", "free_tier": "10 users", "paid": "$7.75/user/month"},
+  "documentation": "https://developer.atlassian.com/cloud/jira",
+  "website": "https://www.atlassian.com/software/jira"
+}
