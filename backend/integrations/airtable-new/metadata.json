@@ -1,0 +1,37 @@
+{
+  "name": "Airtable",
+  "id": "airtable",
+  "category": "productivity",
+  "description": "Spreadsheet-database hybrid platform for organizing work",
+  "version": "1.0.0",
+  "auth": {
+    "type": "oauth2",
+    "authUrl": "https://airtable.com/oauth2/v1/authorize",
+    "tokenUrl": "https://airtable.com/oauth2/v1/token",
+    "scope": "data.records:read data.records:write schema.bases:read",
+    "clientId": "AIRTABLE_CLIENT_ID",
+    "clientSecret": "AIRTABLE_CLIENT_SECRET"
+  },
+  "baseUrl": "https://api.airtable.com/v0",
+  "features": [
+    "Base management",
+    "Table operations",
+    "Record CRUD",
+    "Batch operations",
+    "Query and search",
+    "Attachments",
+    "Webhooks",
+    "Collaborators",
+    "Shares"
+  ],
+  "rateLimit": {
+    "requests": 5,
+    "period": "second"
+  },
+  "pricing": {
+    "free": true,
+    "plans": ["Free", "Plus", "Pro", "Enterprise"]
+  },
+  "documentation": "https://airtable.com/developers/web/api/introduction",
+  "status": "active"
+}
