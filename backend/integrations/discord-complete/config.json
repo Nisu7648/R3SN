@@ -1,0 +1,56 @@
+{
+  "name": "Discord Complete",
+  "id": "discord-complete",
+  "category": "communication",
+  "description": "Complete Discord integration for bots, messages, and server management",
+  "version": "1.0.0",
+  "authentication": {
+    "type": "bot_token",
+    "fields": [
+      {
+        "name": "botToken",
+        "label": "Bot Token",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "endpoints": [
+    {
+      "name": "sendMessage",
+      "method": "POST",
+      "path": "/messages",
+      "description": "Send message to channel"
+    },
+    {
+      "name": "createChannel",
+      "method": "POST",
+      "path": "/channels",
+      "description": "Create new channel"
+    },
+    {
+      "name": "getGuild",
+      "method": "GET",
+      "path": "/guilds/:id",
+      "description": "Get guild information"
+    },
+    {
+      "name": "createRole",
+      "method": "POST",
+      "path": "/roles",
+      "description": "Create new role"
+    },
+    {
+      "name": "listGuildMembers",
+      "method": "GET",
+      "path": "/members",
+      "description": "List guild members"
+    }
+  ],
+  "pricing": {
+    "model": "free",
+    "details": "Free for all users"
+  },
+  "documentation": "https://discord.com/developers/docs",
+  "website": "https://discord.com"
+}
