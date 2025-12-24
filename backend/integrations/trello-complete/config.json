@@ -1,0 +1,25 @@
+{
+  "name": "Trello Complete",
+  "id": "trello-complete",
+  "category": "project-management",
+  "description": "Complete Trello integration for boards, lists, and cards",
+  "version": "1.0.0",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {"name": "apiKey", "label": "API Key", "type": "password", "required": true},
+      {"name": "token", "label": "Token", "type": "password", "required": true}
+    ]
+  },
+  "endpoints": [
+    {"name": "getBoards", "method": "GET", "path": "/boards"},
+    {"name": "createBoard", "method": "POST", "path": "/boards"},
+    {"name": "getLists", "method": "GET", "path": "/lists"},
+    {"name": "createList", "method": "POST", "path": "/lists"},
+    {"name": "getCards", "method": "GET", "path": "/cards"},
+    {"name": "createCard", "method": "POST", "path": "/cards"}
+  ],
+  "pricing": {"model": "freemium", "free_tier": "10 boards", "paid": "$5/user/month"},
+  "documentation": "https://developer.atlassian.com/cloud/trello",
+  "website": "https://trello.com"
+}
