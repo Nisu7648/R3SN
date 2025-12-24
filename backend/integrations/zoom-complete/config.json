@@ -1,0 +1,20 @@
+{
+  "name": "Zoom Complete",
+  "id": "zoom-complete",
+  "category": "video-conferencing",
+  "description": "Complete Zoom integration for meetings and webinars",
+  "version": "1.0.0",
+  "authentication": {"type": "jwt", "fields": [
+    {"name": "apiKey", "label": "API Key", "type": "password", "required": true},
+    {"name": "apiSecret", "label": "API Secret", "type": "password", "required": true}
+  ]},
+  "endpoints": [
+    {"name": "createMeeting", "method": "POST", "path": "/meetings"},
+    {"name": "getMeeting", "method": "GET", "path": "/meetings/:id"},
+    {"name": "listMeetings", "method": "GET", "path": "/meetings"},
+    {"name": "deleteMeeting", "method": "DELETE", "path": "/meetings/:id"}
+  ],
+  "pricing": {"model": "freemium", "free_tier": "40 min meetings", "paid": "$14.99/month"},
+  "documentation": "https://marketplace.zoom.us/docs/api-reference",
+  "website": "https://zoom.us"
+}
