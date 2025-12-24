@@ -1,0 +1,21 @@
+{
+  "name": "WooCommerce Complete",
+  "id": "woocommerce-complete",
+  "category": "ecommerce",
+  "description": "Complete WooCommerce integration for WordPress ecommerce",
+  "version": "1.0.0",
+  "authentication": {"type": "basic_auth", "fields": [
+    {"name": "siteUrl", "label": "Site URL", "type": "text", "required": true},
+    {"name": "consumerKey", "label": "Consumer Key", "type": "text", "required": true},
+    {"name": "consumerSecret", "label": "Consumer Secret", "type": "password", "required": true}
+  ]},
+  "endpoints": [
+    {"name": "getProducts", "method": "GET", "path": "/products"},
+    {"name": "createProduct", "method": "POST", "path": "/products"},
+    {"name": "getOrders", "method": "GET", "path": "/orders"},
+    {"name": "getCustomers", "method": "GET", "path": "/customers"}
+  ],
+  "pricing": {"model": "free", "details": "Free WordPress plugin"},
+  "documentation": "https://woocommerce.github.io/woocommerce-rest-api-docs",
+  "website": "https://woocommerce.com"
+}
