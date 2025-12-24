@@ -1,0 +1,74 @@
+{
+  "name": "Twilio Complete",
+  "id": "twilio-complete",
+  "category": "communication",
+  "description": "Complete Twilio integration for SMS, Voice, WhatsApp, and Video",
+  "version": "1.0.0",
+  "authentication": {
+    "type": "credentials",
+    "fields": [
+      {
+        "name": "accountSid",
+        "label": "Account SID",
+        "type": "text",
+        "required": true
+      },
+      {
+        "name": "authToken",
+        "label": "Auth Token",
+        "type": "password",
+        "required": true
+      },
+      {
+        "name": "phoneNumber",
+        "label": "Twilio Phone Number",
+        "type": "text",
+        "required": true
+      }
+    ]
+  },
+  "endpoints": [
+    {
+      "name": "sendSMS",
+      "method": "POST",
+      "path": "/sms",
+      "description": "Send SMS message"
+    },
+    {
+      "name": "makeCall",
+      "method": "POST",
+      "path": "/calls",
+      "description": "Make voice call"
+    },
+    {
+      "name": "sendWhatsApp",
+      "method": "POST",
+      "path": "/whatsapp",
+      "description": "Send WhatsApp message"
+    },
+    {
+      "name": "listMessages",
+      "method": "GET",
+      "path": "/messages",
+      "description": "List all messages"
+    },
+    {
+      "name": "getMessage",
+      "method": "GET",
+      "path": "/messages/:id",
+      "description": "Get message details"
+    },
+    {
+      "name": "sendMMS",
+      "method": "POST",
+      "path": "/mms",
+      "description": "Send MMS with media"
+    }
+  ],
+  "pricing": {
+    "model": "pay_as_you_go",
+    "details": "SMS: $0.0075/msg, Voice: $0.0140/min"
+  },
+  "documentation": "https://www.twilio.com/docs",
+  "website": "https://www.twilio.com"
+}
