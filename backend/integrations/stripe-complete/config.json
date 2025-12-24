@@ -1,0 +1,99 @@
+{
+  "name": "Stripe Complete",
+  "id": "stripe-complete",
+  "category": "payment",
+  "description": "Complete Stripe payment processing with subscriptions, invoices, and webhooks",
+  "version": "1.0.0",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "Stripe Secret Key",
+        "type": "password",
+        "required": true,
+        "description": "Your Stripe secret key (starts with sk_)"
+      }
+    ]
+  },
+  "endpoints": [
+    {
+      "name": "createCustomer",
+      "method": "POST",
+      "path": "/customers",
+      "description": "Create a new customer"
+    },
+    {
+      "name": "createPaymentIntent",
+      "method": "POST",
+      "path": "/payment-intents",
+      "description": "Create a payment intent"
+    },
+    {
+      "name": "createSubscription",
+      "method": "POST",
+      "path": "/subscriptions",
+      "description": "Create a subscription"
+    },
+    {
+      "name": "cancelSubscription",
+      "method": "DELETE",
+      "path": "/subscriptions/:id",
+      "description": "Cancel a subscription"
+    },
+    {
+      "name": "createProduct",
+      "method": "POST",
+      "path": "/products",
+      "description": "Create a product"
+    },
+    {
+      "name": "createPrice",
+      "method": "POST",
+      "path": "/prices",
+      "description": "Create a price"
+    },
+    {
+      "name": "getCustomer",
+      "method": "GET",
+      "path": "/customers/:id",
+      "description": "Get customer details"
+    },
+    {
+      "name": "listCustomers",
+      "method": "GET",
+      "path": "/customers",
+      "description": "List all customers"
+    },
+    {
+      "name": "createRefund",
+      "method": "POST",
+      "path": "/refunds",
+      "description": "Create a refund"
+    },
+    {
+      "name": "getBalance",
+      "method": "GET",
+      "path": "/balance",
+      "description": "Get account balance"
+    },
+    {
+      "name": "listCharges",
+      "method": "GET",
+      "path": "/charges",
+      "description": "List all charges"
+    },
+    {
+      "name": "createInvoice",
+      "method": "POST",
+      "path": "/invoices",
+      "description": "Create an invoice"
+    }
+  ],
+  "pricing": {
+    "model": "transaction_fee",
+    "details": "2.9% + $0.30 per successful card charge"
+  },
+  "documentation": "https://stripe.com/docs/api",
+  "website": "https://stripe.com"
+}
