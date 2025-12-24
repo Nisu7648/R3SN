@@ -1,0 +1,36 @@
+{
+  "name": "Figma",
+  "id": "figma",
+  "category": "design",
+  "description": "Collaborative design and prototyping platform",
+  "version": "1.0.0",
+  "auth": {
+    "type": "oauth2",
+    "authUrl": "https://www.figma.com/oauth",
+    "tokenUrl": "https://www.figma.com/api/oauth/token",
+    "scope": "file_read",
+    "clientId": "FIGMA_CLIENT_ID",
+    "clientSecret": "FIGMA_CLIENT_SECRET"
+  },
+  "baseUrl": "https://api.figma.com/v1",
+  "features": [
+    "File access",
+    "Node operations",
+    "Image exports",
+    "Comments",
+    "Projects",
+    "Components",
+    "Styles",
+    "Versions"
+  ],
+  "rateLimit": {
+    "requests": 100,
+    "period": "minute"
+  },
+  "pricing": {
+    "free": true,
+    "plans": ["Starter", "Professional", "Organization", "Enterprise"]
+  },
+  "documentation": "https://www.figma.com/developers/api",
+  "status": "active"
+}
