@@ -1,0 +1,21 @@
+{
+  "name": "Mailchimp Complete",
+  "id": "mailchimp-complete",
+  "category": "email-marketing",
+  "description": "Complete Mailchimp integration for email marketing and automation",
+  "version": "1.0.0",
+  "authentication": {"type": "api_key", "fields": [
+    {"name": "apiKey", "label": "API Key", "type": "password", "required": true},
+    {"name": "serverPrefix", "label": "Server Prefix", "type": "text", "required": true}
+  ]},
+  "endpoints": [
+    {"name": "getLists", "method": "GET", "path": "/lists"},
+    {"name": "addMember", "method": "POST", "path": "/lists/:id/members"},
+    {"name": "getCampaigns", "method": "GET", "path": "/campaigns"},
+    {"name": "createCampaign", "method": "POST", "path": "/campaigns"},
+    {"name": "sendCampaign", "method": "POST", "path": "/campaigns/:id/send"}
+  ],
+  "pricing": {"model": "freemium", "free_tier": "500 contacts", "paid": "$13/month"},
+  "documentation": "https://mailchimp.com/developer",
+  "website": "https://mailchimp.com"
+}
