@@ -1,0 +1,24 @@
+{
+  "name": "Notion Complete",
+  "id": "notion-complete",
+  "category": "productivity",
+  "description": "Complete Notion integration for workspace and database management",
+  "version": "1.0.0",
+  "authentication": {
+    "type": "oauth2",
+    "fields": [
+      {"name": "apiKey", "label": "Integration Token", "type": "password", "required": true}
+    ]
+  },
+  "endpoints": [
+    {"name": "listDatabases", "method": "POST", "path": "/search"},
+    {"name": "getDatabase", "method": "GET", "path": "/databases/:id"},
+    {"name": "queryDatabase", "method": "POST", "path": "/databases/:id/query"},
+    {"name": "createPage", "method": "POST", "path": "/pages"},
+    {"name": "getPage", "method": "GET", "path": "/pages/:id"},
+    {"name": "updatePage", "method": "PATCH", "path": "/pages/:id"}
+  ],
+  "pricing": {"model": "freemium", "free_tier": "Unlimited pages", "paid": "$8/user/month"},
+  "documentation": "https://developers.notion.com",
+  "website": "https://notion.so"
+}
