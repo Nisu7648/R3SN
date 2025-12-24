@@ -1,0 +1,18 @@
+{
+  "name": "Dropbox Complete",
+  "id": "dropbox-complete",
+  "category": "storage",
+  "description": "Complete Dropbox integration for file storage and sharing",
+  "version": "1.0.0",
+  "authentication": {"type": "oauth2", "fields": [{"name": "accessToken", "label": "Access Token", "type": "password", "required": true}]},
+  "endpoints": [
+    {"name": "listFolder", "method": "POST", "path": "/files/list"},
+    {"name": "uploadFile", "method": "POST", "path": "/files/upload"},
+    {"name": "downloadFile", "method": "POST", "path": "/files/download"},
+    {"name": "deleteFile", "method": "POST", "path": "/files/delete"},
+    {"name": "createFolder", "method": "POST", "path": "/files/folder"}
+  ],
+  "pricing": {"model": "freemium", "free_tier": "2GB", "paid": "$11.99/month for 2TB"},
+  "documentation": "https://www.dropbox.com/developers/documentation",
+  "website": "https://dropbox.com"
+}
