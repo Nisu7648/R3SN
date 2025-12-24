@@ -1,0 +1,21 @@
+{
+  "name": "Calendly Complete",
+  "id": "calendly-complete",
+  "category": "scheduling",
+  "description": "Complete Calendly integration for appointment scheduling",
+  "version": "1.0.0",
+  "authentication": {"type": "api_key", "fields": [
+    {"name": "apiKey", "label": "API Key", "type": "password", "required": true}
+  ]},
+  "endpoints": [
+    {"name": "getCurrentUser", "method": "GET", "path": "/users/me"},
+    {"name": "getEventTypes", "method": "GET", "path": "/event_types"},
+    {"name": "getScheduledEvents", "method": "GET", "path": "/scheduled_events"},
+    {"name": "getEvent", "method": "GET", "path": "/scheduled_events/:uuid"},
+    {"name": "cancelEvent", "method": "POST", "path": "/scheduled_events/:uuid/cancel"},
+    {"name": "createWebhook", "method": "POST", "path": "/webhooks"}
+  ],
+  "pricing": {"model": "freemium", "free_tier": "1 event type", "paid": "$8/month"},
+  "documentation": "https://developer.calendly.com",
+  "website": "https://calendly.com"
+}
