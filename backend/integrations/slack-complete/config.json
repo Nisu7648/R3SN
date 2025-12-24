@@ -1,0 +1,70 @@
+{
+  "name": "Slack Complete",
+  "id": "slack-complete",
+  "category": "communication",
+  "description": "Complete Slack integration for messages, channels, and workspace management",
+  "version": "1.0.0",
+  "authentication": {
+    "type": "oauth",
+    "fields": [
+      {
+        "name": "botToken",
+        "label": "Bot Token",
+        "type": "password",
+        "required": true,
+        "description": "Slack Bot User OAuth Token (starts with xoxb-)"
+      }
+    ]
+  },
+  "endpoints": [
+    {
+      "name": "sendMessage",
+      "method": "POST",
+      "path": "/messages",
+      "description": "Send message to channel"
+    },
+    {
+      "name": "updateMessage",
+      "method": "PUT",
+      "path": "/messages",
+      "description": "Update existing message"
+    },
+    {
+      "name": "deleteMessage",
+      "method": "DELETE",
+      "path": "/messages",
+      "description": "Delete message"
+    },
+    {
+      "name": "createChannel",
+      "method": "POST",
+      "path": "/channels",
+      "description": "Create new channel"
+    },
+    {
+      "name": "listChannels",
+      "method": "GET",
+      "path": "/channels",
+      "description": "List all channels"
+    },
+    {
+      "name": "uploadFile",
+      "method": "POST",
+      "path": "/files",
+      "description": "Upload file to channel"
+    },
+    {
+      "name": "listUsers",
+      "method": "GET",
+      "path": "/users",
+      "description": "List all users"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "free_tier": "10K messages searchable",
+    "paid": "$8/user/month"
+  },
+  "documentation": "https://api.slack.com",
+  "website": "https://slack.com"
+}
