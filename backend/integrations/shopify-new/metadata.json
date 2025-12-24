@@ -1,0 +1,35 @@
+{
+  "name": "Shopify",
+  "id": "shopify",
+  "category": "ecommerce",
+  "description": "E-commerce platform for online stores",
+  "version": "1.0.0",
+  "auth": {
+    "type": "oauth2",
+    "authUrl": "https://{shop}.myshopify.com/admin/oauth/authorize",
+    "tokenUrl": "https://{shop}.myshopify.com/admin/oauth/access_token",
+    "scope": "read_products,write_products,read_orders,write_orders,read_customers,write_customers",
+    "clientId": "SHOPIFY_API_KEY",
+    "clientSecret": "SHOPIFY_API_SECRET"
+  },
+  "baseUrl": "https://{shop}.myshopify.com/admin/api/2024-01",
+  "features": [
+    "Product management",
+    "Order management",
+    "Customer management",
+    "Inventory tracking",
+    "Collections",
+    "Discounts",
+    "Shop settings"
+  ],
+  "rateLimit": {
+    "requests": 40,
+    "period": "second"
+  },
+  "pricing": {
+    "free": false,
+    "plans": ["Basic", "Shopify", "Advanced", "Plus"]
+  },
+  "documentation": "https://shopify.dev/docs/api",
+  "status": "active"
+}
