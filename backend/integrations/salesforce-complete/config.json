@@ -1,0 +1,21 @@
+{
+  "name": "Salesforce Complete",
+  "id": "salesforce-complete",
+  "category": "crm",
+  "description": "Complete Salesforce CRM integration",
+  "version": "1.0.0",
+  "authentication": {"type": "oauth2", "fields": [
+    {"name": "instanceUrl", "label": "Instance URL", "type": "text", "required": true},
+    {"name": "accessToken", "label": "Access Token", "type": "password", "required": true}
+  ]},
+  "endpoints": [
+    {"name": "query", "method": "GET", "path": "/query"},
+    {"name": "getAccounts", "method": "GET", "path": "/accounts"},
+    {"name": "createAccount", "method": "POST", "path": "/accounts"},
+    {"name": "getContacts", "method": "GET", "path": "/contacts"},
+    {"name": "createContact", "method": "POST", "path": "/contacts"}
+  ],
+  "pricing": {"model": "paid", "details": "$25/user/month"},
+  "documentation": "https://developer.salesforce.com",
+  "website": "https://salesforce.com"
+}
