@@ -1,0 +1,69 @@
+{
+  "name": "SendGrid Complete",
+  "id": "sendgrid-complete",
+  "category": "email",
+  "description": "Complete SendGrid integration for email sending, templates, and marketing",
+  "version": "1.0.0",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {
+        "name": "apiKey",
+        "label": "SendGrid API Key",
+        "type": "password",
+        "required": true
+      }
+    ]
+  },
+  "endpoints": [
+    {
+      "name": "sendEmail",
+      "method": "POST",
+      "path": "/send",
+      "description": "Send email"
+    },
+    {
+      "name": "sendBulkEmail",
+      "method": "POST",
+      "path": "/send-bulk",
+      "description": "Send bulk emails"
+    },
+    {
+      "name": "sendTemplateEmail",
+      "method": "POST",
+      "path": "/send-template",
+      "description": "Send template email"
+    },
+    {
+      "name": "createTemplate",
+      "method": "POST",
+      "path": "/templates",
+      "description": "Create email template"
+    },
+    {
+      "name": "listTemplates",
+      "method": "GET",
+      "path": "/templates",
+      "description": "List all templates"
+    },
+    {
+      "name": "addContact",
+      "method": "POST",
+      "path": "/contacts",
+      "description": "Add contact"
+    },
+    {
+      "name": "getStats",
+      "method": "GET",
+      "path": "/stats",
+      "description": "Get email statistics"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "free_tier": "100 emails/day",
+    "paid": "$19.95/month for 50K emails"
+  },
+  "documentation": "https://docs.sendgrid.com",
+  "website": "https://sendgrid.com"
+}
