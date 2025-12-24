@@ -1,0 +1,24 @@
+{
+  "name": "Airtable Complete",
+  "id": "airtable-complete",
+  "category": "database",
+  "description": "Complete Airtable integration for database management",
+  "version": "1.0.0",
+  "authentication": {
+    "type": "api_key",
+    "fields": [
+      {"name": "apiKey", "label": "API Key", "type": "password", "required": true},
+      {"name": "baseId", "label": "Base ID", "type": "text", "required": true}
+    ]
+  },
+  "endpoints": [
+    {"name": "listRecords", "method": "GET", "path": "/records"},
+    {"name": "getRecord", "method": "GET", "path": "/records/:id"},
+    {"name": "createRecord", "method": "POST", "path": "/records"},
+    {"name": "updateRecord", "method": "PATCH", "path": "/records/:id"},
+    {"name": "deleteRecord", "method": "DELETE", "path": "/records/:id"}
+  ],
+  "pricing": {"model": "freemium", "free_tier": "1,200 records per base", "paid": "$10/user/month"},
+  "documentation": "https://airtable.com/api",
+  "website": "https://airtable.com"
+}
