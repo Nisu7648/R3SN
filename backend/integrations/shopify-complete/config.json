@@ -1,0 +1,20 @@
+{
+  "name": "Shopify Complete",
+  "id": "shopify-complete",
+  "category": "ecommerce",
+  "description": "Complete Shopify integration for ecommerce management",
+  "version": "1.0.0",
+  "authentication": {"type": "api_key", "fields": [
+    {"name": "shopName", "label": "Shop Name", "type": "text", "required": true},
+    {"name": "accessToken", "label": "Access Token", "type": "password", "required": true}
+  ]},
+  "endpoints": [
+    {"name": "getProducts", "method": "GET", "path": "/products"},
+    {"name": "createProduct", "method": "POST", "path": "/products"},
+    {"name": "getOrders", "method": "GET", "path": "/orders"},
+    {"name": "getCustomers", "method": "GET", "path": "/customers"}
+  ],
+  "pricing": {"model": "paid", "details": "$29/month basic plan"},
+  "documentation": "https://shopify.dev/api",
+  "website": "https://shopify.com"
+}
