@@ -1,0 +1,24 @@
+{
+  "name": "Asana Complete",
+  "id": "asana-complete",
+  "category": "project-management",
+  "description": "Complete Asana integration for task and project management",
+  "version": "1.0.0",
+  "authentication": {
+    "type": "oauth2",
+    "fields": [
+      {"name": "accessToken", "label": "Access Token", "type": "password", "required": true}
+    ]
+  },
+  "endpoints": [
+    {"name": "getWorkspaces", "method": "GET", "path": "/workspaces"},
+    {"name": "getProjects", "method": "GET", "path": "/projects"},
+    {"name": "createProject", "method": "POST", "path": "/projects"},
+    {"name": "getTasks", "method": "GET", "path": "/tasks"},
+    {"name": "createTask", "method": "POST", "path": "/tasks"},
+    {"name": "updateTask", "method": "PUT", "path": "/tasks/:id"}
+  ],
+  "pricing": {"model": "freemium", "free_tier": "15 users", "paid": "$10.99/user/month"},
+  "documentation": "https://developers.asana.com",
+  "website": "https://asana.com"
+}
