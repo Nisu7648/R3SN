@@ -1,0 +1,17 @@
+{
+  "name": "HubSpot Complete",
+  "id": "hubspot-complete",
+  "category": "crm",
+  "description": "Complete HubSpot CRM integration",
+  "version": "1.0.0",
+  "authentication": {"type": "api_key", "fields": [{"name": "apiKey", "label": "API Key", "type": "password", "required": true}]},
+  "endpoints": [
+    {"name": "getContacts", "method": "GET", "path": "/contacts"},
+    {"name": "createContact", "method": "POST", "path": "/contacts"},
+    {"name": "getDeals", "method": "GET", "path": "/deals"},
+    {"name": "createDeal", "method": "POST", "path": "/deals"}
+  ],
+  "pricing": {"model": "freemium", "free_tier": "1M contacts", "paid": "$45/month"},
+  "documentation": "https://developers.hubspot.com",
+  "website": "https://hubspot.com"
+}
